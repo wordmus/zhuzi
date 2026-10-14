@@ -1,0 +1,17 @@
+{
+  "id": "mentor-desk",
+  "title": "导师台",
+  "hypothesis": {
+    "id": "h-first-30s",
+    "text": "第一次来的人，30 秒内要有能做的事，并且感到被认出",
+    "mode": "satisfy"
+  },
+  "target": "推门 30 秒内开始玩；先给，再问；它在你来之前就在做事",
+  "stop": "你拿起票根",
+  "form": "vignette",
+  "perspective": { "who": "你", "control": 1 },
+  "era": "zhanguo",
+  "durationMin": 1,
+  "director": "base",
+  "notes": "导师台是基础导演的作品。感官架、两本册子、灯油默认折叠，第二、三次来访时随需要出现。"
+}

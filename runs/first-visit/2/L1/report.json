@@ -1,0 +1,193 @@
+{
+  "intent": "first-visit",
+  "seed": 2,
+  "tier": "L1",
+  "when": "2026-10-14T08:02:15.507Z",
+  "status": "ok",
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": [
+      {
+        "level": "warn",
+        "path": "acts[0].lines[0].text",
+        "msg": "「来了。这一件刚做好。」不止一句（每屏 ≤ 1 句）",
+        "act": "threshold"
+      },
+      {
+        "level": "warn",
+        "path": "acts[1].reveal",
+        "msg": "揭示顺序里的 he 不是这一幕的元素（若是运行时生成的可忽略）",
+        "act": "reveal"
+      },
+      {
+        "level": "warn",
+        "path": "acts[2].reveal",
+        "msg": "揭示顺序里的 rumor 不是这一幕的元素（若是运行时生成的可忽略）",
+        "act": "han"
+      },
+      {
+        "level": "warn",
+        "path": "acts[2].reveal",
+        "msg": "揭示顺序里的 altar 不是这一幕的元素（若是运行时生成的可忽略）",
+        "act": "han"
+      }
+    ]
+  },
+  "build": {
+    "ok": true,
+    "ms": 270,
+    "bytes": 56982,
+    "singleFile": true,
+    "external": []
+  },
+  "play": {
+    "done": true,
+    "reason": "done",
+    "seconds": 12,
+    "steps": 4,
+    "stepLog": [
+      {
+        "i": 0,
+        "act": "threshold",
+        "aff": "door",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 1,
+        "act": "reveal",
+        "aff": "east-suburb",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 2,
+        "act": "han",
+        "aff": "he",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 3,
+        "act": "return",
+        "aff": "ticket",
+        "prefer": "focus",
+        "progressed": true
+      }
+    ],
+    "shots": [
+      "01-threshold-enter.png",
+      "02-reveal-enter.png",
+      "03-han-enter.png",
+      "04-return-enter.png",
+      "05-return-s3.png",
+      "06-final-done.png"
+    ],
+    "traceEvents": 34,
+    "errors": 0,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "fallbackClicks": 0,
+    "firstActionSec": 0.017,
+    "stageFpsP5": 59.523809523812105,
+    "ledger": null,
+    "acts": [
+      {
+        "act": "threshold",
+        "expected": "灯一盏盏亮到你这边",
+        "entered": true,
+        "exited": true,
+        "durationMs": 2104,
+        "firstAffMs": 1,
+        "firstActionMs": 2103,
+        "predictedFirstActionMs": 4000,
+        "note": "与预演相近",
+        "lines": [
+          "[vignette] threshold"
+        ]
+      },
+      {
+        "act": "reveal",
+        "expected": "你看向哪里，哪里显影",
+        "entered": true,
+        "exited": true,
+        "durationMs": 2952,
+        "firstAffMs": 0,
+        "firstActionMs": 2951,
+        "predictedFirstActionMs": 6000,
+        "note": "与预演相近",
+        "lines": [
+          "[reveal] reveal"
+        ]
+      },
+      {
+        "act": "han",
+        "expected": "田伯开门后说的和心里预演的不一样",
+        "entered": true,
+        "exited": true,
+        "durationMs": 2985,
+        "firstAffMs": 0,
+        "firstActionMs": 2985,
+        "predictedFirstActionMs": 3000,
+        "note": "与预演相近",
+        "lines": [
+          "[walk2d] han"
+        ]
+      },
+      {
+        "act": "return",
+        "expected": "它记得禾做了什么",
+        "entered": true,
+        "exited": true,
+        "durationMs": 2983,
+        "firstAffMs": 1,
+        "firstActionMs": 2983,
+        "predictedFirstActionMs": 5000,
+        "note": "与预演相近",
+        "lines": [
+          "[vignette] return"
+        ]
+      }
+    ]
+  },
+  "seconds": 12.5,
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 56982
+    },
+    {
+      "path": "plan.json",
+      "bytes": 18795
+    },
+    {
+      "path": "shots/01-threshold-enter.png",
+      "bytes": 11875
+    },
+    {
+      "path": "shots/02-reveal-enter.png",
+      "bytes": 9774
+    },
+    {
+      "path": "shots/03-han-enter.png",
+      "bytes": 9532
+    },
+    {
+      "path": "shots/04-return-enter.png",
+      "bytes": 10349
+    },
+    {
+      "path": "shots/05-return-s3.png",
+      "bytes": 4258
+    },
+    {
+      "path": "shots/06-final-done.png",
+      "bytes": 4258
+    },
+    {
+      "path": "trace.jsonl",
+      "bytes": 2835
+    }
+  ]
+}

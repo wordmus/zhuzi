@@ -1,0 +1,34 @@
+{"t":1,"kind":"sense","name":"boot","visit":1,"seed":2,"tier":"L1","dayPart":"afternoon"}
+{"t":1,"kind":"act.enter","act":"threshold","framework":"vignette","author":"基础导演","focus":"door","predict":{"firstLook":"window","dwell":"mentor","surprise":"灯一盏盏亮到你这边","firstActionMs":4000}}
+{"t":1,"kind":"line.say","who":"基础导演","text":"[vignette] threshold","chars":19,"source":"script","over":false}
+{"t":2,"kind":"aff.show","id":"door","label":"继续"}
+{"t":1947,"kind":"aff.hover","id":"door","on":true}
+{"t":2104,"kind":"aff.click","id":"door","dwellMs":0}
+{"t":2105,"kind":"act.exit","act":"threshold","ms":2104}
+{"t":2105,"kind":"aff.hover","id":"door","on":false,"ms":158}
+{"t":2105,"kind":"aff.hide","id":"door"}
+{"t":2105,"kind":"act.enter","act":"reveal","framework":"reveal","author":"叔衡","focus":"east-suburb","predict":{"firstLook":"east-suburb","dwell":"crack","surprise":"你看向哪里，哪里显影","firstActionMs":6000}}
+{"t":2105,"kind":"line.say","who":"叔衡","text":"[reveal] reveal","chars":14,"source":"script","over":false}
+{"t":2105,"kind":"aff.show","id":"east-suburb","label":"继续"}
+{"t":2148,"kind":"aff.hover","id":"east-suburb","on":true}
+{"t":5056,"kind":"aff.click","id":"east-suburb","dwellMs":0}
+{"t":5057,"kind":"act.exit","act":"reveal","ms":2952}
+{"t":5057,"kind":"aff.hover","id":"east-suburb","on":false,"ms":2908}
+{"t":5057,"kind":"aff.hide","id":"east-suburb"}
+{"t":5057,"kind":"act.enter","act":"han","framework":"walk2d","author":"叔衡","focus":"he","predict":{"firstLook":"he","dwell":"gate","surprise":"田伯开门后说的和心里预演的不一样","tired":"冬天第二天","firstActionMs":3000}}
+{"t":5057,"kind":"line.say","who":"叔衡","text":"[walk2d] han","chars":11,"source":"script","over":false}
+{"t":5057,"kind":"aff.show","id":"he","label":"继续"}
+{"t":5064,"kind":"aff.hover","id":"he","on":true}
+{"t":8042,"kind":"aff.click","id":"he","dwellMs":0}
+{"t":8042,"kind":"act.exit","act":"han","ms":2985}
+{"t":8042,"kind":"aff.hover","id":"he","on":false,"ms":2979}
+{"t":8042,"kind":"aff.hide","id":"he"}
+{"t":8042,"kind":"act.enter","act":"return","framework":"vignette","author":"基础导演","focus":"ticket","predict":{"firstLook":"ticket","dwell":"mentor","surprise":"它记得禾做了什么","firstActionMs":5000}}
+{"t":8043,"kind":"line.say","who":"基础导演","text":"[vignette] return","chars":16,"source":"script","over":false}
+{"t":8043,"kind":"aff.show","id":"ticket","label":"继续"}
+{"t":8047,"kind":"aff.hover","id":"ticket","on":true}
+{"t":11025,"kind":"aff.click","id":"ticket","dwellMs":0}
+{"t":11025,"kind":"act.exit","act":"return","ms":2982}
+{"t":11025,"kind":"aff.hover","id":"ticket","on":false,"ms":2978}
+{"t":11025,"kind":"aff.hide","id":"ticket"}
+{"t":11025,"kind":"act.exit","act":"visit","done":true}

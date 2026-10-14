@@ -1,0 +1,223 @@
+{
+  "target": "bench/fixtures/bad.html",
+  "url": "http://127.0.0.1:54886/bad.html",
+  "when": "2026-10-14T08:03:21.106Z",
+  "verdict": "FAIL",
+  "hard": {
+    "pass": 2,
+    "total": 8
+  },
+  "summary": "FAIL hard 2/8 · first-action 0.06s · first3s 5 (limit 1) · feedback p90 none (limit 1000) · max-chars 334 (limit 30) · errors 2 (limit 0) · fps-p5 60 · notext FAIL · repro FAIL · incomplete (stuck)",
+  "checks": [
+    {
+      "id": "first-action",
+      "label": "首个可操作元素",
+      "pass": true,
+      "value": 0.06480000001192093,
+      "limit": 1
+    },
+    {
+      "id": "first3s",
+      "label": "每幕前 3 秒可做的事",
+      "pass": false,
+      "value": 5,
+      "limit": 1,
+      "note": "(page):5"
+    },
+    {
+      "id": "feedback",
+      "label": "反馈延迟 p90",
+      "pass": false,
+      "value": "none",
+      "limit": 1000,
+      "note": "样本 1，100ms 内有反馈的占 0%（目标 100ms）"
+    },
+    {
+      "id": "max-chars",
+      "label": "每屏可见字数",
+      "pass": false,
+      "value": 334,
+      "limit": 30,
+      "note": "DOM 334 / trace 0"
+    },
+    {
+      "id": "errors",
+      "label": "控制台报错",
+      "pass": false,
+      "value": 2,
+      "limit": 0,
+      "note": "[bad] 初始化失败：未能读取配置 | Error: [bad] 未捕获的异常\n    at http://127.0.0.1:54886/bad.html:29:28"
+    },
+    {
+      "id": "fps-p5",
+      "label": "帧率 p5",
+      "pass": true,
+      "value": 60,
+      "limit": 50,
+      "note": "541 帧；整局 rAF p5=60；stage.fpsP5()=n/a（末 12 秒有探针，未计入）"
+    },
+    {
+      "id": "notext",
+      "label": "删字测试",
+      "pass": false,
+      "value": "FAIL",
+      "limit": "done",
+      "note": "停在 stuck"
+    },
+    {
+      "id": "repro",
+      "label": "同 seed 复现",
+      "pass": false,
+      "value": "FAIL",
+      "limit": "same",
+      "note": "事实 0 条（无 world.fact，只比较幕序）；账本一致，幕序一致，台词一致；有一次没跑完"
+    }
+  ],
+  "metrics": {
+    "firstActionSec": 0.06480000001192093,
+    "first3s": {
+      "perAct": [
+        {
+          "act": "(page)",
+          "n": 5
+        }
+      ],
+      "max": 5,
+      "source": "dom"
+    },
+    "feedback": {
+      "samples": [
+        {
+          "step": 0,
+          "aff": "a1",
+          "ambient": {
+            "g": 0,
+            "l": 0
+          },
+          "first": null,
+          "latencyMs": null,
+          "shots": 24
+        }
+      ],
+      "p90Ms": null,
+      "within100Ratio": 0
+    },
+    "chars": {
+      "dom": 334,
+      "trace": 0,
+      "max": 334
+    },
+    "errors": {
+      "total": 2,
+      "console": [
+        "[bad] 初始化失败：未能读取配置"
+      ],
+      "page": [
+        "Error: [bad] 未捕获的异常\n    at http://127.0.0.1:54886/bad.html:29:28"
+      ],
+      "trace": 0,
+      "warnings": 0
+    },
+    "fps": {
+      "p5": 59.88023952095548,
+      "own": 59.88023952095548,
+      "stage": null,
+      "usedStage": false,
+      "frames": 541
+    },
+    "notext": {
+      "done": false,
+      "hidden": false,
+      "reason": "stuck"
+    },
+    "repro": {
+      "facts": 0,
+      "factsEqual": true,
+      "actsEqual": true,
+      "linesEqual": true,
+      "bothDone": false
+    },
+    "seedDiff": {
+      "checked": false
+    },
+    "stepsPolicy": {
+      "seed": null,
+      "preferCounts": {
+        "first": 2,
+        "rotate": 8
+      }
+    }
+  },
+  "runs": {
+    "main": {
+      "done": false,
+      "reason": "stuck",
+      "steps": 10,
+      "seconds": 11.9,
+      "fallbackClicks": 0,
+      "shots": 0
+    },
+    "notext": {
+      "done": false,
+      "reason": "stuck",
+      "steps": 10,
+      "seconds": 9.4,
+      "fallbackClicks": 0,
+      "shots": 0
+    },
+    "repro": {
+      "done": false,
+      "reason": "stuck",
+      "steps": 10,
+      "seconds": 9.5,
+      "fallbackClicks": 0,
+      "shots": 0
+    }
+  },
+  "curve": [
+    {
+      "minute": 1,
+      "decisions": 0,
+      "new_info": 0,
+      "want_continue": 1,
+      "numbers_on_screen": 4,
+      "words_on_screen": 334,
+      "note": "10 次动手，起于 ?/a1；0 条新东西；字偏多"
+    }
+  ],
+  "curveSummary": {
+    "decisionDensity": 0,
+    "firstDecisionMinute": null,
+    "wantContinueMin": 1,
+    "wantContinueEnd": 1,
+    "numbersMedian": 4
+  },
+  "thresholds": {
+    "version": 1,
+    "note": "棘轮：每次 /goal 达成后只升不降。数值来自 docs/design/demo-spec.md 第八节。",
+    "firstActionSec": 1,
+    "first3sActionsMax": 1,
+    "feedbackMsMax": 1000,
+    "feedbackMsTarget": 100,
+    "maxChars": 30,
+    "consoleErrorsMax": 0,
+    "fpsP5Min": 50,
+    "notext": true,
+    "repro": true,
+    "feedback": {
+      "pixelDelta": 20,
+      "globalFrac": 0.0003,
+      "localFrac": 0.002,
+      "baselineMul": 2,
+      "maxProbes": 8
+    },
+    "player": {
+      "maxSteps": 240,
+      "maxSeconds": 420,
+      "settleMs": 450,
+      "minGapMs": 600,
+      "emptyAffSeconds": 45
+    }
+  },
+  "outDir": "/Users/lidechi/Documents/Github/Zhuzi-claude/runs/_bench/bad"
+}

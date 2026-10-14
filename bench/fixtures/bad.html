@@ -1,0 +1,30 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>bad fixture</title>
+<!-- 故意做坏的页面：说明书式的一堵字墙、五个按钮同时出现、控制台报错、没有 done。bench 必须判它 FAIL。 -->
+<style>
+  html, body { margin: 0; background: #f4f4f0; color: #222; font: 14px/1.6 sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 24px; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+  button { padding: 8px 14px; font-size: 14px; }
+</style>
+<main>
+  <h1>使用说明 · 请先阅读</h1>
+  <p id="wall"></p>
+  <div class="row">
+    <button data-aff="a1">开始</button>
+    <button data-aff="a2">设置</button>
+    <button data-aff="a3">帮助</button>
+    <button data-aff="a4">统计</button>
+    <button data-aff="a5">退出</button>
+  </div>
+  <p>当前压力 87% · 粮价 213 · 民心 42 · 第 17 天</p>
+</main>
+<script>
+  // 一堵字墙：约 600 字，不分段
+  const s = '欢迎使用本系统。本系统由多个模块组成，包括但不限于导师台、作品架、感官架、册子与灯油计量。请在开始之前通读以下说明：第一，所有操作均须通过下方按钮完成；第二，压力数值超过百分之八十时请及时处理；第三，粮价变化会影响民心，民心变化会影响税收，税收变化又会反过来影响粮价，因此请同时关注三项指标。';
+  document.getElementById('wall').textContent = s.repeat(2);
+  // 控制台报错
+  console.error('[bad] 初始化失败：未能读取配置');
+  setTimeout(() => { throw new Error('[bad] 未捕获的异常'); }, 400);
+</script>

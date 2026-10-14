@@ -1,0 +1,6 @@
+when,target,verdict,hard,summary
+2026-10-14T08:02:43.029Z,"runs/first-visit/1/L1",PASS,8/8,"PASS hard 8/8 · first-action 0.02s · first3s 1 · feedback p90 102ms · max-chars 19 · errors 0 · fps-p5 60 · notext PASS · repro PASS"
+2026-10-14T08:02:58.680Z,"runs/first-visit/2/L1",PASS,8/8,"PASS hard 8/8 · first-action 0.02s · first3s 1 · feedback p90 101ms · max-chars 19 · errors 0 · fps-p5 60 · notext PASS · repro PASS · seed-differs PASS"
+2026-10-14T08:03:21.106Z,"bench/fixtures/bad.html",FAIL,2/8,"FAIL hard 2/8 · first-action 0.06s · first3s 5 (limit 1) · feedback p90 none (limit 1000) · max-chars 334 (limit 30) · errors 2 (limit 0) · fps-p5 60 · notext FAIL · repro FAIL · incomplete (stuck)"
+2026-10-14T08:03:37.757Z,"bench/fixtures/good.html",PASS,8/8,"PASS hard 8/8 · first-action 0.02s · first3s 1 · feedback p90 84ms · max-chars 5 · errors 0 · fps-p5 60 · notext PASS · repro PASS"
+2026-10-14T08:03:52.890Z,"runs/first-visit/1/L1",PASS,8/8,"PASS hard 8/8 · first-action 0.02s · first3s 1 · feedback p90 101ms · max-chars 19 · errors 0 · fps-p5 60 · notext PASS · repro PASS"

@@ -1,0 +1,33 @@
+{
+  "version": "1",
+  "note": "导演的种子规则：demo-spec 第一节 + 策划文档第 12 节。director.ts 读 one-sentence（maxChars）与 feedback（ms）；其余是给导演、validate.ts 与 critic 对照的数据。基础导演可以改这些数字（策划文档第 13 节）。",
+  "rules": [
+    { "id": "one-focus", "text": "一屏一个焦点：只有焦点明显地动；背景只有缓慢、低对比的呼吸（灯焰、热气、风里的草）。", "param": { "focusPerScreen": 1 }, "source": "spec 一.1 · 策划 12" },
+    { "id": "first-3s", "text": "进入一个场景的前 3 秒，只有一个能做的事；其余退后、变暗。", "param": { "actions": 1, "seconds": 3 }, "source": "spec 一.1 · 策划 12" },
+    { "id": "one-sentence", "text": "字最贵：每屏 ≤ 1 句，不超过 30 字，最好 ≤ 18 字；多出来的折进「为什么」。", "param": { "maxChars": 30, "idealChars": 18, "sentences": 1 }, "source": "spec 一.2 · 策划 12" },
+    { "id": "no-labels", "text": "没有说明文字、没有标签、没有按钮文字；信息放在物件的样子里（粟瓮的高低、孩子的姿势、田缝的宽窄、灯的明暗）。", "source": "spec 一.2" },
+    { "id": "feedback", "text": "每个动作 100ms 内有看得见的反馈（光、形变、声音），1 秒内有意义上的回应。", "param": { "ms": 100, "meaningMs": 1000 }, "source": "spec 一.3 · 策划 12" },
+    { "id": "attention-budget", "text": "注意力是预算：动的东西最先被看见，其次是明暗对比与人的视线，文字最贵；动效只给焦点。", "source": "策划 12" },
+    { "id": "behavior-first", "text": "心智先从行为里读出来：停在单元层，手上的活没停；停在模块层，停下看一眼、换个做法；到了心智层，直起身、开口说话。心象是第二层，给想看的人。", "source": "spec 一.4 · 策划 12" },
+    { "id": "tradeoff-visible", "text": "取舍可见、不全说：理由可以追问（悬停、长按），但不主动摊开；全部摆出来是机器，选过的才是心智。", "source": "spec 一.5 · 策划 12" },
+    { "id": "landmarks-fixed", "text": "地标不动：你的座位、导师的位置、门。变化发生在地标旁边，才看得出来。", "source": "spec 一.6 · 策划 12" },
+    { "id": "change-in-front", "text": "变化盲视：想让人看见变化，就让它在你面前发生，或由角色的视线指过去；焦点之外的改变几乎不会被注意到。", "source": "spec 一.6 · 策划 12" },
+    { "id": "one-take", "text": "一镜到底：中间不黑屏、不切场景、不加载。", "source": "spec 一.7" },
+    { "id": "tone", "text": "语气：少警句，允许插科打诨而不离题；角色对天意的理解可以又歪又合理。", "source": "spec 一.8 · 策划 19" },
+    { "id": "give-then-ask", "text": "先给，再问：进门不报时间、不报第几天、不问名字；名字等玩完一局再问。", "source": "spec 三 · 策划 12、19" },
+    { "id": "continuity", "text": "连续：你进门时它正在做一件事，先做完这一笔，再转向你。", "source": "策划 12" },
+    { "id": "response", "text": "回应：它对你做过的事有反应；你在某处停过，下次那里就深一点。", "source": "策划 12" },
+    { "id": "anticipate", "text": "预备：它在你开口前已经猜了一次；猜错了会挪，挪的动作你看得见。", "source": "策划 12" },
+    { "id": "timing", "text": "时机：它会等，会挑时候，不在你专注时打断；提醒按阶梯，先在场景里，再到界面上。", "source": "策划 12" },
+    { "id": "persistence", "text": "执着：它有自己想做的事，有时不照你说的做，并让你看到它没有顺从的地方。", "source": "策划 12" },
+    { "id": "control", "text": "视角与控制一致：你不是他，是他心里的一个声音，约 0.3 的控制；他自己决定做不做、怎么做。", "param": { "control": 0.3 }, "source": "spec 4.7" },
+    { "id": "peak-end", "text": "峰值与结尾：人记住一段体验最强的一刻和结尾；每一局、每一次来访都设计这两处。", "param": { "peaks": 1, "ends": 1 }, "source": "策划 12" },
+    { "id": "leave-a-thread", "text": "留一条线：没收口的事更容易被记住；离开前留一条没收口的线。", "param": { "threads": 1 }, "source": "策划 12" },
+    { "id": "fold-when-understood", "text": "看懂了就折叠：看懂的东西退到幕后，只在有特殊变化时再出来。", "source": "策划 12" },
+    { "id": "plans-not-state", "text": "给你看计划和改动，不给你看状态：不放数字面板、百分比、计数器；饥饱用粟瓮和家人的样子。", "source": "策划 12 · spec 开头" },
+    { "id": "revision-trace", "text": "改稿留痕：改过的地方留一道前一版的淡痕；点一下能看见改前的样子和理由。", "source": "策划 12" },
+    { "id": "change-budget", "text": "有节制：每次来访最多一两处看得见的改动，每处都能追溯到原因，最好是你做过的事。", "param": { "perVisit": 2 }, "source": "策划 12" },
+    { "id": "sediment", "text": "从想到不想：同一情境同一做法连续奏效 3 次，编译成习惯，心智不再为它停下来。", "param": { "successes": 3 }, "source": "策划 12 · spec 五" },
+    { "id": "chronicle", "text": "年谱：每位导演和导师台本身都有年谱；第一天的样子挂在墙上，和今天对照。", "source": "策划 12" }
+  ]
+}

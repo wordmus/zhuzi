@@ -1,0 +1,29 @@
+{
+  "id": "b7a97c0fb",
+  "name": "Render original resume",
+  "command": "osascript /var/folders/k2/1lmlwp6j3gvcd829zvvgl4pw0000gn/T/jian-resume-20261014-tt6r3v5c/render_word.applescript /var/folders/k2/1lmlwp6j3gvcd829zvvgl4pw0000gn/T/jian-resume-20261014-tt6r3v5c/original.docx /var/folders/k2/1lmlwp6j3gvcd829zvvgl4pw0000gn/T/jian-resume-20261014-tt6r3v5c/original.pdf",
+  "status": "failed",
+  "outputPath": ".pi/tasks/01a13946-585b-71cc-b343-f26fed74dcc7-53218/b7a97c0fb.output",
+  "cwd": "/Users/lidechi/Documents/Github/Zhuzi-claude",
+  "startTime": 1791962618926,
+  "endTime": 1791962739149,
+  "exitCode": 1,
+  "signal": null,
+  "pid": 61298,
+  "bytesWritten": 230,
+  "isAgent": false,
+  "surviveReload": false,
+  "error": "Exited with code 1",
+  "notified": true,
+  "notifyOnCompletion": true,
+  "triggerOnCompletion": true,
+  "timeoutSeconds": 150,
+  "shellPolicy": {
+    "policy": "inherit",
+    "executable": "/bin/zsh",
+    "argvPrefix": [
+      "-c"
+    ],
+    "dialect": "posix"
+  }
+}

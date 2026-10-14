@@ -1,0 +1,260 @@
+{
+  "target": "runs/first-visit/2/L1",
+  "url": "http://127.0.0.1:54765/index.html",
+  "when": "2026-10-14T08:02:58.680Z",
+  "verdict": "PASS",
+  "hard": {
+    "pass": 8,
+    "total": 8
+  },
+  "summary": "PASS hard 8/8 · first-action 0.02s · first3s 1 · feedback p90 101ms · max-chars 19 · errors 0 · fps-p5 60 · notext PASS · repro PASS · seed-differs PASS",
+  "checks": [
+    {
+      "id": "first-action",
+      "label": "首个可操作元素",
+      "pass": true,
+      "value": 0.017399999976158143,
+      "limit": 1
+    },
+    {
+      "id": "first3s",
+      "label": "每幕前 3 秒可做的事",
+      "pass": true,
+      "value": 1,
+      "limit": 1,
+      "note": "threshold:1 reveal:1 han:1 return:1"
+    },
+    {
+      "id": "feedback",
+      "label": "反馈延迟 p90",
+      "pass": true,
+      "value": 101,
+      "limit": 1000,
+      "note": "样本 3，100ms 内有反馈的占 67%（目标 100ms）"
+    },
+    {
+      "id": "max-chars",
+      "label": "每屏可见字数",
+      "pass": true,
+      "value": 19,
+      "limit": 30,
+      "note": "DOM 19 / trace 19"
+    },
+    {
+      "id": "errors",
+      "label": "控制台报错",
+      "pass": true,
+      "value": 0,
+      "limit": 0
+    },
+    {
+      "id": "fps-p5",
+      "label": "帧率 p5",
+      "pass": true,
+      "value": 60,
+      "limit": 50,
+      "note": "231 帧；整局 rAF p5=60；stage.fpsP5()=60（末 12 秒有探针，未计入）"
+    },
+    {
+      "id": "notext",
+      "label": "删字测试",
+      "pass": true,
+      "value": "PASS",
+      "limit": "done"
+    },
+    {
+      "id": "repro",
+      "label": "同 seed 复现",
+      "pass": true,
+      "value": "PASS",
+      "limit": "same",
+      "note": "事实 0 条（无 world.fact，只比较幕序）；账本一致，幕序一致，台词一致"
+    }
+  ],
+  "metrics": {
+    "firstActionSec": 0.017399999976158143,
+    "first3s": {
+      "perAct": [
+        {
+          "act": "threshold",
+          "n": 1
+        },
+        {
+          "act": "reveal",
+          "n": 1
+        },
+        {
+          "act": "han",
+          "n": 1
+        },
+        {
+          "act": "return",
+          "n": 1
+        }
+      ],
+      "max": 1,
+      "source": "trace"
+    },
+    "feedback": {
+      "samples": [
+        {
+          "step": 0,
+          "aff": "door",
+          "ambient": {
+            "g": 0.00008572048611111111,
+            "l": 0.0006095679012345679
+          },
+          "first": {
+            "g": 0.0007161458333333333,
+            "l": 0.005092592592592593
+          },
+          "latencyMs": 100,
+          "shots": 24
+        },
+        {
+          "step": 1,
+          "aff": "east-suburb",
+          "ambient": {
+            "g": 0,
+            "l": 0
+          },
+          "first": {
+            "g": 0.0007345920138888889,
+            "l": 0.005223765432098766
+          },
+          "latencyMs": 101,
+          "shots": 24
+        },
+        {
+          "step": 2,
+          "aff": "he",
+          "ambient": {
+            "g": 0,
+            "l": 0
+          },
+          "first": {
+            "g": 0.0007107204861111111,
+            "l": 0.005054012345679012
+          },
+          "latencyMs": 98,
+          "shots": 24
+        }
+      ],
+      "p90Ms": 101,
+      "within100Ratio": 0.6666666666666666
+    },
+    "chars": {
+      "dom": 19,
+      "trace": 19,
+      "max": 19
+    },
+    "errors": {
+      "total": 0,
+      "console": [],
+      "page": [],
+      "trace": 0,
+      "warnings": 0
+    },
+    "fps": {
+      "p5": 59.523809523812105,
+      "own": 59.523809523812105,
+      "stage": 59.523809523812105,
+      "usedStage": false,
+      "frames": 231
+    },
+    "notext": {
+      "done": true,
+      "hidden": false,
+      "reason": "done"
+    },
+    "repro": {
+      "facts": 0,
+      "factsEqual": true,
+      "actsEqual": true,
+      "linesEqual": true,
+      "bothDone": true
+    },
+    "seedDiff": {
+      "checked": true,
+      "differs": true
+    },
+    "stepsPolicy": {
+      "seed": null,
+      "preferCounts": {
+        "focus": 4
+      }
+    }
+  },
+  "runs": {
+    "main": {
+      "done": true,
+      "reason": "done",
+      "steps": 4,
+      "seconds": 11.5,
+      "fallbackClicks": 0,
+      "shots": 0
+    },
+    "notext": {
+      "done": true,
+      "reason": "done",
+      "steps": 4,
+      "seconds": 3.3,
+      "fallbackClicks": 0,
+      "shots": 0
+    },
+    "repro": {
+      "done": true,
+      "reason": "done",
+      "steps": 4,
+      "seconds": 3.3,
+      "fallbackClicks": 0,
+      "shots": 0
+    }
+  },
+  "curve": [
+    {
+      "minute": 1,
+      "decisions": 4,
+      "new_info": 8,
+      "want_continue": 5,
+      "numbers_on_screen": 0,
+      "words_on_screen": 13,
+      "note": "4 次动手，起于 threshold/door；8 条新东西"
+    }
+  ],
+  "curveSummary": {
+    "decisionDensity": 4,
+    "firstDecisionMinute": 1,
+    "wantContinueMin": 5,
+    "wantContinueEnd": 5,
+    "numbersMedian": 0
+  },
+  "thresholds": {
+    "version": 1,
+    "note": "棘轮：每次 /goal 达成后只升不降。数值来自 docs/design/demo-spec.md 第八节。",
+    "firstActionSec": 1,
+    "first3sActionsMax": 1,
+    "feedbackMsMax": 1000,
+    "feedbackMsTarget": 100,
+    "maxChars": 30,
+    "consoleErrorsMax": 0,
+    "fpsP5Min": 50,
+    "notext": true,
+    "repro": true,
+    "feedback": {
+      "pixelDelta": 20,
+      "globalFrac": 0.0003,
+      "localFrac": 0.002,
+      "baselineMul": 2,
+      "maxProbes": 8
+    },
+    "player": {
+      "maxSteps": 240,
+      "maxSeconds": 420,
+      "settleMs": 450,
+      "minGapMs": 600,
+      "emptyAffSeconds": 45
+    }
+  },
+  "outDir": "/Users/lidechi/Documents/Github/Zhuzi-claude/runs/first-visit/2/L1"
+}

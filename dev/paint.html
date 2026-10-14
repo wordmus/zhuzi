@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>画具 · 漆画</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&display=swap">
+<style>
+  :root { color-scheme: dark; --lacquer:#120d0b; --lacquer2:#2a1a13; --gold:#c9a24a; --silk:#e7d9b6; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--lacquer); color: var(--silk); }
+  body { font-family: "Noto Serif SC","Songti SC","STSong",serif; padding: 0 16px 48px; overflow-x: hidden; }
+  header { display: flex; align-items: baseline; gap: 14px; padding: 18px 0 10px; border-bottom: 1px solid rgba(201,162,74,.25); margin-bottom: 16px; }
+  header h1 { margin: 0; font-size: 20px; font-weight: 600; letter-spacing: .2em; color: var(--gold); }
+  header span { font-size: 12px; opacity: .55; }
+  #fps { margin-left: auto; font-size: 12px; opacity: .6; font-variant-numeric: tabular-nums; }
+  h2 { font-size: 13px; font-weight: 400; letter-spacing: .3em; color: var(--gold); opacity: .8; margin: 26px 0 10px; }
+  .scenes { display: grid; gap: 14px; }
+  .scene canvas { width: 100%; display: block; border-radius: 2px; }
+  .scene .cap, .cell .cap { font-size: 12px; opacity: .6; padding: 6px 2px 0; letter-spacing: .05em; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
+  .cell canvas { width: 100%; height: 230px; display: block; border-radius: 2px; background: var(--lacquer2); }
+  .cell.wide { grid-column: 1 / -1; }
+  .cell.wide canvas { height: 300px; }
+  .cell.tall canvas { height: 420px; }
+  code { font-family: ui-monospace, Menlo, monospace; font-size: 11px; color: var(--gold); opacity: .85; }
+</style>
+</head>
+<body>
+<header><h1>画具</h1><span>楚漆画 · 程序化二维</span><span id="fps"></span></header>
+<main id="app"></main>
+<script type="module" src="./paint.ts"></script>
+</body>
+</html>

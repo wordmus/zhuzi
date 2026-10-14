@@ -1,0 +1,2 @@
+# 别名表：别名=文件名（相对 docs/notes/）。供 notes.sh 与 check 使用；# 开头是注释。
+东周=东周实验室 3f543bf66e8880baac9dc2cb65bb34ec.md

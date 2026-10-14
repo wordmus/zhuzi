@@ -1,0 +1,17 @@
+{
+  "id": "han-act1",
+  "title": "旱",
+  "hypothesis": {
+    "id": "h-people-over-war",
+    "text": "你更在意人物的处境，而非战局",
+    "mode": "satisfy"
+  },
+  "target": "住进一个人的心，替他设想别人；为一个农夫在旱年里的处境动情，并亲手促成一次不可逆的承诺",
+  "stop": "禾在四季内做出一个不可逆的承诺（借粮立券、卖地、投亲、祭社），或冬尽时由他自己决定",
+  "form": "game",
+  "perspective": { "who": "禾", "control": 0.3 },
+  "era": "zhanguo",
+  "durationMin": 12,
+  "director": "shuheng",
+  "notes": "峰值是田伯开门的那一刻；结尾是一个不可逆的承诺。饥饱用粟瓮和家人的样子表现，不用数字。设想比走路便宜。"
+}

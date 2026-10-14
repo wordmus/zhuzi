@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "note": "棘轮：每次 /goal 达成后只升不降。数值来自 docs/design/demo-spec.md 第八节。",
+  "firstActionSec": 1.0,
+  "first3sActionsMax": 1,
+  "feedbackMsMax": 1000,
+  "feedbackMsTarget": 100,
+  "maxChars": 30,
+  "consoleErrorsMax": 0,
+  "fpsP5Min": 50,
+  "notext": true,
+  "repro": true,
+  "feedback": {
+    "pixelDelta": 20,
+    "globalFrac": 0.0003,
+    "localFrac": 0.002,
+    "baselineMul": 2,
+    "maxProbes": 8
+  },
+  "player": {
+    "maxSteps": 240,
+    "maxSeconds": 420,
+    "settleMs": 450,
+    "minGapMs": 600,
+    "emptyAffSeconds": 45
+  }
+}

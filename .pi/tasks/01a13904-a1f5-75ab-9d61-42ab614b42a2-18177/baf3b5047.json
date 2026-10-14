@@ -1,0 +1,29 @@
+{
+  "id": "baf3b5047",
+  "name": "Add second GitHub account",
+  "command": "gh auth login --hostname github.com --git-protocol ssh --web --skip-ssh-key",
+  "description": "Browser device-flow login for a second github.com account in gh CLI (used by Orca)",
+  "status": "completed",
+  "outputPath": ".pi/tasks/01a13904-a1f5-75ab-9d61-42ab614b42a2-18177/baf3b5047.output",
+  "cwd": "/Users/lidechi/Documents/Github/Zhuzi-claude",
+  "startTime": 1791958325836,
+  "endTime": 1791958511329,
+  "exitCode": 0,
+  "signal": null,
+  "pid": 28736,
+  "bytesWritten": 252,
+  "isAgent": false,
+  "surviveReload": false,
+  "notified": true,
+  "notifyOnCompletion": true,
+  "triggerOnCompletion": true,
+  "timeoutSeconds": 600,
+  "shellPolicy": {
+    "policy": "inherit",
+    "executable": "/bin/zsh",
+    "argvPrefix": [
+      "-c"
+    ],
+    "dialect": "posix"
+  }
+}

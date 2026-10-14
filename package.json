@@ -1,0 +1,23 @@
+{
+  "name": "zhuzi",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "个人呈现 Agent · 首轮试玩版 demo：推门、《旱》、住进禾的心",
+  "scripts": {
+    "dev": "vite",
+    "typecheck": "tsc --noEmit",
+    "present": "tsx director/pipeline/present.ts",
+    "bench": "tsx bench/run.ts",
+    "build": "tsx director/pipeline/present.ts --intent intents/first-visit.json --tier L1 --seed 1",
+    "bench:selftest": "tsx bench/selftest.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "playwright": "^1.64.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4",
+    "vite-plugin-singlefile": "^2.3.3"
+  }
+}

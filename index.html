@@ -1,0 +1,16 @@
+<!-- 发布为 Artifact 时，外层的 doctype/head/body 由发布方包裹；本地 dev 也能直接打开。 -->
+<title>推门 · 旱</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="一台只为一个人存在的机器：推门，拿起《旱》，住进农夫禾的心。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&family=Ma+Shan+Zheng&display=swap">
+<style>
+  :root { color-scheme: dark; --lacquer:#120d0b; --parchment:#efe1c2; }
+  html, body { height: 100%; margin: 0; background: var(--lacquer); color: var(--parchment); overflow: hidden; }
+  body { font-family: "Noto Serif SC","Songti SC","STSong","SimSun",serif; }
+  #stage { background: var(--lacquer); }
+  :focus-visible { outline: 2px solid #e0b46a; outline-offset: 2px; }
+</style>
+<div id="stage" role="application" aria-label="推门 · 旱"></div>
+<script type="module" src="./app/main.ts"></script>

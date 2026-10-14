@@ -1,0 +1,53 @@
+{
+  "era": "zhanguo",
+  "version": 1,
+  "source": "docs/design/demo-spec.md 第二节「材质与风格」",
+  "colors": {
+    "lacquer": "#120d0b",
+    "lacquer2": "#2a1a13",
+    "cinnabar": "#b33a26",
+    "ochre": "#b0763a",
+    "gold": "#c9a24a",
+    "silk": "#e7d9b6",
+    "silkDim": "#cbb98f",
+    "loess": "#b99568",
+    "umber": "#3b2a1e",
+    "bronze": "#4f6b5a",
+    "night": "#141826",
+    "millet": "#d6b25a"
+  },
+  "names": {
+    "lacquer": "漆黑",
+    "lacquer2": "漆褐",
+    "cinnabar": "朱",
+    "ochre": "赭",
+    "gold": "金",
+    "silk": "帛",
+    "silkDim": "帛暗",
+    "loess": "黄土",
+    "umber": "裂",
+    "bronze": "青铜",
+    "night": "夜蓝",
+    "millet": "粟"
+  },
+  "from": {
+    "lacquer": "漆器底色（夜、屋内）",
+    "lacquer2": "漆器的暖黑",
+    "cinnabar": "朱砂：田伯、印、票根边、灯焰芯",
+    "ochre": "赭石：禾的衣、土",
+    "gold": "金银错的线：云纹、灯",
+    "silk": "帛画的底（白昼）",
+    "silkDim": "帛的阴影",
+    "loess": "东郊的地",
+    "umber": "田缝",
+    "bronze": "铜绿：铺首、铜镜、灯树",
+    "night": "夜空",
+    "millet": "粟、灯光"
+  },
+  "ink": {
+    "onDark": "#f1e3c4",
+    "onLight": "#231a14",
+    "note": "与 components/line.ts 的两种字色一致：漆底/夜上用浅帛，帛/土上用深漆褐"
+  },
+  "post": ["grain", "vignette", "warm-bloom-additive"]
+}

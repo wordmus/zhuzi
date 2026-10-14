@@ -1,0 +1,18 @@
+{
+  "id": "first-visit",
+  "title": "第一次来访",
+  "hypothesis": {
+    "id": "h-first-visit",
+    "text": "你会为一个人的处境停下来，并想知道他后来怎样",
+    "mode": "probe"
+  },
+  "target": "推门、被认出、拿起《旱》、住进禾的心、回到咖啡厅被回应、带着一条没收口的线离开",
+  "stop": "你关上门",
+  "form": "game",
+  "perspective": { "who": "你", "control": 0.3 },
+  "era": "zhanguo",
+  "durationMin": 14,
+  "director": "base",
+  "compose": ["mentor-desk", "han-act1"],
+  "notes": "策划文档第 19 节「第一次来访」逐秒表；第二次来访看见它因为你而变。"
+}

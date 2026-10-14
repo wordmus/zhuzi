@@ -1,0 +1,67 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>good fixture</title>
+<!-- 守规矩的最小页面：一次只有一个可做的事、点了立刻有光、每屏一句短话、没有报错、能走到 done。bench 必须判它 PASS。 -->
+<style>
+  html, body { margin: 0; height: 100%; background: #120d0b; color: #f1e3c4; overflow: hidden; font-family: serif; }
+  #stage { position: fixed; inset: 0; }
+  #glow { position: absolute; left: 50%; top: 50%; width: 220px; height: 220px; margin: -110px 0 0 -110px; border-radius: 50%; background: #2a1a13; transition: background .05s; }
+  #glow.lit { background: #c9a24a; }
+  #flame { position: absolute; left: 62%; top: 40%; width: 14px; height: 22px; border-radius: 50%; background: #d6b25a; opacity: .7; animation: breathe 3s ease-in-out infinite; }
+  @keyframes breathe { 50% { opacity: .45; transform: scale(.9); } }
+  .aff { position: absolute; left: 50%; top: 50%; width: 220px; height: 220px; margin: -110px 0 0 -110px; border: 0; border-radius: 50%; background: transparent; color: transparent; font-size: 0; cursor: pointer; }
+  #say { position: absolute; left: 0; right: 0; top: 18%; text-align: center; font-size: 22px; letter-spacing: .08em; opacity: 0; transition: opacity .3s; }
+  #say.on { opacity: 1; }
+</style>
+<div id="stage"><div id="glow"></div><div id="flame"></div><div id="say"></div></div>
+<script>
+  const t0 = performance.now();
+  const trace = (window.__trace = []);
+  const log = (kind, data) => trace.push({ t: Math.round(performance.now() - t0), kind, ...data });
+  window.__zhuzi = { done: false, stage: { fpsP5: () => 60 }, bus: { now: () => Math.round(performance.now() - t0) } };
+  const stage = document.getElementById('stage');
+  const glow = document.getElementById('glow');
+  const say = document.getElementById('say');
+
+  function showAff(id) {
+    const b = document.createElement('button');
+    b.className = 'aff';
+    b.dataset.aff = id;
+    b.setAttribute('aria-label', id);
+    stage.appendChild(b);
+    log('aff.show', { id });
+    return b;
+  }
+  function speak(text) {
+    say.textContent = text;
+    say.classList.add('on');
+    log('line.say', { who: '导师', text, chars: [...text].length });
+    setTimeout(() => say.classList.remove('on'), 1800);
+  }
+  const acts = [
+    { id: 'threshold', focus: 'door', line: '来了。' },
+    { id: 'table', focus: 'ticket', line: '先看这个。' },
+    { id: 'leave', focus: 'door-close', line: '慢走。' },
+  ];
+  function run(i) {
+    if (i >= acts.length) {
+      log('act.exit', { act: 'visit', done: true });
+      window.__zhuzi.done = true;
+      return;
+    }
+    const a = acts[i];
+    log('act.enter', { act: a.id, focus: a.focus });
+    const b = showAff(a.focus);
+    b.addEventListener('click', () => {
+      log('aff.click', { id: a.focus });
+      glow.classList.add('lit'); // 立刻的光
+      setTimeout(() => glow.classList.remove('lit'), 400);
+      b.remove();
+      log('aff.hide', { id: a.focus });
+      speak(a.line);
+      log('act.exit', { act: a.id });
+      setTimeout(() => run(i + 1), 1200);
+    });
+  }
+  run(0);
+</script>
