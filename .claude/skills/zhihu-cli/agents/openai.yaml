@@ -1,0 +1,4 @@
+interface:
+  display_name: "知乎 CLI"
+  short_description: "通过本机 zhihu 命令安全检索、浏览、登录和管理知乎内容"
+  default_prompt: "使用 $zhihu-cli 查询知乎热榜或搜索指定主题，并以结构化结果简要汇报。"

@@ -1,0 +1,4 @@
+interface:
+  display_name: "启用 CLIProxyAPI OAuth（Codex / Grok）"
+  short_description: "安全检测并启用本机 CLIProxyAPI 的 Codex 与/或 xAI Grok OAuth"
+  default_prompt: "使用 $enable-cliproxyapi-codex-oauth 检测并安全启用本机 CLIProxyAPI。默认 provider=both（Codex OAuth + xAI Grok OAuth）；若只要一侧请说明 provider=codex 或 provider=xai。"

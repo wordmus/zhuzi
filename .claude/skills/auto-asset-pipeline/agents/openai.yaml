@@ -1,0 +1,4 @@
+interface:
+  display_name: "Auto Asset Pipeline"
+  short_description: "Generate, detect, and export game assets"
+  default_prompt: "Use $auto-asset-pipeline to turn this source image or requirement into extracted sprites, masks, and metadata."
