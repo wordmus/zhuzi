@@ -4,3 +4,9 @@ dist/
 .env
 *.log
 runs/**/tmp/
+
+# 私人内容，不入库
+docs/resume/
+docs/notes/
+.pi/
+~$*.docx
