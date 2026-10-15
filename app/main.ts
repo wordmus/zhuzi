@@ -20,6 +20,7 @@ import { mountPresenter } from '../components/presenter';
 const FRAMEWORKS: Record<string, Framework> = { vignette, reveal, walk2d };
 
 async function boot() {
+  document.documentElement.lang = 'zh-CN';
   const root = document.getElementById('stage')!;
   const p = plan as Plan;
   const stage = createStage(root);
@@ -56,10 +57,16 @@ async function boot() {
 
   mountPresenter(ctx);
 
+  const savedDwell: Record<string, number> = {};
   const saveRecord = () => {
+    if (ctx.handoff.forgetVisit) return;
     record.at = senses.now();
     const dwell = aff.dwell();
-    for (const [k, v] of Object.entries(dwell)) record.dwell[k] = Math.round((record.dwell[k] ?? 0) + v);
+    for (const [k, v] of Object.entries(dwell)) {
+      const delta = Math.max(0, v - (savedDwell[k] ?? 0));
+      record.dwell[k] = Math.round((record.dwell[k] ?? 0) + delta);
+      savedDwell[k] = v;
+    }
     store.set('visit.last', record);
   };
   window.addEventListener('pagehide', saveRecord);

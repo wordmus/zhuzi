@@ -152,13 +152,15 @@
   /** 删字测试：隐藏全部 DOM 文字，并让 canvas 的 fillText/strokeText 不出字 */
   B.hideText = () => {
     if (B.noText) return;
+    const host = document.head || document.documentElement;
+    if (!host) return;
     B.noText = true;
     const css = document.createElement('style');
     css.id = '__bench_notext';
     css.textContent =
       'html *, html *::before, html *::after { color: transparent !important; text-shadow: none !important; -webkit-text-fill-color: transparent !important; }' +
       ' [data-layer="lines"], .zl, .zl-live { visibility: hidden !important; }';
-    (document.head || document.documentElement).appendChild(css);
+    host.appendChild(css);
     const P = window.CanvasRenderingContext2D && CanvasRenderingContext2D.prototype;
     if (P) {
       P.fillText = function () {};

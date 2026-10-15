@@ -1,7 +1,7 @@
 {
   "version": 1,
   "note": "棘轮：每次 /goal 达成后只升不降。数值来自 docs/design/demo-spec.md 第八节。",
-  "firstActionSec": 1.0,
+  "firstActionSec": 0.9,
   "first3sActionsMax": 1,
   "feedbackMsMax": 1000,
   "feedbackMsTarget": 100,

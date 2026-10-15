@@ -18,6 +18,7 @@ import type {
 } from '../types';
 import { CONCEPT_NAME, TRAITS, TRAIT_NAME } from '../types';
 import { REQUISITION_CUT } from './generate';
+import { createLandscape } from './landscape';
 import * as L from './lines';
 import type { GateScenario } from './tianbo';
 import { gateThink, predictPure, responseValue, tianboModel } from './tianbo';
@@ -40,6 +41,7 @@ export interface SimWorld extends World {
   opening(): Beat[];
   offer(): Offer | null;
   finished(): boolean;
+  idle(option?: DayOption, why?: string): DayOutcome;
   /** 禾的心智（演示面板：审计日志、习惯、三层计数） */
   heMind(): Mind;
 }
@@ -59,6 +61,7 @@ export function createWorld(cfg: WorldConfig, rng?: Rng): SimWorld {
   const lr = root.fork('lines');
   const T = config.he.temperament;
   const total = config.seasons.reduce((a, s) => a + s.days, 0);
+  const land = createLandscape();
   const hasMother = config.family.some((f) => f.role === 'mother');
   const falseDay = (() => {
     const d = root.fork('sky').int(2, Math.max(2, total - 2));
@@ -151,24 +154,42 @@ export function createWorld(cfg: WorldConfig, rng?: Rng): SimWorld {
     return { ...seed };
   }
 
+  const landscapeFacts = new Set<string>();
+  function recordLandscape(start: number, beats: Beat[]) {
+    for (const beat of beats.slice(start)) {
+      const key = beat.kind === 'closing' ? `closing:${S.day}:${beat.what}`
+        : beat.kind === 'mark' && beat.prev === undefined ? `mark:${beat.mark.id}` : null;
+      if (!key || landscapeFacts.has(key)) continue;
+      landscapeFacts.add(key);
+      if (beat.kind === 'closing') fact('event', beat.what, 'world', beats);
+      else if (beat.kind === 'mark') fact('event', beat.mark.effect, beat.mark.by, beats);
+    }
+  }
+
   // ---- 田伯的场景：真 / 禾以为的 ----
-  const crowdFor = (a: Approach) => (a === 'ming' ? clamp01(0.3 + (S.unfolded.includes('altar') ? 0.3 : 0) + 0.08 * Math.min(S.prayed, 3)) : 0);
+  const crowdFor = (a: Approach) => (a === 'ming' ? clamp01((0.3 + (S.unfolded.includes('altar') ? 0.3 : 0) + 0.08 * Math.min(S.prayed, 3)) * (1 - 0.18 * land.departed)) : 0);
   const believed = (a: Approach): GateScenario => ({
     approach: a, granary: S.gBelief, crowd: crowdFor(a), hunger: hungerOf(S.jar), visits: S.visits,
     requisitioned: S.requisitioned, season: seasonAt(S.day).plan.season, pride: 0.5,
+    landQuality: land.green, wariness: land.guard,
   });
   const real = (a: Approach): GateScenario => ({
     approach: a, granary: granaryAt(S.day), crowd: crowdFor(a), hunger: hungerOf(S.jar), visits: S.visits,
     requisitioned: S.day >= config.tianbo.requisitionDay, season: seasonAt(S.day).plan.season, pride: config.tianbo.pride,
+    landQuality: land.green, wariness: clamp01(land.guard + 0.5 - tb.params.temperament.patience),
   });
 
   // ---- 禾想做什么 ----
   const sigFor = (place: PlaceId) => `${place}|h${Math.min(2, Math.floor(hungerOf(S.jar) * 3))}`;
-  const unheard = (place: PlaceId) => Math.min(1, config.clues.filter((c) => c.place === place && c.day <= S.day && !S.known.includes(c.id)).length / 2);
+  const unheard = (place: PlaceId) => {
+    if (place === 'well' && land.water <= 0) return 0;
+    return Math.min(1, config.clues.filter((c) => c.place === place && c.day <= S.day && !S.known.includes(c.id)).length / 2)
+      * (place === 'well' ? 1 - 0.18 * land.departed : 1);
+  };
 
-  const wantLeave = () => { const c = ctx(); return (0.1 + 0.9 * c.D) * (1 - 0.65 * T.attachment) * (0.45 + 0.55 * T.duty) + 0.3 * seedStr('zou'); };
+  const wantLeave = () => { const c = ctx(); return (0.1 + 0.9 * c.D) * (1 - 0.65 * T.attachment) * (0.45 + 0.55 * T.duty) + 0.3 * seedStr('zou') + 0.015 * land.departed; };
   const wantSacrifice = () => { const c = ctx(); return 0.1 + 0.4 * T.awe * (0.4 + 0.6 * c.D) + 0.2 * Math.max(seedStr('she'), seedStr('tian')); };
-  const wantEndure = () => { const c = ctx(); return 0.26 + 0.4 * T.attachment + 0.25 * T.patience - 0.12 * c.D; };
+  const wantEndure = () => { const c = ctx(); return 0.26 + 0.4 * T.attachment + 0.25 * T.patience - 0.12 * c.D + 0.04 * land.green; };
   const leaveOpen = () => S.pressure >= 0.55 || seedStr('zou') >= 0.6;
 
   function evaluate(): Ev[] {
@@ -176,7 +197,7 @@ export function createWorld(cfg: WorldConfig, rng?: Rng): SimWorld {
     const W = he.params.infoWeight;
     const out: Ev[] = [];
     const add = (place: PlaceId, action: string, pref: number, info: number, extra: Partial<DayOption>, expect: string) => {
-      const p = pref + (he.habit(sigFor(place)) === action ? 0.06 : 0);
+      const p = pref + (he.habit(sigFor(place)) === action ? 0.06 : 0) + 0.035 * land.path(place);
       out.push({ opt: { place, action, want: clamp01(p + W * info), expect, ...extra }, pref: p, info });
     };
     if (S.offer) {
@@ -189,13 +210,14 @@ export function createWorld(cfg: WorldConfig, rng?: Rng): SimWorld {
       return sortEv(out);
     }
     add('home', 'rest', 0.22 + 0.2 * T.duty * (0.4 + c.h) + 0.25 * seedStr('jia') + (hasMother ? 0.04 : 0), 0.4 * unheard('home'), {}, L.EXPECT['home:rest']);
-    add('field', 'wait-rain', 0.62 * c.hope + 0.18 * T.attachment - 0.35 * c.D + 0.25 * seedStr('deng'), 0.05, {}, L.EXPECT['field:wait-rain']);
-    add('well', 'listen', 0.15 + 0.2 * unheard('well') + 0.15 * seedStr('su') - 0.15 * c.D, 0.4 * unheard('well'), {}, L.EXPECT['well:listen']);
+    if (!land.fieldClosed) add('field', 'wait-rain', 0.62 * c.hope + 0.18 * T.attachment - 0.35 * c.D + 0.25 * seedStr('deng') - 0.04 * S.crack + 0.03 * land.green, 0.05, {}, L.EXPECT['field:wait-rain']);
+    add('well', land.water > 0 ? 'listen' : 'dig-well', 0.15 + 0.2 * unheard('well') + 0.15 * seedStr('su') - 0.15 * c.D, 0.4 * unheard('well'), {}, land.water > 0 ? L.EXPECT['well:listen'] : '井底兴许还有水');
     const prayWant = 0.1 + T.awe * (0.2 + 0.45 * (S.omenSeen ? 1 : 0) + 0.3 * Math.min(1, c.P / 0.6)) + 0.3 * Math.max(seedStr('she'), seedStr('tian')) - 0.12 * S.prayed;
     add('altar', 'pray', Math.max(0, prayWant), 0.1, {}, L.EXPECT['altar:pray']);
     if (S.unfolded.includes('altar')) add('altar', 'sacrifice', wantSacrifice(), 0, { commits: 'sacrifice' }, L.EXPECT['altar:sacrifice']);
     const early = c.plan.season === 'spring' && c.P < 0.45;
     for (const a of APPROACHES) {
+      if (a === 'qing' && land.oldFavorClosed) continue;
       const pred = predictPure(he.params.belief, believed(a));
       const V = responseValue(pred, T.attachment, seedStr('di'));
       const willing = 0.15 + 0.95 * c.D;
@@ -238,17 +260,22 @@ export function createWorld(cfg: WorldConfig, rng?: Rng): SimWorld {
       mind: {
         lamps: he.lamps(), belief: { ...he.params.belief }, seeds: S.seeds.map((s) => ({ ...s })), lastLayer: he.lastLayer, pressure: r2(S.pressure),
       },
-      ending: S.ending,
+      ending: S.ending, marks: land.marks(), closing: land.closings(),
     };
   }
 
   // ---- Beat 的片段 ----
   function goTo(place: PlaceId, beats: Beat[]) {
-    if (S.place !== place) { beats.push({ kind: 'walk', who: 'he', to: place }); S.place = place; }
+    if (S.place !== place) {
+      beats.push({ kind: 'walk', who: 'he', to: place });
+      land.walk(place, S.day, beats);
+      S.place = place;
+    }
   }
   const say = (who: string, text: string): Beat => ({ kind: 'say', who, text });
 
   function surfaceClues(place: PlaceId, beats: Beat[]): number {
+    if (place === 'well' && land.water <= 0) return 0;
     const avail = config.clues.filter((c) => c.place === place && c.day <= S.day && !S.known.includes(c.id)).slice(0, 2);
     for (const c of avail) {
       S.known.push(c.id);
@@ -326,6 +353,9 @@ export function createWorld(cfg: WorldConfig, rng?: Rng): SimWorld {
     sense('hunger', h, 'hunger');
     if (S.place === 'field') sense('crack', S.crack, 'crack');
     addPressure(0.045 * Math.max(0, plan.rainExpect - plan.rainActual) + 0.1 * h + 0.02 * S.crack - 0.01);
+    const envStart = beats.length;
+    land.endDay(S.day, S.crack, beats);
+    recordLandscape(envStart, beats);
     growSeeds(beats);
     const top = flushLayer(beats);
     if (S.todayHabit) {
@@ -377,9 +407,15 @@ export function createWorld(cfg: WorldConfig, rng?: Rng): SimWorld {
   // ---- 结局 ----
   function commit(id: EndingId, beats: Beat[], variant?: 'give') {
     const base = variant === 'give' ? L.MENTOR_GIVE : L.ENDING[id];
+    if (!land.closings().some(c => c.day === S.day)) {
+      const envStart = beats.length;
+      land.endDay(S.day, S.crack, beats);
+      recordLandscape(envStart, beats);
+    }
     const jarBefore = S.jar;
     let mentor = base.mentor;
-    const grain = { lend: 14, sell: 16, sacrifice: 0, leave: 0, endure: 0 }[id];
+    const grain = id === 'sell' ? (S.offer?.grain ?? 16 + Math.round(4 * land.green))
+      : { lend: 14, sacrifice: 0, leave: 0, endure: 0 }[id];
     if (id === 'lend') beats.push({ kind: 'pose', who: variant === 'give' ? 'tianbo' : 'he', pose: variant === 'give' ? 'hand-over' : 'tally-snap' });
     if (id === 'sell') beats.push({ kind: 'pose', who: 'he', pose: 'soil-in-hand' });
     if (id === 'leave') {
@@ -447,12 +483,17 @@ export function createWorld(cfg: WorldConfig, rng?: Rng): SimWorld {
     S.gBelief = clamp01(S.gBelief + 0.6 * (granaryAt(S.day) - S.gBelief));
     he.infer('granary', r2(S.gBelief), 'seen:gate');
     S.visits++;
+    tb.infer('he:hunger', sc.hunger, 'seen:he');
+    tb.infer('he:insistence', S.visits, 'seen:he');
+    tb.learn({ kind: 'patience', value: Math.max(0.2, 0.5 - 0.06 * S.visits) }, 'he:returning');
+    tb.remember({ key: `he:${S.day}`, text: `禾带着${APPROACH_NAME[a]}登门。`, tag: 'observed', kind: 'he', data: { approach: a, hunger: sc.hunger, crowd: sc.crowd } });
+    land.watch(S.day, S.visits, beats);
     flushLayer(beats);
     if (actual === 'refuse') { addPressure(0.1); S.disappoint++; S.failed[a]++; return; }
     if (actual === 'give') { beats.push(say('he', L.HE.thanks.give)); commit('lend', beats, 'give'); return; }
     S.offer = actual === 'lend'
       ? { kind: 'lend', approach: a, grain: 14, terms: L.OFFER_TERMS.lend }
-      : { kind: 'buy-land', approach: a, grain: 16, terms: L.OFFER_TERMS['buy-land'] };
+      : { kind: 'buy-land', approach: a, grain: 16 + Math.round(4 * land.green), terms: L.OFFER_TERMS['buy-land'] };
     fact('decision', `田伯开出条件：${S.offer.terms}。`, 'tianbo', beats);
   }
 
@@ -478,21 +519,31 @@ export function createWorld(cfg: WorldConfig, rng?: Rng): SimWorld {
       }
       case 'wait-rain':
         goTo('field', beats);
+        land.touchField(S.day, S.crack, beats);
         beats.push({ kind: 'pose', who: 'he', pose: 'kneel-crack' }, { kind: 'crack', amount: r2(S.crack) }, say('he', pickLine(L.HE.field)));
         S.crackShown = S.crack;
         return;
       case 'listen': {
         goTo('well', beats);
+        land.drawWater(S.day, beats);
         beats.push({ kind: 'pose', who: 'he', pose: 'lean-well' });
         if (!surfaceClues('well', beats)) beats.push(say('linren', pickLine(L.LINREN)));
         return;
       }
-      case 'pray':
+      case 'dig-well':
+        goTo('well', beats);
+        beats.push({ kind: 'pose', who: 'he', pose: 'kneel-crack' }, say('he', '井底只有泥。'));
+        return;
+      case 'pray': {
         goTo('altar', beats);
+        const food = land.gather(S.day, beats);
+        S.jar += food;
+        if (food > 0) beats.push({ kind: 'jar', days: r2(S.jar) });
         beats.push({ kind: 'pose', who: 'he', pose: 'kneel' }, say('he', pickLine(L.HE.pray)));
         S.prayed++;
         addPressure(-0.015);
         return;
+      }
       case 'look': {
         goTo('road', beats);
         beats.push({ kind: 'pose', who: 'he', pose: 'look-far' });
@@ -531,7 +582,9 @@ export function createWorld(cfg: WorldConfig, rng?: Rng): SimWorld {
   const outcome = (beats: Beat[]): DayOutcome => ({ beats, state: snapshot() });
 
   const openBeats: Beat[] = [];
+  land.opening(S.day, S.crack, openBeats);
   dawn(openBeats);
+  recordLandscape(0, openBeats);
 
   const world: SimWorld = {
     config,
@@ -542,6 +595,13 @@ export function createWorld(cfg: WorldConfig, rng?: Rng): SimWorld {
     heMind: () => he,
     ledger: () => ledger.map((f) => ({ ...f })),
     mindTrace: () => [...he.audit, ...tb.audit].sort((a, b) => a.seq - b.seq),
+    idle(chosen?: DayOption, why?: string) {
+      if (S.ending) return outcome([]);
+      const option = chosen ?? world.inclination();
+      const result = world.act(option);
+      result.beats.unshift({ kind: 'self', option, why: why ?? (he.habit(sigFor(option.place)) ? '禾已经走惯了这条路。' : '禾没等你，照自己的意思去做了。') });
+      return result;
+    },
 
     options: () => evaluate().map((e) => ({ ...e.opt })),
     inclination: () => ({ ...evaluate()[0]!.opt }),
@@ -622,6 +682,7 @@ export function createWorld(cfg: WorldConfig, rng?: Rng): SimWorld {
         const seed = addSeed(L.PLACE_CONCEPT[ev.opt.place], undefined, 0.4, ev.opt.refuse);
         beats.push(say('he', pickLine(key === 'early' ? L.REFUSE['gate-early']! : L.REFUSE[ev.opt.place] ?? L.REFUSE.generic!)), { kind: 'seed', seed });
         ev = evs[0]!;
+        beats.push({ kind: 'self', option: { ...ev.opt }, why: '禾挡下了这个念头，照自己的意思做。' });
       }
       const o = ev.opt;
       const habitual = !S.offer && !o.commits && o.action !== 'borrow' && he.habit(sigFor(o.place)) === o.action;
@@ -637,6 +698,7 @@ export function createWorld(cfg: WorldConfig, rng?: Rng): SimWorld {
           else perform(o, beats);
         }, { data: { day: S.day } });
       }
+      recordLandscape(0, beats);
       if (!S.ending && !S.offer) endDay(beats);
       return outcome(beats);
     },

@@ -1,0 +1,363 @@
+[
+  {
+    "id": "f1",
+    "day": 1,
+    "text": "裂缝越宽，禾守田的把握越小。",
+    "kind": "event",
+    "by": "world"
+  },
+  {
+    "id": "f2",
+    "day": 1,
+    "text": "井水越少，井边的流言越少；见底后只能刨井。",
+    "kind": "event",
+    "by": "world"
+  },
+  {
+    "id": "f3",
+    "day": 1,
+    "text": "橡子捡光后，社树下不能再补粟瓮。",
+    "kind": "event",
+    "by": "world"
+  },
+  {
+    "id": "f4",
+    "day": 1,
+    "text": "禾没有照做（还没到那一步）；心里留下了「田伯」。",
+    "kind": "decision",
+    "by": "he"
+  },
+  {
+    "id": "f5",
+    "day": 1,
+    "text": "走深的路让禾更容易照旧去那一处。",
+    "kind": "event",
+    "by": "he"
+  },
+  {
+    "id": "f6",
+    "day": 1,
+    "text": "禾的手印让他认清裂缝；活苗仍牵住他。",
+    "kind": "event",
+    "by": "he"
+  },
+  {
+    "id": "f7",
+    "day": 1,
+    "text": "邻家封门后，登门的人少了，去莒的念头更近。",
+    "kind": "event",
+    "by": "neighbors"
+  },
+  {
+    "id": "f8",
+    "day": 1,
+    "text": "邻家钉上了第一块门板。",
+    "kind": "event",
+    "by": "world"
+  },
+  {
+    "id": "f9",
+    "day": 2,
+    "text": "禾心里的小田伯挪动了：「情」轻了。",
+    "kind": "decision",
+    "by": "player"
+  },
+  {
+    "id": "f10",
+    "day": 2,
+    "text": "禾心里的小田伯挪动了：「利」轻了。",
+    "kind": "decision",
+    "by": "player"
+  },
+  {
+    "id": "f11",
+    "day": 2,
+    "text": "禾心里的小田伯挪动了：「名」轻了。",
+    "kind": "decision",
+    "by": "player"
+  },
+  {
+    "id": "f12",
+    "day": 2,
+    "text": "走深的路让禾更容易照旧去那一处。",
+    "kind": "event",
+    "by": "he"
+  },
+  {
+    "id": "f13",
+    "day": 2,
+    "text": "井水只够吊半桶了。",
+    "kind": "event",
+    "by": "world"
+  },
+  {
+    "id": "f14",
+    "day": 3,
+    "text": "橡子捡光后，社树下不能再补粟瓮。",
+    "kind": "event",
+    "by": "neighbors"
+  },
+  {
+    "id": "f15",
+    "day": 3,
+    "text": "社树下只剩零星的橡子。",
+    "kind": "event",
+    "by": "world"
+  },
+  {
+    "id": "f16",
+    "day": 4,
+    "text": "禾没有照做（用处不大）；心里留下了「粟」。",
+    "kind": "decision",
+    "by": "he"
+  },
+  {
+    "id": "f17",
+    "day": 4,
+    "text": "又一家封门，往莒去了。",
+    "kind": "event",
+    "by": "world"
+  },
+  {
+    "id": "f18",
+    "day": 5,
+    "text": "走深的路让禾更容易照旧去那一处。",
+    "kind": "event",
+    "by": "he"
+  },
+  {
+    "id": "f19",
+    "day": 5,
+    "text": "橡子捡光后，社树下不能再补粟瓮。",
+    "kind": "event",
+    "by": "he"
+  },
+  {
+    "id": "f20",
+    "day": 5,
+    "text": "垄边最后一丛野草也枯了。",
+    "kind": "event",
+    "by": "world"
+  },
+  {
+    "id": "f21",
+    "day": 6,
+    "text": "天象：荧惑守心。要出大事。",
+    "kind": "event"
+  },
+  {
+    "id": "f22",
+    "day": 6,
+    "text": "禾没有照做（抹不开脸）；心里留下了「田伯」。",
+    "kind": "decision",
+    "by": "he"
+  },
+  {
+    "id": "f23",
+    "day": 6,
+    "text": "田伯记住禾的来由；叩得越多，门前越戒备。",
+    "kind": "event",
+    "by": "tianbo"
+  },
+  {
+    "id": "f24",
+    "day": 6,
+    "text": "田伯门前添了一个看门人。",
+    "kind": "event",
+    "by": "world"
+  },
+  {
+    "id": "f25",
+    "day": 7,
+    "text": "禾没有照做（舍不得走）；心里留下了「走」。",
+    "kind": "decision",
+    "by": "he"
+  },
+  {
+    "id": "f26",
+    "day": 7,
+    "text": "井底见了泥，吊桶落空。",
+    "kind": "event",
+    "by": "world"
+  },
+  {
+    "id": "f27",
+    "day": 7,
+    "text": "禾对「祈」不再多想了。",
+    "kind": "event",
+    "by": "he"
+  },
+  {
+    "id": "f28",
+    "day": 8,
+    "text": "王的人来征粮，田伯的仓空了一角。",
+    "kind": "event"
+  },
+  {
+    "id": "f29",
+    "day": 8,
+    "text": "禾没有照做（还在等雨）；心里留下了「等」。",
+    "kind": "decision",
+    "by": "he"
+  },
+  {
+    "id": "f30",
+    "day": 8,
+    "text": "社树下的橡子被捡光了。",
+    "kind": "event",
+    "by": "world"
+  },
+  {
+    "id": "f31",
+    "day": 9,
+    "text": "田伯对禾的「提旧情」：拒。",
+    "kind": "decision",
+    "by": "tianbo"
+  },
+  {
+    "id": "f32",
+    "day": 9,
+    "text": "禾觉得田伯没那么看重「情」。",
+    "kind": "decision",
+    "by": "he"
+  },
+  {
+    "id": "f33",
+    "day": 9,
+    "text": "走深的路让禾更容易照旧去那一处。",
+    "kind": "event",
+    "by": "he"
+  },
+  {
+    "id": "f34",
+    "day": 9,
+    "text": "最后一家乡邻也封了门。",
+    "kind": "event",
+    "by": "world"
+  },
+  {
+    "id": "f35",
+    "day": 9,
+    "text": "社树下立起了社坛；禾心里多了「祭」。",
+    "kind": "unfold",
+    "by": "world"
+  },
+  {
+    "id": "f36",
+    "day": 10,
+    "text": "禾心里的小田伯挪动了：「情」轻了。",
+    "kind": "decision",
+    "by": "player"
+  },
+  {
+    "id": "f37",
+    "day": 10,
+    "text": "禾心里的小田伯挪动了：「利」轻了。",
+    "kind": "decision",
+    "by": "player"
+  },
+  {
+    "id": "f38",
+    "day": 10,
+    "text": "禾心里的小田伯挪动了：「名」重了。",
+    "kind": "decision",
+    "by": "player"
+  },
+  {
+    "id": "f39",
+    "day": 10,
+    "text": "禾心里的小田伯挪动了：「情」轻了。",
+    "kind": "decision",
+    "by": "player"
+  },
+  {
+    "id": "f40",
+    "day": 10,
+    "text": "禾心里的小田伯挪动了：「利」重了。",
+    "kind": "decision",
+    "by": "player"
+  },
+  {
+    "id": "f41",
+    "day": 10,
+    "text": "禾心里的小田伯挪动了：「名」轻了。",
+    "kind": "decision",
+    "by": "player"
+  },
+  {
+    "id": "f42",
+    "day": 10,
+    "text": "禾没有照做（用处不大）；心里留下了「粟」。",
+    "kind": "decision",
+    "by": "he"
+  },
+  {
+    "id": "f43",
+    "day": 10,
+    "text": "田伯对禾的「带乡邻」：拒。",
+    "kind": "decision",
+    "by": "tianbo"
+  },
+  {
+    "id": "f44",
+    "day": 10,
+    "text": "禾觉得田伯更看重「利」。",
+    "kind": "decision",
+    "by": "he"
+  },
+  {
+    "id": "f45",
+    "day": 10,
+    "text": "田伯不再肯听旧情了。",
+    "kind": "event",
+    "by": "world"
+  },
+  {
+    "id": "f46",
+    "day": 11,
+    "text": "禾心里的小田伯挪动了：「情」重了。",
+    "kind": "decision",
+    "by": "player"
+  },
+  {
+    "id": "f47",
+    "day": 11,
+    "text": "禾心里的小田伯挪动了：「利」重了。",
+    "kind": "decision",
+    "by": "player"
+  },
+  {
+    "id": "f48",
+    "day": 11,
+    "text": "禾心里的小田伯挪动了：「名」重了。",
+    "kind": "decision",
+    "by": "player"
+  },
+  {
+    "id": "f49",
+    "day": 11,
+    "text": "冻土合上了最后一道田垄。",
+    "kind": "event",
+    "by": "world"
+  },
+  {
+    "id": "f50:leave",
+    "day": 11,
+    "text": "禾带一家人上了往莒的路。",
+    "kind": "commit",
+    "by": "he"
+  },
+  {
+    "id": "f51",
+    "day": 11,
+    "text": "《旱》交付：禾带着一家人，往莒去了。",
+    "kind": "delivery"
+  },
+  {
+    "id": "f52",
+    "day": 11,
+    "text": "走深的路让禾更容易照旧去那一处。",
+    "kind": "event",
+    "by": "he"
+  }
+]

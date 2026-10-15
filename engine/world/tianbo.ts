@@ -20,6 +20,9 @@ export interface GateScenario {
   season: Season;
   /** 田伯的骄傲；禾的想象里取 0.5 */
   pride: number;
+  /** 禾浇活的苗与田伯累积的戒备，来自横幅上的真实痕迹。 */
+  landQuality?: number;
+  wariness?: number;
 }
 
 /** 禾眼里各回应的价值（取代他自己的损益）；买地要看他多恋地 */
@@ -46,11 +49,12 @@ export function tianboModel(w: Weights, s: GateScenario): Candidate[] {
   const M = mq + mm + ml;
   const E = mq + mm;
   // 给：情与名撑着，仓里越空越肉疼；借：利最爱，押了地才放心；买地：越饿越想买
-  const give = 1.6 * E - 0.8 * w.li * (0.4 + scarcity) - 0.3;
-  const lend = 0.9 * M + 0.55 * w.li * s.granary * (A === 'li' ? 1 : 0.45) + 0.05 - 0.2 * scarcity;
-  const buy = w.li * (A === 'li' ? 1.25 : 0.5) * (0.4 + 1.3 * s.hunger) - 0.15 * scarcity;
+  const caution = s.wariness ?? 0;
+  const give = 1.6 * E - 0.8 * w.li * (0.4 + scarcity) - 0.3 - 0.04 * caution;
+  const lend = 0.9 * M + 0.55 * w.li * s.granary * (A === 'li' ? 1 : 0.45) + 0.05 - 0.2 * scarcity - 0.025 * caution;
+  const buy = w.li * (A === 'li' ? 1.25 : 0.5) * (0.4 + 1.3 * s.hunger) - 0.15 * scarcity + 0.1 * w.li * (s.landQuality ?? 0);
   // 拒：仓越空越容易；来由打不到他在乎的地方，也容易
-  const refuse = 0.24 + 0.3 * scarcity + 0.1 * s.pride + (s.requisitioned ? 0.03 : 0) + 0.3 * (0.4 - w[A]) - 0.3 * mm;
+  const refuse = 0.24 + 0.3 * scarcity + 0.1 * s.pride + (s.requisitioned ? 0.03 : 0) + 0.3 * (0.4 - w[A]) - 0.3 * mm + 0.1 * caution;
   return [
     { id: 'give', preference: give },
     { id: 'lend', preference: lend },
