@@ -1,0 +1,185 @@
+{
+  "before": "上回停在案上，接着看，先看《咖啡厅入口》。",
+  "after": {
+    "why": "依你排的先看机器仪表：按顺序，轮到这件",
+    "queue": {
+      "version": 1,
+      "entries": [
+        {
+          "intentId": "console",
+          "title": "机器仪表",
+          "form": "vignette",
+          "order": 0,
+          "when": "next",
+          "why": "按顺序，轮到这件",
+          "evidence": {
+            "kind": "work",
+            "ref": "runs/index.json#console/2/L1"
+          }
+        },
+        {
+          "intentId": "cafe-map",
+          "title": "咖啡厅入口",
+          "form": "vignette",
+          "order": 1,
+          "when": "later",
+          "why": "上回停在案上，接着看",
+          "evidence": {
+            "kind": "dwell",
+            "ref": "visit.last.dwell[\"desk-in\"]=5;visit=1"
+          }
+        },
+        {
+          "intentId": "east-suburb-3d",
+          "title": "东郊3D",
+          "form": "vignette",
+          "order": 2,
+          "when": "later",
+          "why": "按顺序，轮到这件",
+          "evidence": {
+            "kind": "work",
+            "ref": "runs/index.json#east-suburb-3d/5/L3"
+          }
+        },
+        {
+          "intentId": "fifty-years",
+          "title": "五十年长卷",
+          "form": "game",
+          "order": 3,
+          "when": "later",
+          "why": "按顺序，轮到这件",
+          "evidence": {
+            "kind": "work",
+            "ref": "runs/index.json#fifty-years/11/L1"
+          }
+        },
+        {
+          "intentId": "first-visit",
+          "title": "第一次来访",
+          "form": "game",
+          "order": 4,
+          "when": "later",
+          "why": "按顺序，轮到这件",
+          "evidence": {
+            "kind": "work",
+            "ref": "runs/index.json#first-visit/13/L1"
+          }
+        },
+        {
+          "intentId": "han-act1",
+          "title": "旱",
+          "form": "game",
+          "order": 5,
+          "when": "later",
+          "why": "按顺序，轮到这件",
+          "evidence": {
+            "kind": "work",
+            "ref": "runs/index.json#han-act1/7/L1"
+          }
+        },
+        {
+          "intentId": "mentor-desk",
+          "title": "导师台",
+          "form": "vignette",
+          "order": 6,
+          "when": "later",
+          "why": "按顺序，轮到这件",
+          "evidence": {
+            "kind": "work",
+            "ref": "runs/index.json#mentor-desk/2/L1"
+          }
+        },
+        {
+          "intentId": "shelf-gallery",
+          "title": "作品架",
+          "form": "gallery",
+          "order": 7,
+          "when": "later",
+          "why": "按顺序，轮到这件",
+          "evidence": {
+            "kind": "work",
+            "ref": "runs/index.json#shelf-gallery/3/L2"
+          }
+        },
+        {
+          "intentId": "studio",
+          "title": "案上回信",
+          "form": "game",
+          "order": 8,
+          "when": "later",
+          "why": "按顺序，轮到这件",
+          "evidence": {
+            "kind": "work",
+            "ref": "runs/index.json#studio/7/L1"
+          }
+        },
+        {
+          "intentId": "three-look-at-sky",
+          "title": "三人看天",
+          "form": "film",
+          "order": 9,
+          "when": "later",
+          "why": "按顺序，轮到这件",
+          "evidence": {
+            "kind": "work",
+            "ref": "runs/index.json#three-look-at-sky/3/L2"
+          }
+        }
+      ]
+    }
+  },
+  "groups": [
+    {
+      "form": "vignette",
+      "works": 7
+    },
+    {
+      "form": "game",
+      "works": 24
+    },
+    {
+      "form": "gallery",
+      "works": 2
+    },
+    {
+      "form": "film",
+      "works": 2
+    },
+    {
+      "form": "reveal",
+      "works": 0
+    },
+    {
+      "form": "walk2d",
+      "works": 0
+    },
+    {
+      "form": "east3d",
+      "works": 0
+    },
+    {
+      "form": "chronicle",
+      "works": 0
+    },
+    {
+      "form": "console",
+      "works": 0
+    }
+  ],
+  "experience": 28,
+  "errors": [],
+  "pictures": [
+    "runs/desk/15/L1/check-shots/schedule-L1.png",
+    "runs/desk/15/L1/check-shots/schedule-drawer-before.png",
+    "runs/desk/15/L1/check-shots/schedule-drawer-after.png",
+    "runs/desk/15/L1/check-shots/schedule-L1-after.png",
+    "runs/desk/15/L1/check-shots/experience-L2.png",
+    "runs/desk/15/L1/check-shots/experience-L2-next.png",
+    "runs/desk/15/L1/check-shots/groups-L3-first.png",
+    "runs/desk/15/L1/check-shots/groups-L3-second.png",
+    "runs/desk/15/L1/check-shots/experience-L2-empty.png",
+    "runs/desk/15/L1/check-shots/comparison-L1.png",
+    "runs/desk/15/L1/check-shots/comparison-L2.png",
+    "runs/desk/15/L1/check-shots/comparison-L3.png"
+  ]
+}

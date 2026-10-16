@@ -1,0 +1,1374 @@
+{
+  "letters": [
+    {
+      "kind": "commission",
+      "from": "mentor",
+      "to": "director",
+      "payload": {
+        "intentId": "cafe-map",
+        "title": "咖啡厅入口",
+        "hypothesis": {
+          "id": "h-desk",
+          "text": "你想一次只看一层，自己决定何时往里走",
+          "mode": "probe"
+        },
+        "target": "从案上逐层走到导师、导演与架上一件真实作品",
+        "stop": "在新标签页打开作品，或说明入口尚未装上",
+        "budget": {
+          "tier": "L1",
+          "lamp": 0.3,
+          "note": "排期先做咖啡厅入口·vignette；深夜·宽屏·夜深收短",
+          "slips": 2
+        },
+        "userModel": {
+          "visits": 1,
+          "sinceLastMs": 0,
+          "dayPart": "深夜",
+          "device": "宽屏"
+        },
+        "why": "按顺序，轮到这件，先看《咖啡厅入口》。"
+      },
+      "id": "commission:visit:1",
+      "t": 185.80000001192093,
+      "receipt": {
+        "at": 186,
+        "by": "director"
+      }
+    },
+    {
+      "kind": "plan",
+      "from": "director",
+      "to": "mentor",
+      "payload": {
+        "planId": "desk",
+        "version": 1,
+        "director": {
+          "id": "base",
+          "name": "基础导演"
+        },
+        "acts": [
+          {
+            "id": "desk-entry",
+            "framework": "desk",
+            "author": "基础导演",
+            "focus": "desk-in"
+          },
+          {
+            "id": "desk-mentor",
+            "framework": "desk",
+            "author": "基础导演",
+            "focus": "desk-doing"
+          },
+          {
+            "id": "desk-directors",
+            "framework": "desk",
+            "author": "基础导演",
+            "focus": "desk-shelf-in"
+          },
+          {
+            "id": "desk-shelf",
+            "framework": "desk",
+            "author": "基础导演",
+            "focus": "desk-open"
+          }
+        ],
+        "accept": "接下这4幕，按事实交付。",
+        "changes": [
+          "深夜灯油减半；保留既定幕序，让每幕可及时离开"
+        ],
+        "rehearsal": [
+          {
+            "act": "desk-entry",
+            "expect": "案上一枚印",
+            "risk": ""
+          },
+          {
+            "act": "desk-mentor",
+            "expect": "导师对你的想法",
+            "risk": ""
+          },
+          {
+            "act": "desk-directors",
+            "expect": "基础导演与叔衡各自的案",
+            "risk": ""
+          },
+          {
+            "act": "desk-shelf",
+            "expect": "架上一件真实作品",
+            "risk": ""
+          }
+        ]
+      },
+      "id": "plan:visit:1",
+      "t": 186.10000002384186,
+      "receipt": {
+        "at": 186.10000002384186,
+        "by": "mentor"
+      }
+    },
+    {
+      "kind": "cue",
+      "from": "director",
+      "to": "导师",
+      "act": "desk-entry",
+      "payload": {
+        "act": "desk-entry",
+        "who": "导师",
+        "expects": "案上一枚印",
+        "freedom": "按真实来访记忆说话，允许用户不留名字",
+        "initialState": {
+          "seed": 15,
+          "focus": "desk-in",
+          "person": {
+            "name": "导师"
+          },
+          "world": {
+            "seed": 15,
+            "places": [
+              {
+                "id": "home",
+                "name": "家",
+                "x": 0.08,
+                "actions": [
+                  "rest",
+                  "eat"
+                ]
+              },
+              {
+                "id": "field",
+                "name": "田",
+                "x": 0.26,
+                "actions": [
+                  "wait-rain"
+                ]
+              },
+              {
+                "id": "well",
+                "name": "井",
+                "x": 0.43,
+                "actions": [
+                  "listen"
+                ]
+              },
+              {
+                "id": "altar",
+                "name": "社树",
+                "x": 0.59,
+                "actions": [
+                  "pray"
+                ]
+              },
+              {
+                "id": "gate",
+                "name": "田伯家",
+                "x": 0.77,
+                "actions": [
+                  "borrow"
+                ]
+              },
+              {
+                "id": "road",
+                "name": "路口",
+                "x": 0.94,
+                "actions": [
+                  "look",
+                  "leave"
+                ]
+              }
+            ],
+            "people": [
+              {
+                "id": "he",
+                "name": "禾",
+                "role": "actor",
+                "home": "home"
+              },
+              {
+                "id": "tianbo",
+                "name": "田伯",
+                "role": "lord",
+                "home": "gate"
+              },
+              {
+                "id": "ji",
+                "name": "季",
+                "role": "scholar",
+                "home": "road"
+              },
+              {
+                "id": "sang",
+                "name": "桑",
+                "role": "family",
+                "home": "home"
+              },
+              {
+                "id": "xiaoshi",
+                "name": "小石",
+                "role": "family",
+                "home": "home"
+              },
+              {
+                "id": "linren",
+                "name": "邻人",
+                "role": "neighbor",
+                "home": "well"
+              },
+              {
+                "id": "luren",
+                "name": "路人",
+                "role": "neighbor",
+                "home": "road"
+              }
+            ],
+            "he": {
+              "temperament": {
+                "pride": 0.54,
+                "awe": 0.81,
+                "duty": 0.83,
+                "attachment": 0.84,
+                "patience": 0.53
+              },
+              "belief": {
+                "qing": 0.6326286405650898,
+                "li": 0.12282491634134203,
+                "ming": 0.24454644309356816
+              }
+            },
+            "tianbo": {
+              "weights": {
+                "qing": 0.1334963988706784,
+                "li": 0.26144900649708347,
+                "ming": 0.6050545946322381
+              },
+              "pride": 0.8,
+              "granary": [
+                0.9,
+                0.83,
+                0.63,
+                0.67
+              ],
+              "requisitionDay": 8
+            },
+            "seasons": [
+              {
+                "season": "spring",
+                "days": 3,
+                "rainExpect": 0.84,
+                "rainActual": 0.06
+              },
+              {
+                "season": "summer",
+                "days": 3,
+                "rainExpect": 0.6,
+                "rainActual": 0.09
+              },
+              {
+                "season": "autumn",
+                "days": 3,
+                "rainExpect": 0.43,
+                "rainActual": 0.09
+              },
+              {
+                "season": "winter",
+                "days": 2,
+                "rainExpect": 0.23,
+                "rainActual": 0.07
+              }
+            ],
+            "omen": {
+              "kind": "yinghuo",
+              "day": 4
+            },
+            "clues": [
+              {
+                "id": "c1",
+                "text": "田伯门前的匾，是新换的。",
+                "trait": "ming",
+                "sign": 1,
+                "truthful": true,
+                "place": "home",
+                "day": 1,
+                "from": "sang"
+              },
+              {
+                "id": "c2",
+                "text": "田伯出门，总要先问有谁看着。",
+                "trait": "ming",
+                "sign": 1,
+                "truthful": true,
+                "place": "road",
+                "day": 4,
+                "from": "ji"
+              },
+              {
+                "id": "c3",
+                "text": "田伯去年赶走了同乡的穷亲。",
+                "trait": "qing",
+                "sign": -1,
+                "truthful": true,
+                "place": "well",
+                "day": 5,
+                "from": "linren"
+              },
+              {
+                "id": "c4",
+                "text": "人在门口跪三天，田伯也不出来。",
+                "trait": "ming",
+                "sign": -1,
+                "truthful": false,
+                "place": "road",
+                "day": 5,
+                "from": "ji"
+              },
+              {
+                "id": "c5",
+                "text": "谁家孩子饿着，田伯会红眼。",
+                "trait": "qing",
+                "sign": 1,
+                "truthful": false,
+                "place": "well",
+                "day": 6,
+                "from": "linren"
+              },
+              {
+                "id": "c6",
+                "text": "田伯办寿，请了半个乡的人。",
+                "trait": "ming",
+                "sign": 1,
+                "truthful": true,
+                "place": "home",
+                "day": 8,
+                "from": "sang"
+              }
+            ],
+            "jarDays": 24,
+            "family": [
+              {
+                "id": "sang",
+                "name": "桑",
+                "role": "wife"
+              },
+              {
+                "id": "xiaoshi",
+                "name": "小石",
+                "role": "child"
+              }
+            ],
+            "unfoldPressure": 0.57
+          }
+        },
+        "constraints": [
+          "门永远推得开",
+          "你永远能对机器说话",
+          "你永远能回到上一版",
+          "地标不动：你的座位、导师的位置、通往世界的门",
+          "已交付的版本只增不改",
+          "不得把预演写成已发生的事实",
+          "每屏最多30字"
+        ]
+      },
+      "id": "cue:desk-entry:1",
+      "t": 186.20000004768372,
+      "receipt": {
+        "at": 2458.7000000476837,
+        "by": "导师"
+      }
+    },
+    {
+      "kind": "report",
+      "from": "导师",
+      "to": "director",
+      "act": "desk-entry",
+      "payload": {
+        "act": "desk-entry",
+        "who": "导师",
+        "did": [
+          "处理本幕提示；观察到1条交付事实",
+          "说：按顺序，轮到这件，先看《咖啡厅入口》"
+        ],
+        "predicted": "案上一枚印",
+        "actual": "desk-entry已展开",
+        "facts": [
+          {
+            "id": "desk:desk-entry",
+            "text": "desk-entry已展开",
+            "kind": "delivery"
+          }
+        ],
+        "ms": 2272,
+        "voice": [
+          "我说过：按顺序，轮到这件，先看《…。",
+          "我记下：desk-entry已展开。"
+        ]
+      },
+      "id": "report:desk-entry:1",
+      "t": 2458.800000011921,
+      "receipt": {
+        "at": 2458.800000011921,
+        "by": "director"
+      }
+    },
+    {
+      "kind": "cue",
+      "from": "director",
+      "to": "导师",
+      "act": "desk-mentor",
+      "payload": {
+        "act": "desk-mentor",
+        "who": "导师",
+        "expects": "导师对你的想法",
+        "freedom": "按真实来访记忆说话，允许用户不留名字",
+        "initialState": {
+          "seed": 15,
+          "focus": "desk-doing",
+          "person": {
+            "name": "导师"
+          },
+          "world": {
+            "seed": 15,
+            "places": [
+              {
+                "id": "home",
+                "name": "家",
+                "x": 0.08,
+                "actions": [
+                  "rest",
+                  "eat"
+                ]
+              },
+              {
+                "id": "field",
+                "name": "田",
+                "x": 0.26,
+                "actions": [
+                  "wait-rain"
+                ]
+              },
+              {
+                "id": "well",
+                "name": "井",
+                "x": 0.43,
+                "actions": [
+                  "listen"
+                ]
+              },
+              {
+                "id": "altar",
+                "name": "社树",
+                "x": 0.59,
+                "actions": [
+                  "pray"
+                ]
+              },
+              {
+                "id": "gate",
+                "name": "田伯家",
+                "x": 0.77,
+                "actions": [
+                  "borrow"
+                ]
+              },
+              {
+                "id": "road",
+                "name": "路口",
+                "x": 0.94,
+                "actions": [
+                  "look",
+                  "leave"
+                ]
+              }
+            ],
+            "people": [
+              {
+                "id": "he",
+                "name": "禾",
+                "role": "actor",
+                "home": "home"
+              },
+              {
+                "id": "tianbo",
+                "name": "田伯",
+                "role": "lord",
+                "home": "gate"
+              },
+              {
+                "id": "ji",
+                "name": "季",
+                "role": "scholar",
+                "home": "road"
+              },
+              {
+                "id": "sang",
+                "name": "桑",
+                "role": "family",
+                "home": "home"
+              },
+              {
+                "id": "xiaoshi",
+                "name": "小石",
+                "role": "family",
+                "home": "home"
+              },
+              {
+                "id": "linren",
+                "name": "邻人",
+                "role": "neighbor",
+                "home": "well"
+              },
+              {
+                "id": "luren",
+                "name": "路人",
+                "role": "neighbor",
+                "home": "road"
+              }
+            ],
+            "he": {
+              "temperament": {
+                "pride": 0.54,
+                "awe": 0.81,
+                "duty": 0.83,
+                "attachment": 0.84,
+                "patience": 0.53
+              },
+              "belief": {
+                "qing": 0.6326286405650898,
+                "li": 0.12282491634134203,
+                "ming": 0.24454644309356816
+              }
+            },
+            "tianbo": {
+              "weights": {
+                "qing": 0.1334963988706784,
+                "li": 0.26144900649708347,
+                "ming": 0.6050545946322381
+              },
+              "pride": 0.8,
+              "granary": [
+                0.9,
+                0.83,
+                0.63,
+                0.67
+              ],
+              "requisitionDay": 8
+            },
+            "seasons": [
+              {
+                "season": "spring",
+                "days": 3,
+                "rainExpect": 0.84,
+                "rainActual": 0.06
+              },
+              {
+                "season": "summer",
+                "days": 3,
+                "rainExpect": 0.6,
+                "rainActual": 0.09
+              },
+              {
+                "season": "autumn",
+                "days": 3,
+                "rainExpect": 0.43,
+                "rainActual": 0.09
+              },
+              {
+                "season": "winter",
+                "days": 2,
+                "rainExpect": 0.23,
+                "rainActual": 0.07
+              }
+            ],
+            "omen": {
+              "kind": "yinghuo",
+              "day": 4
+            },
+            "clues": [
+              {
+                "id": "c1",
+                "text": "田伯门前的匾，是新换的。",
+                "trait": "ming",
+                "sign": 1,
+                "truthful": true,
+                "place": "home",
+                "day": 1,
+                "from": "sang"
+              },
+              {
+                "id": "c2",
+                "text": "田伯出门，总要先问有谁看着。",
+                "trait": "ming",
+                "sign": 1,
+                "truthful": true,
+                "place": "road",
+                "day": 4,
+                "from": "ji"
+              },
+              {
+                "id": "c3",
+                "text": "田伯去年赶走了同乡的穷亲。",
+                "trait": "qing",
+                "sign": -1,
+                "truthful": true,
+                "place": "well",
+                "day": 5,
+                "from": "linren"
+              },
+              {
+                "id": "c4",
+                "text": "人在门口跪三天，田伯也不出来。",
+                "trait": "ming",
+                "sign": -1,
+                "truthful": false,
+                "place": "road",
+                "day": 5,
+                "from": "ji"
+              },
+              {
+                "id": "c5",
+                "text": "谁家孩子饿着，田伯会红眼。",
+                "trait": "qing",
+                "sign": 1,
+                "truthful": false,
+                "place": "well",
+                "day": 6,
+                "from": "linren"
+              },
+              {
+                "id": "c6",
+                "text": "田伯办寿，请了半个乡的人。",
+                "trait": "ming",
+                "sign": 1,
+                "truthful": true,
+                "place": "home",
+                "day": 8,
+                "from": "sang"
+              }
+            ],
+            "jarDays": 24,
+            "family": [
+              {
+                "id": "sang",
+                "name": "桑",
+                "role": "wife"
+              },
+              {
+                "id": "xiaoshi",
+                "name": "小石",
+                "role": "child"
+              }
+            ],
+            "unfoldPressure": 0.57
+          }
+        },
+        "constraints": [
+          "门永远推得开",
+          "你永远能对机器说话",
+          "你永远能回到上一版",
+          "地标不动：你的座位、导师的位置、通往世界的门",
+          "已交付的版本只增不改",
+          "不得把预演写成已发生的事实",
+          "每屏最多30字"
+        ]
+      },
+      "id": "cue:desk-mentor:1",
+      "t": 2459,
+      "receipt": {
+        "at": 5516.100000023842,
+        "by": "导师"
+      }
+    },
+    {
+      "kind": "report",
+      "from": "导师",
+      "to": "director",
+      "act": "desk-mentor",
+      "payload": {
+        "act": "desk-mentor",
+        "who": "导师",
+        "did": [
+          "处理本幕提示；观察到1条交付事实",
+          "说：上回停在案上，接着看"
+        ],
+        "predicted": "导师对你的想法",
+        "actual": "desk-mentor已展开",
+        "facts": [
+          {
+            "id": "desk:desk-mentor",
+            "text": "desk-mentor已展开",
+            "kind": "delivery"
+          }
+        ],
+        "ms": 3057,
+        "voice": [
+          "我说过：上回停在案上，接着看。",
+          "我记下：desk-mentor已…。"
+        ]
+      },
+      "id": "report:desk-mentor:1",
+      "t": 5516.200000047684,
+      "receipt": {
+        "at": 5516.200000047684,
+        "by": "director"
+      }
+    },
+    {
+      "kind": "cue",
+      "from": "director",
+      "to": "导师",
+      "act": "desk-directors",
+      "payload": {
+        "act": "desk-directors",
+        "who": "导师",
+        "expects": "基础导演与叔衡各自的案",
+        "freedom": "按真实来访记忆说话，允许用户不留名字",
+        "initialState": {
+          "seed": 15,
+          "focus": "desk-shelf-in",
+          "person": {
+            "name": "导师"
+          },
+          "world": {
+            "seed": 15,
+            "places": [
+              {
+                "id": "home",
+                "name": "家",
+                "x": 0.08,
+                "actions": [
+                  "rest",
+                  "eat"
+                ]
+              },
+              {
+                "id": "field",
+                "name": "田",
+                "x": 0.26,
+                "actions": [
+                  "wait-rain"
+                ]
+              },
+              {
+                "id": "well",
+                "name": "井",
+                "x": 0.43,
+                "actions": [
+                  "listen"
+                ]
+              },
+              {
+                "id": "altar",
+                "name": "社树",
+                "x": 0.59,
+                "actions": [
+                  "pray"
+                ]
+              },
+              {
+                "id": "gate",
+                "name": "田伯家",
+                "x": 0.77,
+                "actions": [
+                  "borrow"
+                ]
+              },
+              {
+                "id": "road",
+                "name": "路口",
+                "x": 0.94,
+                "actions": [
+                  "look",
+                  "leave"
+                ]
+              }
+            ],
+            "people": [
+              {
+                "id": "he",
+                "name": "禾",
+                "role": "actor",
+                "home": "home"
+              },
+              {
+                "id": "tianbo",
+                "name": "田伯",
+                "role": "lord",
+                "home": "gate"
+              },
+              {
+                "id": "ji",
+                "name": "季",
+                "role": "scholar",
+                "home": "road"
+              },
+              {
+                "id": "sang",
+                "name": "桑",
+                "role": "family",
+                "home": "home"
+              },
+              {
+                "id": "xiaoshi",
+                "name": "小石",
+                "role": "family",
+                "home": "home"
+              },
+              {
+                "id": "linren",
+                "name": "邻人",
+                "role": "neighbor",
+                "home": "well"
+              },
+              {
+                "id": "luren",
+                "name": "路人",
+                "role": "neighbor",
+                "home": "road"
+              }
+            ],
+            "he": {
+              "temperament": {
+                "pride": 0.54,
+                "awe": 0.81,
+                "duty": 0.83,
+                "attachment": 0.84,
+                "patience": 0.53
+              },
+              "belief": {
+                "qing": 0.6326286405650898,
+                "li": 0.12282491634134203,
+                "ming": 0.24454644309356816
+              }
+            },
+            "tianbo": {
+              "weights": {
+                "qing": 0.1334963988706784,
+                "li": 0.26144900649708347,
+                "ming": 0.6050545946322381
+              },
+              "pride": 0.8,
+              "granary": [
+                0.9,
+                0.83,
+                0.63,
+                0.67
+              ],
+              "requisitionDay": 8
+            },
+            "seasons": [
+              {
+                "season": "spring",
+                "days": 3,
+                "rainExpect": 0.84,
+                "rainActual": 0.06
+              },
+              {
+                "season": "summer",
+                "days": 3,
+                "rainExpect": 0.6,
+                "rainActual": 0.09
+              },
+              {
+                "season": "autumn",
+                "days": 3,
+                "rainExpect": 0.43,
+                "rainActual": 0.09
+              },
+              {
+                "season": "winter",
+                "days": 2,
+                "rainExpect": 0.23,
+                "rainActual": 0.07
+              }
+            ],
+            "omen": {
+              "kind": "yinghuo",
+              "day": 4
+            },
+            "clues": [
+              {
+                "id": "c1",
+                "text": "田伯门前的匾，是新换的。",
+                "trait": "ming",
+                "sign": 1,
+                "truthful": true,
+                "place": "home",
+                "day": 1,
+                "from": "sang"
+              },
+              {
+                "id": "c2",
+                "text": "田伯出门，总要先问有谁看着。",
+                "trait": "ming",
+                "sign": 1,
+                "truthful": true,
+                "place": "road",
+                "day": 4,
+                "from": "ji"
+              },
+              {
+                "id": "c3",
+                "text": "田伯去年赶走了同乡的穷亲。",
+                "trait": "qing",
+                "sign": -1,
+                "truthful": true,
+                "place": "well",
+                "day": 5,
+                "from": "linren"
+              },
+              {
+                "id": "c4",
+                "text": "人在门口跪三天，田伯也不出来。",
+                "trait": "ming",
+                "sign": -1,
+                "truthful": false,
+                "place": "road",
+                "day": 5,
+                "from": "ji"
+              },
+              {
+                "id": "c5",
+                "text": "谁家孩子饿着，田伯会红眼。",
+                "trait": "qing",
+                "sign": 1,
+                "truthful": false,
+                "place": "well",
+                "day": 6,
+                "from": "linren"
+              },
+              {
+                "id": "c6",
+                "text": "田伯办寿，请了半个乡的人。",
+                "trait": "ming",
+                "sign": 1,
+                "truthful": true,
+                "place": "home",
+                "day": 8,
+                "from": "sang"
+              }
+            ],
+            "jarDays": 24,
+            "family": [
+              {
+                "id": "sang",
+                "name": "桑",
+                "role": "wife"
+              },
+              {
+                "id": "xiaoshi",
+                "name": "小石",
+                "role": "child"
+              }
+            ],
+            "unfoldPressure": 0.57
+          }
+        },
+        "constraints": [
+          "门永远推得开",
+          "你永远能对机器说话",
+          "你永远能回到上一版",
+          "地标不动：你的座位、导师的位置、通往世界的门",
+          "已交付的版本只增不改",
+          "不得把预演写成已发生的事实",
+          "每屏最多30字"
+        ]
+      },
+      "id": "cue:desk-directors:1",
+      "t": 5516.300000011921,
+      "receipt": {
+        "at": 8600.100000023842,
+        "by": "导师"
+      }
+    },
+    {
+      "kind": "report",
+      "from": "导师",
+      "to": "director",
+      "act": "desk-directors",
+      "payload": {
+        "act": "desk-directors",
+        "who": "导师",
+        "did": [
+          "处理本幕提示；观察到1条交付事实",
+          "本幕未留下可归属于自己的行动记录"
+        ],
+        "predicted": "基础导演与叔衡各自的案",
+        "actual": "desk-directors已展开",
+        "facts": [
+          {
+            "id": "desk:desk-directors",
+            "text": "desk-directors已展开",
+            "kind": "delivery"
+          }
+        ],
+        "ms": 3084,
+        "voice": [
+          "这一幕我没动手。",
+          "我记下：desk-directo…。"
+        ]
+      },
+      "id": "report:desk-directors:1",
+      "t": 8600.100000023842,
+      "receipt": {
+        "at": 8600.100000023842,
+        "by": "director"
+      }
+    },
+    {
+      "kind": "cue",
+      "from": "director",
+      "to": "导师",
+      "act": "desk-shelf",
+      "payload": {
+        "act": "desk-shelf",
+        "who": "导师",
+        "expects": "架上一件真实作品",
+        "freedom": "按真实来访记忆说话，允许用户不留名字",
+        "initialState": {
+          "seed": 15,
+          "focus": "desk-open",
+          "person": {
+            "name": "导师"
+          },
+          "world": {
+            "seed": 15,
+            "places": [
+              {
+                "id": "home",
+                "name": "家",
+                "x": 0.08,
+                "actions": [
+                  "rest",
+                  "eat"
+                ]
+              },
+              {
+                "id": "field",
+                "name": "田",
+                "x": 0.26,
+                "actions": [
+                  "wait-rain"
+                ]
+              },
+              {
+                "id": "well",
+                "name": "井",
+                "x": 0.43,
+                "actions": [
+                  "listen"
+                ]
+              },
+              {
+                "id": "altar",
+                "name": "社树",
+                "x": 0.59,
+                "actions": [
+                  "pray"
+                ]
+              },
+              {
+                "id": "gate",
+                "name": "田伯家",
+                "x": 0.77,
+                "actions": [
+                  "borrow"
+                ]
+              },
+              {
+                "id": "road",
+                "name": "路口",
+                "x": 0.94,
+                "actions": [
+                  "look",
+                  "leave"
+                ]
+              }
+            ],
+            "people": [
+              {
+                "id": "he",
+                "name": "禾",
+                "role": "actor",
+                "home": "home"
+              },
+              {
+                "id": "tianbo",
+                "name": "田伯",
+                "role": "lord",
+                "home": "gate"
+              },
+              {
+                "id": "ji",
+                "name": "季",
+                "role": "scholar",
+                "home": "road"
+              },
+              {
+                "id": "sang",
+                "name": "桑",
+                "role": "family",
+                "home": "home"
+              },
+              {
+                "id": "xiaoshi",
+                "name": "小石",
+                "role": "family",
+                "home": "home"
+              },
+              {
+                "id": "linren",
+                "name": "邻人",
+                "role": "neighbor",
+                "home": "well"
+              },
+              {
+                "id": "luren",
+                "name": "路人",
+                "role": "neighbor",
+                "home": "road"
+              }
+            ],
+            "he": {
+              "temperament": {
+                "pride": 0.54,
+                "awe": 0.81,
+                "duty": 0.83,
+                "attachment": 0.84,
+                "patience": 0.53
+              },
+              "belief": {
+                "qing": 0.6326286405650898,
+                "li": 0.12282491634134203,
+                "ming": 0.24454644309356816
+              }
+            },
+            "tianbo": {
+              "weights": {
+                "qing": 0.1334963988706784,
+                "li": 0.26144900649708347,
+                "ming": 0.6050545946322381
+              },
+              "pride": 0.8,
+              "granary": [
+                0.9,
+                0.83,
+                0.63,
+                0.67
+              ],
+              "requisitionDay": 8
+            },
+            "seasons": [
+              {
+                "season": "spring",
+                "days": 3,
+                "rainExpect": 0.84,
+                "rainActual": 0.06
+              },
+              {
+                "season": "summer",
+                "days": 3,
+                "rainExpect": 0.6,
+                "rainActual": 0.09
+              },
+              {
+                "season": "autumn",
+                "days": 3,
+                "rainExpect": 0.43,
+                "rainActual": 0.09
+              },
+              {
+                "season": "winter",
+                "days": 2,
+                "rainExpect": 0.23,
+                "rainActual": 0.07
+              }
+            ],
+            "omen": {
+              "kind": "yinghuo",
+              "day": 4
+            },
+            "clues": [
+              {
+                "id": "c1",
+                "text": "田伯门前的匾，是新换的。",
+                "trait": "ming",
+                "sign": 1,
+                "truthful": true,
+                "place": "home",
+                "day": 1,
+                "from": "sang"
+              },
+              {
+                "id": "c2",
+                "text": "田伯出门，总要先问有谁看着。",
+                "trait": "ming",
+                "sign": 1,
+                "truthful": true,
+                "place": "road",
+                "day": 4,
+                "from": "ji"
+              },
+              {
+                "id": "c3",
+                "text": "田伯去年赶走了同乡的穷亲。",
+                "trait": "qing",
+                "sign": -1,
+                "truthful": true,
+                "place": "well",
+                "day": 5,
+                "from": "linren"
+              },
+              {
+                "id": "c4",
+                "text": "人在门口跪三天，田伯也不出来。",
+                "trait": "ming",
+                "sign": -1,
+                "truthful": false,
+                "place": "road",
+                "day": 5,
+                "from": "ji"
+              },
+              {
+                "id": "c5",
+                "text": "谁家孩子饿着，田伯会红眼。",
+                "trait": "qing",
+                "sign": 1,
+                "truthful": false,
+                "place": "well",
+                "day": 6,
+                "from": "linren"
+              },
+              {
+                "id": "c6",
+                "text": "田伯办寿，请了半个乡的人。",
+                "trait": "ming",
+                "sign": 1,
+                "truthful": true,
+                "place": "home",
+                "day": 8,
+                "from": "sang"
+              }
+            ],
+            "jarDays": 24,
+            "family": [
+              {
+                "id": "sang",
+                "name": "桑",
+                "role": "wife"
+              },
+              {
+                "id": "xiaoshi",
+                "name": "小石",
+                "role": "child"
+              }
+            ],
+            "unfoldPressure": 0.57
+          }
+        },
+        "constraints": [
+          "门永远推得开",
+          "你永远能对机器说话",
+          "你永远能回到上一版",
+          "地标不动：你的座位、导师的位置、通往世界的门",
+          "已交付的版本只增不改",
+          "不得把预演写成已发生的事实",
+          "每屏最多30字"
+        ]
+      },
+      "id": "cue:desk-shelf:1",
+      "t": 8600.200000047684,
+      "receipt": {
+        "at": 12512.800000011921,
+        "by": "导师"
+      }
+    },
+    {
+      "kind": "report",
+      "from": "导师",
+      "to": "director",
+      "act": "desk-shelf",
+      "payload": {
+        "act": "desk-shelf",
+        "who": "导师",
+        "did": [
+          "处理本幕提示；观察到1条交付事实",
+          "本幕未留下可归属于自己的行动记录"
+        ],
+        "predicted": "架上一件真实作品",
+        "actual": "desk-shelf已展开，作品已打开",
+        "facts": [
+          {
+            "id": "desk:desk-shelf",
+            "text": "desk-shelf已展开，作品已打开",
+            "kind": "delivery"
+          }
+        ],
+        "ms": 3912,
+        "voice": [
+          "这一幕我没动手。",
+          "我记下：desk-shelf已展…。"
+        ]
+      },
+      "id": "report:desk-shelf:1",
+      "t": 12512.800000011921,
+      "receipt": {
+        "at": 12512.900000035763,
+        "by": "director"
+      }
+    },
+    {
+      "kind": "retro",
+      "from": "director",
+      "to": "mentor",
+      "payload": {
+        "intentId": "desk",
+        "predicted": "从案上逐层走到导师、导演与架上一件真实作品",
+        "actual": "desk-shelf已展开，作品已打开",
+        "userModelDelta": {
+          "visit.last": {
+            "n": 1,
+            "at": 1792173528524,
+            "dwell": {
+              "desk-in": 168,
+              "desk-doing": 3049,
+              "desk-shelf-in": 145,
+              "desk-open": 959,
+              "desk-back": 0,
+              "desk-work-next": 0,
+              "desk-group-next": 0,
+              "desk-details": 0
+            },
+            "seed": 15
+          },
+          "mentor.last": {
+            "intentId": "desk",
+            "ending": null,
+            "facts": [
+              "desk:desk-entry",
+              "desk:desk-mentor",
+              "desk:desk-directors",
+              "desk:desk-shelf"
+            ],
+            "reports": 4,
+            "predictionErrors": 0,
+            "promises": []
+          }
+        },
+        "promises": [],
+        "next": "下次对照这次的事实，换一种来由再试"
+      },
+      "id": "retro:visit:1",
+      "t": 12513,
+      "receipt": {
+        "at": 12513,
+        "by": "mentor"
+      }
+    }
+  ],
+  "check": [],
+  "counts": {
+    "commission": 1,
+    "plan": 1,
+    "cue": 4,
+    "report": 4,
+    "retro": 1
+  }
+}

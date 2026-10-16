@@ -1,0 +1,70 @@
+[
+  {
+    "kind": "presence",
+    "from": "presentation",
+    "to": "director",
+    "act": "desk-entry",
+    "payload": {
+      "shape": "用逐层替换场景把案上、导师、导演和作品架分开。",
+      "cost": "回看上一层需要退回，不能同时摊开。",
+      "sentence": "我一次只让一层在场。"
+    },
+    "id": "presence:desk-entry:1",
+    "t": 668.1000000238419,
+    "receipt": {
+      "at": 668.1000000238419,
+      "by": "director"
+    }
+  },
+  {
+    "kind": "presence",
+    "from": "presentation",
+    "to": "director",
+    "act": "desk-mentor",
+    "payload": {
+      "shape": "用逐层替换场景把案上、导师、导演和作品架分开。",
+      "cost": "回看上一层需要退回，不能同时摊开。",
+      "sentence": "我一次只让一层在场。"
+    },
+    "id": "presence:desk-mentor:1",
+    "t": 728.1999999880791,
+    "receipt": {
+      "at": 728.1999999880791,
+      "by": "director"
+    }
+  },
+  {
+    "kind": "presence",
+    "from": "presentation",
+    "to": "director",
+    "act": "desk-directors",
+    "payload": {
+      "shape": "用逐层替换场景把案上、导师、导演和作品架分开。",
+      "cost": "回看上一层需要退回，不能同时摊开。",
+      "sentence": "我一次只让一层在场。"
+    },
+    "id": "presence:desk-directors:1",
+    "t": 781.5,
+    "receipt": {
+      "at": 781.5,
+      "by": "director"
+    }
+  },
+  {
+    "kind": "presence",
+    "from": "presentation",
+    "to": "director",
+    "act": "desk-shelf",
+    "payload": {
+      "shape": "抽出选中的作品帛条，并在新页为这一件作品开门。",
+      "cost": "作品要在另一页观看，入口不同时摊开全文。",
+      "sentence": "我只为这一卷开门。"
+    },
+    "id": "presence:desk-shelf:1",
+    "t": 837.6000000238419,
+    "receipt": {
+      "at": 837.6000000238419,
+      "by": "director"
+    }
+  }
+]

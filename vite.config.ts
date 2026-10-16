@@ -1,12 +1,13 @@
 import { defineConfig } from 'vite';
 import { viteSingleFile } from 'vite-plugin-singlefile';
 import { planPlugin } from './director/pipeline/vite-plan-plugin';
+import { slimPlugin } from './director/pipeline/slim-plugin';
 
 // 单文件产物：一份 index.html，双击即开，也能直接发布成 Artifact。
 export default defineConfig(({ command }) => ({
   root: '.',
   base: './',
-  plugins: [planPlugin(), command === 'build' ? viteSingleFile({ removeViteModuleLoader: true }) : null],
+  plugins: [planPlugin(), slimPlugin(), command === 'build' ? viteSingleFile({ removeViteModuleLoader: true }) : null],
   server: { host: '127.0.0.1', port: Number(process.env.PORT ?? 5173), strictPort: false },
   build: {
     outDir: process.env.ZHUZI_OUT ?? 'dist',

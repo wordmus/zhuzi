@@ -1,0 +1,30 @@
+{
+  "intent": "shelf-gallery",
+  "seed": 3,
+  "tier": "L2",
+  "when": "2026-10-16T17:34:18.544Z",
+  "status": "built",
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": []
+  },
+  "build": {
+    "ok": true,
+    "ms": 800,
+    "bytes": 33209548,
+    "singleFile": true,
+    "external": []
+  },
+  "seconds": 0.8,
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 33209548
+    },
+    {
+      "path": "plan.json",
+      "bytes": 27620
+    }
+  ]
+}

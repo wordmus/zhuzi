@@ -1,0 +1,148 @@
+{
+  "viewport": [
+    1280,
+    720
+  ],
+  "seeds": [
+    [
+      "desk",
+      15,
+      "L1"
+    ],
+    [
+      "three-look-at-sky",
+      3,
+      "L2"
+    ],
+    [
+      "shelf-gallery",
+      3,
+      "L2"
+    ],
+    [
+      "east-suburb-3d",
+      5,
+      "L3"
+    ]
+  ],
+  "method": "same generated plan and seed; deterministic Math.random; same Playwright virtual clock; PNG control vs inline WebP; RGB absolute difference, diff image magnified 8x",
+  "results": [
+    {
+      "name": "desk-L0",
+      "width": 1280,
+      "height": 720,
+      "changedPixels": 0,
+      "changedPercent": 0,
+      "over8Percent": 0,
+      "meanAbsoluteRGB": 0,
+      "maxChannelDelta": 0,
+      "before": "runs/desk/15/L1/slim-visual/desk-L0-before.png",
+      "after": "runs/desk/15/L1/slim-visual/desk-L0-after.png",
+      "difference": "runs/desk/15/L1/slim-visual/desk-L0-diff-x8.png"
+    },
+    {
+      "name": "desk-L1",
+      "width": 1280,
+      "height": 720,
+      "changedPixels": 0,
+      "changedPercent": 0,
+      "over8Percent": 0,
+      "meanAbsoluteRGB": 0,
+      "maxChannelDelta": 0,
+      "before": "runs/desk/15/L1/slim-visual/desk-L1-before.png",
+      "after": "runs/desk/15/L1/slim-visual/desk-L1-after.png",
+      "difference": "runs/desk/15/L1/slim-visual/desk-L1-diff-x8.png"
+    },
+    {
+      "name": "desk-L2",
+      "width": 1280,
+      "height": 720,
+      "changedPixels": 0,
+      "changedPercent": 0,
+      "over8Percent": 0,
+      "meanAbsoluteRGB": 0,
+      "maxChannelDelta": 0,
+      "before": "runs/desk/15/L1/slim-visual/desk-L2-before.png",
+      "after": "runs/desk/15/L1/slim-visual/desk-L2-after.png",
+      "difference": "runs/desk/15/L1/slim-visual/desk-L2-diff-x8.png"
+    },
+    {
+      "name": "desk-L3",
+      "width": 1280,
+      "height": 720,
+      "changedPixels": 0,
+      "changedPercent": 0,
+      "over8Percent": 0,
+      "meanAbsoluteRGB": 0,
+      "maxChannelDelta": 0,
+      "before": "runs/desk/15/L1/slim-visual/desk-L3-before.png",
+      "after": "runs/desk/15/L1/slim-visual/desk-L3-after.png",
+      "difference": "runs/desk/15/L1/slim-visual/desk-L3-diff-x8.png"
+    },
+    {
+      "name": "three-look-at-sky",
+      "width": 1280,
+      "height": 720,
+      "changedPixels": 469529,
+      "changedPercent": 50.94715711805555,
+      "over8Percent": 6.486979166666666,
+      "meanAbsoluteRGB": 1.4297978153935185,
+      "maxChannelDelta": 53,
+      "before": "runs/desk/15/L1/slim-visual/three-look-at-sky-before.png",
+      "after": "runs/desk/15/L1/slim-visual/three-look-at-sky-after.png",
+      "difference": "runs/desk/15/L1/slim-visual/three-look-at-sky-diff-x8.png"
+    },
+    {
+      "name": "shelf-gallery",
+      "width": 1280,
+      "height": 720,
+      "changedPixels": 250916,
+      "changedPercent": 27.22612847222222,
+      "over8Percent": 0,
+      "meanAbsoluteRGB": 0.13352683738425927,
+      "maxChannelDelta": 1,
+      "before": "runs/desk/15/L1/slim-visual/shelf-gallery-before.png",
+      "after": "runs/desk/15/L1/slim-visual/shelf-gallery-after.png",
+      "difference": "runs/desk/15/L1/slim-visual/shelf-gallery-diff-x8.png"
+    },
+    {
+      "name": "east-suburb-3d",
+      "width": 1280,
+      "height": 720,
+      "changedPixels": 4921,
+      "changedPercent": 0.5339626736111112,
+      "over8Percent": 0.004774305555555556,
+      "meanAbsoluteRGB": 0.0033040364583333333,
+      "maxChannelDelta": 34,
+      "before": "runs/desk/15/L1/slim-visual/east-suburb-3d-before.png",
+      "after": "runs/desk/15/L1/slim-visual/east-suburb-3d-after.png",
+      "difference": "runs/desk/15/L1/slim-visual/east-suburb-3d-diff-x8.png"
+    }
+  ],
+  "offline": [
+    {
+      "intent": "desk",
+      "canvases": 1,
+      "localSidecars": [],
+      "errors": []
+    },
+    {
+      "intent": "three-look-at-sky",
+      "canvases": 1,
+      "localSidecars": [],
+      "errors": []
+    },
+    {
+      "intent": "shelf-gallery",
+      "canvases": 1,
+      "localSidecars": [],
+      "errors": []
+    },
+    {
+      "intent": "east-suburb-3d",
+      "canvases": 1,
+      "localSidecars": [],
+      "errors": []
+    }
+  ]
+}

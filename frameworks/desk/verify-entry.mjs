@@ -7,7 +7,8 @@ import { createHash } from 'node:crypto';
 import { tsImport } from 'tsx/esm/api';
 const { launch, newContext, serveDir, installBench } = await tsImport('../../bench/lib.ts', import.meta.url);
 const root = fileURLToPath(new URL('../../', import.meta.url));
-const run = path.join(root, 'runs/desk/11/L1'), shots = path.join(run, 'shots');
+const runName = process.env.DESK_VERIFY_RUN ?? 'runs/desk/17/L1';
+const run = path.join(root, runName), shots = path.join(run, 'shots');
 fs.mkdirSync(shots, { recursive: true });
 // Exercise the real Node branch in an isolated root with no index.
 const { directFromFiles } = await tsImport('../../director/pipeline/director-node.ts', import.meta.url);
@@ -40,7 +41,7 @@ try {
     page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
     page.on('pageerror', error => errors.push(error.message));
     await installBench(page);
-    await page.goto(`${server.origin}/runs/desk/11/L1/index.html`, { waitUntil: 'networkidle' });
+    await page.goto(`${server.origin}/${runName}/index.html`, { waitUntil: 'networkidle' });
     const layer = page.locator('[data-desk-layer]');
     const click = id => page.locator(`[data-aff="${id}"]`).click();
     const waitLayer = async n => {
@@ -151,7 +152,7 @@ try {
       value = z; for (const act of z.plan.acts) act.works = [];
     } });
   });
-  await page.goto(`${server.origin}/runs/desk/11/L1/index.html`, { waitUntil: 'networkidle' });
+  await page.goto(`${server.origin}/${runName}/index.html`, { waitUntil: 'networkidle' });
   for (const id of ['desk-in', 'desk-doing', 'desk-shelf-in']) await page.locator(`[data-aff="${id}"]`).click();
   await page.waitForFunction(() => document.querySelector('[data-desk-layer]')?.getAttribute('data-desk-layer') === 'L3');
   assert.equal(await page.locator('.zl').innerText(), '还没装上');

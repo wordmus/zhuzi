@@ -1,0 +1,597 @@
+{
+  "capturedAt": "2026-10-16T17:32:47.451Z",
+  "files": {
+    "runs/studio/5/L1/bench.json": {
+      "bytes": 8387,
+      "sha256": "f24db5affe6a3a6f0e8f6ad5dfaf2e4e16bb473ccd3f2202240465bd67f2e6c9"
+    },
+    "runs/studio/5/L1/curve.csv": {
+      "bytes": 210,
+      "sha256": "58f264d652c8100d024a0dafc48cfcec30163e20d7e4a0104ae8ce00a72867f0"
+    },
+    "runs/studio/5/L1/index.html": {
+      "bytes": 6234637,
+      "sha256": "008a3fe9d32478ba01293eb9291a017bddcea5de647134966a3e7051e30048af"
+    },
+    "runs/studio/5/L1/layers.json": {
+      "bytes": 113420,
+      "sha256": "9e5f69e841182bb1bfc21b27df5dcc523dc4eb7973e1b8d8bc8aafb1fd45cf95"
+    },
+    "runs/studio/5/L1/ledger.json": {
+      "bytes": 6391,
+      "sha256": "bf80dea9100ccba84dec314e6d20f1b839eb8a444f79c393ac60831459ff7fcf"
+    },
+    "runs/studio/5/L1/plan.json": {
+      "bytes": 82165,
+      "sha256": "fba7ae3ea12905bb1de15170abd27f25cf326baf9f696f27cdaf0dc56df2283e"
+    },
+    "runs/studio/5/L1/report.json": {
+      "bytes": 11962,
+      "sha256": "f14d5b1123ae185360e72f5b897f22fac10a906c7bf8a7f86b50201e4e0c6327"
+    },
+    "runs/studio/5/L1/trace.jsonl": {
+      "bytes": 176148,
+      "sha256": "f590b3f9df2d7b9c433270ec626c4c3e9646ace20e51840dfe264ef29464171e"
+    },
+    "runs/studio/5/L1/build/index.html": {
+      "bytes": 6234637,
+      "sha256": "008a3fe9d32478ba01293eb9291a017bddcea5de647134966a3e7051e30048af"
+    },
+    "runs/studio/5/L1/shots/01-threshold-enter.png": {
+      "bytes": 936329,
+      "sha256": "370ea410e33d18d56a96a8bb3d8836177fc683b1da33fbfad6fdf8dac7e97ea3"
+    },
+    "runs/studio/5/L1/shots/02-threshold-s0.png": {
+      "bytes": 1075999,
+      "sha256": "574976ed491e885804533695efc96e15dc508aad8dde6850deb46c0f3aa7426c"
+    },
+    "runs/studio/5/L1/shots/03-reveal-enter.png": {
+      "bytes": 104192,
+      "sha256": "e61b7e5a2c63fbc5e4e01c8b1df1e32b7a331fb34335dee2f9531329184846ba"
+    },
+    "runs/studio/5/L1/shots/04-han-enter.png": {
+      "bytes": 1452184,
+      "sha256": "9a0568d70343a46ead232121838082e03a0a76d467ff1ce586acd7c20d7668dc"
+    },
+    "runs/studio/5/L1/shots/05-han-s3.png": {
+      "bytes": 1312314,
+      "sha256": "44299ca72474a96b8c1c2af38e93125d6dffd407a97481c1cfb9822d82fcfcfe"
+    },
+    "runs/studio/5/L1/shots/06-han-s4.png": {
+      "bytes": 1323377,
+      "sha256": "5f61d70ae55a4072c3a904ae22853cffbb0aafc94318accbd000f58a3adf64a3"
+    },
+    "runs/studio/5/L1/shots/07-han-s5.png": {
+      "bytes": 1323275,
+      "sha256": "45b31be24429b4719e26a8e9fde02dd1da894523e39fa109e2c1e04e9799c863"
+    },
+    "runs/studio/5/L1/shots/08-han-s6.png": {
+      "bytes": 1480353,
+      "sha256": "32fc2f728cfc1970c1e04e4263fe73a4627f681ea6253f4d582330f2dfa51e22"
+    },
+    "runs/studio/5/L1/shots/09-studio-enter.png": {
+      "bytes": 275735,
+      "sha256": "d060c63f5adfd72645c766182b1f7aef9379cfe07b0f04480146dfa564e4601e"
+    },
+    "runs/studio/5/L1/shots/10-studio-s33.png": {
+      "bytes": 277594,
+      "sha256": "8fda8d4cbb4d6ecd4f154585d8c51a1e7cb6c7c9d9776aa2196b64bfb14ab8f8"
+    },
+    "runs/studio/5/L1/shots/11-studio-s34.png": {
+      "bytes": 274891,
+      "sha256": "81b58a6e4a49dee3b569794b9e35629cb5b80367bf9a4cb48ec0efffef062f3c"
+    },
+    "runs/studio/5/L1/shots/12-studio-s35.png": {
+      "bytes": 280829,
+      "sha256": "564e477e3ae24255fba636d2dd84eaf74633ed08eba60a6158c1ebd822da23f7"
+    },
+    "runs/studio/5/L1/shots/13-return-enter.png": {
+      "bytes": 359649,
+      "sha256": "1dc7e27fa3d4d7186bd62d4bc27e54dab09894646e484834a0728a587b56d78b"
+    },
+    "runs/studio/5/L1/shots/14-return-s36.png": {
+      "bytes": 377588,
+      "sha256": "2e85b6711d6911712ed2a0724fea5429c5e4836ea7c84d8469175b8aa467c6bc"
+    },
+    "runs/studio/5/L1/shots/15-return-s37.png": {
+      "bytes": 381536,
+      "sha256": "de49a19f9388b833592fc8abbad56ff30e3443251d765079ee49a607e1963537"
+    },
+    "runs/studio/5/L1/shots/16-return-s38.png": {
+      "bytes": 319713,
+      "sha256": "6b5a0bfece62b65e10e1789f029a73b6576d9eea34696a42242b7f74e40177cc"
+    },
+    "runs/studio/5/L1/shots/17-final-done.png": {
+      "bytes": 319537,
+      "sha256": "32bac50f90c65ba9ddda26392c38240a1f13bd7beead289a8f75e196ae732c34"
+    },
+    "runs/fifty-years/9/L1/bench.json": {
+      "bytes": 9297,
+      "sha256": "46cd236c7daecad463826e57c0bee54f71270f94b24edc5cc6510105f0dc1848"
+    },
+    "runs/fifty-years/9/L1/curve.csv": {
+      "bytes": 309,
+      "sha256": "61ea0807ff233fb6e3c89e5fe3065035347bac0eb7316800bb9e8678de351d6c"
+    },
+    "runs/fifty-years/9/L1/history-save.json": {
+      "bytes": 34088,
+      "sha256": "c143dcd3cc172f9e8ebea44ef5337cc0142521ea74587beba6548aa45c1e62a2"
+    },
+    "runs/fifty-years/9/L1/index.html": {
+      "bytes": 6266226,
+      "sha256": "8259fa0c04a4533c2a4ac05504989e0580259e7d5bc6540e7d16ca1270c9e8e0"
+    },
+    "runs/fifty-years/9/L1/layers.json": {
+      "bytes": 194648,
+      "sha256": "b4adaef09daeb6a0fccd0d42c9b4c46f1550c25cb239f3f5f1949f773d58c685"
+    },
+    "runs/fifty-years/9/L1/ledger.json": {
+      "bytes": 9607,
+      "sha256": "ad08480ed8f2274080b48327b0ba447f9fe7521d83185eb340e69137c371bf38"
+    },
+    "runs/fifty-years/9/L1/plan.json": {
+      "bytes": 157676,
+      "sha256": "ab30ecd701729ddf4a0c2ca929c06ac667a094758e6677cfd4c13d703217aefa"
+    },
+    "runs/fifty-years/9/L1/report.json": {
+      "bytes": 22033,
+      "sha256": "82b714a7ad0ca92ec209d29f72bb5b44c3743d1b5e5c16ce7603abc53af046d9"
+    },
+    "runs/fifty-years/9/L1/trace.jsonl": {
+      "bytes": 301296,
+      "sha256": "c77749a034a7510516b3aad81831ec80aba93057db5ea7512090778d498b2d62"
+    },
+    "runs/fifty-years/9/L1/build/index.html": {
+      "bytes": 6266226,
+      "sha256": "8259fa0c04a4533c2a4ac05504989e0580259e7d5bc6540e7d16ca1270c9e8e0"
+    },
+    "runs/fifty-years/9/L1/shots/01-threshold-enter.png": {
+      "bytes": 936255,
+      "sha256": "94cbee99d44d4a1670737d2f4ff4d5b44a387280fc30326aa5fcfc632c3868ad"
+    },
+    "runs/fifty-years/9/L1/shots/02-threshold-s0.png": {
+      "bytes": 1075869,
+      "sha256": "ed984b993cb1d29e1e76886ecdc4f6572f9eae8c24033927c53e647e3d111708"
+    },
+    "runs/fifty-years/9/L1/shots/03-chronicle-356-enter.png": {
+      "bytes": 23958,
+      "sha256": "ab7d9a57c575ca3e65bea94850224617387f040cff524a9a598e5fc63ea67b0c"
+    },
+    "runs/fifty-years/9/L1/shots/04-reveal-enter.png": {
+      "bytes": 96505,
+      "sha256": "f383d32cf36e638a6798c80b936ce92f3362e4d7bf5540e6d91147001a33556a"
+    },
+    "runs/fifty-years/9/L1/shots/05-han-enter.png": {
+      "bytes": 1450021,
+      "sha256": "d0858b870b138d69fdd76b3dbd0b42148149db801a4c8e261017ff13001a6a0b"
+    },
+    "runs/fifty-years/9/L1/shots/06-han-s4.png": {
+      "bytes": 1310209,
+      "sha256": "b737e0c666ad1704ecadfbb0a0b5344b11e7510e71df4d17f81a9fb70701ce6e"
+    },
+    "runs/fifty-years/9/L1/shots/07-han-s5.png": {
+      "bytes": 1322904,
+      "sha256": "5f7a65ced271610e202450da94f13e542b29eac33a940d7645193dfbe22e2936"
+    },
+    "runs/fifty-years/9/L1/shots/08-han-s6.png": {
+      "bytes": 1324078,
+      "sha256": "d43a7b55b002bdb408240d1e3e104cca2393f1ac5457a9870bb537aa42fb8069"
+    },
+    "runs/fifty-years/9/L1/shots/09-han-s7.png": {
+      "bytes": 1479216,
+      "sha256": "a39590f0c7833ab5cc7746ff811a26c63bacedb0b14e737ba092550465c63f33"
+    },
+    "runs/fifty-years/9/L1/shots/10-chronicle-334-enter.png": {
+      "bytes": 23102,
+      "sha256": "780419239a6f613a3e6c36329642b3c1a5cc6c791600494bf1ea6a5480c61552"
+    },
+    "runs/fifty-years/9/L1/shots/11-ji-speakers-enter.png": {
+      "bytes": 1035516,
+      "sha256": "aedfa952e91f40dca2ebb72d2a49f237d8e307850c3d389c7f9543497b1f9b9e"
+    },
+    "runs/fifty-years/9/L1/shots/12-ji-speakers-s24.png": {
+      "bytes": 1018070,
+      "sha256": "368c72f51115d9467a78df0edb5b3fc3e7a5ffc17935d1c95923e0904bddccd8"
+    },
+    "runs/fifty-years/9/L1/shots/13-ji-speakers-s25.png": {
+      "bytes": 1017689,
+      "sha256": "32048bc6ae85b1db3c4cd695fc85b28f8c1c745801c02d4c052324052ca876df"
+    },
+    "runs/fifty-years/9/L1/shots/14-ji-speakers-s26.png": {
+      "bytes": 1020787,
+      "sha256": "349458445354d1b6a5d7392a617c2d5fa6972edc79d35264b7e43e0c5a65a723"
+    },
+    "runs/fifty-years/9/L1/shots/15-ji-speakers-s27.png": {
+      "bytes": 1019105,
+      "sha256": "59cc604e3fa1dca03e90c609bd2d2d46556d7cc8dcdc5697e6cd2519274b0075"
+    },
+    "runs/fifty-years/9/L1/shots/16-ji-wude-enter.png": {
+      "bytes": 1018569,
+      "sha256": "af44c4f49ab1ad4e462c7ca83fd657ad6f6f4a217e9764a49c2204ca13b08361"
+    },
+    "runs/fifty-years/9/L1/shots/17-ji-wude-s30.png": {
+      "bytes": 945246,
+      "sha256": "88bbad4446d783cacc1af2a8f638e1a0b582526b414ccd50f06dfe617dd4a072"
+    },
+    "runs/fifty-years/9/L1/shots/18-ji-wude-s31.png": {
+      "bytes": 945331,
+      "sha256": "78d027199e96b5e45b071013ff8a06b06c96647f0a5f865b2c5d9a9dbd6f23f2"
+    },
+    "runs/fifty-years/9/L1/shots/19-ji-wude-s32.png": {
+      "bytes": 946257,
+      "sha256": "cc416dc87ae0dc65c329b8c91cc37181420689985536ee108721a8ba90ddda3a"
+    },
+    "runs/fifty-years/9/L1/shots/20-ji-wude-s33.png": {
+      "bytes": 945931,
+      "sha256": "345747c32a992756e087bc61895d2baa85c34e3329673b5cf233ad478ec28e29"
+    },
+    "runs/fifty-years/9/L1/shots/21-chronicle-314-enter.png": {
+      "bytes": 27025,
+      "sha256": "da9410d9ab53825fa66a60804811b04450f9b7d74a0e83ced09808f67f43e6b2"
+    },
+    "runs/fifty-years/9/L1/shots/22-tianbo-knife-enter.png": {
+      "bytes": 940881,
+      "sha256": "daaaad88b07e32e6a6a39b47317f5fe282a88f854332deb0b79438b4666924e5"
+    },
+    "runs/fifty-years/9/L1/shots/23-tianbo-knife-s39.png": {
+      "bytes": 948006,
+      "sha256": "a47b0d7e648b0b604fa7c0570a5fd74854a693239cf50e8b32b880f74e2c6a91"
+    },
+    "runs/fifty-years/9/L1/shots/24-tianbo-knife-s40.png": {
+      "bytes": 962525,
+      "sha256": "341c9a83e5adb2554d32f8ea1d509a5716cb1c0bde2a25a0680e48a8422792fd"
+    },
+    "runs/fifty-years/9/L1/shots/25-tianbo-knife-s41.png": {
+      "bytes": 964305,
+      "sha256": "bff31e9a512cfd2434549252f1bc1cb3d5f32bf09f17f9f3d1ee10f08dc3f154"
+    },
+    "runs/fifty-years/9/L1/shots/26-tianbo-knife-s42.png": {
+      "bytes": 963967,
+      "sha256": "8522bb18accd2c1d81b6ce11b90251914ba948e88d2e0863cafd10c6e275fa1d"
+    },
+    "runs/fifty-years/9/L1/shots/27-bells-rest-enter.png": {
+      "bytes": 915066,
+      "sha256": "7e6a4d5ed595b10d59f8c666e59697b6afdeeb7a2d9d9bc5f985d6c2ce8391b6"
+    },
+    "runs/fifty-years/9/L1/shots/28-bells-rest-s44.png": {
+      "bytes": 911539,
+      "sha256": "80c38123b93f7feec3637623ae91c4d65a0ef52e0c3e856a5e1698d6394e9e5a"
+    },
+    "runs/fifty-years/9/L1/shots/29-bells-rest-s45.png": {
+      "bytes": 912088,
+      "sha256": "e0207ec964751a325d717b2afc6d08f8238378e34b943fc2eab8b6d85634a6ad"
+    },
+    "runs/fifty-years/9/L1/shots/30-bells-rest-s46.png": {
+      "bytes": 916541,
+      "sha256": "8ceb07ade1827bb8e266ff8795c60d0dcb8eb9e353fdcbe8927a264ec81c4a7f"
+    },
+    "runs/fifty-years/9/L1/shots/31-bells-rest-s47.png": {
+      "bytes": 913763,
+      "sha256": "9559ae7739c0bd7233374e3d88cd1fc3ae41e85e80a5d065583a92a845bde8fa"
+    },
+    "runs/fifty-years/9/L1/shots/32-chronicle-306-enter.png": {
+      "bytes": 25818,
+      "sha256": "04bfbbf25e26ca1b32b6737d6ab60cae4b78c9d13713499f4637e9de5b25a800"
+    },
+    "runs/fifty-years/9/L1/shots/33-studio-enter.png": {
+      "bytes": 277964,
+      "sha256": "0c01846ca72fa9f41a9eea29f4d366c12151136b12bde3fae7c7f5be471aee0d"
+    },
+    "runs/fifty-years/9/L1/shots/34-studio-s55.png": {
+      "bytes": 279033,
+      "sha256": "5bf9ef75428e7465b67993f12212541493b16bbe618e0ac2e6d25aaf2a1fb802"
+    },
+    "runs/fifty-years/9/L1/shots/35-studio-s56.png": {
+      "bytes": 275100,
+      "sha256": "9548ebf922784a1d0132bf70080bebc001a6309c40a00385ae88333b3f1c2336"
+    },
+    "runs/fifty-years/9/L1/shots/36-studio-s57.png": {
+      "bytes": 280275,
+      "sha256": "e81fc4983bbc740950982c47cc1a40407060ecaf85a72c00b19aa24c8afbbe80"
+    },
+    "runs/fifty-years/9/L1/shots/37-return-enter.png": {
+      "bytes": 360344,
+      "sha256": "643d0f5aa5fa7b2c124d4a0e15c97a8d89dda8e9c084918049da546034705c17"
+    },
+    "runs/fifty-years/9/L1/shots/38-return-s58.png": {
+      "bytes": 376751,
+      "sha256": "f29e01f1b55732fed4ef23db256a178cc3565840d8f3ddeaef7b345fe76373da"
+    },
+    "runs/fifty-years/9/L1/shots/39-return-s59.png": {
+      "bytes": 381792,
+      "sha256": "761be5aceeca12f2448764e84140e17df94addf3662f6f9851e46d03b3f47ea1"
+    },
+    "runs/fifty-years/9/L1/shots/40-return-s60.png": {
+      "bytes": 319206,
+      "sha256": "5cc760131a82124e66b3adce0ec48f4b2532cbb8b80d907222dda5a9f4135592"
+    },
+    "runs/fifty-years/9/L1/shots/41-final-done.png": {
+      "bytes": 319047,
+      "sha256": "8fa43b70120ce92c39cc20b7d205165f6134779d6095df089cf9ce04e7a69865"
+    },
+    "runs/desk/13/L1/bench.json": {
+      "bytes": 6658,
+      "sha256": "06aeaff1a8cf22835e3b8464d02436f5d60d24ae2b8215039f0523bd92b88031"
+    },
+    "runs/desk/13/L1/curve.csv": {
+      "bytes": 151,
+      "sha256": "91666c0edc1b75303e0626130c62237d0d5b8eb985ab5be2cae1a40853090714"
+    },
+    "runs/desk/13/L1/index.html": {
+      "bytes": 33573421,
+      "sha256": "ae21bb3ea5008c5476cace6ae71f34b63895c733979d8ba06d32740d15a488eb"
+    },
+    "runs/desk/13/L1/layers.json": {
+      "bytes": 35971,
+      "sha256": "64484258dbefec9c23d22b1f4536f67d6bcd28a78bc115f1ccb20379cec2f285"
+    },
+    "runs/desk/13/L1/plan.json": {
+      "bytes": 748305,
+      "sha256": "f9bb86cf94a176df1a9ad501d562bb24b4d0db526651317c9da465b4e4c8943f"
+    },
+    "runs/desk/13/L1/report.json": {
+      "bytes": 4274,
+      "sha256": "93b11b91673dce75c4350fc9988466519adc8f8b8398bd704fb2f328edd397e6"
+    },
+    "runs/desk/13/L1/trace.jsonl": {
+      "bytes": 39023,
+      "sha256": "cd5f2633e0f57e9ed1f5291fd82599f0fb06f8e5f2072771f5d951611366417e"
+    },
+    "runs/desk/13/L1/build/index.html": {
+      "bytes": 33573421,
+      "sha256": "ae21bb3ea5008c5476cace6ae71f34b63895c733979d8ba06d32740d15a488eb"
+    },
+    "runs/desk/13/L1/shots/01-desk-entry-enter.png": {
+      "bytes": 470057,
+      "sha256": "85f04f1b6835ba470af6cff92dbca7b4e5561a566f0201b392f55686e064e3c0"
+    },
+    "runs/desk/13/L1/shots/02-desk-mentor-enter.png": {
+      "bytes": 492557,
+      "sha256": "cb86d4ec6d366d9758979841bb15c4a136407742e1f887f135545b2903c94a72"
+    },
+    "runs/desk/13/L1/shots/03-desk-directors-enter.png": {
+      "bytes": 486842,
+      "sha256": "db50b8c955f2f9881991ada9a861659036e5ba79e7b2669cb11f5fbad5b9d03a"
+    },
+    "runs/desk/13/L1/shots/04-desk-shelf-enter.png": {
+      "bytes": 515797,
+      "sha256": "d8bb63183b50b58bbc37c9424294392abd0c79b5ec73b12ae6f26ce780d8f37f"
+    },
+    "runs/desk/13/L1/shots/05-desk-shelf-s3.png": {
+      "bytes": 527702,
+      "sha256": "4dc8806670afd166b13a3bc0bcefa8c3925c28eb980abf299551a0853d4b3dc6"
+    },
+    "runs/desk/13/L1/shots/06-final-done.png": {
+      "bytes": 527702,
+      "sha256": "4dc8806670afd166b13a3bc0bcefa8c3925c28eb980abf299551a0853d4b3dc6"
+    },
+    "runs/desk/13/L1/shots/activity-L1-assign-after.png": {
+      "bytes": 494380,
+      "sha256": "750b1574350425844c5bc285abba7975d37bcf81727d1102d8ab67a813cc1d05"
+    },
+    "runs/desk/13/L1/shots/activity-L1-assign-before.png": {
+      "bytes": 492171,
+      "sha256": "4d0d7b9e30682a74bb1b16f1783ff6a12bfa8b11902bcdbef2c02d587b834578"
+    },
+    "runs/desk/13/L1/shots/activity-L1-drop.png": {
+      "bytes": 491777,
+      "sha256": "1cc4469dfbf902c7a42a22bf08c9d9ff427bc455d594e5af7ba1ab593d070482"
+    },
+    "runs/desk/13/L1/shots/activity-L1-postpone.png": {
+      "bytes": 491794,
+      "sha256": "94b48be99c4d87c1b82e9d1b8b5299e78a4a048ced6621c2943ca2e88294cf27"
+    },
+    "runs/desk/13/L1/shots/activity-L1-slips-after.png": {
+      "bytes": 497534,
+      "sha256": "a1b11813416cc5e6b83734f583458d4792cfb2198f2962e6cfc7c29fdb857ae1"
+    },
+    "runs/desk/13/L1/shots/activity-L1-slips-before.png": {
+      "bytes": 492866,
+      "sha256": "920316d53b6b699a05b7ffc5af77f68ff4359bddbf11ef2e7dcb41143764ba1a"
+    },
+    "runs/desk/13/L1/shots/activity-L2-comparison.png": {
+      "bytes": 128362,
+      "sha256": "66727b2626c781cbbb2a15ccb98d26cc3beaffaf4d2a6efcbe5e8221e2cbe75d"
+    },
+    "runs/desk/13/L1/shots/activity-L2-dwell.png": {
+      "bytes": 483563,
+      "sha256": "33590638fd17bb392a30b22ac7cfbaab042085dd5ea864c8f278698b408af038"
+    },
+    "runs/desk/13/L1/shots/activity-L2-falling.png": {
+      "bytes": 482125,
+      "sha256": "d1cbdddf05a2c1c4081b6955e0814620b5bea2329c4e74487fdd893a05c124b4"
+    },
+    "runs/desk/13/L1/shots/activity-L2-focus.png": {
+      "bytes": 483094,
+      "sha256": "2b3621af8689e85721badc7fd55771b97a17cde02b0a3c2313171ab55c422067"
+    },
+    "runs/desk/13/L1/shots/activity-L2-handoff.png": {
+      "bytes": 483363,
+      "sha256": "d870f79a36f9b78864446427479909dec92a6f003d863b9b9406f09541dc5464"
+    },
+    "runs/desk/13/L1/shots/activity-L2-rehearsal.png": {
+      "bytes": 483425,
+      "sha256": "3ba0d97ee7956b9e763ae943836734e041b2eb0c8846000026f467247b32d71f"
+    },
+    "runs/desk/13/L1/shots/activity-L2-swapped.png": {
+      "bytes": 482254,
+      "sha256": "29b80fb15fa26f43854664a88bd21d371ed5a4eda1817de37c80313fdc2194d1"
+    },
+    "runs/desk/13/L1/shots/activity-L2-tradeoff.png": {
+      "bytes": 483462,
+      "sha256": "400a96e548f5e2644471efec01dec52644e73a40f94c06fdc49c348ad2238d1b"
+    },
+    "assets/library/cafe/recipe.json": {
+      "bytes": 2640,
+      "sha256": "8e295aae1ee2480a6e7cc9e60bfd943127f6bf109249c3847cfb4010e0c13350"
+    },
+    "assets/library/console/works.json": {
+      "bytes": 5152,
+      "sha256": "a7eae94bfb97a957f762aca765b52846d01bdeb524aca9d1e7c4323fd34a6cc3"
+    },
+    "assets/library/desk/paint.ts": {
+      "bytes": 9597,
+      "sha256": "f75eb94bfea82e856622fe9c368271df56536bf8727ed318726378afe1faecd4"
+    },
+    "assets/library/desk/recipe.json": {
+      "bytes": 2200,
+      "sha256": "10706e7b6291ae3f272d0ec5e84f7197c09dcfe45520a11f9cdb381f69788a7b"
+    },
+    "assets/library/east3d/build.py": {
+      "bytes": 12621,
+      "sha256": "c456380c731d0f8e84b66eef10e69a4ba030f3c1d24c4c3c0e4ae7d3dd6a522f"
+    },
+    "assets/library/east3d/ground.glb": {
+      "bytes": 3763344,
+      "sha256": "f4805d34b0158295b1d95b4aad73a046a8df4fc0992dabf383172f8a7638f0b8"
+    },
+    "assets/library/east3d/ground.recipe.json": {
+      "bytes": 435,
+      "sha256": "2b0ac35b20b6804b12a9bf19c9909308ccb4a088258d5f276581690957a334b3"
+    },
+    "assets/library/east3d/he-placeholder.glb": {
+      "bytes": 174372,
+      "sha256": "1d9ed140446ca67e65b92a79d7e86a5e2d0bf21a4893679501eb2d22963ecbaf"
+    },
+    "assets/library/east3d/he-placeholder.recipe.json": {
+      "bytes": 498,
+      "sha256": "3f1e25cab84220ef133e13a8f96d426662d54edb8d8e023a0fa4f3818ba93a4c"
+    },
+    "assets/library/east3d/millet.glb": {
+      "bytes": 8368,
+      "sha256": "aae48c064fd616dc8f18abeb8b6d8da1358953ccacc8b7f80073ca6b2c14481e"
+    },
+    "assets/library/east3d/millet.recipe.json": {
+      "bytes": 358,
+      "sha256": "a3f9f861177cb5e4af9e99d79865abefd639f3f841c1ac67f1ddedb68bf6d41e"
+    },
+    "assets/library/east3d/pots.glb": {
+      "bytes": 57492,
+      "sha256": "6bc49323e8e1878a0534cc34825329499b92315698a8c641d10c62c52186cdb0"
+    },
+    "assets/library/east3d/pots.recipe.json": {
+      "bytes": 313,
+      "sha256": "b2c4e02f5f380b73500816a2e2d63ab375891a9cfe6c1fd6c5cde6688895bb11"
+    },
+    "assets/library/east3d/tree.glb": {
+      "bytes": 102956,
+      "sha256": "1ebeb2c8e10f93e512cd5bcaaf730e693feaca761eb3f3fccae0efb2d1b0ac94"
+    },
+    "assets/library/east3d/tree.recipe.json": {
+      "bytes": 340,
+      "sha256": "cb625e61eb40cb2ed2dad007af3812e3fad98502606060c8121b6faf82a16431"
+    },
+    "assets/library/east3d/view.py": {
+      "bytes": 2658,
+      "sha256": "04ea5986323e30cc36efb702f0365bc3adb54fd6c3ec6ca212dd8931711aacfd"
+    },
+    "assets/library/east3d/well.glb": {
+      "bytes": 17900,
+      "sha256": "10d2b4b1b2ac6d235466d3457b9f4ee49765c0c62a2502caa5b232017a9f891e"
+    },
+    "assets/library/east3d/well.recipe.json": {
+      "bytes": 316,
+      "sha256": "5c7c058399fd57eef56fcfed7bfd97419643c66306fa6f5f046553b2ee0219a4"
+    },
+    "assets/library/shelf-gallery/recipe.json": {
+      "bytes": 4615,
+      "sha256": "8538f3d4a75184e173cb0f9f560b0dc26dbaa552165e0c5bbf77da3850fa6de6"
+    },
+    "assets/library/three-look-at-sky/recipe.json": {
+      "bytes": 4331,
+      "sha256": "93a426b9b8ba73da29b8c124467f7e2076f77cc7d513948b448f2b59d9c7948c"
+    },
+    "assets/library/east3d/tripo/run_tripo_com.py": {
+      "bytes": 960,
+      "sha256": "5997a15ce3a5ade5e11830d4d8bc9afa7d7022a4174baf8d415bc470ae496577"
+    },
+    "assets/library/shelf-gallery/evidence/dev-bench.json": {
+      "bytes": 6162,
+      "sha256": "53c9d9695f7421a541e37bd3c7310f749430e50ebf0b8ea994f685430816c7a5"
+    },
+    "assets/library/shelf-gallery/evidence/pipeline-bench.json": {
+      "bytes": 6178,
+      "sha256": "5919a2b28ffa525f3597e10199725892b5819de8024b601c097d4d17138cd2bf"
+    },
+    "assets/library/shelf-gallery/plates/01-threshold.png": {
+      "bytes": 1075242,
+      "sha256": "75dc4d1b837d1d34fd74e4f2795c05b59bf13eec5009cf4a23b70b95fffbc5dd"
+    },
+    "assets/library/shelf-gallery/plates/02-drought.png": {
+      "bytes": 1326017,
+      "sha256": "699d75aaa3fa9c11478bf5e467d4123d6b24c206bd207c7464bc725c9c3061c5"
+    },
+    "assets/library/shelf-gallery/plates/03-studio.png": {
+      "bytes": 274829,
+      "sha256": "98241c6a4e3a5c912d9646596cd66476e8c482d224d9430046d762b469bab020"
+    },
+    "assets/library/shelf-gallery/plates/04-return.png": {
+      "bytes": 320607,
+      "sha256": "d704dd43c74782c2bfd9ed4ece737f24b967b53687396770f8962cfdb6e4ec45"
+    },
+    "assets/library/shelf-gallery/plates/05-chronicle.png": {
+      "bytes": 23102,
+      "sha256": "780419239a6f613a3e6c36329642b3c1a5cc6c791600494bf1ea6a5480c61552"
+    },
+    "assets/library/shelf-gallery/plates/06-jixia.png": {
+      "bytes": 1017684,
+      "sha256": "a264f256abbdc84361627f457e29276d7a4af50d17e476820bbf410e67ab1b01"
+    },
+    "assets/library/shelf-gallery/plates/07-east-design.png": {
+      "bytes": 1067680,
+      "sha256": "0e181e08ca95264365ef05526b9f9808cea8a32b0fa65760d586f70bf9ab7d18"
+    },
+    "assets/library/shelf-gallery/plates/08-east-delivered.png": {
+      "bytes": 163027,
+      "sha256": "2adbc127d4071a796b14a1fd9cb82ad415477a6d80f1f8069cf8db849ac0c233"
+    },
+    "assets/library/three-look-at-sky/evidence/dev-bench.json": {
+      "bytes": 6584,
+      "sha256": "ef3f9c4d146fc2e8654561f5e01c679c764cb29dc4bae39e2ecf2d0c6a406497"
+    },
+    "assets/library/three-look-at-sky/evidence/fifty-years-preservation.json": {
+      "bytes": 336,
+      "sha256": "15eabc045196403961fdc4e924cbb6533d04c55b90e56c82333630d0ee1a2899"
+    },
+    "assets/library/three-look-at-sky/evidence/fifty-years-regression-bench.json": {
+      "bytes": 9265,
+      "sha256": "97822f8c1725aa3484f61adf0cd2b3d9c3828b608a67a602d825730c6b2385ba"
+    },
+    "assets/library/three-look-at-sky/evidence/fifty-years-regression-curve.csv": {
+      "bytes": 309,
+      "sha256": "aa6b2244cebe4ac99d19e10574607a59991132e7fd54b1a9b1cb3a037c5773fe"
+    },
+    "assets/library/three-look-at-sky/evidence/pipeline-bench.json": {
+      "bytes": 6590,
+      "sha256": "89c3ed33fc81137d6248aa305dcc2e5d465bbbf819cfa322720aa989d98cbce5"
+    },
+    "assets/library/three-look-at-sky/evidence/shot-table.json": {
+      "bytes": 527,
+      "sha256": "8eb3ca0c17fb4804b93a08600a7df1749bcfd3522842adbec2a60679e39904b1"
+    },
+    "assets/library/three-look-at-sky/refs/style-probe.png": {
+      "bytes": 3167478,
+      "sha256": "f50d9afcbf10bf7829a02a7237c32feaf0d8d57dbc61a011f95880d294b05578"
+    },
+    "assets/library/three-look-at-sky/shots/shot-01-he.png": {
+      "bytes": 3167478,
+      "sha256": "f50d9afcbf10bf7829a02a7237c32feaf0d8d57dbc61a011f95880d294b05578"
+    },
+    "assets/library/three-look-at-sky/shots/shot-02-sky.png": {
+      "bytes": 2716578,
+      "sha256": "3f538d66814ccd4182770a5229603c595844529776dc695ef1ffa799b7f2419c"
+    },
+    "assets/library/three-look-at-sky/shots/shot-03-ji.png": {
+      "bytes": 2843043,
+      "sha256": "2ca853eb447afa4ff6b2daedcbebe0510b97f2e02de4fd2ce9c3ae6a4c02d747"
+    },
+    "assets/library/three-look-at-sky/shots/shot-04-tianbo.png": {
+      "bytes": 3028581,
+      "sha256": "8e9575c25b42d069e02477b875ae42e29c246b4fd619413198a4a1db5bc22bbe"
+    },
+    "assets/library/three-look-at-sky/shots/shot-05-city.png": {
+      "bytes": 2880302,
+      "sha256": "dca4888e60d59c866d14af740a1d6f0e4c89391a465960c7a1caa28d3e0accd3"
+    }
+  }
+}

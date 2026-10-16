@@ -1,7 +1,15 @@
 import type { Layer, Tier } from '../types';
 
 export type LayerId = 'mentor' | 'director' | 'actor';
-export type LetterKind = 'commission' | 'plan' | 'cue' | 'report' | 'retro';
+export type LetterKind = 'commission' | 'plan' | 'cue' | 'report' | 'retro' | 'presence';
+
+/** 呈现只为已做的事署名；没有取舍记录时不产生 withheld 键。 */
+export interface Presence {
+  shape: string;
+  withheld?: string[];
+  cost: string;
+  sentence: string;
+}
 
 /** 回执表示收信人已处理；内容在发出后不再改动。 */
 export interface Letter<T = unknown> {

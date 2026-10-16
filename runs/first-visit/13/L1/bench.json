@@ -1,19 +1,19 @@
 {
   "target": "runs/first-visit/13/L1",
-  "url": "http://127.0.0.1:53288/index.html",
-  "when": "2026-10-16T10:54:06.278Z",
-  "verdict": "FAIL",
+  "url": "http://127.0.0.1:57187/index.html",
+  "when": "2026-10-16T18:08:44.731Z",
+  "verdict": "PASS",
   "hard": {
-    "pass": 8,
+    "pass": 9,
     "total": 9
   },
-  "summary": "FAIL hard 8/9 · first-action 0.12s · first3s 1 · feedback p90 none (limit 900) · max-chars 29 · errors 0 · fps-p5 60 · notext PASS · repro PASS · layers PASS",
+  "summary": "PASS hard 9/9 · first-action 0.08s · first3s 1 · feedback p90 420ms · max-chars 29 · errors 0 · fps-p5 60 · notext PASS · repro PASS · layers PASS",
   "checks": [
     {
       "id": "first-action",
       "label": "首个可操作元素",
       "pass": true,
-      "value": 0.12059999996423722,
+      "value": 0.07969999998807907,
       "limit": 0.6
     },
     {
@@ -27,8 +27,8 @@
     {
       "id": "feedback",
       "label": "反馈延迟 p90",
-      "pass": false,
-      "value": "none",
+      "pass": true,
+      "value": 420,
       "limit": 900,
       "note": "样本 8，100ms 内有反馈的占 75%（目标 100ms）"
     },
@@ -53,7 +53,7 @@
       "pass": true,
       "value": 60,
       "limit": 55,
-      "note": "4007 帧；整局 rAF p5=60；stage.fpsP5()=60（已计入）"
+      "note": "4029 帧；整局 rAF p5=60；stage.fpsP5()=60（已计入）"
     },
     {
       "id": "notext",
@@ -88,12 +88,13 @@
         "plan": 1,
         "cue": 6,
         "report": 6,
-        "retro": 1
+        "retro": 1,
+        "presence": 0
       },
       "pending": 0,
       "check": []
     },
-    "firstActionSec": 0.12059999996423722,
+    "firstActionSec": 0.07969999998807907,
     "first3s": {
       "perAct": [
         {
@@ -122,113 +123,116 @@
           "step": 0,
           "aff": "door",
           "ambient": {
-            "g": 0.0006792534722222223,
-            "l": 0.00002452449724780642
+            "g": 0.0007562934027777778,
+            "l": 0.000027249441386451578
           },
           "first": {
-            "g": 0.10822808159722222,
-            "l": 0.18275110360237615
+            "g": 0.12170247395833333,
+            "l": 0.2058041310153142
           },
-          "latencyMs": 346,
-          "shots": 6
+          "latencyMs": 420,
+          "shots": 5
         },
         {
           "step": 1,
           "aff": "ticket",
           "ambient": {
-            "g": 0.0035134548611111113,
-            "l": 0.007582838617321376
+            "g": 0.0029665798611111112,
+            "l": 0.0059744852848301125
           },
           "first": {
-            "g": 0.004240451388888889,
-            "l": 0.016437202644099196
+            "g": 0.0042664930555555555,
+            "l": 0.01644141299313713
           },
-          "latencyMs": 33,
+          "latencyMs": 31,
           "shots": 24
         },
         {
           "step": 2,
           "aff": "east-suburb",
           "ambient": {
-            "g": 0.005249565972222222,
+            "g": 0.005353732638888889,
             "l": 0
           },
-          "first": null,
-          "latencyMs": null,
-          "shots": 24
+          "first": {
+            "g": 0.0005501302083333334,
+            "l": 0.0016828300891854095
+          },
+          "latencyMs": 53,
+          "shots": 20
         },
         {
           "step": 4,
           "aff": "heart-approach",
           "ambient": {
-            "g": 0.0030772569444444445,
-            "l": 0.004331577448747153
+            "g": 0.006137152777777778,
+            "l": 0.003922266514806378
           },
           "first": {
-            "g": 0.01172634548611111,
-            "l": 0.03846099088838269
+            "g": 0.012805989583333333,
+            "l": 0.04150768792710706
           },
-          "latencyMs": 34,
-          "shots": 24
+          "latencyMs": 115,
+          "shots": 17
         },
         {
           "step": 8,
           "aff": "walk2d-gate-ring",
           "ambient": {
-            "g": 0.0035329861111111113,
-            "l": 0.023783783783783784
+            "g": 0.0038053385416666665,
+            "l": 0.025617238860482103
           },
           "first": {
-            "g": 0.002263454861111111,
-            "l": 0.015237399561723887
+            "g": 0.0029112413194444446,
+            "l": 0.019598246895544194
           },
-          "latencyMs": 48,
-          "shots": 21
+          "latencyMs": 99,
+          "shots": 19
         },
         {
           "step": 12,
           "aff": "heart-weight-li",
           "ambient": {
-            "g": 0.003364800347222222,
-            "l": 0.0038946311719214753
+            "g": 0.004352213541666667,
+            "l": 0.004443039857227841
           },
           "first": {
-            "g": 0.003855251736111111,
-            "l": 0.03299747174301011
+            "g": 0.0037630208333333335,
+            "l": 0.03173334324806663
           },
-          "latencyMs": 51,
-          "shots": 21
+          "latencyMs": 53,
+          "shots": 20
         },
         {
           "step": 16,
           "aff": "heart-weight-ming",
           "ambient": {
-            "g": 0.003451605902777778,
-            "l": 0.003085960737656157
+            "g": 0.003207465277777778,
+            "l": 0.002500371802498513
           },
           "first": {
-            "g": 0.005064019097222222,
-            "l": 0.03874182034503272
+            "g": 0.004963107638888889,
+            "l": 0.03814693634741226
           },
-          "latencyMs": 63,
+          "latencyMs": 52,
           "shots": 20
         },
         {
           "step": 24,
           "aff": "heart-go",
           "ambient": {
-            "g": 0.003715277777777778,
-            "l": 0.003516351971869184
+            "g": 0.0022016059027777776,
+            "l": 0.00215095998279232
           },
           "first": {
-            "g": 0.012679036458333333,
-            "l": 0.04985551160115591
+            "g": 0.012769097222222222,
+            "l": 0.05140794358873645
           },
-          "latencyMs": 49,
-          "shots": 21
+          "latencyMs": 33,
+          "shots": 24
         }
       ],
-      "p90Ms": null,
+      "p90Ms": 420,
       "within100Ratio": 0.75
     },
     "chars": {
@@ -244,11 +248,11 @@
       "warnings": 0
     },
     "fps": {
-      "p5": 59.52380952385077,
-      "own": 59.88023952091634,
-      "stage": 59.52380952385077,
+      "p5": 59.523809523799216,
+      "own": 59.52380952385077,
+      "stage": 59.523809523799216,
       "usedStage": true,
-      "frames": 4007
+      "frames": 4029
     },
     "notext": {
       "done": true,
@@ -284,7 +288,7 @@
       "done": true,
       "reason": "done",
       "steps": 36,
-      "seconds": 89.7,
+      "seconds": 92.6,
       "fallbackClicks": 0,
       "shots": 0
     },
@@ -300,7 +304,7 @@
       "done": true,
       "reason": "done",
       "steps": 36,
-      "seconds": 69.4,
+      "seconds": 69.5,
       "fallbackClicks": 0,
       "shots": 0
     }
@@ -308,21 +312,21 @@
   "curve": [
     {
       "minute": 1,
-      "decisions": 22,
-      "new_info": 66,
+      "decisions": 19,
+      "new_info": 64,
       "want_continue": 5,
       "numbers_on_screen": 0,
       "words_on_screen": 16,
-      "note": "22 次动手，起于 threshold/door；66 条新东西"
+      "note": "19 次动手，起于 threshold/door；64 条新东西"
     },
     {
       "minute": 2,
-      "decisions": 13,
-      "new_info": 21,
+      "decisions": 16,
+      "new_info": 23,
       "want_continue": 5,
       "numbers_on_screen": 0,
       "words_on_screen": 15,
-      "note": "14 次动手，起于 han/?；21 条新东西"
+      "note": "17 次动手，起于 han/heart-write；23 条新东西"
     }
   ],
   "curveSummary": {

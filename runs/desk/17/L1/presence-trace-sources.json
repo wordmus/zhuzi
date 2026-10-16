@@ -1,0 +1,30 @@
+[
+  {
+    "path": "runs/desk/17/L1/trace.jsonl",
+    "line": 58,
+    "event": {
+      "kind": "world.event",
+      "layer": "L3",
+      "work": "east-suburb-3d/5/L3",
+      "url": "../../../east-suburb-3d/5/L3/index.html",
+      "t": 11480,
+      "eventKind": "desk.work.open"
+    }
+  },
+  {
+    "path": "runs/studio/9/L1/trace.jsonl",
+    "line": 393,
+    "event": {
+      "act": "studio",
+      "sourceReport": "report:han:1",
+      "predicted": "田伯开门后说的和心里预演的不一样",
+      "actual": "预演：给粟；实际：拒绝",
+      "error": {
+        "layer": "mind",
+        "note": "预演：给粟；实际：拒绝"
+      },
+      "t": 57315,
+      "kind": "director.compare"
+    }
+  }
+]

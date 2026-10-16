@@ -1,0 +1,195 @@
+{
+  "results": [
+    {
+      "name": "wide",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "pictures": [
+        {
+          "file": "runs/desk/17/L1/shots/entry-wide-L0.png",
+          "hash": "747e0753cb304bb8288a3a390bb3774caffbc9a05b32afa7978187333f9be093"
+        },
+        {
+          "file": "runs/desk/17/L1/shots/entry-wide-L1.png",
+          "hash": "033f760ce541026b316f0c6065051dd89cb0b08a0ecb9712bf576f3a511a6b4b"
+        },
+        {
+          "file": "runs/desk/17/L1/shots/entry-wide-L2.png",
+          "hash": "24120a060b3d8f45b75cfb8490a899515fdc400e93518000a7ca81309d34fe8c"
+        },
+        {
+          "file": "runs/desk/17/L1/shots/entry-wide-L3.png",
+          "hash": "43e7e646e03dcc8dda2fc129612900ec4e2ef918c1a3a83f789570a6c1fae761"
+        },
+        {
+          "file": "runs/desk/17/L1/shots/entry-wide-drawer.png",
+          "hash": "fcd3ba8888e2dc7060cf68bcb5df844feb72070bad4a139090124a7ee4362c92"
+        }
+      ],
+      "chars": [
+        18,
+        10,
+        8,
+        18,
+        12,
+        12,
+        9,
+        12,
+        9,
+        9
+      ],
+      "expandedChars": 121,
+      "before": {
+        "why": "上回停在导师案前，接着看，先看《咖啡厅入口》。",
+        "id": "desk"
+      },
+      "after": {
+        "why": "依你纠正的「我更想看人物如何改」，先看咖啡厅入口。",
+        "id": "desk",
+        "saved": [
+          {
+            "id": "h-focus",
+            "text": "我更想看人物如何改变环境",
+            "evidence": [
+              {
+                "visit": 1,
+                "what": "尚无足够来访记录；这是待确认的问题。"
+              }
+            ],
+            "confidence": 0.9,
+            "status": "edited",
+            "originalText": "还不知道你在意谁"
+          },
+          {
+            "id": "h-dwell",
+            "text": "还不知道你愿意在哪停留",
+            "evidence": [
+              {
+                "visit": 1,
+                "what": "尚无足够来访记录；这是待确认的问题。"
+              }
+            ],
+            "confidence": 0,
+            "status": "active"
+          },
+          {
+            "id": "h-night",
+            "text": "深夜你更愿意看短的，不耐烦拖沓",
+            "evidence": [
+              {
+                "visit": 1,
+                "what": "真实时段记录为「深夜」（dayPart）"
+              }
+            ],
+            "confidence": 0.6,
+            "status": "active"
+          }
+        ],
+        "persistent": true
+      },
+      "persistedWhy": "依你纠正的「我更想看人物如何改」，先看咖啡厅入口。",
+      "errors": [],
+      "layers": "PASS",
+      "popup": "200"
+    },
+    {
+      "name": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pictures": [
+        {
+          "file": "runs/desk/17/L1/shots/entry-narrow-L0.png",
+          "hash": "df720ee9601a42f37ef57f74424e0c99d47fe5403ca8d20b63d26732b0d7fe88"
+        },
+        {
+          "file": "runs/desk/17/L1/shots/entry-narrow-L1.png",
+          "hash": "f0e6967ef9995fda0ff22d61aa1bfeafe3d8c743df41d4da1d6112fc05463201"
+        },
+        {
+          "file": "runs/desk/17/L1/shots/entry-narrow-L2.png",
+          "hash": "f6b78f84125989ea14c3dbeb19f91482f80b62663750882b4fdca1460eda6fa6"
+        },
+        {
+          "file": "runs/desk/17/L1/shots/entry-narrow-L3.png",
+          "hash": "68aa6bf7aa4ec01ca0903675be3fca8a1e2639c08a6a8924e70e163ffa0e6fb3"
+        },
+        {
+          "file": "runs/desk/17/L1/shots/entry-narrow-drawer.png",
+          "hash": "f08d1236dfac1d009ae8bdef500a23fb49f6e56a5ffda4204db4e4a7545f07c1"
+        }
+      ],
+      "chars": [
+        18,
+        10,
+        8,
+        18,
+        12,
+        12,
+        9,
+        12,
+        9,
+        9
+      ],
+      "expandedChars": 174,
+      "before": {
+        "why": "上回停在导师案前，接着看，先看《咖啡厅入口》。",
+        "id": "desk"
+      },
+      "after": {
+        "why": "依你纠正的「我更想看人物如何改」，先看咖啡厅入口。",
+        "id": "desk",
+        "saved": [
+          {
+            "id": "h-focus",
+            "text": "我更想看人物如何改变环境",
+            "evidence": [
+              {
+                "visit": 1,
+                "what": "尚无足够来访记录；这是待确认的问题。"
+              }
+            ],
+            "confidence": 0.9,
+            "status": "edited",
+            "originalText": "还不知道你在意谁"
+          },
+          {
+            "id": "h-dwell",
+            "text": "还不知道你愿意在哪停留",
+            "evidence": [
+              {
+                "visit": 1,
+                "what": "尚无足够来访记录；这是待确认的问题。"
+              }
+            ],
+            "confidence": 0,
+            "status": "active"
+          },
+          {
+            "id": "h-night",
+            "text": "深夜你更愿意看短的，不耐烦拖沓",
+            "evidence": [
+              {
+                "visit": 1,
+                "what": "真实时段记录为「深夜」（dayPart）"
+              }
+            ],
+            "confidence": 0.6,
+            "status": "active"
+          }
+        ],
+        "persistent": true
+      },
+      "persistedWhy": "依你纠正的「我更想看人物如何改」，先看咖啡厅入口。",
+      "errors": [],
+      "layers": "PASS",
+      "popup": "200"
+    }
+  ],
+  "missingIndex": "PASS",
+  "mainTextPolicy": "≤30 characters including navigation; expanded mentor drawer excluded, measured separately",
+  "comparison": "shots/entry-four-layers-comparison.png"
+}

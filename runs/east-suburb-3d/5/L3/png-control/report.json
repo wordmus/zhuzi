@@ -1,0 +1,30 @@
+{
+  "intent": "east-suburb-3d",
+  "seed": 5,
+  "tier": "L3",
+  "when": "2026-10-16T17:34:19.905Z",
+  "status": "built",
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": []
+  },
+  "build": {
+    "ok": true,
+    "ms": 797,
+    "bytes": 33203802,
+    "singleFile": true,
+    "external": []
+  },
+  "seconds": 0.8,
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 33203802
+    },
+    {
+      "path": "plan.json",
+      "bytes": 15133
+    }
+  ]
+}

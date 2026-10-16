@@ -1,0 +1,140 @@
+{
+  "intent": "shelf-gallery",
+  "seed": 3,
+  "tier": "L2",
+  "when": "2026-10-16T17:51:31.746Z",
+  "status": "ok",
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": []
+  },
+  "build": {
+    "ok": true,
+    "ms": 672,
+    "bytes": 11430445,
+    "singleFile": true,
+    "external": []
+  },
+  "play": {
+    "done": true,
+    "reason": "done",
+    "seconds": 6.1,
+    "steps": 3,
+    "stepLog": [
+      {
+        "i": 0,
+        "act": "shelf-gallery",
+        "aff": "plate-01-scroll",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 1,
+        "act": "shelf-gallery",
+        "aff": "plate-01-scroll",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 2,
+        "act": "shelf-gallery",
+        "aff": "gallery-fold",
+        "prefer": "least-clicked",
+        "progressed": true
+      }
+    ],
+    "shots": [
+      "01-shelf-gallery-enter.png",
+      "02-shelf-gallery-s0.png",
+      "03-shelf-gallery-s1.png",
+      "04-shelf-gallery-s2.png",
+      "05-final-done.png"
+    ],
+    "traceEvents": 37,
+    "errors": 0,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "fallbackClicks": 0,
+    "firstActionSec": 0.153,
+    "stageFpsP5": 59.52380952380968,
+    "ledger": null,
+    "acts": [
+      {
+        "act": "shelf-gallery",
+        "expected": "同一片旱田有了远近",
+        "entered": true,
+        "exited": true,
+        "durationMs": 5205,
+        "firstAffMs": 4,
+        "firstActionMs": 2283,
+        "predictedFirstActionMs": 800,
+        "note": "首个动作 2283ms，比预演的 800ms 慢很多（模拟玩家要先等画面稳定约 450ms）",
+        "lines": [
+          "门后先亮起一盏灯",
+          "推门以后，你先看见了谁？",
+          "推门以后，你先看见了谁？"
+        ]
+      }
+    ]
+  },
+  "seconds": 7.2,
+  "files": [
+    {
+      "path": "bench.json",
+      "bytes": 6164
+    },
+    {
+      "path": "curve.csv",
+      "bytes": 160
+    },
+    {
+      "path": "index.html",
+      "bytes": 11430445
+    },
+    {
+      "path": "layers.json",
+      "bytes": 20863
+    },
+    {
+      "path": "plan.json",
+      "bytes": 27620
+    },
+    {
+      "path": "png-control/plan.json",
+      "bytes": 27620
+    },
+    {
+      "path": "png-control/report.json",
+      "bytes": 471
+    },
+    {
+      "path": "report.json",
+      "bytes": 2901
+    },
+    {
+      "path": "shots/01-shelf-gallery-enter.png",
+      "bytes": 521738
+    },
+    {
+      "path": "shots/02-shelf-gallery-s0.png",
+      "bytes": 537986
+    },
+    {
+      "path": "shots/03-shelf-gallery-s1.png",
+      "bytes": 537986
+    },
+    {
+      "path": "shots/04-shelf-gallery-s2.png",
+      "bytes": 4258
+    },
+    {
+      "path": "shots/05-final-done.png",
+      "bytes": 4258
+    },
+    {
+      "path": "trace.jsonl",
+      "bytes": 23343
+    }
+  ]
+}

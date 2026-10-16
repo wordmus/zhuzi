@@ -1,0 +1,30 @@
+{
+  "intent": "three-look-at-sky",
+  "seed": 3,
+  "tier": "L2",
+  "when": "2026-10-16T17:34:17.023Z",
+  "status": "built",
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": []
+  },
+  "build": {
+    "ok": true,
+    "ms": 949,
+    "bytes": 33210840,
+    "singleFile": true,
+    "external": []
+  },
+  "seconds": 1,
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 33210840
+    },
+    {
+      "path": "plan.json",
+      "bytes": 32181
+    }
+  ]
+}

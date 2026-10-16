@@ -7,7 +7,7 @@ import { tsImport } from 'tsx/esm/api';
 
 const { launch, newContext, serveDir, installBench } = await tsImport('../../bench/lib.ts', import.meta.url);
 const root = fileURLToPath(new URL('../../', import.meta.url));
-const runDirName = fs.existsSync(path.join(root, 'runs/desk/13/L1')) ? 'runs/desk/13/L1' : 'runs/desk/11/L1';
+const runDirName = process.env.DESK_VERIFY_RUN ?? 'runs/desk/17/L1';
 const run = path.join(root, runDirName), shots = path.join(run, 'shots');
 fs.mkdirSync(shots, { recursive: true });
 

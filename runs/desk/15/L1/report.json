@@ -1,0 +1,473 @@
+{
+  "intent": "desk",
+  "seed": 15,
+  "tier": "L1",
+  "when": "2026-10-16T17:58:35.023Z",
+  "status": "ok",
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": []
+  },
+  "build": {
+    "ok": true,
+    "ms": 601,
+    "bytes": 11801601,
+    "singleFile": true,
+    "external": []
+  },
+  "play": {
+    "done": true,
+    "reason": "done",
+    "seconds": 12.6,
+    "steps": 4,
+    "stepLog": [
+      {
+        "i": 0,
+        "act": "desk-entry",
+        "aff": "desk-in",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 1,
+        "act": "desk-mentor",
+        "aff": "desk-doing",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 2,
+        "act": "desk-directors",
+        "aff": "desk-shelf-in",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 3,
+        "act": "desk-shelf",
+        "aff": "desk-open",
+        "prefer": "focus",
+        "progressed": true
+      }
+    ],
+    "shots": [
+      "01-desk-entry-enter.png",
+      "02-desk-mentor-enter.png",
+      "03-desk-directors-enter.png",
+      "04-desk-shelf-enter.png",
+      "05-desk-shelf-s3.png",
+      "06-final-done.png"
+    ],
+    "traceEvents": 74,
+    "errors": 0,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "fallbackClicks": 0,
+    "firstActionSec": 0.234,
+    "stageFpsP5": 59.88023952095548,
+    "ledger": null,
+    "acts": [
+      {
+        "act": "desk-entry",
+        "expected": "案上一枚印",
+        "entered": true,
+        "exited": true,
+        "durationMs": 2272,
+        "firstAffMs": 10,
+        "firstActionMs": 2271,
+        "predictedFirstActionMs": 100,
+        "note": "首个动作 2271ms，比预演的 100ms 慢很多（模拟玩家要先等画面稳定约 450ms）",
+        "lines": [
+          "按顺序，轮到这件，先看《咖啡厅入口》"
+        ]
+      },
+      {
+        "act": "desk-mentor",
+        "expected": "导师对你的想法",
+        "entered": true,
+        "exited": true,
+        "durationMs": 3057,
+        "firstAffMs": 0,
+        "firstActionMs": 3056,
+        "predictedFirstActionMs": 100,
+        "note": "首个动作 3056ms，比预演的 100ms 慢很多（模拟玩家要先等画面稳定约 450ms）",
+        "lines": [
+          "上回停在案上，接着看"
+        ]
+      },
+      {
+        "act": "desk-directors",
+        "expected": "基础导演与叔衡各自的案",
+        "entered": true,
+        "exited": true,
+        "durationMs": 3084,
+        "firstAffMs": 0,
+        "firstActionMs": 3083,
+        "predictedFirstActionMs": 100,
+        "note": "首个动作 3083ms，比预演的 100ms 慢很多（模拟玩家要先等画面稳定约 450ms）",
+        "lines": [
+          "十样东西抢眼就找不到动作"
+        ]
+      },
+      {
+        "act": "desk-shelf",
+        "expected": "架上一件真实作品",
+        "entered": true,
+        "exited": true,
+        "durationMs": 3912,
+        "firstAffMs": 0,
+        "firstActionMs": 3097,
+        "predictedFirstActionMs": 100,
+        "note": "首个动作 3097ms，比预演的 100ms 慢很多（模拟玩家要先等画面稳定约 450ms）",
+        "lines": [
+          "抽出一卷，门便亮了",
+          "已在新页打开"
+        ]
+      }
+    ]
+  },
+  "seconds": 13.9,
+  "files": [
+    {
+      "path": "bench.json",
+      "bytes": 6655
+    },
+    {
+      "path": "check-shots/activity-L1-assign-after.png",
+      "bytes": 493689
+    },
+    {
+      "path": "check-shots/activity-L1-assign-before.png",
+      "bytes": 492155
+    },
+    {
+      "path": "check-shots/activity-L1-drop.png",
+      "bytes": 491767
+    },
+    {
+      "path": "check-shots/activity-L1-postpone.png",
+      "bytes": 492518
+    },
+    {
+      "path": "check-shots/activity-L1-slips-after.png",
+      "bytes": 497520
+    },
+    {
+      "path": "check-shots/activity-L1-slips-before.png",
+      "bytes": 492727
+    },
+    {
+      "path": "check-shots/activity-L2-comparison.png",
+      "bytes": 127547
+    },
+    {
+      "path": "check-shots/activity-L2-dwell.png",
+      "bytes": 483393
+    },
+    {
+      "path": "check-shots/activity-L2-falling.png",
+      "bytes": 481937
+    },
+    {
+      "path": "check-shots/activity-L2-focus.png",
+      "bytes": 483017
+    },
+    {
+      "path": "check-shots/activity-L2-handoff.png",
+      "bytes": 483494
+    },
+    {
+      "path": "check-shots/activity-L2-rehearsal.png",
+      "bytes": 483527
+    },
+    {
+      "path": "check-shots/activity-L2-swapped.png",
+      "bytes": 482731
+    },
+    {
+      "path": "check-shots/activity-L2-tradeoff.png",
+      "bytes": 482871
+    },
+    {
+      "path": "check-shots/comparison-L1.png",
+      "bytes": 137584
+    },
+    {
+      "path": "check-shots/comparison-L2.png",
+      "bytes": 146821
+    },
+    {
+      "path": "check-shots/comparison-L3.png",
+      "bytes": 133877
+    },
+    {
+      "path": "check-shots/entry-art-before-after-L0.png",
+      "bytes": 124706
+    },
+    {
+      "path": "check-shots/entry-four-layers-comparison.png",
+      "bytes": 294399
+    },
+    {
+      "path": "check-shots/entry-narrow-L0.png",
+      "bytes": 178137
+    },
+    {
+      "path": "check-shots/entry-narrow-L1.png",
+      "bytes": 181105
+    },
+    {
+      "path": "check-shots/entry-narrow-L2.png",
+      "bytes": 177095
+    },
+    {
+      "path": "check-shots/entry-narrow-L3.png",
+      "bytes": 180575
+    },
+    {
+      "path": "check-shots/entry-narrow-drawer.png",
+      "bytes": 187455
+    },
+    {
+      "path": "check-shots/entry-wide-L0.png",
+      "bytes": 470011
+    },
+    {
+      "path": "check-shots/entry-wide-L1.png",
+      "bytes": 492231
+    },
+    {
+      "path": "check-shots/entry-wide-L2.png",
+      "bytes": 487414
+    },
+    {
+      "path": "check-shots/entry-wide-L3.png",
+      "bytes": 517270
+    },
+    {
+      "path": "check-shots/entry-wide-drawer.png",
+      "bytes": 576020
+    },
+    {
+      "path": "check-shots/experience-L2-empty.png",
+      "bytes": 469971
+    },
+    {
+      "path": "check-shots/experience-L2-next.png",
+      "bytes": 487754
+    },
+    {
+      "path": "check-shots/experience-L2.png",
+      "bytes": 488316
+    },
+    {
+      "path": "check-shots/groups-L3-first.png",
+      "bytes": 517575
+    },
+    {
+      "path": "check-shots/groups-L3-second.png",
+      "bytes": 519442
+    },
+    {
+      "path": "check-shots/schedule-L1-after.png",
+      "bytes": 497669
+    },
+    {
+      "path": "check-shots/schedule-L1.png",
+      "bytes": 492373
+    },
+    {
+      "path": "check-shots/schedule-drawer-after.png",
+      "bytes": 551640
+    },
+    {
+      "path": "check-shots/schedule-drawer-before.png",
+      "bytes": 549899
+    },
+    {
+      "path": "checks/alpha.json",
+      "bytes": 2890
+    },
+    {
+      "path": "checks/assets.json",
+      "bytes": 6315
+    },
+    {
+      "path": "checks/build-sha.json",
+      "bytes": 77
+    },
+    {
+      "path": "checks/control-cleanup.json",
+      "bytes": 142
+    },
+    {
+      "path": "checks/history.csv",
+      "bytes": 1734
+    },
+    {
+      "path": "checks/report.json",
+      "bytes": 5846
+    },
+    {
+      "path": "checks/slimming-summary.json",
+      "bytes": 20626
+    },
+    {
+      "path": "curve.csv",
+      "bytes": 151
+    },
+    {
+      "path": "entry-verification.json",
+      "bytes": 5833
+    },
+    {
+      "path": "index.html",
+      "bytes": 11801601
+    },
+    {
+      "path": "layers.json",
+      "bytes": 37401
+    },
+    {
+      "path": "plan.json",
+      "bytes": 762824
+    },
+    {
+      "path": "png-control/plan.json",
+      "bytes": 749760
+    },
+    {
+      "path": "png-control/report.json",
+      "bytes": 464
+    },
+    {
+      "path": "report.json",
+      "bytes": 10347
+    },
+    {
+      "path": "schedule-verification.json",
+      "bytes": 4879
+    },
+    {
+      "path": "shots/01-desk-entry-enter.png",
+      "bytes": 472021
+    },
+    {
+      "path": "shots/02-desk-mentor-enter.png",
+      "bytes": 492531
+    },
+    {
+      "path": "shots/03-desk-directors-enter.png",
+      "bytes": 489784
+    },
+    {
+      "path": "shots/04-desk-shelf-enter.png",
+      "bytes": 517051
+    },
+    {
+      "path": "shots/05-desk-shelf-s3.png",
+      "bytes": 528866
+    },
+    {
+      "path": "shots/06-final-done.png",
+      "bytes": 528866
+    },
+    {
+      "path": "slim-visual/comparison-sheet.png",
+      "bytes": 1198010
+    },
+    {
+      "path": "slim-visual/comparison.json",
+      "bytes": 4089
+    },
+    {
+      "path": "slim-visual/desk-L0-after.png",
+      "bytes": 470025
+    },
+    {
+      "path": "slim-visual/desk-L0-before.png",
+      "bytes": 470025
+    },
+    {
+      "path": "slim-visual/desk-L0-diff-x8.png",
+      "bytes": 20861
+    },
+    {
+      "path": "slim-visual/desk-L1-after.png",
+      "bytes": 489480
+    },
+    {
+      "path": "slim-visual/desk-L1-before.png",
+      "bytes": 489480
+    },
+    {
+      "path": "slim-visual/desk-L1-diff-x8.png",
+      "bytes": 20861
+    },
+    {
+      "path": "slim-visual/desk-L2-after.png",
+      "bytes": 486074
+    },
+    {
+      "path": "slim-visual/desk-L2-before.png",
+      "bytes": 486074
+    },
+    {
+      "path": "slim-visual/desk-L2-diff-x8.png",
+      "bytes": 20861
+    },
+    {
+      "path": "slim-visual/desk-L3-after.png",
+      "bytes": 515678
+    },
+    {
+      "path": "slim-visual/desk-L3-before.png",
+      "bytes": 515678
+    },
+    {
+      "path": "slim-visual/desk-L3-diff-x8.png",
+      "bytes": 20861
+    },
+    {
+      "path": "slim-visual/east-suburb-3d-after.png",
+      "bytes": 554930
+    },
+    {
+      "path": "slim-visual/east-suburb-3d-before.png",
+      "bytes": 554998
+    },
+    {
+      "path": "slim-visual/east-suburb-3d-diff-x8.png",
+      "bytes": 39777
+    },
+    {
+      "path": "slim-visual/shelf-gallery-after.png",
+      "bytes": 521738
+    },
+    {
+      "path": "slim-visual/shelf-gallery-before.png",
+      "bytes": 490247
+    },
+    {
+      "path": "slim-visual/shelf-gallery-diff-x8.png",
+      "bytes": 465059
+    },
+    {
+      "path": "slim-visual/three-look-at-sky-after.png",
+      "bytes": 895848
+    },
+    {
+      "path": "slim-visual/three-look-at-sky-before.png",
+      "bytes": 929897
+    },
+    {
+      "path": "slim-visual/three-look-at-sky-diff-x8.png",
+      "bytes": 901017
+    },
+    {
+      "path": "trace.jsonl",
+      "bytes": 40478
+    }
+  ]
+}

@@ -7,6 +7,7 @@ import type { Store } from '../../engine/store';
 import { createMentor } from '../../engine/layers/mentor';
 import { correctHypothesis, deriveHypotheses, type Hypothesis } from '../../engine/mind/hypotheses';
 import type { Schedule } from '../../engine/mind/schedule';
+import { paintPresence, presenceDetail } from './presence';
 import { groupWorks } from './groups';
 import { deskExperience, memoryTitle, type DeskExperience } from './evidence';
 
@@ -260,7 +261,22 @@ export const desk: Framework = {
         if (w?.url && /^(?:\.\.\/)+[^?#]+\/index\.html$/.test(w.url)) {
           window.open(w.url, '_blank', 'noopener,noreferrer'); opened = true;
           event('desk.work.open', { work: keyOf(w), url: w.url });
-          say('已在新页打开'); draw();
+          const letter = ctx.layers.present(act.id);
+          lines.clear();
+          // 短简有自己的物件层；离场后的成品入口仍可拿起查全文。
+          const slip = stage.dom('desk-presence', 71);
+          const box = scene.boxes(3).presence!;
+          const picture = document.createElement('canvas'); picture.width = Math.ceil(box.w * 2); picture.height = Math.ceil(box.h * 2);
+          picture.style.cssText = `position:absolute;left:${box.x}px;top:${box.y}px;width:${box.w}px;height:${box.h}px`;
+          const ink = picture.getContext('2d')!; ink.scale(2, 2); paintPresence(ink, { ...box, x: 0, y: 0 }); slip.append(picture);
+          const sentence = document.createElement('p'); sentence.dataset.presenceSentence = 'desk'; sentence.textContent = letter.payload.sentence;
+          sentence.style.cssText = `position:absolute;margin:0;display:flex;align-items:center;left:${box.x + box.h * .9}px;top:${box.y}px;width:${box.w - box.h}px;height:${box.h}px;font:${Math.max(10, Math.min(16, box.h * .34))}px \"Songti SC\",serif;white-space:nowrap;color:${TONE.ink}`;
+          slip.append(sentence);
+          const take = document.createElement('button'); take.type = 'button'; take.dataset.presenceSlip = 'desk';
+          take.setAttribute('aria-label', '拿起呈现短简'); take.setAttribute('aria-description', JSON.stringify(letter.payload));
+          take.style.cssText = `position:absolute;left:${box.x}px;top:${box.y}px;width:${box.w}px;height:${box.h}px;background:transparent;border:0;pointer-events:auto;cursor:pointer`;
+          take.onclick = () => { presenceDetail(letter); }; slip.append(take);
+          draw();
           setTimeout(() => finish(), 800);
         } else { say(w ? '这件还没开门' : '还没装上'); event('desk.work.unavailable'); draw(); setTimeout(() => finish(), 800); }
       }

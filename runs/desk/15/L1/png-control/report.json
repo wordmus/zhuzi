@@ -1,0 +1,30 @@
+{
+  "intent": "desk",
+  "seed": 15,
+  "tier": "L1",
+  "when": "2026-10-16T17:34:03.206Z",
+  "status": "built",
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": []
+  },
+  "build": {
+    "ok": true,
+    "ms": 921,
+    "bytes": 33574071,
+    "singleFile": true,
+    "external": []
+  },
+  "seconds": 0.9,
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 33574071
+    },
+    {
+      "path": "plan.json",
+      "bytes": 749760
+    }
+  ]
+}

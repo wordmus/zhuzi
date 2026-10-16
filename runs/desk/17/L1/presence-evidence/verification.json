@@ -1,0 +1,27 @@
+{
+  "screenshots": [
+    "runs/desk/17/L1/presence-evidence/desk-before-extract.png",
+    "runs/desk/17/L1/presence-evidence/desk-short-slip.png",
+    "runs/desk/17/L1/presence-evidence/desk-full-letter.png",
+    "runs/desk/17/L1/presence-evidence/no-record-no-withheld.png",
+    "runs/desk/17/L1/presence-evidence/old-same-camera.png",
+    "runs/desk/17/L1/presence-evidence/old-new-same-camera-comparison.png",
+    "runs/desk/17/L1/presence-evidence/studio-lowering-slip.png",
+    "runs/desk/17/L1/presence-evidence/studio-full-letter.png",
+    "runs/desk/17/L1/presence-evidence/desk-short-slip-narrow.png"
+  ],
+  "checks": [
+    "one letter per act + receipts + consistency",
+    "short first-person sentences",
+    "missing withheld absent",
+    "visible physical slips + main text≤30",
+    "console errors 0"
+  ],
+  "mainChars": [
+    9,
+    9,
+    9,
+    9
+  ],
+  "errors": []
+}

@@ -1,0 +1,198 @@
+{
+  "intent": "east-suburb-3d",
+  "seed": 5,
+  "tier": "L3",
+  "when": "2026-10-16T17:51:52.918Z",
+  "status": "ok",
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": []
+  },
+  "build": {
+    "ok": true,
+    "ms": 552,
+    "bytes": 11424699,
+    "singleFile": true,
+    "external": []
+  },
+  "play": {
+    "done": true,
+    "reason": "done",
+    "seconds": 50.2,
+    "steps": 4,
+    "stepLog": [
+      {
+        "i": 0,
+        "act": "east3d",
+        "aff": "east-crack",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 1,
+        "act": "east3d",
+        "aff": "east-crack",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 2,
+        "act": "east3d",
+        "aff": "east-sky",
+        "prefer": "first",
+        "progressed": true
+      },
+      {
+        "i": 3,
+        "act": "east3d",
+        "aff": "east-sky",
+        "prefer": "least-clicked",
+        "progressed": true
+      }
+    ],
+    "shots": [
+      "01-east3d-enter.png",
+      "02-east3d-s0.png",
+      "03-east3d-s1.png",
+      "04-east3d-s2.png",
+      "05-east3d-s3.png",
+      "06-final-done.png"
+    ],
+    "traceEvents": 39,
+    "errors": 0,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "fallbackClicks": 0,
+    "firstActionSec": 0.338,
+    "stageFpsP5": 59.523809523824994,
+    "ledger": null,
+    "acts": [
+      {
+        "act": "east3d",
+        "expected": "日轮与禾的一句",
+        "entered": true,
+        "exited": true,
+        "durationMs": 50242,
+        "firstAffMs": 221,
+        "firstActionMs": 2492,
+        "predictedFirstActionMs": 1200,
+        "note": "首个动作 2492ms，比预演的 1200ms 慢很多（模拟玩家要先等画面稳定约 450ms）",
+        "lines": [
+          "天老爷，东郊还有我呢。"
+        ]
+      }
+    ]
+  },
+  "seconds": 51.1,
+  "files": [
+    {
+      "path": "bench.json",
+      "bytes": 5846
+    },
+    {
+      "path": "curve.csv",
+      "bytes": 148
+    },
+    {
+      "path": "idle-evidence/idle-no-preference-10s.png",
+      "bytes": 398562
+    },
+    {
+      "path": "idle-evidence/idle-no-preference-2s.png",
+      "bytes": 555038
+    },
+    {
+      "path": "idle-evidence/idle-no-preference-35s.png",
+      "bytes": 151313
+    },
+    {
+      "path": "idle-evidence/idle-no-preference-48s.png",
+      "bytes": 332552
+    },
+    {
+      "path": "idle-evidence/idle-no-preference-55s.png",
+      "bytes": 332796
+    },
+    {
+      "path": "idle-evidence/idle-no-preference.json",
+      "bytes": 1794
+    },
+    {
+      "path": "idle-evidence/idle-reduce-10s.png",
+      "bytes": 397371
+    },
+    {
+      "path": "idle-evidence/idle-reduce-2s.png",
+      "bytes": 397858
+    },
+    {
+      "path": "idle-evidence/idle-reduce-35s.png",
+      "bytes": 270783
+    },
+    {
+      "path": "idle-evidence/idle-reduce-48s.png",
+      "bytes": 285956
+    },
+    {
+      "path": "idle-evidence/idle-reduce-55s.png",
+      "bytes": 286244
+    },
+    {
+      "path": "idle-evidence/idle-reduce.json",
+      "bytes": 1793
+    },
+    {
+      "path": "index.html",
+      "bytes": 11424699
+    },
+    {
+      "path": "layers.json",
+      "bytes": 11210
+    },
+    {
+      "path": "plan.json",
+      "bytes": 15133
+    },
+    {
+      "path": "png-control/plan.json",
+      "bytes": 15133
+    },
+    {
+      "path": "png-control/report.json",
+      "bytes": 472
+    },
+    {
+      "path": "report.json",
+      "bytes": 4021
+    },
+    {
+      "path": "shots/01-east3d-enter.png",
+      "bytes": 554969
+    },
+    {
+      "path": "shots/02-east3d-s0.png",
+      "bytes": 520835
+    },
+    {
+      "path": "shots/03-east3d-s1.png",
+      "bytes": 471116
+    },
+    {
+      "path": "shots/04-east3d-s2.png",
+      "bytes": 189452
+    },
+    {
+      "path": "shots/05-east3d-s3.png",
+      "bytes": 148640
+    },
+    {
+      "path": "shots/06-final-done.png",
+      "bytes": 332281
+    },
+    {
+      "path": "trace.jsonl",
+      "bytes": 13973
+    }
+  ]
+}

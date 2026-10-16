@@ -22,6 +22,7 @@ export function studioLayout(w: number, h: number) {
   const desk = { x: w * (narrow ? .08 : .23), y: h * .43, w: w * (narrow ? .76 : .34), h: h * .34 };
   return { desk,
     caption: { x: desk.x + desk.w * .08, y: desk.y + desk.h * .21, w: desk.w * .84, h: desk.h * .34 },
+    presence: { x: desk.x + desk.w * .19, y: desk.y + desk.h * .73, w: desk.w * .72, h: desk.h * .2 },
     action: { x: desk.x + desk.w * .1, y: desk.y + desk.h * .12, w: desk.w * .8, h: desk.h * .76 },
   };
 }

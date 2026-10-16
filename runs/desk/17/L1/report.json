@@ -1,0 +1,176 @@
+{
+  "intent": "desk",
+  "seed": 17,
+  "tier": "L1",
+  "when": "2026-10-16T18:19:07.753Z",
+  "status": "ok",
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": []
+  },
+  "build": {
+    "ok": true,
+    "bytes": 11808009,
+    "singleFile": true,
+    "external": []
+  },
+  "play": {
+    "done": true,
+    "reason": "done",
+    "seconds": 12.5,
+    "steps": 4,
+    "stepLog": [
+      {
+        "i": 0,
+        "act": "desk-entry",
+        "aff": "desk-in",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 1,
+        "act": "desk-mentor",
+        "aff": "desk-doing",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 2,
+        "act": "desk-directors",
+        "aff": "desk-shelf-in",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 3,
+        "act": "desk-shelf",
+        "aff": "desk-open",
+        "prefer": "focus",
+        "progressed": true
+      }
+    ],
+    "shots": [
+      "01-desk-entry-enter.png",
+      "02-desk-mentor-enter.png",
+      "03-desk-directors-enter.png",
+      "04-desk-shelf-enter.png",
+      "05-desk-shelf-s3.png",
+      "06-final-done.png"
+    ],
+    "traceEvents": 81,
+    "errors": 0,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "fallbackClicks": 0,
+    "firstActionSec": 0.229,
+    "stageFpsP5": 59.523809523812105,
+    "ledger": null,
+    "acts": [
+      {
+        "act": "desk-entry",
+        "expected": "案上一枚印",
+        "entered": true,
+        "exited": true,
+        "durationMs": 2263,
+        "firstAffMs": 8,
+        "firstActionMs": 2263,
+        "predictedFirstActionMs": 100,
+        "note": "首个动作 2263ms，比预演的 100ms 慢很多（模拟玩家要先等画面稳定约 450ms）",
+        "lines": [
+          "按顺序，轮到这件，先看《咖啡厅入口》"
+        ]
+      },
+      {
+        "act": "desk-mentor",
+        "expected": "导师对你的想法",
+        "entered": true,
+        "exited": true,
+        "durationMs": 3052,
+        "firstAffMs": 1,
+        "firstActionMs": 3052,
+        "predictedFirstActionMs": 100,
+        "note": "首个动作 3052ms，比预演的 100ms 慢很多（模拟玩家要先等画面稳定约 450ms）",
+        "lines": [
+          "上回停在案上，接着看"
+        ]
+      },
+      {
+        "act": "desk-directors",
+        "expected": "基础导演与叔衡各自的案",
+        "entered": true,
+        "exited": true,
+        "durationMs": 3054,
+        "firstAffMs": 1,
+        "firstActionMs": 3053,
+        "predictedFirstActionMs": 100,
+        "note": "首个动作 3053ms，比预演的 100ms 慢很多（模拟玩家要先等画面稳定约 450ms）",
+        "lines": [
+          "十样东西抢眼就找不到动作"
+        ]
+      },
+      {
+        "act": "desk-shelf",
+        "expected": "架上一件真实作品",
+        "entered": true,
+        "exited": true,
+        "durationMs": 3895,
+        "firstAffMs": 0,
+        "firstActionMs": 3083,
+        "predictedFirstActionMs": 100,
+        "note": "首个动作 3083ms，比预演的 100ms 慢很多（模拟玩家要先等画面稳定约 450ms）",
+        "lines": [
+          "抽出一卷，门便亮了"
+        ]
+      }
+    ]
+  },
+  "seconds": 14.1,
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 11806929
+    },
+    {
+      "path": "layers.json",
+      "bytes": 38526
+    },
+    {
+      "path": "plan.json",
+      "bytes": 761173
+    },
+    {
+      "path": "shots/01-desk-entry-enter.png",
+      "bytes": 472076
+    },
+    {
+      "path": "shots/02-desk-mentor-enter.png",
+      "bytes": 492498
+    },
+    {
+      "path": "shots/03-desk-directors-enter.png",
+      "bytes": 490109
+    },
+    {
+      "path": "shots/04-desk-shelf-enter.png",
+      "bytes": 517180
+    },
+    {
+      "path": "shots/05-desk-shelf-s3.png",
+      "bytes": 529331
+    },
+    {
+      "path": "shots/06-final-done.png",
+      "bytes": 529331
+    },
+    {
+      "path": "trace.jsonl",
+      "bytes": 43881
+    }
+  ],
+  "finalReplay": {
+    "command": "node frameworks/desk/replay-presence.mjs",
+    "entryHook": "not invoked",
+    "source": "same bench/lib + bench/player as present"
+  }
+}

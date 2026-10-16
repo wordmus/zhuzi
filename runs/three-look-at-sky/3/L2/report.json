@@ -1,0 +1,171 @@
+{
+  "intent": "three-look-at-sky",
+  "seed": 3,
+  "tier": "L2",
+  "when": "2026-10-16T17:47:25.518Z",
+  "status": "ok",
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": []
+  },
+  "build": {
+    "ok": true,
+    "ms": 553,
+    "bytes": 11431737,
+    "singleFile": true,
+    "external": []
+  },
+  "play": {
+    "done": true,
+    "reason": "done",
+    "seconds": 81.2,
+    "steps": 5,
+    "stepLog": [
+      {
+        "i": 0,
+        "act": "three-look-at-sky",
+        "aff": "film-soil",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 1,
+        "act": "three-look-at-sky",
+        "aff": "film-sun",
+        "prefer": "first",
+        "progressed": true
+      },
+      {
+        "i": 2,
+        "act": "three-look-at-sky",
+        "aff": "film-scroll",
+        "prefer": "first",
+        "progressed": true
+      },
+      {
+        "i": 3,
+        "act": "three-look-at-sky",
+        "aff": "film-gate",
+        "prefer": "first",
+        "progressed": true
+      },
+      {
+        "i": 4,
+        "act": "three-look-at-sky",
+        "aff": "film-city",
+        "prefer": "first",
+        "progressed": true
+      }
+    ],
+    "shots": [
+      "01-three-look-at-sky-enter.png",
+      "02-three-look-at-sky-s0.png",
+      "03-three-look-at-sky-s1.png",
+      "04-three-look-at-sky-s2.png",
+      "05-three-look-at-sky-s3.png",
+      "06-final-done.png"
+    ],
+    "traceEvents": 78,
+    "errors": 0,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "fallbackClicks": 0,
+    "firstActionSec": 0.136,
+    "stageFpsP5": 59.52380952385077,
+    "ledger": null,
+    "acts": [
+      {
+        "act": "three-look-at-sky",
+        "expected": "禾、季、田伯抬头看的是同一片天",
+        "entered": true,
+        "exited": true,
+        "durationMs": 81162,
+        "firstAffMs": 1,
+        "firstActionMs": 2214,
+        "predictedFirstActionMs": 1500,
+        "note": "与预演相近",
+        "lines": [
+          "再不落雨，我拿什么留住这块地？",
+          "土还攥在手里。",
+          "再不落雨，我拿什么留住这块地？",
+          "他等的云，还是没有来。",
+          "日头不肯挪开。",
+          "他等的云，还是没有来。",
+          "若天不肯答，我便问到人间去。",
+          "竹简上还空着一句。",
+          "若天不肯答，我便问到人间去。",
+          "田里的眼睛都望着我，我又望谁？",
+          "门外有人等粮。",
+          "田里的眼睛都望着我，我又望谁？",
+          "同一片天，谁先低下头去做事？",
+          "城里已有人动身。",
+          "同一片天，谁先低下头去做事？"
+        ]
+      }
+    ]
+  },
+  "seconds": 82.1,
+  "files": [
+    {
+      "path": "bench.json",
+      "bytes": 6600
+    },
+    {
+      "path": "curve.csv",
+      "bytes": 239
+    },
+    {
+      "path": "index.html",
+      "bytes": 11431737
+    },
+    {
+      "path": "layers.json",
+      "bytes": 28365
+    },
+    {
+      "path": "plan.json",
+      "bytes": 32181
+    },
+    {
+      "path": "png-control/plan.json",
+      "bytes": 32181
+    },
+    {
+      "path": "png-control/report.json",
+      "bytes": 473
+    },
+    {
+      "path": "report.json",
+      "bytes": 3837
+    },
+    {
+      "path": "shots/01-three-look-at-sky-enter.png",
+      "bytes": 895025
+    },
+    {
+      "path": "shots/02-three-look-at-sky-s0.png",
+      "bytes": 838638
+    },
+    {
+      "path": "shots/03-three-look-at-sky-s1.png",
+      "bytes": 713474
+    },
+    {
+      "path": "shots/04-three-look-at-sky-s2.png",
+      "bytes": 806830
+    },
+    {
+      "path": "shots/05-three-look-at-sky-s3.png",
+      "bytes": 837016
+    },
+    {
+      "path": "shots/06-final-done.png",
+      "bytes": 17763
+    },
+    {
+      "path": "trace.jsonl",
+      "bytes": 33221
+    }
+  ]
+}

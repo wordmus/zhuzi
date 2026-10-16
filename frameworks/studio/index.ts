@@ -1,5 +1,5 @@
 import type { ActResult, Framework } from '../../app/context';
-import type { ActorCue, ActorReport, Commission, DirectorAck, Letter } from '../../engine/layers/types';
+import type { ActorCue, ActorReport, Commission, DirectorAck, Letter, Presence } from '../../engine/layers/types';
 import { actorVoice } from '../../engine/layers/voice';
 import type { Fact } from '../../engine/types';
 import type { Affordance } from '../../engine/affordance';
@@ -8,6 +8,7 @@ import { createMentor } from '../../engine/layers/mentor';
 import { acceptCommission } from '../../director/pipeline/mentor';
 import { makeFigure } from '../../components/paint/figure';
 import { drawReturnScene, makeMentor } from '../vignette/scene';
+import { paintPresence, presenceDetail } from '../desk/presence';
 import { paintStudio, studioLayout, type StudioState } from './paint';
 
 const excerpt = (text: string, n = 18) => [...text].length <= n ? text : [...text].slice(0, n - 1).join('') + '…';
@@ -50,6 +51,8 @@ export const studio: Framework = {
     const director = makeFigure('ji', { pose: 'sit-look', facing: 1, onDark: true });
     const start = performance.now();
     let voiceAt = 0, voiceIndex = -1;
+    let presenceAt = 0, presenceRead = false, closePresence: (() => void) | undefined;
+    let presenceLetter: Letter<Presence> | undefined;
     let phaseAt = start, finishAt = 0, control: Affordance | undefined;
     let planLetter: Letter<DirectorAck> | undefined, cueLetter: Letter<ActorCue> | undefined, reportLetter: Letter<ActorReport> | undefined;
     const facts: Fact[] = [];
@@ -60,7 +63,7 @@ export const studio: Framework = {
       caption.textContent = excerpt(text);
       caption.dataset.letter = letter;
       caption.dataset.field = field;
-      bus.log('line.say', { who: state.phase === 'commission' ? '导师' : state.phase === 'report' ? who : '叔衡', text: caption.textContent, fullText: text, letter, field, act: act.id });
+      bus.log('line.say', { who: field === 'sentence' ? '呈现' : state.phase === 'commission' ? '导师' : state.phase === 'report' ? who : '叔衡', text: caption.textContent, fullText: text, letter, field, act: act.id });
     };
     const sayVoice = (index: number) => {
       const text = reportLetter?.payload.voice?.[index];
@@ -79,9 +82,18 @@ export const studio: Framework = {
       drawReturnScene(c, w, h, mentor, { t: stage.time, revisiting: ctx.visit.n > 1, doorOpen: 0, ticketOpacity: 0, showSlips: false });
       // 原座位、导师、门均沿用归来场景坐标；案设在左侧空处。
       paintStudio(c, w, h, stage.time, state, director);
-      const box = studioLayout(w, h).caption;
+      const physical = studioLayout(w, h).presence;
+      const box = presenceAt ? { x: physical.x + physical.h * .9, y: physical.y, w: physical.w - physical.h, h: physical.h } : studioLayout(w, h).caption;
+      caption.style.fontSize = presenceAt ? `${Math.min(16, physical.h * .34)}px` : 'clamp(17px,1.7vw,22px)';
+      caption.style.pointerEvents = 'none';
       Object.assign(caption.style, { left: `${box.x}px`, top: `${box.y}px`, width: `${box.w}px`, height: `${box.h}px`, right: 'auto', bottom: 'auto' });
-      control?.setShape({ kind: 'rect', ...studioLayout(w, h).action });
+      if (presenceAt) {
+        const progress = stage.reducedMotion ? 1 : Math.max(0, Math.min(1, (performance.now() - presenceAt) / 650));
+        paintPresence(c, physical, progress);
+        caption.style.opacity = String(progress);
+        caption.style.transform = `translateY(${-(1 - progress) * 42}px)`;
+      }
+      control?.setShape({ kind: 'rect', ...(presenceAt ? studioLayout(w, h).presence : studioLayout(w, h).action) });
     };
     const action = (id: string, label: string, fn: () => void) => {
       control?.remove();
@@ -170,20 +182,35 @@ export const studio: Framework = {
         }
         if (now - phaseAt >= 2600) receiveReport();
       }
-      if (voiceIndex >= 0) {
+      if (voiceIndex >= 0 && !presenceAt) {
         const voice = reportLetter!.payload.voice!;
         if (now - voiceAt >= 1600 && voiceIndex + 1 < voice.length) sayVoice(voiceIndex + 1);
         caption.textContent = [...voice[voiceIndex]!].slice(0, 1 + Math.floor((now - voiceAt) / 55)).join('');
       }
-      if (finishAt) {
+      if (finishAt && !presenceRead) {
+        if (!presenceAt && now >= finishAt - 650) {
+          presenceAt = now; presenceLetter = layers.present(act.id);
+          tell(presenceLetter.payload.sentence, presenceLetter.id, 'sentence');
+          caption.dataset.presenceSentence = 'studio';
+          bus.log('world.event', { kind: 'studio.presence-lowered', act: act.id, letter: presenceLetter.id });
+          action('studio-presence', '拿起呈现短简', () => {
+            presenceRead = true;
+            closePresence = presenceDetail(presenceLetter!, () => { presenceRead = false; finishAt = performance.now() + 1000; });
+          });
+          // 可选的全文阅读不是推进下一幕的动作，自动试映不打开折页。
+          control!.el.removeAttribute('data-aff');
+          control!.el.dataset.presenceSlip = 'studio';
+          control!.el.setAttribute('aria-description', JSON.stringify(presenceLetter.payload));
+          finishAt = now + 2900;
+        }
         state.archive = Math.max(0, Math.min(1, (now - finishAt + 650) / 650));
-        if (state.archive > .1) caption.textContent = '';
+        if (state.archive > .1 && !presenceAt) caption.textContent = '';
         if (now >= finishAt) resolve();
       }
       draw();
     });
     try { await done; } finally {
-      offFrame(); offResize(); control?.remove(); caption.textContent = '';
+      closePresence?.(); offFrame(); offResize(); control?.remove(); caption.textContent = '';
       stage.removeLayer('studio'); stage.removeLayer('studio-caption'); ctx.lines.clear();
     }
     const result: ActResult = { act: act.id, data: { facts, letters: letterIds, sourceReport: source?.id ?? null,

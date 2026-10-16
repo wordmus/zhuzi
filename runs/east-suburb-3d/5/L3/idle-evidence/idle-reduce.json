@@ -1,0 +1,95 @@
+{
+  "done": true,
+  "state": {
+    "elapsed": 50,
+    "phase": "42–50",
+    "cracked": true,
+    "looked": true,
+    "gapCount": 1,
+    "handShifted": true,
+    "done": true,
+    "triangles": 39311,
+    "materials": 10,
+    "drawCalls": 38,
+    "peakDrawCalls": 38,
+    "reducedMotion": true
+  },
+  "clicks": 0,
+  "events": [
+    {
+      "kind": "world.event",
+      "elapsed": 0,
+      "act": "east3d",
+      "triangles": 39311,
+      "quality": 0.62,
+      "t": 221,
+      "eventKind": "east3d.start"
+    },
+    {
+      "kind": "world.event",
+      "elapsed": 3.007,
+      "phase": "3–24",
+      "t": 3229,
+      "eventKind": "east3d.phase"
+    },
+    {
+      "kind": "world.event",
+      "elapsed": 6.014,
+      "source": "self",
+      "t": 6235,
+      "eventKind": "east3d.crack"
+    },
+    {
+      "kind": "world.event",
+      "elapsed": 6.47,
+      "reason": "rubble",
+      "from": [
+        0.34,
+        0.11,
+        0.74
+      ],
+      "to": [
+        0.56,
+        0.13,
+        0.6
+      ],
+      "t": 6691,
+      "eventKind": "east3d.hand-shift"
+    },
+    {
+      "kind": "world.event",
+      "elapsed": 24.02,
+      "phase": "24–42",
+      "t": 24241,
+      "eventKind": "east3d.phase"
+    },
+    {
+      "kind": "world.event",
+      "elapsed": 32.01,
+      "source": "self",
+      "t": 32232,
+      "eventKind": "east3d.sky"
+    },
+    {
+      "kind": "world.event",
+      "elapsed": 42.01,
+      "phase": "42–50",
+      "t": 42232,
+      "eventKind": "east3d.phase"
+    },
+    {
+      "kind": "world.event",
+      "elapsed": 50,
+      "cracked": true,
+      "looked": true,
+      "gapCount": 1,
+      "handShifted": true,
+      "t": 50224,
+      "eventKind": "east3d.done"
+    }
+  ],
+  "lines": [
+    "天老爷，东郊还有我呢。"
+  ],
+  "finalColors": 327
+}

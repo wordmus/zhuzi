@@ -1,0 +1,122 @@
+[
+  {
+    "file": "assets/library/shelf-gallery/plates/01-threshold.png",
+    "width": 1280,
+    "height": 720,
+    "sameDimensions": true,
+    "alphaMaxDelta": 0,
+    "nonOpaquePixels": 0
+  },
+  {
+    "file": "assets/library/shelf-gallery/plates/02-drought.png",
+    "width": 1280,
+    "height": 720,
+    "sameDimensions": true,
+    "alphaMaxDelta": 0,
+    "nonOpaquePixels": 0
+  },
+  {
+    "file": "assets/library/shelf-gallery/plates/03-studio.png",
+    "width": 1280,
+    "height": 720,
+    "sameDimensions": true,
+    "alphaMaxDelta": 0,
+    "nonOpaquePixels": 0
+  },
+  {
+    "file": "assets/library/shelf-gallery/plates/04-return.png",
+    "width": 1280,
+    "height": 720,
+    "sameDimensions": true,
+    "alphaMaxDelta": 0,
+    "nonOpaquePixels": 0
+  },
+  {
+    "file": "assets/library/shelf-gallery/plates/05-chronicle.png",
+    "width": 1280,
+    "height": 720,
+    "sameDimensions": true,
+    "alphaMaxDelta": 0,
+    "nonOpaquePixels": 0
+  },
+  {
+    "file": "assets/library/shelf-gallery/plates/06-jixia.png",
+    "width": 1280,
+    "height": 720,
+    "sameDimensions": true,
+    "alphaMaxDelta": 0,
+    "nonOpaquePixels": 0
+  },
+  {
+    "file": "assets/library/shelf-gallery/plates/07-east-design.png",
+    "width": 1280,
+    "height": 800,
+    "sameDimensions": true,
+    "alphaMaxDelta": 0,
+    "nonOpaquePixels": 0
+  },
+  {
+    "file": "assets/library/shelf-gallery/plates/08-east-delivered.png",
+    "width": 1280,
+    "height": 720,
+    "sameDimensions": true,
+    "alphaMaxDelta": 0,
+    "nonOpaquePixels": 0
+  },
+  {
+    "file": "assets/library/three-look-at-sky/refs/style-probe.png",
+    "width": 1536,
+    "height": 1024,
+    "sameDimensions": true,
+    "alphaMaxDelta": 0,
+    "nonOpaquePixels": 0
+  },
+  {
+    "file": "assets/library/three-look-at-sky/shots/shot-01-he.png",
+    "width": 1536,
+    "height": 1024,
+    "sameDimensions": true,
+    "alphaMaxDelta": 0,
+    "nonOpaquePixels": 0
+  },
+  {
+    "file": "assets/library/three-look-at-sky/shots/shot-02-sky.png",
+    "width": 1536,
+    "height": 1024,
+    "sameDimensions": true,
+    "alphaMaxDelta": 0,
+    "nonOpaquePixels": 0
+  },
+  {
+    "file": "assets/library/three-look-at-sky/shots/shot-03-ji.png",
+    "width": 1536,
+    "height": 1024,
+    "sameDimensions": true,
+    "alphaMaxDelta": 0,
+    "nonOpaquePixels": 0
+  },
+  {
+    "file": "assets/library/three-look-at-sky/shots/shot-04-tianbo.png",
+    "width": 1536,
+    "height": 1024,
+    "sameDimensions": true,
+    "alphaMaxDelta": 0,
+    "nonOpaquePixels": 0
+  },
+  {
+    "file": "assets/library/three-look-at-sky/shots/shot-05-city.png",
+    "width": 1536,
+    "height": 1024,
+    "sameDimensions": true,
+    "alphaMaxDelta": 0,
+    "nonOpaquePixels": 0
+  },
+  {
+    "file": "node_modules/.cache/zhuzi-slim/alpha-probe.png",
+    "width": 32,
+    "height": 32,
+    "sameDimensions": true,
+    "alphaMaxDelta": 0,
+    "nonOpaquePixels": 1020
+  }
+]

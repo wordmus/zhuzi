@@ -1,0 +1,1132 @@
+{
+  "id": "shelf-gallery",
+  "version": 1,
+  "intent": {
+    "id": "shelf-gallery",
+    "title": "作品架",
+    "hypothesis": {
+      "id": "h-shelf",
+      "text": "把交付与改版铺开，你会愿意停在某张画上追问",
+      "mode": "probe"
+    },
+    "target": "拖开一卷既有作品，看见从灯前到东郊的变化，离开后记住停处",
+    "stop": "展卷到底或收起",
+    "form": "gallery",
+    "perspective": {
+      "who": "你",
+      "control": 1
+    },
+    "era": "zhanguo",
+    "durationMin": 2,
+    "director": "shuheng",
+    "notes": "L2 图集；8 张本项目现有截图/空间稿，原样复制；来源和许可限制见 assets/library/shelf-gallery/recipe.json。"
+  },
+  "seed": 3,
+  "tier": "L2",
+  "director": {
+    "id": "shuheng",
+    "name": "叔衡",
+    "rules": [
+      "one-focus",
+      "first-3s",
+      "one-sentence",
+      "no-labels",
+      "first-loop-readable",
+      "feedback",
+      "attention-budget",
+      "behavior-first",
+      "tradeoff-visible",
+      "landmarks-fixed",
+      "change-in-front",
+      "one-take",
+      "tone",
+      "give-then-ask",
+      "continuity",
+      "response",
+      "anticipate",
+      "timing",
+      "persistence",
+      "control",
+      "peak-end",
+      "leave-a-thread",
+      "fold-when-understood",
+      "plans-not-state",
+      "revision-trace",
+      "change-budget",
+      "sediment",
+      "chronicle"
+    ]
+  },
+  "era": "zhanguo",
+  "acts": [
+    {
+      "id": "shelf-gallery",
+      "framework": "gallery",
+      "author": "叔衡",
+      "focus": "plate-01",
+      "elements": [
+        {
+          "id": "plate-01",
+          "component": "gallery-plate",
+          "asset": "shelf-gallery/plates/01-threshold.png",
+          "represents": "初访的门",
+          "actions": [
+            "看",
+            "追问"
+          ],
+          "prominence": {
+            "x": 0.5,
+            "y": 0.5,
+            "scale": 1,
+            "brightness": 1,
+            "folded": false
+          },
+          "predict": "你会在这一张停一下"
+        },
+        {
+          "id": "plate-02",
+          "component": "gallery-plate",
+          "asset": "shelf-gallery/plates/02-drought.png",
+          "represents": "旱田里的禾",
+          "actions": [
+            "看",
+            "追问"
+          ],
+          "prominence": {
+            "x": 0.5,
+            "y": 0.5,
+            "scale": 1,
+            "brightness": 0.45,
+            "folded": false
+          },
+          "predict": "你会在这一张停一下"
+        },
+        {
+          "id": "plate-03",
+          "component": "gallery-plate",
+          "asset": "shelf-gallery/plates/03-studio.png",
+          "represents": "最初的工作室",
+          "actions": [
+            "看",
+            "追问"
+          ],
+          "prominence": {
+            "x": 0.5,
+            "y": 0.5,
+            "scale": 1,
+            "brightness": 0.45,
+            "folded": false
+          },
+          "predict": "你会在这一张停一下"
+        },
+        {
+          "id": "plate-04",
+          "component": "gallery-plate",
+          "asset": "shelf-gallery/plates/04-return.png",
+          "represents": "回到灯前",
+          "actions": [
+            "看",
+            "追问"
+          ],
+          "prominence": {
+            "x": 0.5,
+            "y": 0.5,
+            "scale": 1,
+            "brightness": 0.45,
+            "folded": false
+          },
+          "predict": "你会在这一张停一下"
+        },
+        {
+          "id": "plate-05",
+          "component": "gallery-plate",
+          "asset": "shelf-gallery/plates/05-chronicle.png",
+          "represents": "五十年长卷",
+          "actions": [
+            "看",
+            "追问"
+          ],
+          "prominence": {
+            "x": 0.5,
+            "y": 0.5,
+            "scale": 1,
+            "brightness": 0.45,
+            "folded": false
+          },
+          "predict": "你会在这一张停一下"
+        },
+        {
+          "id": "plate-06",
+          "component": "gallery-plate",
+          "asset": "shelf-gallery/plates/06-jixia.png",
+          "represents": "稷下的争辩",
+          "actions": [
+            "看",
+            "追问"
+          ],
+          "prominence": {
+            "x": 0.5,
+            "y": 0.5,
+            "scale": 1,
+            "brightness": 0.45,
+            "folded": false
+          },
+          "predict": "你会在这一张停一下"
+        },
+        {
+          "id": "plate-07",
+          "component": "gallery-plate",
+          "asset": "shelf-gallery/plates/07-east-design.png",
+          "represents": "东郊的空间稿",
+          "actions": [
+            "看",
+            "追问"
+          ],
+          "prominence": {
+            "x": 0.5,
+            "y": 0.5,
+            "scale": 1,
+            "brightness": 0.45,
+            "folded": false
+          },
+          "predict": "你会在这一张停一下"
+        },
+        {
+          "id": "plate-08",
+          "component": "gallery-plate",
+          "asset": "shelf-gallery/plates/08-east-delivered.png",
+          "represents": "东郊的交付画面",
+          "actions": [
+            "看",
+            "追问"
+          ],
+          "prominence": {
+            "x": 0.5,
+            "y": 0.5,
+            "scale": 1,
+            "brightness": 0.45,
+            "folded": false
+          },
+          "predict": "你会在这一张停一下"
+        }
+      ],
+      "lines": [
+        {
+          "id": "plate-01-caption",
+          "who": "导师",
+          "text": "门后先亮起一盏灯",
+          "when": "plate:plate-01"
+        },
+        {
+          "id": "plate-01-question",
+          "who": "导师",
+          "text": "推门以后，你先看见了谁？",
+          "when": "after:plate-01"
+        },
+        {
+          "id": "plate-02-caption",
+          "who": "导师",
+          "text": "旱田把禾留在原地",
+          "when": "plate:plate-02"
+        },
+        {
+          "id": "plate-02-question",
+          "who": "导师",
+          "text": "若天不答，禾还能向谁开口？",
+          "when": "after:plate-02"
+        },
+        {
+          "id": "plate-03-caption",
+          "who": "导师",
+          "text": "作品开始有了自己的架子",
+          "when": "plate:plate-03"
+        },
+        {
+          "id": "plate-03-question",
+          "who": "导师",
+          "text": "你会把哪件作品留在手边？",
+          "when": "after:plate-03"
+        },
+        {
+          "id": "plate-04-caption",
+          "who": "导师",
+          "text": "走过一遭，灯下多了痕迹",
+          "when": "plate:plate-04"
+        },
+        {
+          "id": "plate-04-question",
+          "who": "导师",
+          "text": "再来一次，你还会走同一条路吗？",
+          "when": "after:plate-04"
+        },
+        {
+          "id": "plate-05-caption",
+          "who": "导师",
+          "text": "一幕之间，岁月已经过去",
+          "when": "plate:plate-05"
+        },
+        {
+          "id": "plate-05-question",
+          "who": "导师",
+          "text": "岁月拿走的，谁还记得？",
+          "when": "after:plate-05"
+        },
+        {
+          "id": "plate-06-caption",
+          "who": "导师",
+          "text": "话传到另一人耳里就变了",
+          "when": "plate:plate-06"
+        },
+        {
+          "id": "plate-06-question",
+          "who": "导师",
+          "text": "同一句话，为何各人听见不同？",
+          "when": "after:plate-06"
+        },
+        {
+          "id": "plate-07-caption",
+          "who": "导师",
+          "text": "纸上的东郊开始有了远近",
+          "when": "plate:plate-07"
+        },
+        {
+          "id": "plate-07-question",
+          "who": "导师",
+          "text": "换一个站位，你还认得这片田吗？",
+          "when": "after:plate-07"
+        },
+        {
+          "id": "plate-08-caption",
+          "who": "导师",
+          "text": "禾终于能在天地间抬头",
+          "when": "plate:plate-08"
+        },
+        {
+          "id": "plate-08-question",
+          "who": "导师",
+          "text": "景深变了，禾的难处变了吗？",
+          "when": "after:plate-08"
+        }
+      ],
+      "reveal": [
+        "plate-01",
+        "plate-02",
+        "plate-03",
+        "plate-04",
+        "plate-05",
+        "plate-06",
+        "plate-07",
+        "plate-08"
+      ],
+      "withhold": [
+        "长篇说明",
+        "自动播放"
+      ],
+      "exit": "展卷到底或收起",
+      "predict": {
+        "firstLook": "plate-01",
+        "dwell": "plate-03",
+        "surprise": "同一片旱田有了远近",
+        "firstActionMs": 800
+      },
+      "budget": {
+        "maxChars": 30,
+        "maxActionsFirst3s": 1,
+        "feedbackMs": 100
+      }
+    }
+  ],
+  "world": {
+    "seed": 3,
+    "places": [
+      {
+        "id": "home",
+        "name": "家",
+        "x": 0.08,
+        "actions": [
+          "rest",
+          "eat"
+        ]
+      },
+      {
+        "id": "field",
+        "name": "田",
+        "x": 0.26,
+        "actions": [
+          "wait-rain"
+        ]
+      },
+      {
+        "id": "well",
+        "name": "井",
+        "x": 0.43,
+        "actions": [
+          "listen"
+        ]
+      },
+      {
+        "id": "altar",
+        "name": "社树",
+        "x": 0.59,
+        "actions": [
+          "pray"
+        ]
+      },
+      {
+        "id": "gate",
+        "name": "田伯家",
+        "x": 0.77,
+        "actions": [
+          "borrow"
+        ]
+      },
+      {
+        "id": "road",
+        "name": "路口",
+        "x": 0.94,
+        "actions": [
+          "look",
+          "leave"
+        ]
+      }
+    ],
+    "people": [
+      {
+        "id": "he",
+        "name": "禾",
+        "role": "actor",
+        "home": "home"
+      },
+      {
+        "id": "tianbo",
+        "name": "田伯",
+        "role": "lord",
+        "home": "gate"
+      },
+      {
+        "id": "ji",
+        "name": "季",
+        "role": "scholar",
+        "home": "road"
+      },
+      {
+        "id": "sang",
+        "name": "桑",
+        "role": "family",
+        "home": "home"
+      },
+      {
+        "id": "xiaoshi",
+        "name": "小石",
+        "role": "family",
+        "home": "home"
+      },
+      {
+        "id": "mu",
+        "name": "母",
+        "role": "family",
+        "home": "home"
+      },
+      {
+        "id": "linren",
+        "name": "邻人",
+        "role": "neighbor",
+        "home": "well"
+      },
+      {
+        "id": "luren",
+        "name": "路人",
+        "role": "neighbor",
+        "home": "road"
+      }
+    ],
+    "he": {
+      "temperament": {
+        "pride": 0.74,
+        "awe": 0.59,
+        "duty": 0.77,
+        "attachment": 0.79,
+        "patience": 0.54
+      },
+      "belief": {
+        "qing": 0.5617191481031477,
+        "li": 0.1276074884040281,
+        "ming": 0.31067336349282415
+      }
+    },
+    "tianbo": {
+      "weights": {
+        "qing": 0.23004122791515852,
+        "li": 0.18703124207740457,
+        "ming": 0.5829275300074369
+      },
+      "pride": 0.57,
+      "granary": [
+        0.91,
+        0.84,
+        0.7,
+        0.65
+      ],
+      "requisitionDay": 7
+    },
+    "seasons": [
+      {
+        "season": "spring",
+        "days": 3,
+        "rainExpect": 0.77,
+        "rainActual": 0.09
+      },
+      {
+        "season": "summer",
+        "days": 3,
+        "rainExpect": 0.62,
+        "rainActual": 0.04
+      },
+      {
+        "season": "autumn",
+        "days": 3,
+        "rainExpect": 0.41,
+        "rainActual": 0.02
+      },
+      {
+        "season": "winter",
+        "days": 2,
+        "rainExpect": 0.21,
+        "rainActual": 0.05
+      }
+    ],
+    "omen": {
+      "kind": "comet",
+      "day": 6
+    },
+    "clues": [
+      {
+        "id": "c1",
+        "text": "田伯说，旧情不能当粟吃。",
+        "trait": "qing",
+        "sign": -1,
+        "truthful": true,
+        "place": "road",
+        "day": 1,
+        "from": "luren"
+      },
+      {
+        "id": "c2",
+        "text": "旧人上门，田伯让他在门外等。",
+        "trait": "qing",
+        "sign": -1,
+        "truthful": true,
+        "place": "well",
+        "day": 4,
+        "from": "linren"
+      },
+      {
+        "id": "c3",
+        "text": "田伯前日在门口施粥，跪了一地人。",
+        "trait": "ming",
+        "sign": 1,
+        "truthful": true,
+        "place": "home",
+        "day": 7,
+        "from": "sang"
+      },
+      {
+        "id": "c4",
+        "text": "田伯把仓里的粟卖进城，一石三百钱。",
+        "trait": "li",
+        "sign": 1,
+        "truthful": false,
+        "place": "well",
+        "day": 8,
+        "from": "linren"
+      },
+      {
+        "id": "c5",
+        "text": "人在门口跪三天，田伯也不出来。",
+        "trait": "ming",
+        "sign": -1,
+        "truthful": false,
+        "place": "well",
+        "day": 8,
+        "from": "linren"
+      }
+    ],
+    "jarDays": 28,
+    "family": [
+      {
+        "id": "sang",
+        "name": "桑",
+        "role": "wife"
+      },
+      {
+        "id": "xiaoshi",
+        "name": "小石",
+        "role": "child"
+      },
+      {
+        "id": "mu",
+        "name": "母",
+        "role": "mother"
+      }
+    ],
+    "unfoldPressure": 0.52
+  },
+  "constitution": [
+    "门永远推得开",
+    "你永远能对机器说话",
+    "你永远能回到上一版",
+    "地标不动：你的座位、导师的位置、通往世界的门",
+    "已交付的版本只增不改"
+  ],
+  "rehearsal": [
+    {
+      "act": "shelf-gallery",
+      "expect": "同一片旱田有了远近",
+      "risk": ""
+    }
+  ],
+  "ack": {
+    "planId": "shelf-gallery",
+    "version": 1,
+    "director": {
+      "id": "shuheng",
+      "name": "叔衡"
+    },
+    "acts": [
+      {
+        "id": "shelf-gallery",
+        "framework": "gallery",
+        "author": "叔衡",
+        "focus": "plate-01"
+      }
+    ],
+    "accept": "这1幕等候导师委托。",
+    "changes": [],
+    "rehearsal": [
+      {
+        "act": "shelf-gallery",
+        "expect": "同一片旱田有了远近",
+        "risk": ""
+      }
+    ]
+  },
+  "cues": {
+    "shelf-gallery:禾": {
+      "act": "shelf-gallery",
+      "who": "禾",
+      "expects": "同一片旱田有了远近",
+      "freedom": "按自身心智、所见事实与世界压力行动；可以偏离导演预期",
+      "initialState": {
+        "seed": 3,
+        "focus": "plate-01",
+        "person": {
+          "id": "he",
+          "name": "禾",
+          "role": "actor",
+          "home": "home"
+        },
+        "world": {
+          "seed": 3,
+          "places": [
+            {
+              "id": "home",
+              "name": "家",
+              "x": 0.08,
+              "actions": [
+                "rest",
+                "eat"
+              ]
+            },
+            {
+              "id": "field",
+              "name": "田",
+              "x": 0.26,
+              "actions": [
+                "wait-rain"
+              ]
+            },
+            {
+              "id": "well",
+              "name": "井",
+              "x": 0.43,
+              "actions": [
+                "listen"
+              ]
+            },
+            {
+              "id": "altar",
+              "name": "社树",
+              "x": 0.59,
+              "actions": [
+                "pray"
+              ]
+            },
+            {
+              "id": "gate",
+              "name": "田伯家",
+              "x": 0.77,
+              "actions": [
+                "borrow"
+              ]
+            },
+            {
+              "id": "road",
+              "name": "路口",
+              "x": 0.94,
+              "actions": [
+                "look",
+                "leave"
+              ]
+            }
+          ],
+          "people": [
+            {
+              "id": "he",
+              "name": "禾",
+              "role": "actor",
+              "home": "home"
+            },
+            {
+              "id": "tianbo",
+              "name": "田伯",
+              "role": "lord",
+              "home": "gate"
+            },
+            {
+              "id": "ji",
+              "name": "季",
+              "role": "scholar",
+              "home": "road"
+            },
+            {
+              "id": "sang",
+              "name": "桑",
+              "role": "family",
+              "home": "home"
+            },
+            {
+              "id": "xiaoshi",
+              "name": "小石",
+              "role": "family",
+              "home": "home"
+            },
+            {
+              "id": "mu",
+              "name": "母",
+              "role": "family",
+              "home": "home"
+            },
+            {
+              "id": "linren",
+              "name": "邻人",
+              "role": "neighbor",
+              "home": "well"
+            },
+            {
+              "id": "luren",
+              "name": "路人",
+              "role": "neighbor",
+              "home": "road"
+            }
+          ],
+          "he": {
+            "temperament": {
+              "pride": 0.74,
+              "awe": 0.59,
+              "duty": 0.77,
+              "attachment": 0.79,
+              "patience": 0.54
+            },
+            "belief": {
+              "qing": 0.5617191481031477,
+              "li": 0.1276074884040281,
+              "ming": 0.31067336349282415
+            }
+          },
+          "tianbo": {
+            "weights": {
+              "qing": 0.23004122791515852,
+              "li": 0.18703124207740457,
+              "ming": 0.5829275300074369
+            },
+            "pride": 0.57,
+            "granary": [
+              0.91,
+              0.84,
+              0.7,
+              0.65
+            ],
+            "requisitionDay": 7
+          },
+          "seasons": [
+            {
+              "season": "spring",
+              "days": 3,
+              "rainExpect": 0.77,
+              "rainActual": 0.09
+            },
+            {
+              "season": "summer",
+              "days": 3,
+              "rainExpect": 0.62,
+              "rainActual": 0.04
+            },
+            {
+              "season": "autumn",
+              "days": 3,
+              "rainExpect": 0.41,
+              "rainActual": 0.02
+            },
+            {
+              "season": "winter",
+              "days": 2,
+              "rainExpect": 0.21,
+              "rainActual": 0.05
+            }
+          ],
+          "omen": {
+            "kind": "comet",
+            "day": 6
+          },
+          "clues": [
+            {
+              "id": "c1",
+              "text": "田伯说，旧情不能当粟吃。",
+              "trait": "qing",
+              "sign": -1,
+              "truthful": true,
+              "place": "road",
+              "day": 1,
+              "from": "luren"
+            },
+            {
+              "id": "c2",
+              "text": "旧人上门，田伯让他在门外等。",
+              "trait": "qing",
+              "sign": -1,
+              "truthful": true,
+              "place": "well",
+              "day": 4,
+              "from": "linren"
+            },
+            {
+              "id": "c3",
+              "text": "田伯前日在门口施粥，跪了一地人。",
+              "trait": "ming",
+              "sign": 1,
+              "truthful": true,
+              "place": "home",
+              "day": 7,
+              "from": "sang"
+            },
+            {
+              "id": "c4",
+              "text": "田伯把仓里的粟卖进城，一石三百钱。",
+              "trait": "li",
+              "sign": 1,
+              "truthful": false,
+              "place": "well",
+              "day": 8,
+              "from": "linren"
+            },
+            {
+              "id": "c5",
+              "text": "人在门口跪三天，田伯也不出来。",
+              "trait": "ming",
+              "sign": -1,
+              "truthful": false,
+              "place": "well",
+              "day": 8,
+              "from": "linren"
+            }
+          ],
+          "jarDays": 28,
+          "family": [
+            {
+              "id": "sang",
+              "name": "桑",
+              "role": "wife"
+            },
+            {
+              "id": "xiaoshi",
+              "name": "小石",
+              "role": "child"
+            },
+            {
+              "id": "mu",
+              "name": "母",
+              "role": "mother"
+            }
+          ],
+          "unfoldPressure": 0.52
+        }
+      },
+      "constraints": [
+        "门永远推得开",
+        "你永远能对机器说话",
+        "你永远能回到上一版",
+        "地标不动：你的座位、导师的位置、通往世界的门",
+        "已交付的版本只增不改",
+        "不得把预演写成已发生的事实",
+        "每屏最多30字"
+      ]
+    },
+    "shelf-gallery:导师": {
+      "act": "shelf-gallery",
+      "who": "导师",
+      "expects": "同一片旱田有了远近",
+      "freedom": "按真实来访记忆说话，允许用户不留名字",
+      "initialState": {
+        "seed": 3,
+        "focus": "plate-01",
+        "person": {
+          "name": "导师"
+        },
+        "world": {
+          "seed": 3,
+          "places": [
+            {
+              "id": "home",
+              "name": "家",
+              "x": 0.08,
+              "actions": [
+                "rest",
+                "eat"
+              ]
+            },
+            {
+              "id": "field",
+              "name": "田",
+              "x": 0.26,
+              "actions": [
+                "wait-rain"
+              ]
+            },
+            {
+              "id": "well",
+              "name": "井",
+              "x": 0.43,
+              "actions": [
+                "listen"
+              ]
+            },
+            {
+              "id": "altar",
+              "name": "社树",
+              "x": 0.59,
+              "actions": [
+                "pray"
+              ]
+            },
+            {
+              "id": "gate",
+              "name": "田伯家",
+              "x": 0.77,
+              "actions": [
+                "borrow"
+              ]
+            },
+            {
+              "id": "road",
+              "name": "路口",
+              "x": 0.94,
+              "actions": [
+                "look",
+                "leave"
+              ]
+            }
+          ],
+          "people": [
+            {
+              "id": "he",
+              "name": "禾",
+              "role": "actor",
+              "home": "home"
+            },
+            {
+              "id": "tianbo",
+              "name": "田伯",
+              "role": "lord",
+              "home": "gate"
+            },
+            {
+              "id": "ji",
+              "name": "季",
+              "role": "scholar",
+              "home": "road"
+            },
+            {
+              "id": "sang",
+              "name": "桑",
+              "role": "family",
+              "home": "home"
+            },
+            {
+              "id": "xiaoshi",
+              "name": "小石",
+              "role": "family",
+              "home": "home"
+            },
+            {
+              "id": "mu",
+              "name": "母",
+              "role": "family",
+              "home": "home"
+            },
+            {
+              "id": "linren",
+              "name": "邻人",
+              "role": "neighbor",
+              "home": "well"
+            },
+            {
+              "id": "luren",
+              "name": "路人",
+              "role": "neighbor",
+              "home": "road"
+            }
+          ],
+          "he": {
+            "temperament": {
+              "pride": 0.74,
+              "awe": 0.59,
+              "duty": 0.77,
+              "attachment": 0.79,
+              "patience": 0.54
+            },
+            "belief": {
+              "qing": 0.5617191481031477,
+              "li": 0.1276074884040281,
+              "ming": 0.31067336349282415
+            }
+          },
+          "tianbo": {
+            "weights": {
+              "qing": 0.23004122791515852,
+              "li": 0.18703124207740457,
+              "ming": 0.5829275300074369
+            },
+            "pride": 0.57,
+            "granary": [
+              0.91,
+              0.84,
+              0.7,
+              0.65
+            ],
+            "requisitionDay": 7
+          },
+          "seasons": [
+            {
+              "season": "spring",
+              "days": 3,
+              "rainExpect": 0.77,
+              "rainActual": 0.09
+            },
+            {
+              "season": "summer",
+              "days": 3,
+              "rainExpect": 0.62,
+              "rainActual": 0.04
+            },
+            {
+              "season": "autumn",
+              "days": 3,
+              "rainExpect": 0.41,
+              "rainActual": 0.02
+            },
+            {
+              "season": "winter",
+              "days": 2,
+              "rainExpect": 0.21,
+              "rainActual": 0.05
+            }
+          ],
+          "omen": {
+            "kind": "comet",
+            "day": 6
+          },
+          "clues": [
+            {
+              "id": "c1",
+              "text": "田伯说，旧情不能当粟吃。",
+              "trait": "qing",
+              "sign": -1,
+              "truthful": true,
+              "place": "road",
+              "day": 1,
+              "from": "luren"
+            },
+            {
+              "id": "c2",
+              "text": "旧人上门，田伯让他在门外等。",
+              "trait": "qing",
+              "sign": -1,
+              "truthful": true,
+              "place": "well",
+              "day": 4,
+              "from": "linren"
+            },
+            {
+              "id": "c3",
+              "text": "田伯前日在门口施粥，跪了一地人。",
+              "trait": "ming",
+              "sign": 1,
+              "truthful": true,
+              "place": "home",
+              "day": 7,
+              "from": "sang"
+            },
+            {
+              "id": "c4",
+              "text": "田伯把仓里的粟卖进城，一石三百钱。",
+              "trait": "li",
+              "sign": 1,
+              "truthful": false,
+              "place": "well",
+              "day": 8,
+              "from": "linren"
+            },
+            {
+              "id": "c5",
+              "text": "人在门口跪三天，田伯也不出来。",
+              "trait": "ming",
+              "sign": -1,
+              "truthful": false,
+              "place": "well",
+              "day": 8,
+              "from": "linren"
+            }
+          ],
+          "jarDays": 28,
+          "family": [
+            {
+              "id": "sang",
+              "name": "桑",
+              "role": "wife"
+            },
+            {
+              "id": "xiaoshi",
+              "name": "小石",
+              "role": "child"
+            },
+            {
+              "id": "mu",
+              "name": "母",
+              "role": "mother"
+            }
+          ],
+          "unfoldPressure": 0.52
+        }
+      },
+      "constraints": [
+        "门永远推得开",
+        "你永远能对机器说话",
+        "你永远能回到上一版",
+        "地标不动：你的座位、导师的位置、通往世界的门",
+        "已交付的版本只增不改",
+        "不得把预演写成已发生的事实",
+        "每屏最多30字"
+      ]
+    }
+  }
+}

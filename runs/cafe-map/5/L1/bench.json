@@ -1,19 +1,19 @@
 {
   "target": "runs/cafe-map/5/L1",
-  "url": "http://127.0.0.1:63402/index.html",
-  "when": "2026-10-16T05:09:37.393Z",
+  "url": "http://127.0.0.1:55943/index.html",
+  "when": "2026-10-16T18:00:48.306Z",
   "verdict": "PASS",
   "hard": {
     "pass": 9,
     "total": 9
   },
-  "summary": "PASS hard 9/9 · first-action 0.37s · first3s 1 · feedback p90 393ms · max-chars 15 · errors 0 · fps-p5 60 · notext PASS · repro PASS · layers PASS",
+  "summary": "PASS hard 9/9 · first-action 0.28s · first3s 1 · feedback p90 328ms · max-chars 15 · errors 0 · fps-p5 60 · notext PASS · repro PASS · layers PASS",
   "checks": [
     {
       "id": "first-action",
       "label": "首个可操作元素",
       "pass": true,
-      "value": 0.36660000002384185,
+      "value": 0.28339999997615817,
       "limit": 0.6
     },
     {
@@ -28,7 +28,7 @@
       "id": "feedback",
       "label": "反馈延迟 p90",
       "pass": true,
-      "value": 393,
+      "value": 328,
       "limit": 900,
       "note": "样本 4，100ms 内有反馈的占 50%（目标 100ms）"
     },
@@ -53,7 +53,7 @@
       "pass": true,
       "value": 60,
       "limit": 55,
-      "note": "415 帧；整局 rAF p5=60；stage.fpsP5()=60（末 12 秒有探针，未计入）"
+      "note": "414 帧；整局 rAF p5=60；stage.fpsP5()=60（末 12 秒有探针，未计入）"
     },
     {
       "id": "notext",
@@ -93,7 +93,7 @@
       "pending": 0,
       "check": []
     },
-    "firstActionSec": 0.36660000002384185,
+    "firstActionSec": 0.28339999997615817,
     "first3s": {
       "perAct": [
         {
@@ -110,60 +110,60 @@
           "step": 0,
           "aff": "door",
           "ambient": {
-            "g": 0.00103515625,
-            "l": 0.000029974385525096735
+            "g": 0.0007400173611111111,
+            "l": 0.000019074608970516104
           },
           "first": {
-            "g": 0.11704969618055555,
-            "l": 0.20101640416371463
+            "g": 0.10550564236111111,
+            "l": 0.17909422856831436
           },
-          "latencyMs": 393,
+          "latencyMs": 328,
           "shots": 6
         },
         {
           "step": 1,
           "aff": "lamp-oil",
           "ambient": {
-            "g": 0.0014561631944444444,
-            "l": 0.0017881195646562446
+            "g": 0.003285590277777778,
+            "l": 0.0015487649772613142
           },
           "first": {
-            "g": 0.0076573350694444445,
-            "l": 0.019946215616244198
+            "g": 0.00804904513888889,
+            "l": 0.021631084182416355
           },
-          "latencyMs": 67,
-          "shots": 23
+          "latencyMs": 83,
+          "shots": 22
         },
         {
           "step": 2,
           "aff": "directors",
           "ambient": {
-            "g": 0.0007421875,
-            "l": 0.001984817595677324
+            "g": 0.0012424045138888888,
+            "l": 0.0033190791109343146
           },
           "first": {
-            "g": 0.006522352430555556,
-            "l": 0.016048431206802247
+            "g": 0.006587456597222222,
+            "l": 0.015969701490063482
           },
-          "latencyMs": 68,
-          "shots": 24
+          "latencyMs": 81,
+          "shots": 22
         },
         {
           "step": 4,
           "aff": "door",
           "ambient": {
-            "g": 0.0013519965277777777,
-            "l": 0.0017766093052899935
+            "g": 0.0012901475694444445,
+            "l": 0.0015030805183768854
           },
           "first": {
-            "g": 0.02244574652777778,
-            "l": 0.054315381346930106
+            "g": 0.016240234375,
+            "l": 0.038875610792436795
           },
-          "latencyMs": 209,
-          "shots": 23
+          "latencyMs": 135,
+          "shots": 24
         }
       ],
-      "p90Ms": 393,
+      "p90Ms": 328,
       "within100Ratio": 0.5
     },
     "chars": {
@@ -183,7 +183,7 @@
       "own": 59.523809523812105,
       "stage": 59.523809523812105,
       "usedStage": false,
-      "frames": 415
+      "frames": 414
     },
     "notext": {
       "done": true,
@@ -217,7 +217,7 @@
       "done": true,
       "reason": "done",
       "steps": 5,
-      "seconds": 22.3,
+      "seconds": 20.4,
       "fallbackClicks": 0,
       "shots": 0
     },
@@ -225,7 +225,7 @@
       "done": true,
       "reason": "done",
       "steps": 5,
-      "seconds": 7.9,
+      "seconds": 8,
       "fallbackClicks": 0,
       "shots": 0
     },
@@ -233,7 +233,7 @@
       "done": true,
       "reason": "done",
       "steps": 5,
-      "seconds": 8.1,
+      "seconds": 8,
       "fallbackClicks": 0,
       "shots": 0
     }
@@ -245,7 +245,7 @@
       "new_info": 9,
       "want_continue": 5,
       "numbers_on_screen": 0,
-      "words_on_screen": 11,
+      "words_on_screen": 10,
       "note": "5 次动手，起于 threshold/door；9 条新东西"
     }
   ],

@@ -1,0 +1,202 @@
+[
+  {
+    "file": "assets/library/east3d/ground.glb",
+    "before": 3763344,
+    "after": 3763344,
+    "mode": "unchanged",
+    "use": "east3d (imported into all forms)",
+    "jsonBytes": 1396,
+    "binaryBytes": 3761920,
+    "extensionsRequired": []
+  },
+  {
+    "file": "assets/library/east3d/he-placeholder.glb",
+    "before": 174372,
+    "after": 174372,
+    "mode": "unchanged",
+    "use": "east3d (imported into all forms)",
+    "jsonBytes": 20584,
+    "binaryBytes": 153760,
+    "extensionsRequired": []
+  },
+  {
+    "file": "assets/library/east3d/millet.glb",
+    "before": 8368,
+    "after": 8368,
+    "mode": "unchanged",
+    "use": "east3d (imported into all forms)",
+    "jsonBytes": 2292,
+    "binaryBytes": 6048,
+    "extensionsRequired": []
+  },
+  {
+    "file": "assets/library/east3d/pots.glb",
+    "before": 57492,
+    "after": 57492,
+    "mode": "unchanged",
+    "use": "east3d (imported into all forms)",
+    "jsonBytes": 3248,
+    "binaryBytes": 54216,
+    "extensionsRequired": []
+  },
+  {
+    "file": "assets/library/east3d/tree.glb",
+    "before": 102956,
+    "after": 102956,
+    "mode": "unchanged",
+    "use": "east3d (imported into all forms)",
+    "jsonBytes": 14800,
+    "binaryBytes": 88128,
+    "extensionsRequired": []
+  },
+  {
+    "file": "assets/library/east3d/well.glb",
+    "before": 17900,
+    "after": 17900,
+    "mode": "unchanged",
+    "use": "east3d (imported into all forms)",
+    "jsonBytes": 6088,
+    "binaryBytes": 11784,
+    "extensionsRequired": []
+  },
+  {
+    "file": "assets/library/shelf-gallery/plates/01-threshold.png",
+    "before": 1075242,
+    "after": 551332,
+    "mode": "near-lossless 90",
+    "key": "1880c79d260e615e58ae3236214c62de1d4361d0a508925c8d3dcccbd5cecb7c",
+    "cached": true,
+    "version": "1.6.0\nlibsharpyuv: 0.4.2",
+    "use": "gallery (imported into all forms)"
+  },
+  {
+    "file": "assets/library/shelf-gallery/plates/02-drought.png",
+    "before": 1326017,
+    "after": 816576,
+    "mode": "near-lossless 90",
+    "key": "c45b35ef74a24352a7a871d1856c3cdfb6aaf389bf542148f71e2a80c245afe0",
+    "cached": true,
+    "version": "1.6.0\nlibsharpyuv: 0.4.2",
+    "use": "gallery (imported into all forms)"
+  },
+  {
+    "file": "assets/library/shelf-gallery/plates/03-studio.png",
+    "before": 274829,
+    "after": 165878,
+    "mode": "near-lossless 90",
+    "key": "adb949039aec583f83f896a15e2175bae5b1e818be981e6a29e2f9029bbb08db",
+    "cached": true,
+    "version": "1.6.0\nlibsharpyuv: 0.4.2",
+    "use": "gallery (imported into all forms)"
+  },
+  {
+    "file": "assets/library/shelf-gallery/plates/04-return.png",
+    "before": 320607,
+    "after": 214174,
+    "mode": "near-lossless 90",
+    "key": "755fbd1b00d98fc2b469941c3f7327e5006fb2724b05b0a0361c27b06d2d3441",
+    "cached": true,
+    "version": "1.6.0\nlibsharpyuv: 0.4.2",
+    "use": "gallery (imported into all forms)"
+  },
+  {
+    "file": "assets/library/shelf-gallery/plates/05-chronicle.png",
+    "before": 23102,
+    "after": 9434,
+    "mode": "near-lossless 90",
+    "key": "8d876a454d96e830da221bf2091560661947964e02e2c70658b567c277bae849",
+    "cached": true,
+    "version": "1.6.0\nlibsharpyuv: 0.4.2",
+    "use": "gallery (imported into all forms)"
+  },
+  {
+    "file": "assets/library/shelf-gallery/plates/06-jixia.png",
+    "before": 1017684,
+    "after": 483870,
+    "mode": "near-lossless 90",
+    "key": "fd8e4ddc79ab0c5aa8d8d28761af57c9695e7432605c3a8118d7ee3a3ee3ff59",
+    "cached": true,
+    "version": "1.6.0\nlibsharpyuv: 0.4.2",
+    "use": "gallery (imported into all forms)"
+  },
+  {
+    "file": "assets/library/shelf-gallery/plates/07-east-design.png",
+    "before": 1067680,
+    "after": 13966,
+    "mode": "lossy q82 / alpha100",
+    "key": "192148d7653dd772a51e3bf2b2d21fe1696c444486209e5b6baddbb1d2c17408",
+    "cached": true,
+    "version": "1.6.0\nlibsharpyuv: 0.4.2",
+    "use": "gallery (imported into all forms)"
+  },
+  {
+    "file": "assets/library/shelf-gallery/plates/08-east-delivered.png",
+    "before": 163027,
+    "after": 19754,
+    "mode": "lossy q82 / alpha100",
+    "key": "aaecbaedb68035cde5bce72fbb679479201e4e4a29ab8a7e6eb9290072b9b747",
+    "cached": true,
+    "version": "1.6.0\nlibsharpyuv: 0.4.2",
+    "use": "gallery (imported into all forms)"
+  },
+  {
+    "file": "assets/library/three-look-at-sky/refs/style-probe.png",
+    "before": 3167478,
+    "after": 311896,
+    "mode": "lossy q82 / alpha100",
+    "key": "d5decd4f0e8bd82edeebaf68279c6912537e26a492f9860c081ef34cc28de064",
+    "cached": true,
+    "version": "1.6.0\nlibsharpyuv: 0.4.2",
+    "use": "reference only (not bundled)"
+  },
+  {
+    "file": "assets/library/three-look-at-sky/shots/shot-01-he.png",
+    "before": 3167478,
+    "after": 311896,
+    "mode": "lossy q82 / alpha100",
+    "key": "d5decd4f0e8bd82edeebaf68279c6912537e26a492f9860c081ef34cc28de064",
+    "cached": true,
+    "version": "1.6.0\nlibsharpyuv: 0.4.2",
+    "use": "film (imported into all forms)"
+  },
+  {
+    "file": "assets/library/three-look-at-sky/shots/shot-02-sky.png",
+    "before": 2716578,
+    "after": 172002,
+    "mode": "lossy q82 / alpha100",
+    "key": "2de6e957ac704d1d63df2a0be4f8b4fb56e8ac69becd08ea00da490d63e85f92",
+    "cached": true,
+    "version": "1.6.0\nlibsharpyuv: 0.4.2",
+    "use": "film (imported into all forms)"
+  },
+  {
+    "file": "assets/library/three-look-at-sky/shots/shot-03-ji.png",
+    "before": 2843043,
+    "after": 258020,
+    "mode": "lossy q82 / alpha100",
+    "key": "4505c0fa518fac964920cf752266769b54d6048d38a159774a7ad3bb05b2a55a",
+    "cached": true,
+    "version": "1.6.0\nlibsharpyuv: 0.4.2",
+    "use": "film (imported into all forms)"
+  },
+  {
+    "file": "assets/library/three-look-at-sky/shots/shot-04-tianbo.png",
+    "before": 3028581,
+    "after": 297172,
+    "mode": "lossy q82 / alpha100",
+    "key": "bb0ee14efa433c79f7f6935544560035c3e109508bd11e28d98b8c985588feb3",
+    "cached": true,
+    "version": "1.6.0\nlibsharpyuv: 0.4.2",
+    "use": "film (imported into all forms)"
+  },
+  {
+    "file": "assets/library/three-look-at-sky/shots/shot-05-city.png",
+    "before": 2880302,
+    "after": 255752,
+    "mode": "lossy q82 / alpha100",
+    "key": "78070ea5aa5a2f75d6e566d99e02baa8fa1cce2c782edcf96fa212620a9c8c46",
+    "cached": true,
+    "version": "1.6.0\nlibsharpyuv: 0.4.2",
+    "use": "film (imported into all forms)"
+  }
+]

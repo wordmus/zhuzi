@@ -1,8 +1,9 @@
 import type { Bus, TraceKind } from '../bus';
-import type { Plan } from '../types';
-import type { ActorCue, ActorReport, DirectorAck, Letter, LetterKind } from './types';
+import type { Plan, PlanAct } from '../types';
+import { presenceFor } from '../../frameworks/desk/presence-letter';
+import type { ActorCue, ActorReport, DirectorAck, Letter, LetterKind, Presence } from './types';
 
-export const LETTER_KINDS: readonly LetterKind[] = ['commission', 'plan', 'cue', 'report', 'retro'];
+export const LETTER_KINDS: readonly LetterKind[] = ['commission', 'plan', 'cue', 'report', 'retro', 'presence'];
 
 export function letterCounts(letters: Letter[]): Record<LetterKind, number> {
   return Object.fromEntries(LETTER_KINDS.map(kind => [kind, letters.filter(l => l.kind === kind).length])) as Record<LetterKind, number>;
@@ -13,7 +14,8 @@ export function checkLayerLetters(letters: Letter[], expectedActs: string[]): st
   const errors: string[] = [];
   const issue = (text: string) => errors.push(text);
   const actualActs = new Set(expectedActs);
-  for (const kind of LETTER_KINDS) if (!letters.some(l => l.kind === kind)) issue(`缺少 ${kind} 信`);
+  // 旧档案的五类契约不变；出现呈现信的新档案须逐幕完整。
+  for (const kind of LETTER_KINDS.filter(k => k !== 'presence')) if (!letters.some(l => l.kind === kind)) issue(`缺少 ${kind} 信`);
   const ids = new Set<string>();
   for (const [i, l] of letters.entries()) {
     if (ids.has(l.id)) issue(`信件编号重复：${l.id}`);
@@ -26,6 +28,13 @@ export function checkLayerLetters(letters: Letter[], expectedActs: string[]): st
     if ((l.kind === 'cue' || l.kind === 'report') && (!l.act || (l.payload as ActorCue).act !== l.act)) issue(`幕引用不一致：${l.id}`);
     const route = l.kind === 'commission' ? ['mentor', 'director'] : l.kind === 'plan' || l.kind === 'retro' ? ['director', 'mentor'] : null;
     if (route && (l.from !== route[0] || l.to !== route[1])) issue(`收发层不正确：${l.id}`);
+    if (l.kind === 'presence') {
+      if (l.from !== 'presentation' || l.to !== 'director') issue(`呈现信收发层不正确：${l.id}`);
+      if (!l.act) issue(`呈现信没有幕：${l.id}`);
+      const p = l.payload as Presence;
+      if (!p?.shape || !p.cost || !p.sentence) issue(`呈现信内容不完整：${l.id}`);
+      if ([...String(p?.sentence ?? '')].length > 18 || /[0-9０-９]|shape|withheld|cost|sentence|framework|focus/i.test(p?.sentence ?? '')) issue(`呈现信不是短自述：${l.id}`);
+    }
     if (l.kind === 'cue') {
       const cue = l.payload as ActorCue;
       if (l.from !== 'director' || l.to !== cue.who) issue(`提示收件人不正确：${l.id}`);
@@ -51,6 +60,9 @@ export function checkLayerLetters(letters: Letter[], expectedActs: string[]): st
     for (const r of ack.rehearsal ?? []) if (!actualActs.has(r.act)) issue(`预演引用不存在的幕：${r.act}`);
   }
   for (const id of actualActs) if (!letters.some(l => l.kind === 'cue' && l.act === id)) issue(`幕没有演员提示：${id}`);
+  if (letters.some(l => l.kind === 'presence')) for (const id of actualActs) {
+    if (letters.filter(l => l.kind === 'presence' && l.act === id).length !== 1) issue(`幕须恰有一封呈现信：${id}`);
+  }
   const firstPlanAt = letters.findIndex(l => l.kind === 'plan');
   for (const [i, l] of letters.entries()) {
     if (l.kind === 'cue' && (firstPlanAt < 0 || i < firstPlanAt)) issue(`提示早于方案：${l.id}`);
@@ -75,13 +87,25 @@ export function createLayerBus(bus: Bus, clock: () => { t: number; day?: number 
   const queue: Letter[] = [];
   const serial = new Map<string, number>();
   let expectedActs: string[] = [];
+  let presenceActs: PlanAct[] = [];
   const snapshot = <T>(value: T): T => structuredClone(value);
   const log = (letter: Letter, phase: string) => {
     // TraceKind 在总线的独占文件中；此扩展只在本模块声明，不改其他工人的接口。
     bus.log('layer.letter' as TraceKind, { phase, letter: snapshot(letter) });
   };
-  return {
-    usePlan(plan: Pick<Plan, 'acts'>) { expectedActs = plan.acts.map(a => a.id); },
+  const api = {
+    usePlan(plan: Pick<Plan, 'acts'>) { expectedActs = plan.acts.map(a => a.id); presenceActs = plan.acts; },
+    present(act: string): Letter<Presence> {
+      const previous = queue.find(l => l.kind === 'presence' && l.act === act);
+      if (previous) return snapshot(previous as Letter<Presence>);
+      const planAct = presenceActs.find(a => a.id === act);
+      if (!planAct) throw new Error(`呈现信没有方案：${act}`);
+      const enter = bus.trace.findLastIndex(e => e.kind === 'act.enter' && e.act === act);
+      const payload = presenceFor(planAct, bus.trace.slice(Math.max(0, enter)));
+      const letter = api.send({ kind: 'presence', from: 'presentation', to: 'director', act, payload });
+      // 呈现交回导演时即读入；不改动任一旧信的回执。
+      return api.receive(letter.id, 'director') as Letter<Presence>;
+    },
     send<T>(input: { kind: LetterKind; from: string; to: string; act?: string; payload: T }): Letter<T> {
       const key = `${input.kind}:${input.act ?? 'visit'}`;
       const n = (serial.get(key) ?? 0) + 1;
@@ -106,6 +130,11 @@ export function createLayerBus(bus: Bus, clock: () => { t: number; day?: number 
     pending: () => snapshot(queue.filter(l => !l.receipt)),
     check: () => checkLayerLetters(queue, expectedActs),
   };
+  // act.exit 是真实演完的记录；从此处新增呈现回路，不移动旧五类信。
+  bus.on('trace', e => {
+    if (e.kind === 'act.exit' && presenceActs.some(a => a.id === e.act)) api.present(String(e.act));
+  });
+  return api;
 }
 
 export type LayerBus = ReturnType<typeof createLayerBus>;

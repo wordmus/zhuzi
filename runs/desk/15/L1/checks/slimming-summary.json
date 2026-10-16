@@ -1,0 +1,685 @@
+{
+  "generatedAt": "2026-10-16T17:45:36.265Z",
+  "converter": "/opt/homebrew/bin/cwebp 1.6.0 (libsharpyuv 0.4.2)",
+  "builds": [
+    {
+      "build": "desk/15/L1",
+      "before": 33574071,
+      "after": 11794968,
+      "savedPercent": 64.86881796371968,
+      "bench": "PASS hard 9/9 · first-action 0.15s · first3s 1 · feedback p90 84ms · max-chars 18 · errors 0 · fps-p5 60 · notext PASS · repro PASS · layers PASS",
+      "hard": {
+        "pass": 9,
+        "total": 9
+      },
+      "checks": [
+        {
+          "id": "first-action",
+          "label": "首个可操作元素",
+          "pass": true,
+          "value": 0.14640000003576278,
+          "limit": 0.6
+        },
+        {
+          "id": "first3s",
+          "label": "每幕前 3 秒可做的事",
+          "pass": true,
+          "value": 1,
+          "limit": 1,
+          "note": "desk-entry:1 desk-mentor:1 desk-directors:1 desk-shelf:1"
+        },
+        {
+          "id": "feedback",
+          "label": "反馈延迟 p90",
+          "pass": true,
+          "value": 84,
+          "limit": 900,
+          "note": "样本 4，100ms 内有反馈的占 100%（目标 100ms）"
+        },
+        {
+          "id": "max-chars",
+          "label": "每屏可见字数",
+          "pass": true,
+          "value": 18,
+          "limit": 30,
+          "note": "DOM 18 / trace 18"
+        },
+        {
+          "id": "errors",
+          "label": "控制台报错",
+          "pass": true,
+          "value": 0,
+          "limit": 0
+        },
+        {
+          "id": "fps-p5",
+          "label": "帧率 p5",
+          "pass": true,
+          "value": 60,
+          "limit": 55,
+          "note": "287 帧；整局 rAF p5=60；stage.fpsP5()=60（末 12 秒有探针，未计入）"
+        },
+        {
+          "id": "notext",
+          "label": "删字测试",
+          "pass": true,
+          "value": "PASS",
+          "limit": "hidden + done"
+        },
+        {
+          "id": "repro",
+          "label": "同 seed 复现",
+          "pass": true,
+          "value": "PASS",
+          "limit": "same",
+          "note": "事实 0 条（无 world.fact，只比较幕序）；账本一致，幕序一致，台词一致"
+        },
+        {
+          "id": "layers",
+          "label": "三层信息流与回执",
+          "pass": true,
+          "value": "PASS",
+          "limit": "五类齐全、幕序与回执完整",
+          "note": "11封信；未回执0；检查通过"
+        }
+      ]
+    },
+    {
+      "build": "three-look-at-sky/3/L2",
+      "before": 33210840,
+      "after": 11431737,
+      "savedPercent": 65.5782961225913,
+      "bench": "PASS hard 9/9 · first-action 0.13s · first3s 1 · feedback p90 268ms · max-chars 15 · errors 0 · fps-p5 60 · notext PASS · repro PASS · layers PASS",
+      "hard": {
+        "pass": 9,
+        "total": 9
+      },
+      "checks": [
+        {
+          "id": "first-action",
+          "label": "首个可操作元素",
+          "pass": true,
+          "value": 0.13130000001192094,
+          "limit": 0.6
+        },
+        {
+          "id": "first3s",
+          "label": "每幕前 3 秒可做的事",
+          "pass": true,
+          "value": 1,
+          "limit": 1,
+          "note": "three-look-at-sky:1"
+        },
+        {
+          "id": "feedback",
+          "label": "反馈延迟 p90",
+          "pass": true,
+          "value": 268,
+          "limit": 900,
+          "note": "样本 4，100ms 内有反馈的占 75%（目标 100ms）"
+        },
+        {
+          "id": "max-chars",
+          "label": "每屏可见字数",
+          "pass": true,
+          "value": 15,
+          "limit": 30,
+          "note": "DOM 15 / trace 15"
+        },
+        {
+          "id": "errors",
+          "label": "控制台报错",
+          "pass": true,
+          "value": 0,
+          "limit": 0
+        },
+        {
+          "id": "fps-p5",
+          "label": "帧率 p5",
+          "pass": true,
+          "value": 60,
+          "limit": 55,
+          "note": "4373 帧；整局 rAF p5=60；stage.fpsP5()=60（已计入）"
+        },
+        {
+          "id": "notext",
+          "label": "删字测试",
+          "pass": true,
+          "value": "PASS",
+          "limit": "hidden + done"
+        },
+        {
+          "id": "repro",
+          "label": "同 seed 复现",
+          "pass": true,
+          "value": "PASS",
+          "limit": "same",
+          "note": "事实 0 条（无 world.fact，只比较幕序）；账本一致，幕序一致，台词一致"
+        },
+        {
+          "id": "layers",
+          "label": "三层信息流与回执",
+          "pass": true,
+          "value": "PASS",
+          "limit": "五类齐全、幕序与回执完整",
+          "note": "9封信；未回执0；检查通过"
+        }
+      ]
+    },
+    {
+      "build": "shelf-gallery/3/L2",
+      "before": 33209548,
+      "after": 11430445,
+      "savedPercent": 65.58084741171425,
+      "bench": "PASS hard 9/9 · first-action 0.15s · first3s 1 · feedback p90 51ms · max-chars 12 · errors 0 · fps-p5 60 · notext PASS · repro PASS · layers PASS",
+      "hard": {
+        "pass": 9,
+        "total": 9
+      },
+      "checks": [
+        {
+          "id": "first-action",
+          "label": "首个可操作元素",
+          "pass": true,
+          "value": 0.14810000002384185,
+          "limit": 0.6
+        },
+        {
+          "id": "first3s",
+          "label": "每幕前 3 秒可做的事",
+          "pass": true,
+          "value": 1,
+          "limit": 1,
+          "note": "shelf-gallery:1"
+        },
+        {
+          "id": "feedback",
+          "label": "反馈延迟 p90",
+          "pass": true,
+          "value": 51,
+          "limit": 900,
+          "note": "样本 3，100ms 内有反馈的占 100%（目标 100ms）"
+        },
+        {
+          "id": "max-chars",
+          "label": "每屏可见字数",
+          "pass": true,
+          "value": 12,
+          "limit": 30,
+          "note": "DOM 12 / trace 12"
+        },
+        {
+          "id": "errors",
+          "label": "控制台报错",
+          "pass": true,
+          "value": 0,
+          "limit": 0
+        },
+        {
+          "id": "fps-p5",
+          "label": "帧率 p5",
+          "pass": true,
+          "value": 60,
+          "limit": 55,
+          "note": "171 帧；整局 rAF p5=60；stage.fpsP5()=60（末 12 秒有探针，未计入）"
+        },
+        {
+          "id": "notext",
+          "label": "删字测试",
+          "pass": true,
+          "value": "PASS",
+          "limit": "hidden + done"
+        },
+        {
+          "id": "repro",
+          "label": "同 seed 复现",
+          "pass": true,
+          "value": "PASS",
+          "limit": "same",
+          "note": "事实 0 条（无 world.fact，只比较幕序）；账本一致，幕序一致，台词有差"
+        },
+        {
+          "id": "layers",
+          "label": "三层信息流与回执",
+          "pass": true,
+          "value": "PASS",
+          "limit": "五类齐全、幕序与回执完整",
+          "note": "7封信；未回执0；检查通过"
+        }
+      ]
+    },
+    {
+      "build": "east-suburb-3d/5/L3",
+      "before": 33203802,
+      "after": 11424699,
+      "savedPercent": 65.5921963394433,
+      "bench": "PASS hard 9/9 · first-action 0.41s · first3s 1 · feedback p90 321ms · max-chars 11 · errors 0 · fps-p5 60 · notext PASS · repro PASS · layers PASS",
+      "hard": {
+        "pass": 9,
+        "total": 9
+      },
+      "checks": [
+        {
+          "id": "first-action",
+          "label": "首个可操作元素",
+          "pass": true,
+          "value": 0.40590000003576276,
+          "limit": 0.6
+        },
+        {
+          "id": "first3s",
+          "label": "每幕前 3 秒可做的事",
+          "pass": true,
+          "value": 1,
+          "limit": 1,
+          "note": "east3d:1"
+        },
+        {
+          "id": "feedback",
+          "label": "反馈延迟 p90",
+          "pass": true,
+          "value": 321,
+          "limit": 900,
+          "note": "样本 2，100ms 内有反馈的占 0%（目标 100ms）"
+        },
+        {
+          "id": "max-chars",
+          "label": "每屏可见字数",
+          "pass": true,
+          "value": 11,
+          "limit": 30,
+          "note": "DOM 11 / trace 11"
+        },
+        {
+          "id": "errors",
+          "label": "控制台报错",
+          "pass": true,
+          "value": 0,
+          "limit": 0
+        },
+        {
+          "id": "fps-p5",
+          "label": "帧率 p5",
+          "pass": true,
+          "value": 60,
+          "limit": 55,
+          "note": "2427 帧；整局 rAF p5=60；stage.fpsP5()=60（已计入）"
+        },
+        {
+          "id": "notext",
+          "label": "删字测试",
+          "pass": true,
+          "value": "PASS",
+          "limit": "hidden + done"
+        },
+        {
+          "id": "repro",
+          "label": "同 seed 复现",
+          "pass": true,
+          "value": "PASS",
+          "limit": "same",
+          "note": "事实 0 条（无 world.fact，只比较幕序）；账本一致，幕序一致，台词一致"
+        },
+        {
+          "id": "layers",
+          "label": "三层信息流与回执",
+          "pass": true,
+          "value": "PASS",
+          "limit": "五类齐全、幕序与回执完整",
+          "note": "5封信；未回执0；检查通过"
+        }
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "file": "assets/library/east3d/ground.glb",
+      "before": 3763344,
+      "after": 3763344,
+      "mode": "unchanged",
+      "use": "east3d (imported into all forms)",
+      "jsonBytes": 1396,
+      "binaryBytes": 3761920,
+      "extensionsRequired": []
+    },
+    {
+      "file": "assets/library/east3d/he-placeholder.glb",
+      "before": 174372,
+      "after": 174372,
+      "mode": "unchanged",
+      "use": "east3d (imported into all forms)",
+      "jsonBytes": 20584,
+      "binaryBytes": 153760,
+      "extensionsRequired": []
+    },
+    {
+      "file": "assets/library/east3d/millet.glb",
+      "before": 8368,
+      "after": 8368,
+      "mode": "unchanged",
+      "use": "east3d (imported into all forms)",
+      "jsonBytes": 2292,
+      "binaryBytes": 6048,
+      "extensionsRequired": []
+    },
+    {
+      "file": "assets/library/east3d/pots.glb",
+      "before": 57492,
+      "after": 57492,
+      "mode": "unchanged",
+      "use": "east3d (imported into all forms)",
+      "jsonBytes": 3248,
+      "binaryBytes": 54216,
+      "extensionsRequired": []
+    },
+    {
+      "file": "assets/library/east3d/tree.glb",
+      "before": 102956,
+      "after": 102956,
+      "mode": "unchanged",
+      "use": "east3d (imported into all forms)",
+      "jsonBytes": 14800,
+      "binaryBytes": 88128,
+      "extensionsRequired": []
+    },
+    {
+      "file": "assets/library/east3d/well.glb",
+      "before": 17900,
+      "after": 17900,
+      "mode": "unchanged",
+      "use": "east3d (imported into all forms)",
+      "jsonBytes": 6088,
+      "binaryBytes": 11784,
+      "extensionsRequired": []
+    },
+    {
+      "file": "assets/library/shelf-gallery/plates/01-threshold.png",
+      "before": 1075242,
+      "after": 551332,
+      "mode": "near-lossless 90",
+      "key": "1880c79d260e615e58ae3236214c62de1d4361d0a508925c8d3dcccbd5cecb7c",
+      "cached": true,
+      "version": "1.6.0\nlibsharpyuv: 0.4.2",
+      "use": "gallery (imported into all forms)"
+    },
+    {
+      "file": "assets/library/shelf-gallery/plates/02-drought.png",
+      "before": 1326017,
+      "after": 816576,
+      "mode": "near-lossless 90",
+      "key": "c45b35ef74a24352a7a871d1856c3cdfb6aaf389bf542148f71e2a80c245afe0",
+      "cached": true,
+      "version": "1.6.0\nlibsharpyuv: 0.4.2",
+      "use": "gallery (imported into all forms)"
+    },
+    {
+      "file": "assets/library/shelf-gallery/plates/03-studio.png",
+      "before": 274829,
+      "after": 165878,
+      "mode": "near-lossless 90",
+      "key": "adb949039aec583f83f896a15e2175bae5b1e818be981e6a29e2f9029bbb08db",
+      "cached": true,
+      "version": "1.6.0\nlibsharpyuv: 0.4.2",
+      "use": "gallery (imported into all forms)"
+    },
+    {
+      "file": "assets/library/shelf-gallery/plates/04-return.png",
+      "before": 320607,
+      "after": 214174,
+      "mode": "near-lossless 90",
+      "key": "755fbd1b00d98fc2b469941c3f7327e5006fb2724b05b0a0361c27b06d2d3441",
+      "cached": true,
+      "version": "1.6.0\nlibsharpyuv: 0.4.2",
+      "use": "gallery (imported into all forms)"
+    },
+    {
+      "file": "assets/library/shelf-gallery/plates/05-chronicle.png",
+      "before": 23102,
+      "after": 9434,
+      "mode": "near-lossless 90",
+      "key": "8d876a454d96e830da221bf2091560661947964e02e2c70658b567c277bae849",
+      "cached": true,
+      "version": "1.6.0\nlibsharpyuv: 0.4.2",
+      "use": "gallery (imported into all forms)"
+    },
+    {
+      "file": "assets/library/shelf-gallery/plates/06-jixia.png",
+      "before": 1017684,
+      "after": 483870,
+      "mode": "near-lossless 90",
+      "key": "fd8e4ddc79ab0c5aa8d8d28761af57c9695e7432605c3a8118d7ee3a3ee3ff59",
+      "cached": true,
+      "version": "1.6.0\nlibsharpyuv: 0.4.2",
+      "use": "gallery (imported into all forms)"
+    },
+    {
+      "file": "assets/library/shelf-gallery/plates/07-east-design.png",
+      "before": 1067680,
+      "after": 13966,
+      "mode": "lossy q82 / alpha100",
+      "key": "192148d7653dd772a51e3bf2b2d21fe1696c444486209e5b6baddbb1d2c17408",
+      "cached": true,
+      "version": "1.6.0\nlibsharpyuv: 0.4.2",
+      "use": "gallery (imported into all forms)"
+    },
+    {
+      "file": "assets/library/shelf-gallery/plates/08-east-delivered.png",
+      "before": 163027,
+      "after": 19754,
+      "mode": "lossy q82 / alpha100",
+      "key": "aaecbaedb68035cde5bce72fbb679479201e4e4a29ab8a7e6eb9290072b9b747",
+      "cached": true,
+      "version": "1.6.0\nlibsharpyuv: 0.4.2",
+      "use": "gallery (imported into all forms)"
+    },
+    {
+      "file": "assets/library/three-look-at-sky/refs/style-probe.png",
+      "before": 3167478,
+      "after": 311896,
+      "mode": "lossy q82 / alpha100",
+      "key": "d5decd4f0e8bd82edeebaf68279c6912537e26a492f9860c081ef34cc28de064",
+      "cached": true,
+      "version": "1.6.0\nlibsharpyuv: 0.4.2",
+      "use": "reference only (not bundled)"
+    },
+    {
+      "file": "assets/library/three-look-at-sky/shots/shot-01-he.png",
+      "before": 3167478,
+      "after": 311896,
+      "mode": "lossy q82 / alpha100",
+      "key": "d5decd4f0e8bd82edeebaf68279c6912537e26a492f9860c081ef34cc28de064",
+      "cached": true,
+      "version": "1.6.0\nlibsharpyuv: 0.4.2",
+      "use": "film (imported into all forms)"
+    },
+    {
+      "file": "assets/library/three-look-at-sky/shots/shot-02-sky.png",
+      "before": 2716578,
+      "after": 172002,
+      "mode": "lossy q82 / alpha100",
+      "key": "2de6e957ac704d1d63df2a0be4f8b4fb56e8ac69becd08ea00da490d63e85f92",
+      "cached": true,
+      "version": "1.6.0\nlibsharpyuv: 0.4.2",
+      "use": "film (imported into all forms)"
+    },
+    {
+      "file": "assets/library/three-look-at-sky/shots/shot-03-ji.png",
+      "before": 2843043,
+      "after": 258020,
+      "mode": "lossy q82 / alpha100",
+      "key": "4505c0fa518fac964920cf752266769b54d6048d38a159774a7ad3bb05b2a55a",
+      "cached": true,
+      "version": "1.6.0\nlibsharpyuv: 0.4.2",
+      "use": "film (imported into all forms)"
+    },
+    {
+      "file": "assets/library/three-look-at-sky/shots/shot-04-tianbo.png",
+      "before": 3028581,
+      "after": 297172,
+      "mode": "lossy q82 / alpha100",
+      "key": "bb0ee14efa433c79f7f6935544560035c3e109508bd11e28d98b8c985588feb3",
+      "cached": true,
+      "version": "1.6.0\nlibsharpyuv: 0.4.2",
+      "use": "film (imported into all forms)"
+    },
+    {
+      "file": "assets/library/three-look-at-sky/shots/shot-05-city.png",
+      "before": 2880302,
+      "after": 255752,
+      "mode": "lossy q82 / alpha100",
+      "key": "78070ea5aa5a2f75d6e566d99e02baa8fa1cce2c782edcf96fa212620a9c8c46",
+      "cached": true,
+      "version": "1.6.0\nlibsharpyuv: 0.4.2",
+      "use": "film (imported into all forms)"
+    }
+  ],
+  "visual": {
+    "viewport": [
+      1280,
+      720
+    ],
+    "seeds": [
+      [
+        "desk",
+        15,
+        "L1"
+      ],
+      [
+        "three-look-at-sky",
+        3,
+        "L2"
+      ],
+      [
+        "shelf-gallery",
+        3,
+        "L2"
+      ],
+      [
+        "east-suburb-3d",
+        5,
+        "L3"
+      ]
+    ],
+    "method": "same generated plan and seed; deterministic Math.random; same Playwright virtual clock; PNG control vs inline WebP; RGB absolute difference, diff image magnified 8x",
+    "results": [
+      {
+        "name": "desk-L0",
+        "width": 1280,
+        "height": 720,
+        "changedPixels": 0,
+        "changedPercent": 0,
+        "over8Percent": 0,
+        "meanAbsoluteRGB": 0,
+        "maxChannelDelta": 0,
+        "before": "runs/desk/15/L1/slim-visual/desk-L0-before.png",
+        "after": "runs/desk/15/L1/slim-visual/desk-L0-after.png",
+        "difference": "runs/desk/15/L1/slim-visual/desk-L0-diff-x8.png"
+      },
+      {
+        "name": "desk-L1",
+        "width": 1280,
+        "height": 720,
+        "changedPixels": 0,
+        "changedPercent": 0,
+        "over8Percent": 0,
+        "meanAbsoluteRGB": 0,
+        "maxChannelDelta": 0,
+        "before": "runs/desk/15/L1/slim-visual/desk-L1-before.png",
+        "after": "runs/desk/15/L1/slim-visual/desk-L1-after.png",
+        "difference": "runs/desk/15/L1/slim-visual/desk-L1-diff-x8.png"
+      },
+      {
+        "name": "desk-L2",
+        "width": 1280,
+        "height": 720,
+        "changedPixels": 0,
+        "changedPercent": 0,
+        "over8Percent": 0,
+        "meanAbsoluteRGB": 0,
+        "maxChannelDelta": 0,
+        "before": "runs/desk/15/L1/slim-visual/desk-L2-before.png",
+        "after": "runs/desk/15/L1/slim-visual/desk-L2-after.png",
+        "difference": "runs/desk/15/L1/slim-visual/desk-L2-diff-x8.png"
+      },
+      {
+        "name": "desk-L3",
+        "width": 1280,
+        "height": 720,
+        "changedPixels": 0,
+        "changedPercent": 0,
+        "over8Percent": 0,
+        "meanAbsoluteRGB": 0,
+        "maxChannelDelta": 0,
+        "before": "runs/desk/15/L1/slim-visual/desk-L3-before.png",
+        "after": "runs/desk/15/L1/slim-visual/desk-L3-after.png",
+        "difference": "runs/desk/15/L1/slim-visual/desk-L3-diff-x8.png"
+      },
+      {
+        "name": "three-look-at-sky",
+        "width": 1280,
+        "height": 720,
+        "changedPixels": 469529,
+        "changedPercent": 50.94715711805555,
+        "over8Percent": 6.486979166666666,
+        "meanAbsoluteRGB": 1.4297978153935185,
+        "maxChannelDelta": 53,
+        "before": "runs/desk/15/L1/slim-visual/three-look-at-sky-before.png",
+        "after": "runs/desk/15/L1/slim-visual/three-look-at-sky-after.png",
+        "difference": "runs/desk/15/L1/slim-visual/three-look-at-sky-diff-x8.png"
+      },
+      {
+        "name": "shelf-gallery",
+        "width": 1280,
+        "height": 720,
+        "changedPixels": 250916,
+        "changedPercent": 27.22612847222222,
+        "over8Percent": 0,
+        "meanAbsoluteRGB": 0.13352683738425927,
+        "maxChannelDelta": 1,
+        "before": "runs/desk/15/L1/slim-visual/shelf-gallery-before.png",
+        "after": "runs/desk/15/L1/slim-visual/shelf-gallery-after.png",
+        "difference": "runs/desk/15/L1/slim-visual/shelf-gallery-diff-x8.png"
+      },
+      {
+        "name": "east-suburb-3d",
+        "width": 1280,
+        "height": 720,
+        "changedPixels": 4921,
+        "changedPercent": 0.5339626736111112,
+        "over8Percent": 0.004774305555555556,
+        "meanAbsoluteRGB": 0.0033040364583333333,
+        "maxChannelDelta": 34,
+        "before": "runs/desk/15/L1/slim-visual/east-suburb-3d-before.png",
+        "after": "runs/desk/15/L1/slim-visual/east-suburb-3d-after.png",
+        "difference": "runs/desk/15/L1/slim-visual/east-suburb-3d-diff-x8.png"
+      }
+    ],
+    "offline": [
+      {
+        "intent": "desk",
+        "canvases": 1,
+        "localSidecars": [],
+        "errors": []
+      },
+      {
+        "intent": "three-look-at-sky",
+        "canvases": 1,
+        "localSidecars": [],
+        "errors": []
+      },
+      {
+        "intent": "shelf-gallery",
+        "canvases": 1,
+        "localSidecars": [],
+        "errors": []
+      },
+      {
+        "intent": "east-suburb-3d",
+        "canvases": 1,
+        "localSidecars": [],
+        "errors": []
+      }
+    ]
+  },
+  "baselineFileCount": 148
+}

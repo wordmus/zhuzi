@@ -198,7 +198,7 @@ export function mountPresenter(ctx: Ctx): void {
     if (shade.hidden) return;
     const letters = ctx.layers.letters();
     const checks = ctx.layers.check();
-    const kinds = { commission: '委托', plan: '方案', cue: '提示', report: '报告', retro: '回顾' };
+    const kinds = { commission: '委托', plan: '方案', cue: '提示', report: '报告', retro: '回顾', presence: '呈现' };
     const names: Record<string, string> = { mentor: '导师', director: '导演', actor: '演员' };
     const totals = letterCounts(letters);
     layerStatus.textContent = Object.entries(totals).map(([kind, n]) => `${kinds[kind as keyof typeof kinds]} ${n}`).join(' · ')
@@ -207,7 +207,9 @@ export function mountPresenter(ctx: Ctx): void {
       const detail = l.kind === 'commission' ? `为什么这次给你这个：${(l.payload as Commission).why}`
         : l.kind === 'plan' ? (l.payload as DirectorAck).accept
         : l.kind === 'cue' ? `预期：${(l.payload as ActorCue).expects}`
-        : l.kind === 'report' ? `实际：${(l.payload as ActorReport).actual}` : `学到：${(l.payload as MentorRetro).actual}`;
+        : l.kind === 'report' ? `实际：${(l.payload as ActorReport).actual}`
+        : l.kind === 'presence' ? `自述：${(l.payload as { sentence?: string }).sentence ?? ''}`
+        : `学到：${(l.payload as MentorRetro).actual}`;
       return `${l.receipt ? '✓' : '○'} ${(l.t / 1000).toFixed(1)}秒 ${names[l.from] ?? l.from} → ${names[l.to] ?? l.to} · ${kinds[l.kind]}${l.act ? ' · ' + l.act : ''} · ${detail}`;
     }).join('\n');
     const st = world()?.state();

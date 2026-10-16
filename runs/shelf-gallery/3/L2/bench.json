@@ -1,0 +1,278 @@
+{
+  "target": "runs/shelf-gallery/3/L2",
+  "url": "http://127.0.0.1:53913/index.html",
+  "when": "2026-10-16T17:51:52.407Z",
+  "verdict": "PASS",
+  "hard": {
+    "pass": 9,
+    "total": 9
+  },
+  "summary": "PASS hard 9/9 · first-action 0.12s · first3s 1 · feedback p90 35ms · max-chars 12 · errors 0 · fps-p5 60 · notext PASS · repro PASS · layers PASS",
+  "checks": [
+    {
+      "id": "first-action",
+      "label": "首个可操作元素",
+      "pass": true,
+      "value": 0.11530000001192092,
+      "limit": 0.6
+    },
+    {
+      "id": "first3s",
+      "label": "每幕前 3 秒可做的事",
+      "pass": true,
+      "value": 1,
+      "limit": 1,
+      "note": "shelf-gallery:1"
+    },
+    {
+      "id": "feedback",
+      "label": "反馈延迟 p90",
+      "pass": true,
+      "value": 35,
+      "limit": 900,
+      "note": "样本 3，100ms 内有反馈的占 100%（目标 100ms）"
+    },
+    {
+      "id": "max-chars",
+      "label": "每屏可见字数",
+      "pass": true,
+      "value": 12,
+      "limit": 30,
+      "note": "DOM 12 / trace 12"
+    },
+    {
+      "id": "errors",
+      "label": "控制台报错",
+      "pass": true,
+      "value": 0,
+      "limit": 0
+    },
+    {
+      "id": "fps-p5",
+      "label": "帧率 p5",
+      "pass": true,
+      "value": 60,
+      "limit": 55,
+      "note": "169 帧；整局 rAF p5=60；stage.fpsP5()=60（末 12 秒有探针，未计入）"
+    },
+    {
+      "id": "notext",
+      "label": "删字测试",
+      "pass": true,
+      "value": "PASS",
+      "limit": "hidden + done"
+    },
+    {
+      "id": "repro",
+      "label": "同 seed 复现",
+      "pass": true,
+      "value": "PASS",
+      "limit": "same",
+      "note": "事实 0 条（无 world.fact，只比较幕序）；账本一致，幕序一致，台词有差"
+    },
+    {
+      "id": "layers",
+      "label": "三层信息流与回执",
+      "pass": true,
+      "value": "PASS",
+      "limit": "五类齐全、幕序与回执完整",
+      "note": "7封信；未回执0；检查通过"
+    }
+  ],
+  "metrics": {
+    "layers": {
+      "required": true,
+      "letters": 7,
+      "counts": {
+        "commission": 1,
+        "plan": 1,
+        "cue": 2,
+        "report": 2,
+        "retro": 1
+      },
+      "pending": 0,
+      "check": []
+    },
+    "firstActionSec": 0.11530000001192092,
+    "first3s": {
+      "perAct": [
+        {
+          "act": "shelf-gallery",
+          "n": 1
+        }
+      ],
+      "max": 1,
+      "source": "trace"
+    },
+    "feedback": {
+      "samples": [
+        {
+          "step": 0,
+          "aff": "plate-01-scroll",
+          "ambient": {
+            "g": 0,
+            "l": 0
+          },
+          "first": {
+            "g": 0.1092578125,
+            "l": 0.1092578125
+          },
+          "latencyMs": 35,
+          "shots": 24
+        },
+        {
+          "step": 1,
+          "aff": "plate-01-scroll",
+          "ambient": {
+            "g": 0,
+            "l": 0
+          },
+          "first": {
+            "g": 0.10800455729166666,
+            "l": 0.10800455729166666
+          },
+          "latencyMs": 18,
+          "shots": 24
+        },
+        {
+          "step": 2,
+          "aff": "gallery-fold",
+          "ambient": {
+            "g": 0,
+            "l": 0
+          },
+          "first": {
+            "g": 0.16796223958333334,
+            "l": 0.28389529724933454
+          },
+          "latencyMs": 33,
+          "shots": 24
+        }
+      ],
+      "p90Ms": 35,
+      "within100Ratio": 1
+    },
+    "chars": {
+      "dom": 12,
+      "trace": 12,
+      "max": 12
+    },
+    "errors": {
+      "total": 0,
+      "console": [],
+      "page": [],
+      "trace": 0,
+      "warnings": 0
+    },
+    "fps": {
+      "p5": 59.52380952381049,
+      "own": 59.52380952381049,
+      "stage": 59.52380952380968,
+      "usedStage": false,
+      "frames": 169
+    },
+    "notext": {
+      "done": true,
+      "hidden": true,
+      "reason": "done"
+    },
+    "repro": {
+      "facts": 0,
+      "factsEqual": true,
+      "actsEqual": true,
+      "linesEqual": false,
+      "bothDone": true,
+      "actualLedgerEqual": null,
+      "sameActionSequence": false,
+      "firstFactDifference": null,
+      "firstActionDifference": {
+        "index": 2,
+        "main": "gallery-fold:click",
+        "replay": "plate-01-scroll:click"
+      }
+    },
+    "seedDiff": {
+      "checked": false
+    },
+    "stepsPolicy": {
+      "seed": null,
+      "preferCounts": {
+        "focus": 2,
+        "least-clicked": 1
+      }
+    }
+  },
+  "runs": {
+    "main": {
+      "done": true,
+      "reason": "done",
+      "steps": 3,
+      "seconds": 8.6,
+      "fallbackClicks": 0,
+      "shots": 0
+    },
+    "notext": {
+      "done": true,
+      "reason": "done",
+      "steps": 4,
+      "seconds": 3.8,
+      "fallbackClicks": 0,
+      "shots": 0
+    },
+    "repro": {
+      "done": true,
+      "reason": "done",
+      "steps": 4,
+      "seconds": 3.8,
+      "fallbackClicks": 0,
+      "shots": 0
+    }
+  },
+  "curve": [
+    {
+      "minute": 1,
+      "decisions": 3,
+      "new_info": 4,
+      "want_continue": 5,
+      "numbers_on_screen": 0,
+      "words_on_screen": 12,
+      "note": "3 次动手，起于 shelf-gallery/plate-01-scroll；4 条新东西"
+    }
+  ],
+  "curveSummary": {
+    "decisionDensity": 3,
+    "firstDecisionMinute": 1,
+    "wantContinueMin": 5,
+    "wantContinueEnd": 5,
+    "numbersMedian": 0
+  },
+  "thresholds": {
+    "version": 1,
+    "note": "棘轮：每次 /goal 达成后只升不降。数值来自 docs/design/demo-spec.md 第八节。",
+    "firstActionSec": 0.6,
+    "first3sActionsMax": 1,
+    "feedbackMsMax": 900,
+    "feedbackMsTarget": 100,
+    "maxChars": 30,
+    "consoleErrorsMax": 0,
+    "fpsP5Min": 55,
+    "notext": true,
+    "repro": true,
+    "layers": true,
+    "feedback": {
+      "pixelDelta": 20,
+      "globalFrac": 0.0003,
+      "localFrac": 0.002,
+      "baselineMul": 2,
+      "maxProbes": 8
+    },
+    "player": {
+      "maxSteps": 240,
+      "maxSeconds": 420,
+      "settleMs": 450,
+      "minGapMs": 600,
+      "emptyAffSeconds": 45
+    }
+  },
+  "outDir": "/Users/lidechi/orca/workspaces/Zhuzi-claude/ds/runs/shelf-gallery/3/L2"
+}

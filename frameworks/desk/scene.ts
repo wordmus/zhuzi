@@ -50,6 +50,7 @@ export function createDeskScene(stage: Stage, c: CanvasRenderingContext2D) {
       tradeoff: rect(narrow ? spread - 25 : spread - 35, 115, 30, 45),
       next: rect(95, -170, 73, 230),
       group: rect(narrow ? -198 : -320, -223, 82, 145),
+      presence: rect(42, 32, 228, 46),
       memory: rect(narrow ? -150 : -184, -235, narrow ? 300 : 368, 126),
     };
   };

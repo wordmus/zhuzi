@@ -82,7 +82,10 @@ export function createMentor(input: MentorInput) {
       const reason = head ? edited
         ? `依你纠正的「${short(edited.text.trim(), 9)}」，${directorLabel ? `派${directorLabel}` : ''}${revised ? '照新排期看' : '先看'}${head.title}。`
         : revised ? `依你排的${directorLabel ? `派给${directorLabel}` : '先看'}${head.title}：${short(head.why, 11)}`
-        : `${short(head.why, 14)}，${directorLabel ? `派${directorLabel}做` : '先看'}《${head.title}》。`
+        // 理由里已经提到这件就不再重复标题（标题在木牘上）。
+        : head.why.includes(head.title)
+          ? `${short(head.why, 18)}${directorLabel ? `，派${directorLabel}做` : ''}。`
+          : `${short(head.why, 14)}，${directorLabel ? `派${directorLabel}做` : '先看'}《${head.title}》。`
         : postponed ? `排期已压后，稍后再看《${postponed.title}》。`
         : queue.entries.length ? '你已撤下所有排期，先停一停。' : '还没有可排的作品，先留一张空牍。';
       // Complexity is chosen from the scheduled form, while device/night limits still apply.

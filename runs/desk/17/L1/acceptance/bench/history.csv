@@ -1,0 +1,6 @@
+2026-10-16T18:03:14.856Z,"runs/desk/17/L1",PASS,9/9,"PASS hard 9/9 · first-action 0.17s · first3s 1 · feedback p90 85ms · max-chars 18 · errors 0 · fps-p5 60 · notext PASS · repro PASS · layers PASS"
+2026-10-16T18:06:36.383Z,"runs/studio/9/L1",PASS,9/9,"PASS hard 9/9 · first-action 0.14s · first3s 1 · feedback p90 400ms · max-chars 28 · errors 0 · fps-p5 60 · notext PASS · repro PASS · layers PASS"
+2026-10-16T18:08:15.436Z,"runs/fifty-years/9/L1",PASS,9/9,"PASS hard 9/9 · first-action 0.09s · first3s 1 · feedback p90 439ms · max-chars 28 · errors 0 · fps-p5 60 · notext PASS · repro PASS · layers PASS"
+2026-10-16T18:11:44.491Z,"runs/studio/9/L1",PASS,9/9,"PASS hard 9/9 · first-action 0.14s · first3s 1 · feedback p90 296ms · max-chars 28 · errors 0 · fps-p5 60 · notext PASS · repro PASS · layers PASS"
+2026-10-16T18:17:37.640Z,"runs/studio/9/L1",PASS,9/9,"PASS hard 9/9 · first-action 0.11s · first3s 1 · feedback p90 283ms · max-chars 28 · errors 0 · fps-p5 60 · notext PASS · repro PASS · layers PASS"
+2026-10-16T18:19:28.613Z,"runs/desk/17/L1",PASS,9/9,"PASS hard 9/9 · first-action 0.15s · first3s 1 · feedback p90 66ms · max-chars 18 · errors 0 · fps-p5 60 · notext PASS · repro PASS · layers PASS"

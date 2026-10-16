@@ -6,6 +6,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
 import { Differ, REPO_ROOT, attachDiagnostics, ev, installBench, launch, loadThresholds, newContext, readPageData, serveDir } from '../../bench/lib';
 import { letterCounts } from '../../engine/layers/bus';
 import type { Letter } from '../../engine/layers/types';
@@ -89,6 +90,9 @@ async function main() {
   const report: Record<string, any> = { intent: intentJson.id, seed: args.seed, tier: args.tier, when: new Date().toISOString(), status: 'running' };
   const writeReport = () => fs.writeFileSync(path.join(runDir, 'report.json'), JSON.stringify(report, null, 2));
   const finish = (code: number): never => {
+    if (code === 0 && ['ok', 'built'].includes(report.status) && intentJson.id === 'desk' && !args.out) {
+      execFileSync(process.execPath, [path.join(root, 'scripts/update-entry.mjs'), String(args.seed), args.tier], { cwd: root, stdio: 'inherit' });
+    }
     report.seconds = Math.round((Date.now() - t0) / 100) / 10;
     report.files = listFiles(runDir).filter((f) => !f.path.startsWith('build/'));
     writeReport();

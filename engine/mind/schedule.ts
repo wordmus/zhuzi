@@ -105,7 +105,7 @@ export function buildSchedule(input: ScheduleInput): Schedule {
   const ranked = unique.map(work => {
     const violation = violations.find(e => e.ref.includes(`runs/${work.intent}/`));
     let score = 0;
-    let why = `已有${shortTitle(work, 9)}，先看一件`;
+    let why = '按顺序，轮到这件';
     let evidence: ScheduleEntry['evidence'] = { kind: 'work', ref: workRef(work) };
     if (violation) {
       score += 30;
