@@ -3,6 +3,8 @@ import type { Ctx } from '../app/context';
 import { direct } from '../director/pipeline/director';
 import { createRng } from '../engine/rng';
 import type { SimWorld } from '../engine/world/sim';
+import { letterCounts } from '../engine/layers/bus';
+import type { ActorCue, ActorReport, Commission, DirectorAck, MentorRetro } from '../engine/layers/types';
 import { mountTouchFeedback } from './touch-feedback';
 
 export function mountPresenter(ctx: Ctx): void {
@@ -150,6 +152,11 @@ export function mountPresenter(ctx: Ctx): void {
   confirm.appendChild(confirmation);
   dialog.appendChild(confirm);
 
+  title('三层信息流');
+  const layerStatus = node('p');
+  const layerLetters = node('pre');
+  dialog.append(layerStatus, layerLetters);
+
   title('心智停在哪一层');
   const mind = node('p');
   dialog.appendChild(mind);
@@ -180,6 +187,20 @@ export function mountPresenter(ctx: Ctx): void {
   };
   function render() {
     if (shade.hidden) return;
+    const letters = ctx.layers.letters();
+    const checks = ctx.layers.check();
+    const kinds = { commission: '委托', plan: '方案', cue: '提示', report: '报告', retro: '回顾' };
+    const names: Record<string, string> = { mentor: '导师', director: '导演', actor: '演员' };
+    const totals = letterCounts(letters);
+    layerStatus.textContent = Object.entries(totals).map(([kind, n]) => `${kinds[kind as keyof typeof kinds]} ${n}`).join(' · ')
+      + ` · 未回执 ${ctx.layers.pending().length} · ${checks.length ? ((window as any).__zhuzi?.done ? '检查未通过' : '演出进行中') + '：' + checks.join('；') : '检查通过'}`;
+    layerLetters.textContent = letters.map(l => {
+      const detail = l.kind === 'commission' ? `为什么这次给你这个：${(l.payload as Commission).why}`
+        : l.kind === 'plan' ? (l.payload as DirectorAck).accept
+        : l.kind === 'cue' ? `预期：${(l.payload as ActorCue).expects}`
+        : l.kind === 'report' ? `实际：${(l.payload as ActorReport).actual}` : `学到：${(l.payload as MentorRetro).actual}`;
+      return `${l.receipt ? '✓' : '○'} ${(l.t / 1000).toFixed(1)}秒 ${names[l.from] ?? l.from} → ${names[l.to] ?? l.to} · ${kinds[l.kind]}${l.act ? ' · ' + l.act : ''} · ${detail}`;
+    }).join('\n');
     const st = world()?.state();
     const counts = ctx.think.stats();
     status.textContent = `种子 ${ctx.plan.seed} · 来访 ${ctx.visit.n} · 本地规则 ${counts.rules} 次 · 模型 ${counts.model} 次`;

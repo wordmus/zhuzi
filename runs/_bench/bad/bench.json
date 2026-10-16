@@ -1,20 +1,20 @@
 {
   "target": "bench/fixtures/bad.html",
-  "url": "http://127.0.0.1:54886/bad.html",
-  "when": "2026-10-14T08:03:21.106Z",
+  "url": "http://127.0.0.1:50500/bad.html",
+  "when": "2026-10-15T19:29:24.754Z",
   "verdict": "FAIL",
   "hard": {
-    "pass": 2,
-    "total": 8
+    "pass": 3,
+    "total": 9
   },
-  "summary": "FAIL hard 2/8 · first-action 0.06s · first3s 5 (limit 1) · feedback p90 none (limit 1000) · max-chars 334 (limit 30) · errors 2 (limit 0) · fps-p5 60 · notext FAIL · repro FAIL · incomplete (stuck)",
+  "summary": "FAIL hard 3/9 · first-action 0.06s · first3s 5 (limit 1) · feedback p90 none (limit 900) · max-chars 334 (limit 30) · errors 2 (limit 0) · fps-p5 60 · notext FAIL · repro FAIL · layers skipped · incomplete (stuck)",
   "checks": [
     {
       "id": "first-action",
       "label": "首个可操作元素",
       "pass": true,
-      "value": 0.06480000001192093,
-      "limit": 1
+      "value": 0.060899999976158144,
+      "limit": 0.6
     },
     {
       "id": "first3s",
@@ -29,7 +29,7 @@
       "label": "反馈延迟 p90",
       "pass": false,
       "value": "none",
-      "limit": 1000,
+      "limit": 900,
       "note": "样本 1，100ms 内有反馈的占 0%（目标 100ms）"
     },
     {
@@ -46,22 +46,22 @@
       "pass": false,
       "value": 2,
       "limit": 0,
-      "note": "[bad] 初始化失败：未能读取配置 | Error: [bad] 未捕获的异常\n    at http://127.0.0.1:54886/bad.html:29:28"
+      "note": "[bad] 初始化失败：未能读取配置 | Error: [bad] 未捕获的异常\n    at http://127.0.0.1:50500/bad.html:29:28"
     },
     {
       "id": "fps-p5",
       "label": "帧率 p5",
       "pass": true,
       "value": 60,
-      "limit": 50,
-      "note": "541 帧；整局 rAF p5=60；stage.fpsP5()=n/a（末 12 秒有探针，未计入）"
+      "limit": 55,
+      "note": "539 帧；整局 rAF p5=60；stage.fpsP5()=n/a（末 12 秒有探针，未计入）"
     },
     {
       "id": "notext",
       "label": "删字测试",
       "pass": false,
       "value": "FAIL",
-      "limit": "done",
+      "limit": "hidden + done",
       "note": "停在 stuck"
     },
     {
@@ -71,10 +71,31 @@
       "value": "FAIL",
       "limit": "same",
       "note": "事实 0 条（无 world.fact，只比较幕序）；账本一致，幕序一致，台词一致；有一次没跑完"
+    },
+    {
+      "id": "layers",
+      "label": "三层信息流与回执",
+      "pass": true,
+      "value": "skipped",
+      "limit": "五类齐全、幕序与回执完整",
+      "note": "通用测量夹具没有导演方案，不适用三层协议"
     }
   ],
   "metrics": {
-    "firstActionSec": 0.06480000001192093,
+    "layers": {
+      "required": false,
+      "letters": 0,
+      "counts": {
+        "commission": 0,
+        "plan": 0,
+        "cue": 0,
+        "report": 0,
+        "retro": 0
+      },
+      "pending": 0,
+      "check": []
+    },
+    "firstActionSec": 0.060899999976158144,
     "first3s": {
       "perAct": [
         {
@@ -113,7 +134,7 @@
         "[bad] 初始化失败：未能读取配置"
       ],
       "page": [
-        "Error: [bad] 未捕获的异常\n    at http://127.0.0.1:54886/bad.html:29:28"
+        "Error: [bad] 未捕获的异常\n    at http://127.0.0.1:50500/bad.html:29:28"
       ],
       "trace": 0,
       "warnings": 0
@@ -123,11 +144,11 @@
       "own": 59.88023952095548,
       "stage": null,
       "usedStage": false,
-      "frames": 541
+      "frames": 539
     },
     "notext": {
       "done": false,
-      "hidden": false,
+      "hidden": true,
       "reason": "stuck"
     },
     "repro": {
@@ -135,7 +156,11 @@
       "factsEqual": true,
       "actsEqual": true,
       "linesEqual": true,
-      "bothDone": false
+      "bothDone": false,
+      "actualLedgerEqual": null,
+      "sameActionSequence": true,
+      "firstFactDifference": null,
+      "firstActionDifference": null
     },
     "seedDiff": {
       "checked": false
@@ -153,7 +178,7 @@
       "done": false,
       "reason": "stuck",
       "steps": 10,
-      "seconds": 11.9,
+      "seconds": 11.1,
       "fallbackClicks": 0,
       "shots": 0
     },
@@ -161,7 +186,7 @@
       "done": false,
       "reason": "stuck",
       "steps": 10,
-      "seconds": 9.4,
+      "seconds": 9.7,
       "fallbackClicks": 0,
       "shots": 0
     },
@@ -169,7 +194,7 @@
       "done": false,
       "reason": "stuck",
       "steps": 10,
-      "seconds": 9.5,
+      "seconds": 9.7,
       "fallbackClicks": 0,
       "shots": 0
     }
@@ -195,15 +220,16 @@
   "thresholds": {
     "version": 1,
     "note": "棘轮：每次 /goal 达成后只升不降。数值来自 docs/design/demo-spec.md 第八节。",
-    "firstActionSec": 1,
+    "firstActionSec": 0.6,
     "first3sActionsMax": 1,
-    "feedbackMsMax": 1000,
+    "feedbackMsMax": 900,
     "feedbackMsTarget": 100,
     "maxChars": 30,
     "consoleErrorsMax": 0,
-    "fpsP5Min": 50,
+    "fpsP5Min": 55,
     "notext": true,
     "repro": true,
+    "layers": true,
     "feedback": {
       "pixelDelta": 20,
       "globalFrac": 0.0003,
@@ -219,5 +245,5 @@
       "emptyAffSeconds": 45
     }
   },
-  "outDir": "/Users/lidechi/Documents/Github/Zhuzi-claude/runs/_bench/bad"
+  "outDir": "/Users/lidechi/orca/workspaces/Zhuzi-claude/ds/runs/_bench/bad"
 }

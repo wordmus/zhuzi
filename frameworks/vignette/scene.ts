@@ -22,6 +22,7 @@ export interface ReturnSceneState {
   showSlips?: boolean;
   cornerTicket?: number;
   lampDim?: boolean;
+  lampX?: number;
 }
 
 export interface ReturnLayout {
@@ -138,7 +139,7 @@ export function drawReturnScene(ctx: C2D, w: number, h: number, mentor: Figure, 
   const seatY = h * 0.94;
   const seatS = Math.min(h * 0.17, w * 0.18);
   drawSeat(ctx, seatX, seatY, seatS);
-  const lampX = w * (st.revisiting ? 0.29 : 0.48);
+  const lampX = w * (st.lampX ?? 0.48);
   const sideLamp = drawSmallLamp(ctx, lampX, seatY - seatS * 0.08, seatS * 0.82, t, st.lampDim ?? false);
 
   const doorW = Math.min(h * 0.3, w * 0.26);

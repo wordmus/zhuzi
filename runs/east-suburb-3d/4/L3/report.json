@@ -1,0 +1,130 @@
+{
+  "intent": "east-suburb-3d",
+  "seed": 4,
+  "tier": "L3",
+  "when": "2026-10-16T00:17:34.122Z",
+  "status": "ok",
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": []
+  },
+  "build": {
+    "ok": true,
+    "ms": 482,
+    "bytes": 6525293,
+    "singleFile": true,
+    "external": []
+  },
+  "play": {
+    "done": true,
+    "reason": "done",
+    "seconds": 50.3,
+    "steps": 4,
+    "stepLog": [
+      {
+        "i": 0,
+        "act": "east3d",
+        "aff": "east-crack",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 1,
+        "act": "east3d",
+        "aff": "east-crack",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 2,
+        "act": "east3d",
+        "aff": "east-sky",
+        "prefer": "first",
+        "progressed": true
+      },
+      {
+        "i": 3,
+        "act": "east3d",
+        "aff": "east-sky",
+        "prefer": "least-clicked",
+        "progressed": true
+      }
+    ],
+    "shots": [
+      "01-east3d-enter.png",
+      "02-east3d-s0.png",
+      "03-east3d-s1.png",
+      "04-east3d-s2.png",
+      "05-east3d-s3.png",
+      "06-final-done.png"
+    ],
+    "traceEvents": 39,
+    "errors": 0,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "fallbackClicks": 0,
+    "firstActionSec": 0.329,
+    "stageFpsP5": 59.88023952094243,
+    "ledger": null,
+    "acts": [
+      {
+        "act": "east3d",
+        "expected": "日轮与禾的一句",
+        "entered": true,
+        "exited": true,
+        "durationMs": 50236,
+        "firstAffMs": 212,
+        "firstActionMs": 2486,
+        "predictedFirstActionMs": 1200,
+        "note": "首个动作 2486ms，比预演的 1200ms 慢很多（模拟玩家要先等画面稳定约 450ms）",
+        "lines": [
+          "天老爷，东郊还有我呢。"
+        ]
+      }
+    ]
+  },
+  "seconds": 51.4,
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 6525293
+    },
+    {
+      "path": "layers.json",
+      "bytes": 11098
+    },
+    {
+      "path": "plan.json",
+      "bytes": 15233
+    },
+    {
+      "path": "shots/01-east3d-enter.png",
+      "bytes": 555595
+    },
+    {
+      "path": "shots/02-east3d-s0.png",
+      "bytes": 524056
+    },
+    {
+      "path": "shots/03-east3d-s1.png",
+      "bytes": 472334
+    },
+    {
+      "path": "shots/04-east3d-s2.png",
+      "bytes": 202880
+    },
+    {
+      "path": "shots/05-east3d-s3.png",
+      "bytes": 163027
+    },
+    {
+      "path": "shots/06-final-done.png",
+      "bytes": 332796
+    },
+    {
+      "path": "trace.jsonl",
+      "bytes": 13877
+    }
+  ]
+}

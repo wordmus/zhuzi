@@ -1,0 +1,125 @@
+{
+  "intent": "mentor-desk",
+  "seed": 2,
+  "tier": "L1",
+  "when": "2026-10-15T22:00:58.116Z",
+  "status": "ok",
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": [
+      {
+        "level": "warn",
+        "path": "acts[0].lines[0].text",
+        "msg": "「来了。这一件刚做好。」不止一句（每屏 ≤ 1 句）",
+        "act": "threshold"
+      }
+    ]
+  },
+  "build": {
+    "ok": true,
+    "ms": 508,
+    "bytes": 6518134,
+    "singleFile": true,
+    "external": []
+  },
+  "play": {
+    "done": true,
+    "reason": "done",
+    "seconds": 8.2,
+    "steps": 2,
+    "stepLog": [
+      {
+        "i": 0,
+        "act": "threshold",
+        "aff": "door",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 1,
+        "act": "threshold",
+        "aff": "ticket",
+        "prefer": "pulse",
+        "progressed": true
+      }
+    ],
+    "shots": [
+      "01-threshold-enter.png",
+      "02-threshold-s0.png",
+      "03-threshold-s1.png",
+      "04-final-done.png"
+    ],
+    "traceEvents": 32,
+    "errors": 0,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "fallbackClicks": 0,
+    "firstActionSec": 0.121,
+    "stageFpsP5": 59.52380952380888,
+    "ledger": null,
+    "acts": [
+      {
+        "act": "threshold",
+        "expected": "灯一盏盏亮到你这边",
+        "entered": true,
+        "exited": true,
+        "durationMs": 7332,
+        "firstAffMs": 5,
+        "firstActionMs": 2275,
+        "predictedFirstActionMs": 4000,
+        "note": "与预演相近",
+        "lines": [
+          "帮禾借点粟，让一家人过冬。"
+        ]
+      }
+    ]
+  },
+  "seconds": 9.3,
+  "files": [
+    {
+      "path": "bench.json",
+      "bytes": 5764
+    },
+    {
+      "path": "curve.csv",
+      "bytes": 145
+    },
+    {
+      "path": "index.html",
+      "bytes": 6518134
+    },
+    {
+      "path": "layers.json",
+      "bytes": 11749
+    },
+    {
+      "path": "plan.json",
+      "bytes": 18788
+    },
+    {
+      "path": "report.json",
+      "bytes": 2425
+    },
+    {
+      "path": "shots/01-threshold-enter.png",
+      "bytes": 936339
+    },
+    {
+      "path": "shots/02-threshold-s0.png",
+      "bytes": 1076314
+    },
+    {
+      "path": "shots/03-threshold-s1.png",
+      "bytes": 1083642
+    },
+    {
+      "path": "shots/04-final-done.png",
+      "bytes": 1083642
+    },
+    {
+      "path": "trace.jsonl",
+      "bytes": 13736
+    }
+  ]
+}

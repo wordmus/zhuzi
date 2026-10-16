@@ -1,0 +1,20 @@
+import assert from 'node:assert/strict';
+import { createRng } from '../../engine/rng';
+import { QUOTES, SCHOOLS, answer, initialScore, makeDeck, standing } from './logic';
+
+assert.equal(new Set(QUOTES.map(q => q.school)).size, 6);
+assert(QUOTES.every(q => [...q.text].length <= 18 && q.source && q.url));
+const deck = () => makeDeck(createRng(317).fork('jixia-speakers').shuffle(QUOTES));
+assert.deepEqual(deck(), deck());
+assert.equal(deck().length, 5);
+let score = initialScore();
+for (const [i, quote] of deck().entries()) score = answer(score, quote, i === 2 ? SCHOOLS.find(s => s !== quote.school)! : quote.school);
+assert.equal(score.correct, 4);
+assert.equal(score.maxStreak, 2);
+assert.equal(score.seeds.length, 1);
+assert(standing(score));
+assert(!standing(initialScore()));
+assert(!standing({ ...score, correct: 2 }));
+assert(standing({ ...score, correct: 3 }));
+assert.throws(() => makeDeck(QUOTES, 6));
+console.log('PASS jixia-speakers：六派史源、五题复现、错题留种、连对与六成门槛');

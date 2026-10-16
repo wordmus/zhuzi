@@ -24,7 +24,7 @@ export interface ValidateOptions {
   rules?: { rules: { id: string; param?: Record<string, number> }[] };
 }
 
-const FRAMEWORKS = ['vignette', 'reveal', 'walk2d'];
+const FRAMEWORKS = ['vignette', 'reveal', 'walk2d', 'chronicle', 'jixia-speakers', 'wude-wheel', 'qi-knife', 'bells', 'studio', 'east3d'];
 const TIERS = ['L0', 'L1', 'L2', 'L3', 'L4'];
 /** 一句话的字数：不含空白，按码位数，与 components/line.ts 的算法一致 */
 export const countChars = (s: string) => [...String(s).replace(/\s/g, '')].length;

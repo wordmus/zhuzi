@@ -1,0 +1,14 @@
+{
+  "id": "east3d-pots",
+  "file": "pots.glb",
+  "recipe": "三只陶罐（球体+罐口圆柱，尺寸递减）",
+  "faces": 804,
+  "face_unit": "triangles",
+  "source": "程序化生成（Blender 5.1，seed 7）",
+  "license": "本项目自有",
+  "era": "zhanguo",
+  "tags": [
+    "east3d",
+    "drought"
+  ]
+}

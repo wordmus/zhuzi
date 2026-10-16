@@ -10,14 +10,23 @@ import { createStore } from '../engine/store';
 import { createThink } from '../engine/think';
 import { createAudio } from '../engine/audio';
 import { createLines } from '../components/line';
+import { createLayerBus } from '../engine/layers/bus';
+import { createMentor } from '../engine/layers/mentor';
+import { actorReport, factsIn } from '../engine/layers/report';
+import type { ActorReport } from '../engine/layers/types';
+import { acceptCommission } from '../director/pipeline/mentor';
 import type { Plan } from '../engine/types';
 import type { Ctx, Framework, VisitInfo, VisitRecord } from './context';
 import { vignette } from '../frameworks/vignette';
 import { reveal } from '../frameworks/reveal';
 import { walk2d } from '../frameworks/walk2d';
+import { studio } from '../frameworks/studio';
+import { east3d } from '../frameworks/east3d';
+import { fiftyYearsFrameworks } from '../director/pipeline/fifty-years-runtime';
 import { mountPresenter } from '../components/presenter';
 
-const FRAMEWORKS: Record<string, Framework> = { vignette, reveal, walk2d };
+const FRAMEWORKS: Record<string, Framework> = { vignette, reveal, walk2d, studio, east3d };
+Object.assign(FRAMEWORKS, fiftyYearsFrameworks);
 
 async function boot() {
   document.documentElement.lang = 'zh-CN';
@@ -41,8 +50,9 @@ async function boot() {
   };
   const record: VisitRecord = { n: visit.n, at: senses.now(), dwell: {}, seed: p.seed, name: previous?.name };
 
+  const layers = createLayerBus(bus, () => ({ t: performance.now(), day: (ctx.handoff.world as { state?: () => { day: number } } | undefined)?.state?.().day }));
   const ctx: Ctx = {
-    stage, bus, store, senses, think, aff, lines, audio,
+    stage, bus, layers, store, senses, think, aff, lines, audio,
     plan: p,
     rng: createRng(p.seed),
     visit,
@@ -51,11 +61,27 @@ async function boot() {
   };
 
   // 给 bench、模拟玩家与演示面板看的窗口
-  (window as any).__zhuzi = { ctx, plan: p, bus, stage, version: p.version };
+  (window as any).__zhuzi = { ctx, plan: p, bus, stage, version: p.version, layers: { letters: layers.letters, check: layers.check } };
   (window as any).__trace = bus.trace;
   bus.log('sense', { name: 'boot', visit: visit.n, seed: p.seed, tier: p.tier, dayPart: senses.dayPart() });
 
   mountPresenter(ctx);
+
+  layers.usePlan(p);
+  const mentor = createMentor({
+    seed: p.seed, tier: p.tier, visits: visit.n, previous, sinceLastMs: visit.sinceMs,
+    dayPart: senses.dayPart(), device: senses.coarsePointer() || stage.width < 700 ? '手机' : '宽屏',
+    strength: senses.strength(), store,
+  });
+  const commission = mentor.commission(p.intent, p);
+  const commissionLetter = layers.send({ kind: 'commission', from: 'mentor', to: 'director', payload: commission });
+  Object.assign(p, acceptCommission(p, commission));
+  layers.receive(commissionLetter.id, 'director');
+  const planLetter = layers.send({ kind: 'plan', from: 'director', to: 'mentor', payload: p.ack! });
+  ctx.handoff.mentorPlan = p.ack;
+  layers.receive(planLetter.id, 'mentor');
+  const reports: ActorReport[] = [];
+  const touched: string[] = [];
 
   const savedDwell: Record<string, number> = {};
   const saveRecord = () => {
@@ -77,14 +103,46 @@ async function boot() {
       bus.log('error', { message: `no framework ${act.framework}` });
       continue;
     }
+    const cues = Object.values(p.cues ?? {}).filter(c => c.act === act.id);
+    ctx.handoff.actorCues = cues;
+    const cueLetters = cues.map(cue => layers.send({ kind: 'cue', from: 'director', to: cue.who, act: act.id, payload: cue }));
+    const traceStart = bus.trace.length;
     bus.log('act.enter', { act: act.id, framework: act.framework, author: act.author, focus: act.focus, predict: act.predict });
     const t0 = performance.now();
     const res = await fw.run(act, ctx);
-    bus.log('act.exit', { act: act.id, ms: Math.round(performance.now() - t0), data: res.data });
+    const ms = performance.now() - t0;
+    bus.log('act.exit', { act: act.id, ms: Math.round(ms), data: res.data });
+    const span = bus.trace.slice(traceStart);
+    for (const e of span) if (e.kind === 'aff.click') {
+      const id = String(e.id);
+      const local = id.replace(`${act.framework}-`, '').replace(/^place-/, '');
+      touched.push(`${act.id}:${id}`, `${act.id}:${local}`);
+      if (local === 'he') touched.push(`${act.id}:heart`);
+      if (local === 'gate-ring') touched.push(`${act.id}:gate`);
+      if (act.id === 'return' && ['name', 'pen'].includes(local)) touched.push(`${act.id}:mentor`);
+    }
+    for (const [i, cue] of cues.entries()) {
+      const report = actorReport(p, act, cue, res, span, ms);
+      const world = ctx.handoff.world as { state?: () => { mind?: { seeds?: ActorReport['seeds'] } } } | undefined;
+      if (cue.who === '禾' && act.framework === 'walk2d') report.seeds = structuredClone(world?.state?.().mind?.seeds ?? []);
+      layers.receive(cueLetters[i]!.id, cue.who);
+      const letter = layers.send({ kind: 'report', from: cue.who, to: 'director', act: act.id, payload: report });
+      reports.push(report);
+      layers.receive(letter.id, 'director');
+    }
     aff.clear();
     saveRecord();
   }
   saveRecord();
+  const world = ctx.handoff.world as { ledger?: () => unknown[] } | undefined;
+  const facts = factsIn([...(world?.ledger?.() ?? []), ...reports.flatMap(r => r.facts)]);
+  const retro = mentor.retro(p, reports, { record, facts, touched });
+  if (ctx.handoff.forgetVisit) retro.userModelDelta = {};
+  const retroLetter = layers.send({ kind: 'retro', from: 'director', to: 'mentor', payload: retro });
+  if (!ctx.handoff.forgetVisit) {
+    for (const [key, value] of Object.entries(retro.userModelDelta)) store.set(key, value);
+  }
+  layers.receive(retroLetter.id, 'mentor');
   bus.log('act.exit', { act: 'visit', done: true });
   (window as any).__zhuzi.done = true;
 }

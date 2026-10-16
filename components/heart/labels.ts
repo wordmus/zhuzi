@@ -3,11 +3,10 @@ import type { Approach, Rehearsal, Trait, Weights } from '../../engine/types';
 import { approachName, type HeartLayout, weightY } from './drawing';
 
 export function rehearsalText(rehearsal: Rehearsal, changedFrom?: Approach): string {
-  const method = approachName[rehearsal.approach];
   const result = { give: '肯给粟', lend: '肯借粟', 'buy-land': '要买地', refuse: '会拒绝' }[rehearsal.predicted];
   return changedFrom && changedFrom !== rehearsal.approach
-    ? `未用${approachName[changedFrom]}，禾改${method}：猜他${result}。`
-    : `${method}：禾猜他${result}。`;
+    ? `禾另猜他${result}。`
+    : `禾猜他${result}。`;
 }
 
 export function createHeartLabels(root: HTMLElement) {

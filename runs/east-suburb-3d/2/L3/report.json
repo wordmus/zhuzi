@@ -1,0 +1,110 @@
+{
+  "intent": "east-suburb-3d",
+  "seed": 2,
+  "tier": "L3",
+  "when": "2026-10-15T16:48:24.418Z",
+  "status": "ok",
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": []
+  },
+  "build": {
+    "ok": true,
+    "ms": 571,
+    "bytes": 6207433,
+    "singleFile": true,
+    "external": []
+  },
+  "play": {
+    "done": true,
+    "reason": "done",
+    "seconds": 7.3,
+    "steps": 2,
+    "stepLog": [
+      {
+        "i": 0,
+        "act": "east3d",
+        "aff": "east-crack",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 1,
+        "act": "east3d",
+        "aff": "east-sky",
+        "prefer": "first",
+        "progressed": true
+      }
+    ],
+    "shots": [
+      "01-east3d-enter.png",
+      "02-east3d-s0.png",
+      "03-east3d-s1.png",
+      "04-final-done.png"
+    ],
+    "traceEvents": 29,
+    "errors": 0,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "fallbackClicks": 0,
+    "firstActionSec": 0.387,
+    "stageFpsP5": 59.52380952380888,
+    "ledger": null,
+    "acts": [
+      {
+        "act": "east3d",
+        "expected": "日轮与禾的一句",
+        "entered": true,
+        "exited": true,
+        "durationMs": 7297,
+        "firstAffMs": 225,
+        "firstActionMs": 2507,
+        "predictedFirstActionMs": 1200,
+        "note": "首个动作 2507ms，比预演的 1200ms 慢很多（模拟玩家要先等画面稳定约 450ms）",
+        "lines": [
+          "天老爷，你是忘了东郊，还是忘了我？"
+        ]
+      }
+    ]
+  },
+  "seconds": 8.8,
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 6207433
+    },
+    {
+      "path": "layers.json",
+      "bytes": 11328
+    },
+    {
+      "path": "plan.json",
+      "bytes": 15628
+    },
+    {
+      "path": "report.json",
+      "bytes": 521
+    },
+    {
+      "path": "shots/01-east3d-enter.png",
+      "bytes": 330848
+    },
+    {
+      "path": "shots/02-east3d-s0.png",
+      "bytes": 349359
+    },
+    {
+      "path": "shots/03-east3d-s1.png",
+      "bytes": 294146
+    },
+    {
+      "path": "shots/04-final-done.png",
+      "bytes": 29408
+    },
+    {
+      "path": "trace.jsonl",
+      "bytes": 12744
+    }
+  ]
+}

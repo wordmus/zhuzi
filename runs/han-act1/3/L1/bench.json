@@ -1,0 +1,345 @@
+{
+  "target": "runs/han-act1/3/L1",
+  "url": "http://127.0.0.1:53731/index.html",
+  "when": "2026-10-15T14:18:57.701Z",
+  "verdict": "PASS",
+  "hard": {
+    "pass": 9,
+    "total": 9
+  },
+  "summary": "PASS hard 9/9 · first-action 0.02s · first3s 1 · feedback p90 66ms · max-chars 29 · errors 0 · fps-p5 60 · notext PASS · repro PASS · layers PASS",
+  "checks": [
+    {
+      "id": "first-action",
+      "label": "首个可操作元素",
+      "pass": true,
+      "value": 0.0215,
+      "limit": 0.9
+    },
+    {
+      "id": "first3s",
+      "label": "每幕前 3 秒可做的事",
+      "pass": true,
+      "value": 1,
+      "limit": 1,
+      "note": "reveal:1 han:1"
+    },
+    {
+      "id": "feedback",
+      "label": "反馈延迟 p90",
+      "pass": true,
+      "value": 66,
+      "limit": 1000,
+      "note": "样本 7，100ms 内有反馈的占 100%（目标 100ms）"
+    },
+    {
+      "id": "max-chars",
+      "label": "每屏可见字数",
+      "pass": true,
+      "value": 29,
+      "limit": 30,
+      "note": "DOM 29 / trace 17"
+    },
+    {
+      "id": "errors",
+      "label": "控制台报错",
+      "pass": true,
+      "value": 0,
+      "limit": 0
+    },
+    {
+      "id": "fps-p5",
+      "label": "帧率 p5",
+      "pass": true,
+      "value": 60,
+      "limit": 50,
+      "note": "2683 帧；整局 rAF p5=60；stage.fpsP5()=60（已计入）"
+    },
+    {
+      "id": "notext",
+      "label": "删字测试",
+      "pass": true,
+      "value": "PASS",
+      "limit": "hidden + done"
+    },
+    {
+      "id": "repro",
+      "label": "同 seed 复现",
+      "pass": true,
+      "value": "PASS",
+      "limit": "same",
+      "note": "事实 40 条；账本一致，幕序一致，台词一致"
+    },
+    {
+      "id": "layers",
+      "label": "三层信息流与回执",
+      "pass": true,
+      "value": "PASS",
+      "limit": "五类齐全、幕序与回执完整",
+      "note": "9封信；未回执0；检查通过"
+    }
+  ],
+  "metrics": {
+    "layers": {
+      "required": true,
+      "letters": 9,
+      "counts": {
+        "commission": 1,
+        "plan": 1,
+        "cue": 3,
+        "report": 3,
+        "retro": 1
+      },
+      "pending": 0,
+      "check": []
+    },
+    "firstActionSec": 0.0215,
+    "first3s": {
+      "perAct": [
+        {
+          "act": "reveal",
+          "n": 1
+        },
+        {
+          "act": "han",
+          "n": 1
+        }
+      ],
+      "max": 1,
+      "source": "trace"
+    },
+    "feedback": {
+      "samples": [
+        {
+          "step": 0,
+          "aff": "east-suburb",
+          "ambient": {
+            "g": 0.005333116319444445,
+            "l": 0
+          },
+          "first": {
+            "g": 0.0004144965277777778,
+            "l": 0.0016828300891854095
+          },
+          "latencyMs": 49,
+          "shots": 20
+        },
+        {
+          "step": 1,
+          "aff": "walk2d-he",
+          "ambient": {
+            "g": 0.005149739583333333,
+            "l": 0.03211443728685108
+          },
+          "first": {
+            "g": 0.21372178819444446,
+            "l": 0.3898459914469767
+          },
+          "latencyMs": 66,
+          "shots": 20
+        },
+        {
+          "step": 2,
+          "aff": "heart-approach",
+          "ambient": {
+            "g": 0.00451171875,
+            "l": 0.004751566059225512
+          },
+          "first": {
+            "g": 0.011993272569444444,
+            "l": 0.039311645785876995
+          },
+          "latencyMs": 54,
+          "shots": 20
+        },
+        {
+          "step": 4,
+          "aff": "heart-go",
+          "ambient": {
+            "g": 0.004002821180555556,
+            "l": 0.0048835108585193274
+          },
+          "first": {
+            "g": 0.0020355902777777777,
+            "l": 0.017567465843652378
+          },
+          "latencyMs": 50,
+          "shots": 21
+        },
+        {
+          "step": 8,
+          "aff": "heart-weight-qing",
+          "ambient": {
+            "g": 0.001958550347222222,
+            "l": 0.0006041790600832838
+          },
+          "first": {
+            "g": 0.004759114583333333,
+            "l": 0.035135336109458654
+          },
+          "latencyMs": 50,
+          "shots": 20
+        },
+        {
+          "step": 12,
+          "aff": "heart-close",
+          "ambient": {
+            "g": 0.003034939236111111,
+            "l": 0.0028970688479890935
+          },
+          "first": {
+            "g": 0.020707465277777778,
+            "l": 0.053467961826857535
+          },
+          "latencyMs": 49,
+          "shots": 20
+        },
+        {
+          "step": 16,
+          "aff": "walk2d-he",
+          "ambient": {
+            "g": 0.0034548611111111112,
+            "l": 0.0009473285335354301
+          },
+          "first": {
+            "g": 0.09469184027777777,
+            "l": 0.17404793482379688
+          },
+          "latencyMs": 51,
+          "shots": 20
+        }
+      ],
+      "p90Ms": 66,
+      "within100Ratio": 1
+    },
+    "chars": {
+      "dom": 29,
+      "trace": 17,
+      "max": 29
+    },
+    "errors": {
+      "total": 0,
+      "console": [],
+      "page": [],
+      "trace": 0,
+      "warnings": 0
+    },
+    "fps": {
+      "p5": 59.523809523824994,
+      "own": 59.523809523824994,
+      "stage": 59.523809523824994,
+      "usedStage": true,
+      "frames": 2683
+    },
+    "notext": {
+      "done": true,
+      "hidden": true,
+      "reason": "done"
+    },
+    "repro": {
+      "facts": 40,
+      "factsEqual": true,
+      "actsEqual": true,
+      "linesEqual": true,
+      "bothDone": true,
+      "actualLedgerEqual": true,
+      "sameActionSequence": true,
+      "firstFactDifference": null,
+      "firstActionDifference": null
+    },
+    "seedDiff": {
+      "checked": false
+    },
+    "stepsPolicy": {
+      "seed": null,
+      "preferCounts": {
+        "focus": 7,
+        "pulse": 4,
+        "least-clicked": 11,
+        "input": 2
+      }
+    }
+  },
+  "runs": {
+    "main": {
+      "done": true,
+      "reason": "done",
+      "steps": 24,
+      "seconds": 68.4,
+      "fallbackClicks": 0,
+      "shots": 0
+    },
+    "notext": {
+      "done": true,
+      "reason": "done",
+      "steps": 24,
+      "seconds": 48.7,
+      "fallbackClicks": 0,
+      "shots": 0
+    },
+    "repro": {
+      "done": true,
+      "reason": "done",
+      "steps": 24,
+      "seconds": 48.9,
+      "fallbackClicks": 0,
+      "shots": 0
+    }
+  },
+  "curve": [
+    {
+      "minute": 1,
+      "decisions": 23,
+      "new_info": 62,
+      "want_continue": 5,
+      "numbers_on_screen": 0,
+      "words_on_screen": 19,
+      "note": "23 次动手，起于 reveal/east-suburb；62 条新东西"
+    },
+    {
+      "minute": 2,
+      "decisions": 1,
+      "new_info": 9,
+      "want_continue": 4,
+      "numbers_on_screen": 0,
+      "words_on_screen": 13,
+      "note": "1 次动手，起于 han/walk2d-place-field；9 条新东西"
+    }
+  ],
+  "curveSummary": {
+    "decisionDensity": 12,
+    "firstDecisionMinute": 1,
+    "wantContinueMin": 4,
+    "wantContinueEnd": 4,
+    "numbersMedian": 0
+  },
+  "thresholds": {
+    "version": 1,
+    "note": "棘轮：每次 /goal 达成后只升不降。数值来自 docs/design/demo-spec.md 第八节。",
+    "firstActionSec": 0.9,
+    "first3sActionsMax": 1,
+    "feedbackMsMax": 1000,
+    "feedbackMsTarget": 100,
+    "maxChars": 30,
+    "consoleErrorsMax": 0,
+    "fpsP5Min": 50,
+    "notext": true,
+    "repro": true,
+    "layers": true,
+    "feedback": {
+      "pixelDelta": 20,
+      "globalFrac": 0.0003,
+      "localFrac": 0.002,
+      "baselineMul": 2,
+      "maxProbes": 8
+    },
+    "player": {
+      "maxSteps": 240,
+      "maxSeconds": 420,
+      "settleMs": 450,
+      "minGapMs": 600,
+      "emptyAffSeconds": 45
+    }
+  },
+  "outDir": "/Users/lidechi/orca/workspaces/Zhuzi-claude/ds/runs/han-act1/3/L1"
+}

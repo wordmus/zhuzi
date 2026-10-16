@@ -1,20 +1,20 @@
 {
-  "target": "runs/first-visit/51/L1",
-  "url": "http://127.0.0.1:56055/index.html",
-  "when": "2026-10-15T02:32:36.854Z",
+  "target": "runs/first-visit/13/L1",
+  "url": "http://127.0.0.1:63528/index.html",
+  "when": "2026-10-16T00:28:16.535Z",
   "verdict": "PASS",
   "hard": {
-    "pass": 8,
-    "total": 8
+    "pass": 9,
+    "total": 9
   },
-  "summary": "PASS hard 8/8 · first-action 0.04s · first3s 1 · feedback p90 339ms · max-chars 29 · errors 0 · fps-p5 60 · notext PASS · repro PASS · seed-differs PASS",
+  "summary": "PASS hard 9/9 · first-action 0.13s · first3s 1 · feedback p90 300ms · max-chars 29 · errors 0 · fps-p5 60 · notext PASS · repro PASS · layers PASS",
   "checks": [
     {
       "id": "first-action",
       "label": "首个可操作元素",
       "pass": true,
-      "value": 0.03559999999403954,
-      "limit": 0.9
+      "value": 0.1265,
+      "limit": 0.6
     },
     {
       "id": "first3s",
@@ -28,9 +28,9 @@
       "id": "feedback",
       "label": "反馈延迟 p90",
       "pass": true,
-      "value": 339,
-      "limit": 1000,
-      "note": "样本 8，100ms 内有反馈的占 88%（目标 100ms）"
+      "value": 300,
+      "limit": 900,
+      "note": "样本 8，100ms 内有反馈的占 75%（目标 100ms）"
     },
     {
       "id": "max-chars",
@@ -38,7 +38,7 @@
       "pass": true,
       "value": 29,
       "limit": 30,
-      "note": "DOM 29 / trace 19"
+      "note": "DOM 29 / trace 17"
     },
     {
       "id": "errors",
@@ -52,8 +52,8 @@
       "label": "帧率 p5",
       "pass": true,
       "value": 60,
-      "limit": 50,
-      "note": "3318 帧；整局 rAF p5=60；stage.fpsP5()=60（已计入）"
+      "limit": 55,
+      "note": "3992 帧；整局 rAF p5=60；stage.fpsP5()=60（已计入）"
     },
     {
       "id": "notext",
@@ -68,11 +68,32 @@
       "pass": true,
       "value": "PASS",
       "limit": "same",
-      "note": "事实 37 条；账本一致，幕序一致，台词一致"
+      "note": "事实 43 条；账本一致，幕序一致，台词一致"
+    },
+    {
+      "id": "layers",
+      "label": "三层信息流与回执",
+      "pass": true,
+      "value": "PASS",
+      "limit": "五类齐全、幕序与回执完整",
+      "note": "15封信；未回执0；检查通过"
     }
   ],
   "metrics": {
-    "firstActionSec": 0.03559999999403954,
+    "layers": {
+      "required": true,
+      "letters": 15,
+      "counts": {
+        "commission": 1,
+        "plan": 1,
+        "cue": 6,
+        "report": 6,
+        "retro": 1
+      },
+      "pending": 0,
+      "check": []
+    },
+    "firstActionSec": 0.1265,
     "first3s": {
       "perAct": [
         {
@@ -101,121 +122,121 @@
           "step": 0,
           "aff": "door",
           "ambient": {
-            "g": 0.0006673177083333333,
-            "l": 0.000019074608970516104
+            "g": 0.0006814236111111112,
+            "l": 0.000027249441386451578
           },
           "first": {
-            "g": 0.10824110243055556,
-            "l": 0.18272112921685105
+            "g": 0.09960828993055555,
+            "l": 0.16705542536378004
           },
-          "latencyMs": 339,
+          "latencyMs": 300,
           "shots": 6
         },
         {
           "step": 1,
           "aff": "ticket",
           "ambient": {
-            "g": 0.0011610243055555556,
-            "l": 0.002934613279440866
+            "g": 0.0032964409722222223,
+            "l": 0.006757610205886068
           },
           "first": {
-            "g": 0.005104166666666667,
-            "l": 0.01973811628984043
+            "g": 0.004259982638888889,
+            "l": 0.016352995663340492
           },
-          "latencyMs": 34,
+          "latencyMs": 40,
           "shots": 24
         },
         {
           "step": 2,
           "aff": "east-suburb",
           "ambient": {
-            "g": 0.004612630208333334,
+            "g": 0.005169270833333333,
             "l": 0
           },
           "first": {
-            "g": 0.0010145399305555556,
-            "l": 0.004273563060274664
+            "g": 0.0010004340277777778,
+            "l": 0.0018800009170736182
           },
-          "latencyMs": 32,
-          "shots": 24
+          "latencyMs": 102,
+          "shots": 20
         },
         {
           "step": 4,
           "aff": "heart-approach",
           "ambient": {
-            "g": 0.0047938368055555555,
-            "l": 0.0037008144288076888
+            "g": 0.0027528211805555557,
+            "l": 0.005054100227790433
           },
           "first": {
-            "g": 0.011834852430555556,
-            "l": 0.03403438699410241
-          },
-          "latencyMs": 33,
-          "shots": 24
-        },
-        {
-          "step": 8,
-          "aff": "walk2d-gate-ring",
-          "ambient": {
-            "g": 0.0026009114583333335,
-            "l": 0.017509130752373994
-          },
-          "first": {
-            "g": 0.002191840277777778,
-            "l": 0.014755295836376917
-          },
-          "latencyMs": 49,
-          "shots": 21
-        },
-        {
-          "step": 12,
-          "aff": "heart-weight-li",
-          "ambient": {
-            "g": 0.004223090277777778,
-            "l": 0.004312908982748364
-          },
-          "first": {
-            "g": 0.003832465277777778,
-            "l": 0.032830160618679355
+            "g": 0.011881510416666666,
+            "l": 0.03882047266514806
           },
           "latencyMs": 51,
           "shots": 20
         },
         {
-          "step": 16,
-          "aff": "heart-write",
+          "step": 8,
+          "aff": "walk2d-gate-ring",
           "ambient": {
-            "g": 0.005152994791666666,
-            "l": 0.012045375903636992
+            "g": 0.003932291666666666,
+            "l": 0.026471877282688093
           },
           "first": {
-            "g": 0.021159939236111112,
-            "l": 0.09057411927540704
+            "g": 0.0025108506944444445,
+            "l": 0.016902848794740688
           },
-          "latencyMs": 50,
+          "latencyMs": 69,
+          "shots": 20
+        },
+        {
+          "step": 12,
+          "aff": "heart-weight-li",
+          "ambient": {
+            "g": 0.0030143229166666665,
+            "l": 0.0010968173706127305
+          },
+          "first": {
+            "g": 0.0037174479166666666,
+            "l": 0.03171475312314099
+          },
+          "latencyMs": 51,
           "shots": 21
         },
         {
-          "step": 20,
-          "aff": "heart-write",
+          "step": 16,
+          "aff": "heart-weight-ming",
           "ambient": {
-            "g": 0.005403645833333333,
-            "l": 0.014420783884633729
+            "g": 0.0036414930555555554,
+            "l": 0.0028442891136228436
           },
           "first": {
-            "g": 0.020883246527777777,
-            "l": 0.08959215928326272
+            "g": 0.005057508680555556,
+            "l": 0.03851873884592504
           },
-          "latencyMs": 54,
-          "shots": 20
+          "latencyMs": 46,
+          "shots": 21
+        },
+        {
+          "step": 24,
+          "aff": "heart-go",
+          "ambient": {
+            "g": 0.003357204861111111,
+            "l": 0.0035631119714951043
+          },
+          "first": {
+            "g": 0.012652994791666667,
+            "l": 0.05128636758970906
+          },
+          "latencyMs": 69,
+          "shots": 15
         }
       ],
-      "p90Ms": 339,
-      "within100Ratio": 0.875
+      "p90Ms": 300,
+      "within100Ratio": 0.75
     },
     "chars": {
       "dom": 29,
-      "trace": 19,
+      "trace": 17,
       "max": 29
     },
     "errors": {
@@ -226,11 +247,11 @@
       "warnings": 0
     },
     "fps": {
-      "p5": 59.88023952091634,
-      "own": 59.88023952091634,
-      "stage": 59.88023952091634,
+      "p5": 59.523809523799216,
+      "own": 59.523809523824994,
+      "stage": 59.523809523799216,
       "usedStage": true,
-      "frames": 3318
+      "frames": 3992
     },
     "notext": {
       "done": true,
@@ -238,7 +259,7 @@
       "reason": "done"
     },
     "repro": {
-      "facts": 37,
+      "facts": 43,
       "factsEqual": true,
       "actsEqual": true,
       "linesEqual": true,
@@ -249,15 +270,14 @@
       "firstActionDifference": null
     },
     "seedDiff": {
-      "checked": true,
-      "differs": true
+      "checked": false
     },
     "stepsPolicy": {
       "seed": null,
       "preferCounts": {
         "focus": 8,
-        "pulse": 9,
-        "least-clicked": 9,
+        "pulse": 8,
+        "least-clicked": 17,
         "input": 3
       }
     }
@@ -266,24 +286,24 @@
     "main": {
       "done": true,
       "reason": "done",
-      "steps": 29,
-      "seconds": 79.6,
+      "steps": 36,
+      "seconds": 91.5,
       "fallbackClicks": 0,
       "shots": 0
     },
     "notext": {
       "done": true,
       "reason": "done",
-      "steps": 29,
-      "seconds": 56.3,
+      "steps": 36,
+      "seconds": 69.6,
       "fallbackClicks": 0,
       "shots": 0
     },
     "repro": {
       "done": true,
       "reason": "done",
-      "steps": 29,
-      "seconds": 56.2,
+      "steps": 36,
+      "seconds": 69.6,
       "fallbackClicks": 0,
       "shots": 0
     }
@@ -291,25 +311,25 @@
   "curve": [
     {
       "minute": 1,
-      "decisions": 21,
-      "new_info": 60,
+      "decisions": 20,
+      "new_info": 66,
       "want_continue": 5,
       "numbers_on_screen": 0,
-      "words_on_screen": 19,
-      "note": "21 次动手，起于 threshold/door；60 条新东西"
+      "words_on_screen": 16,
+      "note": "20 次动手，起于 threshold/door；66 条新东西"
     },
     {
       "minute": 2,
-      "decisions": 7,
-      "new_info": 14,
+      "decisions": 15,
+      "new_info": 21,
       "want_continue": 5,
       "numbers_on_screen": 0,
-      "words_on_screen": 6,
-      "note": "8 次动手，起于 han/?；14 条新东西"
+      "words_on_screen": 15,
+      "note": "16 次动手，起于 han/?；21 条新东西"
     }
   ],
   "curveSummary": {
-    "decisionDensity": 14,
+    "decisionDensity": 17.5,
     "firstDecisionMinute": 1,
     "wantContinueMin": 5,
     "wantContinueEnd": 5,
@@ -318,15 +338,16 @@
   "thresholds": {
     "version": 1,
     "note": "棘轮：每次 /goal 达成后只升不降。数值来自 docs/design/demo-spec.md 第八节。",
-    "firstActionSec": 0.9,
+    "firstActionSec": 0.6,
     "first3sActionsMax": 1,
-    "feedbackMsMax": 1000,
+    "feedbackMsMax": 900,
     "feedbackMsTarget": 100,
     "maxChars": 30,
     "consoleErrorsMax": 0,
-    "fpsP5Min": 50,
+    "fpsP5Min": 55,
     "notext": true,
     "repro": true,
+    "layers": true,
     "feedback": {
       "pixelDelta": 20,
       "globalFrac": 0.0003,
@@ -342,5 +363,5 @@
       "emptyAffSeconds": 45
     }
   },
-  "outDir": "/Users/lidechi/orca/workspaces/Zhuzi-claude/Sol-takes-over/runs/first-visit/51/L1"
+  "outDir": "/Users/lidechi/orca/workspaces/Zhuzi-claude/ds/runs/first-visit/13/L1"
 }

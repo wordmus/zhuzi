@@ -1,0 +1,14 @@
+{
+  "id": "east3d-well",
+  "file": "well.glb",
+  "recipe": "井圈+井沿+双柱+桔槔横杆+吊桶；青铜吊桶",
+  "faces": 208,
+  "face_unit": "triangles",
+  "source": "程序化生成（Blender 5.1，seed 7）",
+  "license": "本项目自有",
+  "era": "zhanguo",
+  "tags": [
+    "east3d",
+    "drought"
+  ]
+}

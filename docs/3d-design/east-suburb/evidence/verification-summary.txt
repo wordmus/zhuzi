@@ -1,0 +1,20 @@
+pnpm typecheck
+PASS tsc --noEmit · exit 0
+
+ZHUZI_ENTRY=dev/east3d.html ZHUZI_OUT=dist-east3d npx vite build && pnpm bench dist-east3d/dev/east3d.html
+PASS hard 9/9 · first-action 0.36s · first3s 1 · feedback p90 287ms · max-chars 11 · errors 0 · fps-p5 60 · notext PASS · repro PASS · layers PASS
+
+pnpm present --intent intents/east-suburb-3d.json --tier L3 --seed 4 && pnpm bench runs/east-suburb-3d/4/L3
+valid ok errors 0 warnings 0 · play done 4 steps 50.3s shots 6 trace 39 errors 0
+PASS hard 9/9 · first-action 0.23s · first3s 1 · feedback p90 302ms · max-chars 11 · errors 0 · fps-p5 60 · notext PASS · repro PASS · layers PASS
+
+pnpm exec tsx frameworks/east3d/idle.test.ts
+PASS idle (no-preference) · 55s 无输入 · done=true · crack=6.003s · sky=32.009s · gap=1 · hand-shift=1 · line=1 · triangles=39311 · materials=10 · peak-calls=39 · errors=0
+PASS idle (reduce) · 55s 无输入 · done=true · crack=6.015s · sky=32.021s · gap=1 · hand-shift=1 · line=1 · triangles=39311 · materials=10 · peak-calls=38 · errors=0
+PASS east3d idle 2/2
+PASS interaction · repeated inputs · gap=1 · hand-shift=1 · line=1 · done=true · errors=0
+
+screenshot: docs/3d-design/east-suburb/evidence/idle-no-preference-35s.png
+screenshot: docs/3d-design/east-suburb/evidence/idle-no-preference-55s.png
+screenshot: runs/east-suburb-3d/4/L3/shots/06-final-done.png
+未做：Tripo/绑骨、完全站立、自由走动/环绕、取水/下雨/季节/存档；移动端与真机 GPU、物理显示 100ms 未实测。

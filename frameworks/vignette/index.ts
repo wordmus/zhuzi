@@ -1,11 +1,14 @@
 import type { Ctx, Framework } from '../../app/context';
 import type { Ending } from '../../engine/types';
 import { TONE } from '../../components/paint/palette';
-import { ticket as paintTicket, bambooSlips } from '../../components/paint/props-room';
+import { ticket as paintTicket } from '../../components/paint/props-room';
 import { sceneDoor, sceneRoom, makeRoomCast, type RoomCast } from '../../components/paint/samples';
 import { clamp, easeOut, lerp } from '../../components/paint/util';
 import type { Affordance, AffShape, DragEvent } from '../../engine/affordance';
 import { drawReturnScene, drawSeat, drawSmallLamp, makeMentor, updateMentorLook, type ReturnLayout } from './scene';
+import { currentLampX, prepareVisitChanges } from './visit-changes';
+import { mountChronicle } from './chronicle';
+import { mountBooks } from '../../components/books';
 
 const MAX_LINE = 30;
 
@@ -89,13 +92,27 @@ async function runThreshold(act: Parameters<Framework['run']>[0], ctx: Ctx) {
   let visibleTicket = { x: stage.width / 2, y: stage.height * 0.65, w: 48 };
   const motion = stage.reducedMotion ? 0.25 : 1;
   const previous = ctx.visit.previous;
+  const changes = prepareVisitChanges(ctx);
+  const chronicle = mountChronicle(ctx);
+  const books = mountBooks(ctx);
+  (window as any).__books = books;
+  let glance = 0;
+  let pointer = { x: -1, y: -1 };
+  let lastFrameAt = performance.now();
+  const trackPointer = (e: PointerEvent) => {
+    const rect = stage.root.getBoundingClientRect();
+    pointer = { x: e.clientX - rect.left, y: e.clientY - rect.top };
+  };
+  const leavePointer = () => { pointer = { x: -1, y: -1 }; };
+  stage.root.addEventListener('pointermove', trackPointer);
+  stage.root.addEventListener('pointerleave', leavePointer);
   const previousEnding = ctx.store.get<Ending | null>('ending.last', null);
   const revisiting = !!previous?.ending && previousEnding?.id === previous.ending;
   const elapsedDays = Math.floor(ctx.visit.sinceMs / 86_400_000);
-  const greet = revisiting && previousEnding
+  const greet = changes[0]?.attribution ?? (revisiting && previousEnding
     ? shortLine(elapsedDays >= 1 ? previousEnding.echo.replaceAll('{days}', String(elapsedDays)) : previousEnding.mentorLine)
     : ctx.plan.director.rules.includes('first-loop-readable') ? '帮禾借点粟，让一家人过冬。'
-      : lineText(ctx, 'greet', '来了，墨还没干。');
+      : lineText(ctx, 'greet', '来了，墨还没干。'));
   const doorAff = aff.add({
     id: 'door',
     label: '推门',
@@ -132,6 +149,8 @@ async function runThreshold(act: Parameters<Framework['run']>[0], ctx: Ctx) {
   const triggerPick = () => {
     if (!ticketAff || picked) return;
     picked = true;
+    ctx.record.skipped = (ctx.record.skipped ?? []).filter(id => id !== 'ticket');
+    ctx.record.activated = [...new Set([...(ctx.record.activated ?? []), 'ticket'])];
     pickedAt = performance.now();
     ticketAff.setEnabled(false);
     audio.sfx('pickup');
@@ -142,6 +161,8 @@ async function runThreshold(act: Parameters<Framework['run']>[0], ctx: Ctx) {
     const w = stage.width;
     const h = stage.height;
     const now = performance.now();
+    const frameMs = Math.min(100, now - lastFrameAt);
+    lastFrameAt = now;
     const t = stage.time;
     const c = layer.ctx;
     layer.clear();
@@ -177,6 +198,12 @@ async function runThreshold(act: Parameters<Framework['run']>[0], ctx: Ctx) {
 
     const lookAt = 2.38 * motion;
     if (elapsed >= lookAt && cast.mentor.pose !== 'sit-look') updateMentorLook(cast.mentor, true);
+    if (changes.length && elapsed >= lookAt && glance === 0) {
+      cast.mentor.setGaze(changes[0]!.place === 'lamp' ? -0.85 : 0.75);
+      glance = 1;
+    } else if (glance === 1 && elapsed >= lookAt + 1.1 * motion) {
+      cast.mentor.setGaze(null); glance = 2;
+    }
     const write = clamp(elapsed / (0.9 * motion));
     const ticketPush = easeOut(clamp((elapsed - 2.54 * motion) / (0.76 * motion)));
     const lift = picked ? clamp((now - pickedAt) / (260 * motion)) : dragLift;
@@ -200,8 +227,13 @@ async function runThreshold(act: Parameters<Framework['run']>[0], ctx: Ctx) {
     if (litCount >= 5) {
       const seatSize = Math.min(h * 0.17, w * 0.18);
       drawSeat(c, w * 0.17, h * 0.94, seatSize);
-      drawSmallLamp(c, w * (revisiting ? 0.29 : 0.48), h * 0.94 - seatSize * 0.08, seatSize * 0.82, t);
-      if (revisiting) bambooSlips(c, w * 0.72, h * 0.78, Math.min(h * 0.13, w * 0.14), { open: 0.5, marks: true, n: 9 });
+      drawSmallLamp(c, w * currentLampX(ctx), h * 0.94 - seatSize * 0.08, seatSize * 0.82, t);
+      chronicle.draw(c, w, h, elapsed > 4 && greetRevealed);
+      books.draw(c, w, h, elapsed > 4 && greetRevealed);
+      const head = cast.mentor.anchors.head;
+      if (document.visibilityState === 'visible' && Math.abs(pointer.x - head.x) < seatSize * 0.65 && pointer.y > head.y - seatSize * 0.2 && pointer.y < head.y + seatSize * 1.6) {
+        ctx.record.dwell.mentor = Math.round((ctx.record.dwell.mentor ?? 0) + frameMs);
+      }
     }
     c.restore();
     visibleTicket = { x: painted.x, y: painted.y, w: ticketW };
@@ -215,6 +247,7 @@ async function runThreshold(act: Parameters<Framework['run']>[0], ctx: Ctx) {
     }
 
     if (!ticketAff && elapsed >= 3.05 * motion && greetRevealed && layout) {
+      ctx.record.skipped = [...new Set([...(ctx.record.skipped ?? []), 'ticket'])];
       ticketAff = aff.add({
         id: 'ticket',
         label: '拿起票根',
@@ -256,6 +289,10 @@ async function runThreshold(act: Parameters<Framework['run']>[0], ctx: Ctx) {
   } finally {
     offFrame();
     offResize();
+    stage.root.removeEventListener('pointermove', trackPointer);
+    stage.root.removeEventListener('pointerleave', leavePointer);
+    chronicle.remove();
+    books.remove();
     for (const a of owned) a.remove();
   }
   return { act: act.id, data: { affordances: ['door', 'ticket'], ticket: ctx.handoff.ticket, frame: Boolean(ctx.handoff.frame) } };
@@ -277,6 +314,9 @@ async function runReturn(act: Parameters<Framework['run']>[0], ctx: Ctx) {
   const layer = stage.layer('vignette', 30);
   const mentor = makeMentor();
   const previous = ctx.visit.previous;
+  prepareVisitChanges(ctx);
+  const chronicle = mountChronicle(ctx);
+  const books = mountBooks(ctx);
   const priorEnding = store.get<Ending | null>('ending.last', null);
   const ending = ctx.handoff.ending as Ending | undefined;
   const world = ctx.handoff.world;
@@ -426,9 +466,15 @@ async function runReturn(act: Parameters<Framework['run']>[0], ctx: Ctx) {
       nameEntry: inputReady && !nameResolved,
       showSlips: !!previous,
       lampDim: lampForgotten,
+      lampX: currentLampX(ctx),
       cornerTicket: 0,
     });
     c.restore();
+    // 年谱是追问入口：等主线可关门后再开放，不抢走问称呼时唯一的动作。
+    if (!ctx.handoff.forgetVisit) {
+      chronicle.draw(c, w, h, elapsed > 3 && !!doorAff);
+      books.draw(c, w, h, elapsed > 3 && !!doorAff);
+    }
     paintTicket(c, ticketX, ticketY, movingW, { lift: 0, glow: 0.22 + (seal >= 1 ? 0.28 : 0), seal, glyph: '旱', flat: 0, t: stage.time, write: 1 });
 
     if (inputReady && !nameResolved) {
@@ -558,6 +604,10 @@ async function runReturn(act: Parameters<Framework['run']>[0], ctx: Ctx) {
           delete ctx.record.longestPlace;
           delete ctx.record.longestPlaceMs;
           ctx.record.dwell = {};
+          ctx.record.changes = [];
+          delete ctx.record.skipped;
+          delete ctx.record.activated;
+          chronicle.remove();
           forgetAff?.setEnabled(false);
           audio.sfx('wind-gust');
           void lines.say({ who: '导师', text: '灯灭了，旧事不再留存。', anchor: () => layout?.seatLamp ?? { x: stage.width * 0.3, y: stage.height * 0.8 }, tone: 'mentor', sticky: true, source: { source: 'script' } });
@@ -579,6 +629,8 @@ async function runReturn(act: Parameters<Framework['run']>[0], ctx: Ctx) {
     offFrame();
     offResize();
     input.removeEventListener('keydown', onInputKey);
+    chronicle.remove();
+    books.remove();
     stage.removeLayer('vignette-return-input');
     for (const a of owned) a.remove();
     lines.clear();

@@ -1,3 +1,5 @@
+import type { ActorCue, Commission, DirectorAck } from './layers/types';
+
 // 共享契约。所有模块（心智、世界、框架、组件、管线、bench）都只通过这些类型对话。
 // 改这里 = 改接口，必须同步所有实现方。
 
@@ -60,9 +62,12 @@ export interface Prediction {
   firstActionMs?: number;
 }
 
+/** 呈现方案里的「形」。已知的形有自动补全；新加的框架（小游戏等）按框架目录命名，直接写 id 即可。 */
+export type FrameworkId = 'vignette' | 'reveal' | 'walk2d' | (string & {});
+
 export interface PlanAct {
   id: string;
-  framework: 'vignette' | 'reveal' | 'walk2d';
+  framework: FrameworkId;
   /** 这一幕的作者（基础导演 / 叔衡） */
   author: string;
   /** 唯一焦点元素 id */
@@ -81,6 +86,9 @@ export interface PlanAct {
 
 /** 导演产出的呈现方案（runs/<intent>/<seed>/<tier>/plan.json） */
 export interface Plan {
+  commission?: Commission;
+  cues?: Record<string, ActorCue>;
+  ack?: DirectorAck;
   id: string;
   version: number;
   intent: Intent;

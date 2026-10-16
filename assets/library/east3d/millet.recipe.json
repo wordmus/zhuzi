@@ -1,0 +1,14 @@
+{
+  "id": "east3d-millet",
+  "file": "millet.glb",
+  "recipe": "细杆+38°折垂穗，合并为单件；运行时 26 丛实例合批；五边杆、8x5 球穗",
+  "faces": 80,
+  "face_unit": "triangles",
+  "source": "程序化生成（Blender 5.1，seed 7）",
+  "license": "本项目自有",
+  "era": "zhanguo",
+  "tags": [
+    "east3d",
+    "drought"
+  ]
+}

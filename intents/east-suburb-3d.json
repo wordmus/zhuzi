@@ -1,0 +1,17 @@
+{
+  "id": "east-suburb-3d",
+  "title": "东郊 · 3D",
+  "hypothesis": {
+    "id": "h-material",
+    "text": "同一件呈现换一层材质，你会更愿意停下来看它",
+    "mode": "probe"
+  },
+  "target": "在东郊旱田看禾探土、望天；也可点田缝或天空引导他的注意",
+  "stop": "50 秒后，禾探过田缝也望过天；缺口与高跪终姿留在末帧",
+  "form": "vignette",
+  "perspective": { "who": "你", "control": 0.4 },
+  "era": "zhanguo",
+  "durationMin": 1,
+  "director": "shuheng",
+  "notes": "L3 的独立呈现：事实账本不变，只换画面；不改动既有作品。Tripo 无余额，资产全部本机程序化生成（assets/library/east3d）。"
+}

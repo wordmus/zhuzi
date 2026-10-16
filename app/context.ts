@@ -2,6 +2,7 @@
 
 import type { AffordanceRegistry } from '../engine/affordance';
 import type { Audio } from '../engine/audio-api';
+import type { LayerBus } from '../engine/layers/bus';
 import type { Bus } from '../engine/bus';
 import type { Rng } from '../engine/rng';
 import type { Senses } from '../engine/senses';
@@ -12,6 +13,19 @@ import type { EndingId, Plan, PlanAct } from '../engine/types';
 import type { Lines } from '../components/line';
 
 /** 上一次来访留下的东西（存在本机） */
+export interface VisitChange {
+  id: string;
+  what: string;
+  why: string;
+  since: number;
+  visit: number;
+  place: 'lamp' | 'chronicle';
+  before: string;
+  after: string;
+  attribution: string;
+  lampX?: number;
+}
+
 export interface VisitRecord {
   n: number;
   at: number;
@@ -24,6 +38,11 @@ export interface VisitRecord {
   longestPlace?: string;
   longestPlaceMs?: number;
   seed: number;
+  /** 已交付的变化，只追加；旧版本的来访记录可以没有这些字段。 */
+  changes?: VisitChange[];
+  /** 明确看见但未拿起的入口；不能从没有点击记录推断旧来访跳过了什么。 */
+  skipped?: string[];
+  activated?: string[];
 }
 
 export interface VisitInfo {
@@ -37,6 +56,7 @@ export interface VisitInfo {
 export interface Ctx {
   stage: Stage;
   bus: Bus;
+  layers: LayerBus;
   store: Store;
   senses: Senses;
   think: Think;

@@ -7,6 +7,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { Differ, REPO_ROOT, attachDiagnostics, ev, installBench, launch, loadThresholds, newContext, readPageData, serveDir } from '../../bench/lib';
+import { letterCounts } from '../../engine/layers/bus';
+import type { Letter } from '../../engine/layers/types';
 import { play } from '../../bench/player';
 import type { Intent, Plan, Tier } from '../../engine/types';
 import { directFromFiles } from './director-node';
@@ -169,6 +171,12 @@ async function main() {
     const maxSeconds = args.maxSeconds ?? th.player.maxSeconds;
     const result = await play(page, { ...th.player, maxSeconds, differ: null as Differ | null, shotsDir: args.shots ? shotsDir : null, shotsPerAct: 5 });
     const data = await readPageData(page);
+    const layers = await ev<{ letters: Letter[]; check: string[] }>(page, `(() => {
+      const layers = window.__zhuzi?.layers;
+      return layers ? { letters: layers.letters(), check: layers.check() } : { letters: [], check: ['缺少三层信息流'] };
+    })()`);
+    fs.writeFileSync(path.join(runDir, 'layers.json'), JSON.stringify({ ...layers, counts: letterCounts(layers.letters) }, null, 2));
+    console.log(`layers ${layers.letters.length} 封信 · 未回执 ${layers.letters.filter(l => !l.receipt).length} · ${layers.check.length ? layers.check.join('；') : '检查通过'}`);
 
     fs.writeFileSync(path.join(runDir, 'trace.jsonl'), data.trace.map((e) => JSON.stringify(e)).join('\n') + (data.trace.length ? '\n' : ''));
     const ledger = await ev<{ source: string; facts: unknown[] } | null>(page, LEDGER_JS).catch(() => null);
@@ -182,6 +190,10 @@ async function main() {
       }
     }
     if (facts) fs.writeFileSync(path.join(runDir, 'ledger.json'), JSON.stringify(facts, null, 2));
+    if (plan.id === 'fifty-years') {
+      const historySave = await ev(page, `window.__zhuzi.ctx.store.get('history.save', null)`);
+      fs.writeFileSync(path.join(runDir, 'history-save.json'), JSON.stringify(historySave, null, 2));
+    }
 
     // 对照导演的预演：每幕“以为会怎样 / 实际怎样”
     const tr = data.trace;
