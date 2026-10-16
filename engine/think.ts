@@ -43,7 +43,7 @@ export interface Think {
   /** 演示面板上的「停」：之后全部走规则 */
   setStopped(stopped: boolean): void;
   stopped(): boolean;
-  stats(): { model: number; rules: number; lastWhy?: string };
+  stats(): { model: number; rules: number; total: number; lastWhy?: string };
 }
 
 type SampleFn = ((input: unknown, opts?: Record<string, unknown>) => Promise<{ text: string }>) & {
@@ -157,7 +157,7 @@ export function createThink(bus: Bus): Think {
       bus.log('think.result', { kind: 'control', source: 'rules', why: s ? 'stopped' : 'resumed', ms: 0 });
     },
     stopped: () => stoppedFlag,
-    stats: () => ({ model: modelCount, rules: rulesCount, lastWhy }),
+    stats: () => ({ model: modelCount, rules: rulesCount, total: modelCount + rulesCount, lastWhy }),
   };
 }
 

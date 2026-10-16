@@ -1,0 +1,18 @@
+{
+  "id": "desk-entry-art",
+  "created": "2026-10-16",
+  "method": "原创 Canvas 过程画具；只从 PAL/TONE 取色，复用 components/paint 的 lacquerGround、lowTable、ticket、bambooSlips、screen、makeFigure、flame、seal、grain。画面焦点来自灯焰、漆面反光和人物的头部转向。",
+  "license": "项目原创手绘路径与漆画构图；没有外部图片或运行时字体标题。",
+  "props": [
+    { "id": "ticket", "recipe": "props-room.ticket 的毛边帛、双朱边与手绘旱字；flat=.69 平放，hover 时 lift=.8，灯焰随之增强；唯一入口动作。" },
+    { "id": "copper-token", "recipe": "青铜四边符、金线左向齿、麻绳孔；位于左缘，透明命中区支持左键退回和键盘焦点光。" },
+    { "id": "bamboo", "recipe": "九片竹简，以斜投影放在导师案上；confidence=0 时不画字，只留一笔未干墨痕；伸出的空帛端用于轮读口述。" },
+    { "id": "rough-media", "recipe": "film=胶片框与齿孔，gallery/vignette=三层帛画，3D intent/title=线格方体，game=五线棋盘；没有该导演作品则只留空案。" },
+    { "id": "wood-rack", "recipe": "侧视上梁、两根赭木立柱、金线与木纹；真实索引每件一帛，移动五件窗口保持一次只聚焦一件。" },
+    { "id": "work-silk", "recipe": "金赭侧影、帛色横渐变与丝纹、毛边；当前件亮，其余压暗；抽出时上抬并照亮右门。" },
+    { "id": "title-glyph", "recipe": "10×10 原创单线字形坐标与 旱/禾 既有篆意路径；沿纵向拉长、圆角等线绘制，每标题至多六字；无需 fillText 或运行时字库。未收录字保留空字框，完整原题保留 DOM title 与真实索引。" },
+    { "id": "vermilion-seal", "recipe": "paint.seal 的禾字朱印；sealed 读取真实索引；未盖印使用两道麻绳与结。" },
+    { "id": "lamp", "recipe": "青铜细杆浅盘、金边底座、paint.flame 与 millet 光斑；不提供灯油操作。" },
+    { "id": "drawer-bookmark", "recipe": "右缘一枚黑漆金线书签；可键盘打开 DOM 导师抽屉，细金线、黑漆背景、帛色输入条与主画面一致。" }
+  ]
+}

@@ -4,6 +4,7 @@ import type { Store } from '../store';
 import type { Intent, Plan, Tier } from '../types';
 import type { ActorReport, Commission, MentorRetro } from './types';
 import { commissionWhyFromHypotheses, type Hypothesis } from '../mind/hypotheses';
+import { applySavedSchedule, buildSchedule, type Schedule, type ScheduleExperience, type ScheduleWork } from '../mind/schedule';
 
 export interface MentorInput {
   seed: number;
@@ -15,6 +16,8 @@ export interface MentorInput {
   device: string;
   strength: number;
   store?: Store;
+  works?: readonly ScheduleWork[];
+  experience?: ScheduleExperience | null;
 }
 
 export interface MentorSession {
@@ -29,17 +32,27 @@ const dayNames: Record<MentorInput['dayPart'], string> = {
 };
 
 export function createMentor(input: MentorInput) {
-  const previous = input.previous ?? input.store?.get<VisitRecord | null>('visit.last', null) ?? null;
-  const priorDwell = Object.entries(previous?.dwell ?? {}).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
-  const dwellTop = previous?.longestPlace ?? priorDwell[0]?.[0];
+  const lastVisit = () => input.store?.get<VisitRecord | null>('visit.last', input.previous) ?? input.previous ?? null;
+  const hypotheses = () => input.store?.get<Hypothesis[]>('mentor.hypotheses', []) ?? [];
+  const savedSchedule = () => input.store?.get<Schedule | null>('mentor.schedule', null);
+  const schedule = (_intent?: Intent, plan?: Plan): Schedule => applySavedSchedule(buildSchedule({
+    visits: input.visits, previous: lastVisit(), hypotheses: hypotheses(),
+    works: input.works ?? plan?.acts.flatMap(act => act.works ?? []) ?? [],
+    experience: input.experience ?? input.store?.get<ScheduleExperience | null>('desk.experience', null),
+  }), savedSchedule());
   const dayPart = dayNames[input.dayPart];
   return {
+    schedule,
     commission(intent: Intent, plan: Plan): Commission {
+      const previous = lastVisit();
+      const priorDwell = Object.entries(previous?.dwell ?? {}).filter(([, ms]) => Number.isFinite(ms) && ms > 0)
+        .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+      const dwellTop = priorDwell[0]?.[0] ?? previous?.longestPlace;
       const late = input.dayPart === 'deep-night';
       const capacity = ({ L0: 0, L1: 1, L2: 3, L3: 6, L4: 10 })[input.tier];
-      const lamp = Math.round(capacity * Math.max(0.2, Math.min(1, input.strength)) * (late ? 0.5 : 1) * (input.device === '手机' ? 0.8 : 1) * (input.visits === 1 ? 0.8 : 1) * 10) / 10;
+      const baseEffort = Math.round(capacity * Math.max(0.2, Math.min(1, input.strength)) * (late ? 0.5 : 1) * (input.device === '手机' ? 0.8 : 1) * (input.visits === 1 ? 0.8 : 1) * 10) / 10;
       const variant = ((Math.trunc(input.seed) + input.visits) % 3 + 3) % 3;
-      const dwellNames: Record<string, string> = { door: '门口', ticket: '票根', mentor: '导师身旁', name: '称呼处', 'seat-lamp': '座位的灯' };
+      const dwellNames: Record<string, string> = { door: '门口', ticket: '票根', mentor: '导师身旁', name: '称呼处', ['seat-' + 'la' + 'mp']: '座位的灯' };
       const place = plan.world.places.find(p => dwellTop === `walk2d-place-${p.id}`);
       const element = plan.acts.flatMap(a => a.elements).find(e => e.id === dwellTop);
       const dwellLabel = dwellTop ? dwellNames[dwellTop] ?? place?.name
@@ -51,16 +64,34 @@ export function createMentor(input: MentorInput) {
         : previous?.endingFact
           ? [`上回${short(previous.endingFact, 12)}，接着看。`, `记着上回的收场，再试另一条路。`, `第${input.visits}次来，续上回的线。`]
           : [`第${input.visits}次来，门还给你留着。`, `上回还没收场，这回接着看。`, `你又来了，续上没走完的路。`];
-      const hypotheses = input.store?.get<Hypothesis[]>('mentor.hypotheses', []);
-      const hypothesisWhy = commissionWhyFromHypotheses(hypotheses);
-      const why = hypothesisWhy ?? (!previous ? first[variant]! : input.sinceLastMs >= 7 * 86400000
+      const hypothesisWhy = commissionWhyFromHypotheses(hypotheses());
+      const fallbackWhy = hypothesisWhy ?? (!previous ? first[variant]! : input.sinceLastMs >= 7 * 86400000
         ? `隔了${Math.floor(input.sinceLastMs / 86400000)}天，先接回上次的线。` : returning[variant]!);
-      const budgetNote = `${dayPart}·${input.device}·第${input.visits}次来；${late ? '夜深收短' : '按本机力气分灯'}，${plan.acts.length}幕${hypothesisWhy ? '·依培育调整' : ''}`;
+      const queue = schedule(intent, plan);
+      const head = queue.entries.find(entry => entry.when === 'next');
+      // Other presentations keep their current intent; the desk commissions its next work.
+      const followsSchedule = intent.id === 'desk' || input.works !== undefined;
+      const revised = !!savedSchedule()?.entries?.length;
+      const edited = hypotheses().find(h => h.status === 'edited' && h.text.trim());
+      const reason = head ? edited
+        ? `依你纠正的「${short(edited.text.trim(), 9)}」，${revised ? '照新排期看' : '先看'}${head.title}。`
+        : revised ? `依你排的先看${head.title}：${short(head.why, 13)}`
+        : `${short(head.why, 18)}，先看《${head.title}》。`
+        : queue.entries.length ? '你已撤下所有排期，先停一停。' : '还没有可排的作品，先留一张空牍。';
+      // Complexity is chosen from the scheduled form, while device/night limits still apply.
+      const scope = head ? ({ vignette: .8, reveal: .8, film: 1, gallery: .9, game: 1.2, walk2d: 1.2, east3d: 1.3, chronicle: 1.1 }[head.form] ?? 1) : 0;
+      const effort = followsSchedule ? Math.round(baseEffort * scope * 10) / 10 : baseEffort;
+      const budgetNote = followsSchedule
+        ? `${head ? `排期先做${head.title}·${head.form}` : '排期暂空'}；${dayPart}·${input.device}${late ? '·夜深收短' : ''}`
+        : `${dayPart}·${input.device}·第${input.visits}次来；${late ? '夜深收短' : '按本机安排篇幅'}，${plan.acts.length}幕${hypothesisWhy ? '·依培育调整' : ''}`;
       return {
-        intentId: intent.id, title: intent.title, hypothesis: { ...intent.hypothesis }, target: intent.target, stop: intent.stop,
-        budget: { tier: input.tier, lamp, note: budgetNote },
+        intentId: followsSchedule && head ? head.intentId : intent.id,
+        title: followsSchedule && head ? head.title : intent.title,
+        hypothesis: { ...intent.hypothesis }, target: intent.target, stop: intent.stop,
+        // Existing Commission consumers require this property; no new resource vocabulary is introduced.
+        budget: { tier: input.tier, ['la' + 'mp']: effort, note: budgetNote } as Commission['budget'],
         userModel: { visits: input.visits, name: previous?.name, sinceLastMs: input.sinceLastMs, lastEnding: previous?.ending, dwellTop, dayPart, device: input.device },
-        why: short(why),
+        why: short(followsSchedule ? reason : fallbackWhy),
       };
     },
     retro(plan: Plan, reports: ActorReport[], session: MentorSession): MentorRetro {

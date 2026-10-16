@@ -1,0 +1,37 @@
+{
+  "shots": 5,
+  "totalSeconds": 75,
+  "perShot": [
+    {
+      "id": "he",
+      "ms": 15000,
+      "chars": 15,
+      "hotspots": 1
+    },
+    {
+      "id": "sky",
+      "ms": 12000,
+      "chars": 11,
+      "hotspots": 1
+    },
+    {
+      "id": "ji",
+      "ms": 17000,
+      "chars": 14,
+      "hotspots": 1
+    },
+    {
+      "id": "tianbo",
+      "ms": 17000,
+      "chars": 15,
+      "hotspots": 1
+    },
+    {
+      "id": "city",
+      "ms": 14000,
+      "chars": 14,
+      "hotspots": 1
+    }
+  ],
+  "hotspots": 5
+}

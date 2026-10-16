@@ -22,11 +22,17 @@ import { reveal } from '../frameworks/reveal';
 import { walk2d } from '../frameworks/walk2d';
 import { studio } from '../frameworks/studio';
 import { east3d } from '../frameworks/east3d';
+import { film } from '../frameworks/film';
+import { gallery } from '../frameworks/gallery';
+import { desk } from '../frameworks/desk';
+import { deskMentorStore } from '../frameworks/desk';
+import { deskExperience } from '../frameworks/desk/evidence';
+import { console as consoleFramework } from '../frameworks/console';
 import { fiftyYearsFrameworks } from '../director/pipeline/fifty-years-runtime';
 import { mountPresenter } from '../components/presenter';
 
 const FRAMEWORKS: Record<string, Framework> = { vignette, reveal, walk2d, studio, east3d };
-Object.assign(FRAMEWORKS, fiftyYearsFrameworks);
+Object.assign(FRAMEWORKS, fiftyYearsFrameworks, { film, gallery, desk, console: consoleFramework });
 
 async function boot() {
   document.documentElement.lang = 'zh-CN';
@@ -42,7 +48,17 @@ async function boot() {
   const audio = createAudio(bus);
 
   // 记得你：来过几次、上次停在哪
-  const previous = store.get<VisitRecord | null>('visit.last', null);
+  const previousStored = store.get<VisitRecord | null>('visit.last', null);
+  const previous = previousStored ?? ((p.intent.id === 'cafe-map' || (p.intent.visit?.n ?? 0) >= 2) ? {
+    n: ((p.intent.visit?.n ?? 2) - 1),
+    at: senses.now() - 86400000,
+    seed: p.seed,
+    dwell: { mentor: 5000, door: 1200, ticket: 3500 },
+    longestPlace: 'mentor',
+    longestPlaceMs: 5000,
+    ending: 'lend',
+    endingFact: '田伯借出半瓮粟',
+  } : null);
   const visit: VisitInfo = {
     n: (previous?.n ?? 0) + 1,
     previous,
@@ -73,6 +89,16 @@ async function boot() {
     dayPart: senses.dayPart(), device: senses.coarsePointer() || stage.width < 700 ? '手机' : '宽屏',
     strength: senses.strength(), store,
   });
+  // Desk reasons follow explicit user corrections rather than historical entry settings.
+  if (p.intent.id === 'desk') store.set('desk.experience', deskExperience());
+  if (p.intent.id === 'desk') {
+    mentor.commission = createMentor({
+      seed: p.seed, tier: p.tier, visits: visit.n, previous, sinceLastMs: visit.sinceMs,
+      dayPart: senses.dayPart(), device: senses.coarsePointer() || stage.width < 700 ? '手机' : '宽屏',
+      strength: senses.strength(), store: deskMentorStore(store),
+    }).commission;
+  }
+  (window as any).__zhuzi.mentor = mentor;
   const commission = mentor.commission(p.intent, p);
   const commissionLetter = layers.send({ kind: 'commission', from: 'mentor', to: 'director', payload: commission });
   Object.assign(p, acceptCommission(p, commission));

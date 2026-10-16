@@ -1,0 +1,1635 @@
+{
+  "version": 1,
+  "note": "案例是设计文档，非试玩；运行记录只证明列出的测量项，不证明规则来源于该运行。firstSeenAt 是最早有日期的运行对照，非规则写入时间；无日期、无参数、无运行证据分别留 null、null、空数组。",
+  "entries": [
+    {
+      "id": "one-focus",
+      "title": "一处焦点",
+      "rule": "一屏一个焦点：只有焦点明显地动；背景只有缓慢、低对比的呼吸（灯焰、热气、风里的草）。",
+      "why": "十样东西抢眼就找不到动作",
+      "source": "spec 一.1 · 策划 12",
+      "caseRefs": [
+        1,
+        2,
+        3
+      ],
+      "param": {
+        "focusPerScreen": 1
+      },
+      "firstSeenAt": null,
+      "evidence": {
+        "kind": "case",
+        "ref": "director/seed-memory/cases.md#案例-1",
+        "note": "设计案例明确引用本规则；不是试玩或运行记录"
+      },
+      "runEvidence": [],
+      "violated": false
+    },
+    {
+      "id": "first-3s",
+      "title": "初见一事",
+      "rule": "进入一个场景的前 3 秒，只有一个能做的事；其余退后、变暗。",
+      "why": "进门先让人找到能做的事",
+      "source": "spec 一.1 · 策划 12",
+      "caseRefs": [
+        1,
+        2
+      ],
+      "param": {
+        "actions": 1,
+        "seconds": 3
+      },
+      "firstSeenAt": "2026-10-14T08:02:58.680Z",
+      "evidence": {
+        "kind": "case",
+        "ref": "director/seed-memory/cases.md#案例-1",
+        "note": "设计案例明确引用本规则；不是试玩或运行记录"
+      },
+      "runEvidence": [
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/2/L1/bench.json#/checks/1",
+          "when": "2026-10-14T08:02:58.680Z",
+          "check": "first3s",
+          "value": 1,
+          "limit": 1,
+          "ruleLimit": 1,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照前3秒可做的事，不推断视觉焦点"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/1/L1/bench.json#/checks/1",
+          "when": "2026-10-14T08:03:52.890Z",
+          "check": "first3s",
+          "value": 1,
+          "limit": 1,
+          "ruleLimit": 1,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照前3秒可做的事，不推断视觉焦点"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/44/L1/bench.json#/checks/1",
+          "when": "2026-10-14T10:24:51.897Z",
+          "check": "first3s",
+          "value": 1,
+          "limit": 1,
+          "ruleLimit": 1,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照前3秒可做的事，不推断视觉焦点"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/45/L1/bench.json#/checks/1",
+          "when": "2026-10-14T12:45:24.114Z",
+          "check": "first3s",
+          "value": 1,
+          "limit": 1,
+          "ruleLimit": 1,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照前3秒可做的事，不推断视觉焦点"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/46/L1/bench.json#/checks/1",
+          "when": "2026-10-14T13:00:19.510Z",
+          "check": "first3s",
+          "value": 1,
+          "limit": 1,
+          "ruleLimit": 1,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照前3秒可做的事，不推断视觉焦点"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/47/L1/bench.json#/checks/1",
+          "when": "2026-10-14T13:32:03.928Z",
+          "check": "first3s",
+          "value": 1,
+          "limit": 1,
+          "ruleLimit": 1,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照前3秒可做的事，不推断视觉焦点"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/49/L1/bench.json#/checks/1",
+          "when": "2026-10-14T19:35:41.748Z",
+          "check": "first3s",
+          "value": 1,
+          "limit": 1,
+          "ruleLimit": 1,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照前3秒可做的事，不推断视觉焦点"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/50/L1/bench.json#/checks/1",
+          "when": "2026-10-14T21:04:25.342Z",
+          "check": "first3s",
+          "value": 1,
+          "limit": 1,
+          "ruleLimit": 1,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照前3秒可做的事，不推断视觉焦点"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/51/L1/bench.json#/checks/1",
+          "when": "2026-10-15T02:32:36.854Z",
+          "check": "first3s",
+          "value": 1,
+          "limit": 1,
+          "ruleLimit": 1,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照前3秒可做的事，不推断视觉焦点"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/han-act1/3/L1/bench.json#/checks/1",
+          "when": "2026-10-15T14:18:57.701Z",
+          "check": "first3s",
+          "value": 1,
+          "limit": 1,
+          "ruleLimit": 1,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照前3秒可做的事，不推断视觉焦点"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/studio/2/L1/bench.json#/checks/1",
+          "when": "2026-10-15T14:47:08.879Z",
+          "check": "first3s",
+          "value": 1,
+          "limit": 1,
+          "ruleLimit": 1,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照前3秒可做的事，不推断视觉焦点"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/fifty-years/3/L1/bench.json#/checks/1",
+          "when": "2026-10-15T14:51:39.859Z",
+          "check": "first3s",
+          "value": 1,
+          "limit": 1,
+          "ruleLimit": 1,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照前3秒可做的事，不推断视觉焦点"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/east-suburb-3d/2/L3/bench.json#/checks/1",
+          "when": "2026-10-15T16:49:13.381Z",
+          "check": "first3s",
+          "value": 1,
+          "limit": 1,
+          "ruleLimit": 1,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照前3秒可做的事，不推断视觉焦点"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/studio/5/L1/bench.json#/checks/1",
+          "when": "2026-10-15T19:23:59.892Z",
+          "check": "first3s",
+          "value": 1,
+          "limit": 1,
+          "ruleLimit": 1,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照前3秒可做的事，不推断视觉焦点"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/11/L1/bench.json#/checks/1",
+          "when": "2026-10-15T19:26:42.328Z",
+          "check": "first3s",
+          "value": 1,
+          "limit": 1,
+          "ruleLimit": 1,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照前3秒可做的事，不推断视觉焦点"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/han-act1/7/L1/bench.json#/checks/1",
+          "when": "2026-10-15T19:28:39.915Z",
+          "check": "first3s",
+          "value": 1,
+          "limit": 1,
+          "ruleLimit": 1,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照前3秒可做的事，不推断视觉焦点"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/7/L1/bench.json#/checks/1",
+          "when": "2026-10-15T22:04:13.968Z",
+          "check": "first3s",
+          "value": 1,
+          "limit": 1,
+          "ruleLimit": 1,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照前3秒可做的事，不推断视觉焦点"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/mentor-desk/2/L1/bench.json#/checks/1",
+          "when": "2026-10-15T22:06:57.786Z",
+          "check": "first3s",
+          "value": 1,
+          "limit": 1,
+          "ruleLimit": 1,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照前3秒可做的事，不推断视觉焦点"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/east-suburb-3d/4/L3/bench.json#/checks/1",
+          "when": "2026-10-16T00:24:00.339Z",
+          "check": "first3s",
+          "value": 1,
+          "limit": 1,
+          "ruleLimit": 1,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照前3秒可做的事，不推断视觉焦点"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/three-look-at-sky/2/L2/bench.json#/checks/1",
+          "when": "2026-10-16T01:22:59.604Z",
+          "check": "first3s",
+          "value": 1,
+          "limit": 1,
+          "ruleLimit": 1,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照前3秒可做的事，不推断视觉焦点"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/shelf-gallery/2/L2/bench.json#/checks/1",
+          "when": "2026-10-16T01:23:52.041Z",
+          "check": "first3s",
+          "value": 1,
+          "limit": 1,
+          "ruleLimit": 1,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照前3秒可做的事，不推断视觉焦点"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/cafe-map/3/L1/bench.json#/checks/1",
+          "when": "2026-10-16T04:45:21.962Z",
+          "check": "first3s",
+          "value": 1,
+          "limit": 1,
+          "ruleLimit": 1,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照前3秒可做的事，不推断视觉焦点"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/desk/2/L1/bench.json#/checks/1",
+          "when": "2026-10-16T05:09:32.685Z",
+          "check": "first3s",
+          "value": 1,
+          "limit": 1,
+          "ruleLimit": 1,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照前3秒可做的事，不推断视觉焦点"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/cafe-map/5/L1/bench.json#/checks/1",
+          "when": "2026-10-16T05:09:37.393Z",
+          "check": "first3s",
+          "value": 1,
+          "limit": 1,
+          "ruleLimit": 1,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照前3秒可做的事，不推断视觉焦点"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/desk/7/L1/bench.json#/checks/1",
+          "when": "2026-10-16T05:33:52.439Z",
+          "check": "first3s",
+          "value": 1,
+          "limit": 1,
+          "ruleLimit": 1,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照前3秒可做的事，不推断视觉焦点"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/desk/9/L1/bench.json#/checks/1",
+          "when": "2026-10-16T05:51:20.729Z",
+          "check": "first3s",
+          "value": 1,
+          "limit": 1,
+          "ruleLimit": 1,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照前3秒可做的事，不推断视觉焦点"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/fifty-years/11/L1/bench.json#/checks/1",
+          "when": "2026-10-16T08:43:45.126Z",
+          "check": "first3s",
+          "value": 1,
+          "limit": 1,
+          "ruleLimit": 1,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照前3秒可做的事，不推断视觉焦点"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/desk/11/L1/bench.json#/checks/1",
+          "when": "2026-10-16T08:47:06.130Z",
+          "check": "first3s",
+          "value": 1,
+          "limit": 1,
+          "ruleLimit": 1,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照前3秒可做的事，不推断视觉焦点"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/fifty-years/9/L1/bench.json#/checks/1",
+          "when": "2026-10-16T08:51:46.081Z",
+          "check": "first3s",
+          "value": 1,
+          "limit": 1,
+          "ruleLimit": 1,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照前3秒可做的事，不推断视觉焦点"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/13/L1/bench.json#/checks/1",
+          "when": "2026-10-16T08:54:30.100Z",
+          "check": "first3s",
+          "value": 1,
+          "limit": 1,
+          "ruleLimit": 1,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照前3秒可做的事，不推断视觉焦点"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/studio/7/L1/bench.json#/checks/1",
+          "when": "2026-10-16T08:57:15.196Z",
+          "check": "first3s",
+          "value": 1,
+          "limit": 1,
+          "ruleLimit": 1,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照前3秒可做的事，不推断视觉焦点"
+        }
+      ],
+      "violated": false
+    },
+    {
+      "id": "one-sentence",
+      "title": "惜字如金",
+      "rule": "字最贵：每屏 ≤ 1 句，不超过 30 字，最好 ≤ 18 字；多出来的折进「为什么」。",
+      "why": "导师抬头只说一句",
+      "source": "spec 一.2 · 策划 12",
+      "caseRefs": [
+        3
+      ],
+      "param": {
+        "maxChars": 30,
+        "idealChars": 18,
+        "sentences": 1
+      },
+      "firstSeenAt": "2026-10-14T08:02:58.680Z",
+      "evidence": {
+        "kind": "case",
+        "ref": "director/seed-memory/cases.md#案例-3",
+        "note": "设计案例明确引用本规则；不是试玩或运行记录"
+      },
+      "runEvidence": [
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/2/L1/bench.json#/checks/3",
+          "when": "2026-10-14T08:02:58.680Z",
+          "check": "max-chars",
+          "value": 19,
+          "limit": 30,
+          "ruleLimit": 30,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照可见字数，不推断句数"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/1/L1/bench.json#/checks/3",
+          "when": "2026-10-14T08:03:52.890Z",
+          "check": "max-chars",
+          "value": 19,
+          "limit": 30,
+          "ruleLimit": 30,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照可见字数，不推断句数"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/44/L1/bench.json#/checks/3",
+          "when": "2026-10-14T10:24:51.897Z",
+          "check": "max-chars",
+          "value": 19,
+          "limit": 30,
+          "ruleLimit": 30,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照可见字数，不推断句数"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/45/L1/bench.json#/checks/3",
+          "when": "2026-10-14T12:45:24.114Z",
+          "check": "max-chars",
+          "value": 17,
+          "limit": 30,
+          "ruleLimit": 30,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照可见字数，不推断句数"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/46/L1/bench.json#/checks/3",
+          "when": "2026-10-14T13:00:19.510Z",
+          "check": "max-chars",
+          "value": 17,
+          "limit": 30,
+          "ruleLimit": 30,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照可见字数，不推断句数"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/47/L1/bench.json#/checks/3",
+          "when": "2026-10-14T13:32:03.928Z",
+          "check": "max-chars",
+          "value": 17,
+          "limit": 30,
+          "ruleLimit": 30,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照可见字数，不推断句数"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/49/L1/bench.json#/checks/3",
+          "when": "2026-10-14T19:35:41.748Z",
+          "check": "max-chars",
+          "value": 29,
+          "limit": 30,
+          "ruleLimit": 30,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照可见字数，不推断句数"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/50/L1/bench.json#/checks/3",
+          "when": "2026-10-14T21:04:25.342Z",
+          "check": "max-chars",
+          "value": 25,
+          "limit": 30,
+          "ruleLimit": 30,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照可见字数，不推断句数"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/51/L1/bench.json#/checks/3",
+          "when": "2026-10-15T02:32:36.854Z",
+          "check": "max-chars",
+          "value": 29,
+          "limit": 30,
+          "ruleLimit": 30,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照可见字数，不推断句数"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/han-act1/3/L1/bench.json#/checks/3",
+          "when": "2026-10-15T14:18:57.701Z",
+          "check": "max-chars",
+          "value": 29,
+          "limit": 30,
+          "ruleLimit": 30,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照可见字数，不推断句数"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/studio/2/L1/bench.json#/checks/3",
+          "when": "2026-10-15T14:47:08.879Z",
+          "check": "max-chars",
+          "value": 28,
+          "limit": 30,
+          "ruleLimit": 30,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照可见字数，不推断句数"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/fifty-years/3/L1/bench.json#/checks/3",
+          "when": "2026-10-15T14:51:39.859Z",
+          "check": "max-chars",
+          "value": 29,
+          "limit": 30,
+          "ruleLimit": 30,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照可见字数，不推断句数"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/east-suburb-3d/2/L3/bench.json#/checks/3",
+          "when": "2026-10-15T16:49:13.381Z",
+          "check": "max-chars",
+          "value": 17,
+          "limit": 30,
+          "ruleLimit": 30,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照可见字数，不推断句数"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/studio/5/L1/bench.json#/checks/3",
+          "when": "2026-10-15T19:23:59.892Z",
+          "check": "max-chars",
+          "value": 29,
+          "limit": 30,
+          "ruleLimit": 30,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照可见字数，不推断句数"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/11/L1/bench.json#/checks/3",
+          "when": "2026-10-15T19:26:42.328Z",
+          "check": "max-chars",
+          "value": 28,
+          "limit": 30,
+          "ruleLimit": 30,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照可见字数，不推断句数"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/han-act1/7/L1/bench.json#/checks/3",
+          "when": "2026-10-15T19:28:39.915Z",
+          "check": "max-chars",
+          "value": 29,
+          "limit": 30,
+          "ruleLimit": 30,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照可见字数，不推断句数"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/7/L1/bench.json#/checks/3",
+          "when": "2026-10-15T22:04:13.968Z",
+          "check": "max-chars",
+          "value": 29,
+          "limit": 30,
+          "ruleLimit": 30,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照可见字数，不推断句数"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/mentor-desk/2/L1/bench.json#/checks/3",
+          "when": "2026-10-15T22:06:57.786Z",
+          "check": "max-chars",
+          "value": 13,
+          "limit": 30,
+          "ruleLimit": 30,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照可见字数，不推断句数"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/east-suburb-3d/4/L3/bench.json#/checks/3",
+          "when": "2026-10-16T00:24:00.339Z",
+          "check": "max-chars",
+          "value": 11,
+          "limit": 30,
+          "ruleLimit": 30,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照可见字数，不推断句数"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/three-look-at-sky/2/L2/bench.json#/checks/3",
+          "when": "2026-10-16T01:22:59.604Z",
+          "check": "max-chars",
+          "value": 15,
+          "limit": 30,
+          "ruleLimit": 30,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照可见字数，不推断句数"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/shelf-gallery/2/L2/bench.json#/checks/3",
+          "when": "2026-10-16T01:23:52.041Z",
+          "check": "max-chars",
+          "value": 12,
+          "limit": 30,
+          "ruleLimit": 30,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照可见字数，不推断句数"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/cafe-map/3/L1/bench.json#/checks/3",
+          "when": "2026-10-16T04:45:21.962Z",
+          "check": "max-chars",
+          "value": 15,
+          "limit": 30,
+          "ruleLimit": 30,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照可见字数，不推断句数"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/desk/2/L1/bench.json#/checks/3",
+          "when": "2026-10-16T05:09:32.685Z",
+          "check": "max-chars",
+          "value": 16,
+          "limit": 30,
+          "ruleLimit": 30,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照可见字数，不推断句数"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/cafe-map/5/L1/bench.json#/checks/3",
+          "when": "2026-10-16T05:09:37.393Z",
+          "check": "max-chars",
+          "value": 15,
+          "limit": 30,
+          "ruleLimit": 30,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照可见字数，不推断句数"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/desk/7/L1/bench.json#/checks/3",
+          "when": "2026-10-16T05:33:52.439Z",
+          "check": "max-chars",
+          "value": 30,
+          "limit": 30,
+          "ruleLimit": 30,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照可见字数，不推断句数"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/desk/9/L1/bench.json#/checks/3",
+          "when": "2026-10-16T05:51:20.729Z",
+          "check": "max-chars",
+          "value": 15,
+          "limit": 30,
+          "ruleLimit": 30,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照可见字数，不推断句数"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/fifty-years/11/L1/bench.json#/checks/3",
+          "when": "2026-10-16T08:43:45.126Z",
+          "check": "max-chars",
+          "value": 28,
+          "limit": 30,
+          "ruleLimit": 30,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照可见字数，不推断句数"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/desk/11/L1/bench.json#/checks/3",
+          "when": "2026-10-16T08:47:06.130Z",
+          "check": "max-chars",
+          "value": 18,
+          "limit": 30,
+          "ruleLimit": 30,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照可见字数，不推断句数"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/fifty-years/9/L1/bench.json#/checks/3",
+          "when": "2026-10-16T08:51:46.081Z",
+          "check": "max-chars",
+          "value": 28,
+          "limit": 30,
+          "ruleLimit": 30,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照可见字数，不推断句数"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/13/L1/bench.json#/checks/3",
+          "when": "2026-10-16T08:54:30.100Z",
+          "check": "max-chars",
+          "value": 29,
+          "limit": 30,
+          "ruleLimit": 30,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照可见字数，不推断句数"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/studio/7/L1/bench.json#/checks/3",
+          "when": "2026-10-16T08:57:15.196Z",
+          "check": "max-chars",
+          "value": 29,
+          "limit": 30,
+          "ruleLimit": 30,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照可见字数，不推断句数"
+        }
+      ],
+      "violated": false
+    },
+    {
+      "id": "no-labels",
+      "title": "物件说话",
+      "rule": "物件承担主要信息；首次出现的动作可以用两到四字说明其用途，目标、选择、结果必须能从画面读出，总可见字仍不超过30。",
+      "why": "先看懂物件能做什么",
+      "source": "用户试玩反馈：看不懂在玩什么",
+      "caseRefs": [
+        1,
+        2,
+        5
+      ],
+      "param": null,
+      "firstSeenAt": null,
+      "evidence": {
+        "kind": "case",
+        "ref": "director/seed-memory/cases.md#案例-1",
+        "note": "设计案例明确引用本规则；不是试玩或运行记录"
+      },
+      "runEvidence": [],
+      "violated": false
+    },
+    {
+      "id": "first-loop-readable",
+      "title": "首局明白",
+      "rule": "首轮从禾已经愿意向田伯求粮的那天切入；之前的日程用真实规则积累并保留事实。导师明确交付求粮目标；先选开口方式、看预演、真实叩门、对照结果，之后才展开砝码与其他心智工具。",
+      "why": "求粮目标和动作要看得懂",
+      "source": "用户试玩反馈：首分钟缺少目标、动作含义与结果",
+      "caseRefs": [],
+      "param": null,
+      "firstSeenAt": null,
+      "evidence": {
+        "kind": "rule",
+        "ref": "director/seed-memory/rules.json#/rules/4",
+        "note": "仅有规则原文来源，未找到明确引用本规则的案例"
+      },
+      "runEvidence": [],
+      "violated": false
+    },
+    {
+      "id": "feedback",
+      "title": "动即有应",
+      "rule": "每个动作 100ms 内有看得见的反馈（光、形变、声音），1 秒内有意义上的回应。",
+      "why": "动手后要立刻看见回应",
+      "source": "spec 一.3 · 策划 12",
+      "caseRefs": [
+        2
+      ],
+      "param": {
+        "ms": 100,
+        "meaningMs": 1000
+      },
+      "firstSeenAt": "2026-10-14T08:02:58.680Z",
+      "evidence": {
+        "kind": "case",
+        "ref": "director/seed-memory/cases.md#案例-2",
+        "note": "设计案例明确引用本规则；不是试玩或运行记录"
+      },
+      "runEvidence": [
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/2/L1/bench.json#/checks/2",
+          "when": "2026-10-14T08:02:58.680Z",
+          "check": "feedback",
+          "value": 101,
+          "limit": 1000,
+          "ruleLimit": 100,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照反馈延迟p90，不推断每次动作或语义回应"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/1/L1/bench.json#/checks/2",
+          "when": "2026-10-14T08:03:52.890Z",
+          "check": "feedback",
+          "value": 101,
+          "limit": 1000,
+          "ruleLimit": 100,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照反馈延迟p90，不推断每次动作或语义回应"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/45/L1/bench.json#/checks/2",
+          "when": "2026-10-14T12:45:24.114Z",
+          "check": "feedback",
+          "value": 331,
+          "limit": 1000,
+          "ruleLimit": 100,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照反馈延迟p90，不推断每次动作或语义回应"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/46/L1/bench.json#/checks/2",
+          "when": "2026-10-14T13:00:19.510Z",
+          "check": "feedback",
+          "value": 341,
+          "limit": 1000,
+          "ruleLimit": 100,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照反馈延迟p90，不推断每次动作或语义回应"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/47/L1/bench.json#/checks/2",
+          "when": "2026-10-14T13:32:03.928Z",
+          "check": "feedback",
+          "value": 256,
+          "limit": 1000,
+          "ruleLimit": 100,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照反馈延迟p90，不推断每次动作或语义回应"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/49/L1/bench.json#/checks/2",
+          "when": "2026-10-14T19:35:41.748Z",
+          "check": "feedback",
+          "value": 254,
+          "limit": 1000,
+          "ruleLimit": 100,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照反馈延迟p90，不推断每次动作或语义回应"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/50/L1/bench.json#/checks/2",
+          "when": "2026-10-14T21:04:25.342Z",
+          "check": "feedback",
+          "value": 263,
+          "limit": 1000,
+          "ruleLimit": 100,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照反馈延迟p90，不推断每次动作或语义回应"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/51/L1/bench.json#/checks/2",
+          "when": "2026-10-15T02:32:36.854Z",
+          "check": "feedback",
+          "value": 339,
+          "limit": 1000,
+          "ruleLimit": 100,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照反馈延迟p90，不推断每次动作或语义回应"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/han-act1/3/L1/bench.json#/checks/2",
+          "when": "2026-10-15T14:18:57.701Z",
+          "check": "feedback",
+          "value": 66,
+          "limit": 1000,
+          "ruleLimit": 100,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照反馈延迟p90，不推断每次动作或语义回应"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/studio/2/L1/bench.json#/checks/2",
+          "when": "2026-10-15T14:47:08.879Z",
+          "check": "feedback",
+          "value": 365,
+          "limit": 1000,
+          "ruleLimit": 100,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照反馈延迟p90，不推断每次动作或语义回应"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/fifty-years/3/L1/bench.json#/checks/2",
+          "when": "2026-10-15T14:51:39.859Z",
+          "check": "feedback",
+          "value": 304,
+          "limit": 1000,
+          "ruleLimit": 100,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照反馈延迟p90，不推断每次动作或语义回应"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/east-suburb-3d/2/L3/bench.json#/checks/2",
+          "when": "2026-10-15T16:49:13.381Z",
+          "check": "feedback",
+          "value": 365,
+          "limit": 1000,
+          "ruleLimit": 100,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照反馈延迟p90，不推断每次动作或语义回应"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/studio/5/L1/bench.json#/checks/2",
+          "when": "2026-10-15T19:23:59.892Z",
+          "check": "feedback",
+          "value": 300,
+          "limit": 900,
+          "ruleLimit": 100,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照反馈延迟p90，不推断每次动作或语义回应"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/11/L1/bench.json#/checks/2",
+          "when": "2026-10-15T19:26:42.328Z",
+          "check": "feedback",
+          "value": 268,
+          "limit": 900,
+          "ruleLimit": 100,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照反馈延迟p90，不推断每次动作或语义回应"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/han-act1/7/L1/bench.json#/checks/2",
+          "when": "2026-10-15T19:28:39.915Z",
+          "check": "feedback",
+          "value": 81,
+          "limit": 900,
+          "ruleLimit": 100,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照反馈延迟p90，不推断每次动作或语义回应"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/7/L1/bench.json#/checks/2",
+          "when": "2026-10-15T22:04:13.968Z",
+          "check": "feedback",
+          "value": 244,
+          "limit": 900,
+          "ruleLimit": 100,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照反馈延迟p90，不推断每次动作或语义回应"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/mentor-desk/2/L1/bench.json#/checks/2",
+          "when": "2026-10-15T22:06:57.786Z",
+          "check": "feedback",
+          "value": 336,
+          "limit": 900,
+          "ruleLimit": 100,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照反馈延迟p90，不推断每次动作或语义回应"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/east-suburb-3d/4/L3/bench.json#/checks/2",
+          "when": "2026-10-16T00:24:00.339Z",
+          "check": "feedback",
+          "value": 321,
+          "limit": 900,
+          "ruleLimit": 100,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照反馈延迟p90，不推断每次动作或语义回应"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/three-look-at-sky/2/L2/bench.json#/checks/2",
+          "when": "2026-10-16T01:22:59.604Z",
+          "check": "feedback",
+          "value": 201,
+          "limit": 900,
+          "ruleLimit": 100,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照反馈延迟p90，不推断每次动作或语义回应"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/shelf-gallery/2/L2/bench.json#/checks/2",
+          "when": "2026-10-16T01:23:52.041Z",
+          "check": "feedback",
+          "value": 67,
+          "limit": 900,
+          "ruleLimit": 100,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照反馈延迟p90，不推断每次动作或语义回应"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/cafe-map/3/L1/bench.json#/checks/2",
+          "when": "2026-10-16T04:45:21.962Z",
+          "check": "feedback",
+          "value": 423,
+          "limit": 900,
+          "ruleLimit": 100,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照反馈延迟p90，不推断每次动作或语义回应"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/desk/2/L1/bench.json#/checks/2",
+          "when": "2026-10-16T05:09:32.685Z",
+          "check": "feedback",
+          "value": 53,
+          "limit": 900,
+          "ruleLimit": 100,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照反馈延迟p90，不推断每次动作或语义回应"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/cafe-map/5/L1/bench.json#/checks/2",
+          "when": "2026-10-16T05:09:37.393Z",
+          "check": "feedback",
+          "value": 393,
+          "limit": 900,
+          "ruleLimit": 100,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照反馈延迟p90，不推断每次动作或语义回应"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/desk/7/L1/bench.json#/checks/2",
+          "when": "2026-10-16T05:33:52.439Z",
+          "check": "feedback",
+          "value": 75,
+          "limit": 900,
+          "ruleLimit": 100,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照反馈延迟p90，不推断每次动作或语义回应"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/desk/9/L1/bench.json#/checks/2",
+          "when": "2026-10-16T05:51:20.729Z",
+          "check": "feedback",
+          "value": 83,
+          "limit": 900,
+          "ruleLimit": 100,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照反馈延迟p90，不推断每次动作或语义回应"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/fifty-years/11/L1/bench.json#/checks/2",
+          "when": "2026-10-16T08:43:45.126Z",
+          "check": "feedback",
+          "value": 432,
+          "limit": 900,
+          "ruleLimit": 100,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照反馈延迟p90，不推断每次动作或语义回应"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/desk/11/L1/bench.json#/checks/2",
+          "when": "2026-10-16T08:47:06.130Z",
+          "check": "feedback",
+          "value": 66,
+          "limit": 900,
+          "ruleLimit": 100,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照反馈延迟p90，不推断每次动作或语义回应"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/fifty-years/9/L1/bench.json#/checks/2",
+          "when": "2026-10-16T08:51:46.081Z",
+          "check": "feedback",
+          "value": 306,
+          "limit": 900,
+          "ruleLimit": 100,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照反馈延迟p90，不推断每次动作或语义回应"
+        },
+        {
+          "kind": "run",
+          "ref": "runs/first-visit/13/L1/bench.json#/checks/2",
+          "when": "2026-10-16T08:54:30.100Z",
+          "check": "feedback",
+          "value": 360,
+          "limit": 900,
+          "ruleLimit": 100,
+          "outcome": "observed",
+          "benchPass": true,
+          "note": "仅对照反馈延迟p90，不推断每次动作或语义回应"
+        }
+      ],
+      "violated": false
+    },
+    {
+      "id": "attention-budget",
+      "title": "光随焦点",
+      "rule": "注意力是预算：动的东西最先被看见，其次是明暗对比与人的视线，文字最贵；动效只给焦点。",
+      "why": "其余退暗才看得见导师",
+      "source": "策划 12",
+      "caseRefs": [
+        3
+      ],
+      "param": null,
+      "firstSeenAt": null,
+      "evidence": {
+        "kind": "case",
+        "ref": "director/seed-memory/cases.md#案例-3",
+        "note": "设计案例明确引用本规则；不是试玩或运行记录"
+      },
+      "runEvidence": [],
+      "violated": false
+    },
+    {
+      "id": "behavior-first",
+      "title": "行为显心",
+      "rule": "心智先从行为里读出来：停在单元层，手上的活没停；停在模块层，停下看一眼、换个做法；到了心智层，直起身、开口说话。心象是第二层，给想看的人。",
+      "why": "显影本身教会人看懂",
+      "source": "spec 一.4 · 策划 12",
+      "caseRefs": [
+        5
+      ],
+      "param": null,
+      "firstSeenAt": null,
+      "evidence": {
+        "kind": "case",
+        "ref": "director/seed-memory/cases.md#案例-5",
+        "note": "设计案例明确引用本规则；不是试玩或运行记录"
+      },
+      "runEvidence": [],
+      "violated": false
+    },
+    {
+      "id": "tradeoff-visible",
+      "title": "取舍有痕",
+      "rule": "取舍可见、不全说：理由可以追问（悬停、长按），但不主动摊开；全部摆出来是机器，选过的才是心智。",
+      "why": "理由等人追问再展开",
+      "source": "spec 一.5 · 策划 12",
+      "caseRefs": [],
+      "param": null,
+      "firstSeenAt": null,
+      "evidence": {
+        "kind": "rule",
+        "ref": "director/seed-memory/rules.json#/rules/8",
+        "note": "仅有规则原文来源，未找到明确引用本规则的案例"
+      },
+      "runEvidence": [],
+      "violated": false
+    },
+    {
+      "id": "landmarks-fixed",
+      "title": "地标不移",
+      "rule": "地标不动：你的座位、导师的位置、门。变化发生在地标旁边，才看得出来。",
+      "why": "位置不变才看得见变化",
+      "source": "spec 一.6 · 策划 12",
+      "caseRefs": [],
+      "param": null,
+      "firstSeenAt": null,
+      "evidence": {
+        "kind": "rule",
+        "ref": "director/seed-memory/rules.json#/rules/9",
+        "note": "仅有规则原文来源，未找到明确引用本规则的案例"
+      },
+      "runEvidence": [],
+      "violated": false
+    },
+    {
+      "id": "change-in-front",
+      "title": "眼前变化",
+      "rule": "变化盲视：想让人看见变化，就让它在你面前发生，或由角色的视线指过去；焦点之外的改变几乎不会被注意到。",
+      "why": "让看向的地方当场显影",
+      "source": "spec 一.6 · 策划 12",
+      "caseRefs": [
+        5
+      ],
+      "param": null,
+      "firstSeenAt": null,
+      "evidence": {
+        "kind": "case",
+        "ref": "director/seed-memory/cases.md#案例-5",
+        "note": "设计案例明确引用本规则；不是试玩或运行记录"
+      },
+      "runEvidence": [],
+      "violated": false
+    },
+    {
+      "id": "one-take",
+      "title": "一镜到底",
+      "rule": "一镜到底：中间不黑屏、不切场景、不加载。",
+      "why": "显影途中不切断眼前世界",
+      "source": "spec 一.7",
+      "caseRefs": [
+        5
+      ],
+      "param": null,
+      "firstSeenAt": null,
+      "evidence": {
+        "kind": "case",
+        "ref": "director/seed-memory/cases.md#案例-5",
+        "note": "设计案例明确引用本规则；不是试玩或运行记录"
+      },
+      "runEvidence": [],
+      "violated": false
+    },
+    {
+      "id": "tone",
+      "title": "人有诙谐",
+      "rule": "语气：少警句，允许插科打诨而不离题；角色对天意的理解可以又歪又合理。",
+      "why": "角色说话可以歪而有理",
+      "source": "spec 一.8 · 策划 19",
+      "caseRefs": [],
+      "param": null,
+      "firstSeenAt": null,
+      "evidence": {
+        "kind": "rule",
+        "ref": "director/seed-memory/rules.json#/rules/12",
+        "note": "仅有规则原文来源，未找到明确引用本规则的案例"
+      },
+      "runEvidence": [],
+      "violated": false
+    },
+    {
+      "id": "give-then-ask",
+      "title": "先予后问",
+      "rule": "先给，再问：进门不报时间、不报第几天、不问名字；名字等玩完一局再问。",
+      "why": "先给一局再问名字",
+      "source": "spec 三 · 策划 12、19",
+      "caseRefs": [
+        1,
+        4
+      ],
+      "param": null,
+      "firstSeenAt": null,
+      "evidence": {
+        "kind": "case",
+        "ref": "director/seed-memory/cases.md#案例-1",
+        "note": "设计案例明确引用本规则；不是试玩或运行记录"
+      },
+      "runEvidence": [],
+      "violated": false
+    },
+    {
+      "id": "continuity",
+      "title": "来前有事",
+      "rule": "连续：你进门时它正在做一件事，先做完这一笔，再转向你。",
+      "why": "来客进门时导师仍在落笔",
+      "source": "策划 12",
+      "caseRefs": [
+        3
+      ],
+      "param": null,
+      "firstSeenAt": null,
+      "evidence": {
+        "kind": "case",
+        "ref": "director/seed-memory/cases.md#案例-3",
+        "note": "设计案例明确引用本规则；不是试玩或运行记录"
+      },
+      "runEvidence": [],
+      "violated": false
+    },
+    {
+      "id": "response",
+      "title": "记得来客",
+      "rule": "回应：它对你做过的事有反应；你在某处停过，下次那里就深一点。",
+      "why": "停过的地方下次深一点",
+      "source": "策划 12",
+      "caseRefs": [],
+      "param": null,
+      "firstSeenAt": null,
+      "evidence": {
+        "kind": "rule",
+        "ref": "director/seed-memory/rules.json#/rules/15",
+        "note": "仅有规则原文来源，未找到明确引用本规则的案例"
+      },
+      "runEvidence": [],
+      "violated": false
+    },
+    {
+      "id": "anticipate",
+      "title": "猜错会挪",
+      "rule": "预备：它在你开口前已经猜了一次；猜错了会挪，挪的动作你看得见。",
+      "why": "猜错之后要让人看见改动",
+      "source": "策划 12",
+      "caseRefs": [],
+      "param": null,
+      "firstSeenAt": null,
+      "evidence": {
+        "kind": "rule",
+        "ref": "director/seed-memory/rules.json#/rules/16",
+        "note": "仅有规则原文来源，未找到明确引用本规则的案例"
+      },
+      "runEvidence": [],
+      "violated": false
+    },
+    {
+      "id": "timing",
+      "title": "择时开口",
+      "rule": "时机：它会等，会挑时候，不在你专注时打断；提醒按阶梯，先在场景里，再到界面上。",
+      "why": "专注时不打断",
+      "source": "策划 12",
+      "caseRefs": [],
+      "param": null,
+      "firstSeenAt": null,
+      "evidence": {
+        "kind": "rule",
+        "ref": "director/seed-memory/rules.json#/rules/17",
+        "note": "仅有规则原文来源，未找到明确引用本规则的案例"
+      },
+      "runEvidence": [],
+      "violated": false
+    },
+    {
+      "id": "persistence",
+      "title": "自有主张",
+      "rule": "执着：它有自己想做的事，有时不照你说的做，并让你看到它没有顺从的地方。",
+      "why": "不顺从也让人看得见",
+      "source": "策划 12",
+      "caseRefs": [],
+      "param": null,
+      "firstSeenAt": null,
+      "evidence": {
+        "kind": "rule",
+        "ref": "director/seed-memory/rules.json#/rules/18",
+        "note": "仅有规则原文来源，未找到明确引用本规则的案例"
+      },
+      "runEvidence": [],
+      "violated": false
+    },
+    {
+      "id": "control",
+      "title": "他自作主",
+      "rule": "视角与控制一致：你不是他，是他心里的一个声音，约 0.3 的控制；他自己决定做不做、怎么做。",
+      "why": "你是心中声音由他做决定",
+      "source": "spec 4.7",
+      "caseRefs": [],
+      "param": {
+        "control": 0.3
+      },
+      "firstSeenAt": null,
+      "evidence": {
+        "kind": "rule",
+        "ref": "director/seed-memory/rules.json#/rules/19",
+        "note": "仅有规则原文来源，未找到明确引用本规则的案例"
+      },
+      "runEvidence": [],
+      "violated": false
+    },
+    {
+      "id": "peak-end",
+      "title": "峰与结尾",
+      "rule": "峰值与结尾：人记住一段体验最强的一刻和结尾；每一局、每一次来访都设计这两处。",
+      "why": "结尾落在回应上",
+      "source": "策划 12",
+      "caseRefs": [
+        4
+      ],
+      "param": {
+        "peaks": 1,
+        "ends": 1
+      },
+      "firstSeenAt": null,
+      "evidence": {
+        "kind": "case",
+        "ref": "director/seed-memory/cases.md#案例-4",
+        "note": "设计案例明确引用本规则；不是试玩或运行记录"
+      },
+      "runEvidence": [],
+      "violated": false
+    },
+    {
+      "id": "leave-a-thread",
+      "title": "留一条线",
+      "rule": "留一条线：没收口的事更容易被记住；离开前留一条没收口的线。",
+      "why": "最后一句留下未收口的事",
+      "source": "策划 12",
+      "caseRefs": [
+        4
+      ],
+      "param": {
+        "threads": 1
+      },
+      "firstSeenAt": null,
+      "evidence": {
+        "kind": "case",
+        "ref": "director/seed-memory/cases.md#案例-4",
+        "note": "设计案例明确引用本规则；不是试玩或运行记录"
+      },
+      "runEvidence": [],
+      "violated": false
+    },
+    {
+      "id": "fold-when-understood",
+      "title": "懂即收起",
+      "rule": "看懂了就折叠：看懂的东西退到幕后，只在有特殊变化时再出来。",
+      "why": "看懂的东西退到幕后",
+      "source": "策划 12",
+      "caseRefs": [],
+      "param": null,
+      "firstSeenAt": null,
+      "evidence": {
+        "kind": "rule",
+        "ref": "director/seed-memory/rules.json#/rules/22",
+        "note": "仅有规则原文来源，未找到明确引用本规则的案例"
+      },
+      "runEvidence": [],
+      "violated": false
+    },
+    {
+      "id": "plans-not-state",
+      "title": "计划可见",
+      "rule": "给你看计划和改动，不给你看状态：不放数字面板、百分比、计数器；饥饱用粟瓮和家人的样子。",
+      "why": "报时间不能代替回应",
+      "source": "策划 12 · spec 开头",
+      "caseRefs": [
+        1,
+        4
+      ],
+      "param": null,
+      "firstSeenAt": null,
+      "evidence": {
+        "kind": "case",
+        "ref": "director/seed-memory/cases.md#案例-1",
+        "note": "设计案例明确引用本规则；不是试玩或运行记录"
+      },
+      "runEvidence": [],
+      "violated": false
+    },
+    {
+      "id": "revision-trace",
+      "title": "改稿留痕",
+      "rule": "改稿留痕：改过的地方留一道前一版的淡痕；点一下能看见改前的样子和理由。",
+      "why": "改前的样子和理由要可追溯",
+      "source": "策划 12",
+      "caseRefs": [],
+      "param": null,
+      "firstSeenAt": null,
+      "evidence": {
+        "kind": "rule",
+        "ref": "director/seed-memory/rules.json#/rules/24",
+        "note": "仅有规则原文来源，未找到明确引用本规则的案例"
+      },
+      "runEvidence": [],
+      "violated": false
+    },
+    {
+      "id": "change-budget",
+      "title": "改动有度",
+      "rule": "有节制：每次来访最多一两处看得见的改动，每处都能追溯到原因，最好是你做过的事。",
+      "why": "每次只改一两处并留下原因",
+      "source": "策划 12",
+      "caseRefs": [],
+      "param": {
+        "perVisit": 2
+      },
+      "firstSeenAt": null,
+      "evidence": {
+        "kind": "rule",
+        "ref": "director/seed-memory/rules.json#/rules/25",
+        "note": "仅有规则原文来源，未找到明确引用本规则的案例"
+      },
+      "runEvidence": [],
+      "violated": false
+    },
+    {
+      "id": "sediment",
+      "title": "熟能成习",
+      "rule": "从想到不想：同一情境同一做法连续奏效 3 次，编译成习惯，心智不再为它停下来。",
+      "why": "连续奏效的做法才成为习惯",
+      "source": "策划 12 · spec 五",
+      "caseRefs": [],
+      "param": {
+        "successes": 3
+      },
+      "firstSeenAt": null,
+      "evidence": {
+        "kind": "rule",
+        "ref": "director/seed-memory/rules.json#/rules/26",
+        "note": "仅有规则原文来源，未找到明确引用本规则的案例"
+      },
+      "runEvidence": [],
+      "violated": false
+    },
+    {
+      "id": "chronicle",
+      "title": "年谱对照",
+      "rule": "年谱：每位导演和导师台本身都有年谱；第一天的样子挂在墙上，和今天对照。",
+      "why": "第一天的样子留着对照今天",
+      "source": "策划 12",
+      "caseRefs": [],
+      "param": null,
+      "firstSeenAt": null,
+      "evidence": {
+        "kind": "rule",
+        "ref": "director/seed-memory/rules.json#/rules/27",
+        "note": "仅有规则原文来源，未找到明确引用本规则的案例"
+      },
+      "runEvidence": [],
+      "violated": false
+    }
+  ]
+}

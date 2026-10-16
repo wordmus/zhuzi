@@ -8,7 +8,9 @@ import type { Affordance, AffShape, DragEvent } from '../../engine/affordance';
 import { drawReturnScene, drawSeat, drawSmallLamp, makeMentor, updateMentorLook, type ReturnLayout } from './scene';
 import { currentLampX, prepareVisitChanges } from './visit-changes';
 import { mountChronicle } from './chronicle';
+import { getOrInitHypotheses, type Hypothesis } from '../../engine/mind/hypotheses';
 import { mountBooks } from '../../components/books';
+import { drawOilStation, drawDirectorStation, drawShelfStation, drawDoorStation, loadWorksIndex, type WorkItem } from './cafe-map';
 
 const MAX_LINE = 30;
 
@@ -91,11 +93,48 @@ async function runThreshold(act: Parameters<Framework['run']>[0], ctx: Ctx) {
   let layout: ReturnType<typeof sceneRoom> | null = null;
   let visibleTicket = { x: stage.width / 2, y: stage.height * 0.65, w: 48 };
   const motion = stage.reducedMotion ? 0.25 : 1;
+
+  const isExpanded = ctx.visit.n >= 2 || ctx.plan.intent.id === 'cafe-map';
+  let station: 'oil' | 'directors' | 'shelf' | 'door' = 'oil';
+  let oilPoured = ctx.store.get<boolean>('mentor.lamp.poured', false);
+  let pourAnimStart = 0;
+  let draftDismissed = ctx.store.get<boolean>('director.draft.dismissed', false);
+  let inspectingDirectors = false;
+  let worksList: WorkItem[] | null = (act.cafeMap?.works as WorkItem[]) ?? null;
+  let selectedWork: WorkItem | null = worksList && worksList.length > 0 ? worksList[0]! : null;
+  let exitDoorOpen = 0;
+  let exitDoorPushedAt = 0;
+  let oilAff: Affordance | null = null;
+  let directorsAff: Affordance | null = null;
+  let shelfAff: Affordance | null = null;
+  let exitDoorAff: Affordance | null = null;
+
+  if (isExpanded) {
+    void loadWorksIndex((act.cafeMap?.works as WorkItem[]) ?? null).then((w) => {
+      worksList = w;
+      (window as any).__runsIndex = w;
+      if (w && w.length > 0 && !selectedWork) selectedWork = w[0]!;
+    });
+  }
+
   const previous = ctx.visit.previous;
   const changes = prepareVisitChanges(ctx);
   const chronicle = mountChronicle(ctx);
   const books = mountBooks(ctx);
   (window as any).__books = books;
+  const hypotheses = isExpanded ? getOrInitHypotheses(ctx.store, { previous, current: ctx.record }) : [];
+  let readHypothesis = -1;
+  let hypothesisHoverAt = 0;
+  let hypothesisSaid = -1;
+  const sayHypothesis = () => {
+    const h = ctx.store.get<Hypothesis[]>('mentor.hypotheses', hypotheses)[readHypothesis];
+    if (!h || !greetRevealed) return;
+    hypothesisSaid = readHypothesis;
+    lines.clear();
+    void lines.say({ who: '导师', text: shortLine(h.text), anchor: () => layout?.mentor.top ?? { x: stage.width * .64, y: stage.height * .36 }, tone: 'mentor', sticky: true, source: { source: 'script' } });
+  };
+  const inspectHypothesis = () => { if (isExpanded && readHypothesis >= 0) sayHypothesis(); };
+  stage.root.addEventListener('pointerdown', inspectHypothesis);
   let glance = 0;
   let pointer = { x: -1, y: -1 };
   let lastFrameAt = performance.now();
@@ -127,6 +166,7 @@ async function runThreshold(act: Parameters<Framework['run']>[0], ctx: Ctx) {
       if (openedAt) return;
       openedAt = performance.now();
       doorAff.setEnabled(false);
+      if (isExpanded) doorAff.el.style.boxShadow = 'none';
       audio.unlock();
       audio.sfx('door-creak');
       audio.ambience('night', 0.18, 420);
@@ -204,6 +244,7 @@ async function runThreshold(act: Parameters<Framework['run']>[0], ctx: Ctx) {
     } else if (glance === 1 && elapsed >= lookAt + 1.1 * motion) {
       cast.mentor.setGaze(null); glance = 2;
     }
+    if (isExpanded && litCount >= 5) cast.mentor.setGaze(station === 'oil' ? -.85 : station === 'directors' ? -.4 : .8);
     const write = clamp(elapsed / (0.9 * motion));
     const ticketPush = easeOut(clamp((elapsed - 2.54 * motion) / (0.76 * motion)));
     const lift = picked ? clamp((now - pickedAt) / (260 * motion)) : dragLift;
@@ -217,7 +258,7 @@ async function runThreshold(act: Parameters<Framework['run']>[0], ctx: Ctx) {
       ticketLift: lift,
     });
     const ticketW = Math.max(layout.ticket.w, Math.min(w * 0.065, h * 0.11));
-    const painted = paintTicket(c, layout.ticket.x, layout.ticket.y, ticketW, {
+    const painted = isExpanded ? layout.ticket : paintTicket(c, layout.ticket.x, layout.ticket.y, ticketW, {
       lift,
       glow: 0.22 + Math.sin(t * 1.8) * 0.08 + (picked ? 0.72 : 0),
       t,
@@ -228,8 +269,10 @@ async function runThreshold(act: Parameters<Framework['run']>[0], ctx: Ctx) {
       const seatSize = Math.min(h * 0.17, w * 0.18);
       drawSeat(c, w * 0.17, h * 0.94, seatSize);
       drawSmallLamp(c, w * currentLampX(ctx), h * 0.94 - seatSize * 0.08, seatSize * 0.82, t);
-      chronicle.draw(c, w, h, elapsed > 4 && greetRevealed);
-      books.draw(c, w, h, elapsed > 4 && greetRevealed);
+      if (!isExpanded) {
+        chronicle.draw(c, w, h, elapsed > 4 && greetRevealed);
+        books.draw(c, w, h, elapsed > 4 && greetRevealed);
+      }
       const head = cast.mentor.anchors.head;
       if (document.visibilityState === 'visible' && Math.abs(pointer.x - head.x) < seatSize * 0.65 && pointer.y > head.y - seatSize * 0.2 && pointer.y < head.y + seatSize * 1.6) {
         ctx.record.dwell.mentor = Math.round((ctx.record.dwell.mentor ?? 0) + frameMs);
@@ -237,6 +280,61 @@ async function runThreshold(act: Parameters<Framework['run']>[0], ctx: Ctx) {
     }
     c.restore();
     visibleTicket = { x: painted.x, y: painted.y, w: ticketW };
+
+    if (isExpanded && litCount >= 5) {
+      const floorY = h * 0.7;
+      const oilX = w * 0.22;
+      const oilY = floorY + h * 0.04;
+      const oilS = Math.min(w * 0.24, h * 0.27);
+
+      const dirX = w * 0.44;
+      const dirY = floorY + h * 0.03;
+      const dirS = Math.min(w * 0.22, h * 0.24);
+
+      const shelfX = w * 0.68;
+      const shelfY = floorY - h * 0.30;
+      const shelfW = Math.min(w * 0.125, 175);
+      const shelfH = Math.min(h * 0.32, 220);
+
+      const doorStationX = w * 0.89;
+      const doorStationY = floorY + h * 0.01;
+      const doorStationW = Math.min(h * 0.26, w * 0.22);
+      const doorStationH = Math.min(h * 0.46, w * 0.38);
+
+      const pourProgress = pourAnimStart ? clamp((now - pourAnimStart) / 450) : (oilPoured ? 1 : 0);
+      if (exitDoorPushedAt) exitDoorOpen = clamp((now - exitDoorPushedAt) / (400 * motion));
+
+      const rackX = oilX - oilS * .48, rackY = oilY - oilS * .25 - oilS * .0504 - oilS * .305;
+      const near = pointer.x >= rackX && pointer.x <= rackX + oilS * .31 && pointer.y >= rackY && pointer.y <= rackY + oilS * .34;
+      const hi = near ? Math.min(hypotheses.length - 1, Math.max(0, Math.floor((pointer.x - rackX - oilS * .035) / (oilS * .057)))) : -1;
+      if (hi !== readHypothesis) { readHypothesis = hi; hypothesisHoverAt = now; hypothesisSaid = -1; }
+      if (hi >= 0 && hypothesisSaid !== hi && now - hypothesisHoverAt >= 800) sayHypothesis();
+      drawOilStation(c, oilX, oilY, oilS, t, {
+        poured: oilPoured,
+        pourProgress,
+        budgetLamp: ctx.store.get<Record<string, number>>('mentor.lamps', {})[ctx.plan.intent.id]
+          ?? (ctx.layers.letters().find(letter => letter.kind === 'commission')?.payload as any)?.budget?.lamp ?? 1,
+        lampX: currentLampX(ctx),
+        active: station === 'oil' || !!oilAff?.hovering,
+        hypotheses: ctx.store.get<Hypothesis[]>('mentor.hypotheses', hypotheses),
+      });
+      drawDirectorStation(c, dirX, dirY, dirS, t, {
+        dismissed: draftDismissed,
+        inspecting: inspectingDirectors,
+        active: station === 'directors' || !!directorsAff?.hovering,
+        forms: ['base', 'shuheng'].map(id => worksList?.find(w => w.director === id)?.form ?? ctx.plan.intent.form),
+      });
+      drawShelfStation(c, shelfX, shelfY, shelfW, shelfH, t, {
+        works: worksList,
+        selectedIndex: selectedWork && worksList ? worksList.indexOf(selectedWork) : -1,
+        active: station === 'shelf' || !!shelfAff?.hovering,
+      });
+      drawDoorStation(c, doorStationX, doorStationY, doorStationW, doorStationH, t, {
+        open: exitDoorOpen,
+        active: station === 'door',
+        hasUrl: Boolean(selectedWork?.url),
+      });
+    }
 
     if (!greetStarted && elapsed >= lookAt && litCount >= 5) {
       greetStarted = true;
@@ -246,41 +344,224 @@ async function runThreshold(act: Parameters<Framework['run']>[0], ctx: Ctx) {
       });
     }
 
-    if (!ticketAff && elapsed >= 3.05 * motion && greetRevealed && layout) {
-      ctx.record.skipped = [...new Set([...(ctx.record.skipped ?? []), 'ticket'])];
-      ticketAff = aff.add({
-        id: 'ticket',
-        label: '拿起票根',
-        shape: rectAround(visibleTicket.x, visibleTicket.y, visibleTicket.w, visibleTicket.w * 2.4, 18),
-        key: 'Enter',
-        represents: '拿起写着旱字的帛票根',
-        onActivate: triggerPick,
-        onDrag(e: DragEvent) {
-          if (e.phase === 'start') dragLift = 0.12;
-          else if (e.phase === 'move') dragLift = clamp(Math.max(0.12, -e.dy / Math.max(30, stage.height * 0.12)), 0, 0.82);
-          else {
-            if (e.dy < -14) triggerPick();
-            else dragLift = 0;
-          }
-        },
-      });
-      ticketAff.el.dataset.pulse = 'breath';
-      ticketAff.el.setAttribute('aria-current', 'true');
-      owned.push(ticketAff);
-    }
+    if (!isExpanded) {
+      if (!ticketAff && elapsed >= 3.05 * motion && greetRevealed && layout) {
+        ctx.record.skipped = [...new Set([...(ctx.record.skipped ?? []), 'ticket'])];
+        ticketAff = aff.add({
+          id: 'ticket',
+          label: '拿起票根',
+          shape: rectAround(visibleTicket.x, visibleTicket.y, visibleTicket.w, visibleTicket.w * 2.4, 18),
+          key: 'Enter',
+          represents: '拿起写着旱字的帛票根',
+          onActivate: triggerPick,
+          onDrag(e: DragEvent) {
+            if (e.phase === 'start') dragLift = 0.12;
+            else if (e.phase === 'move') dragLift = clamp(Math.max(0.12, -e.dy / Math.max(30, stage.height * 0.12)), 0, 0.82);
+            else {
+              if (e.dy < -14) triggerPick();
+              else dragLift = 0;
+            }
+          },
+        });
+        ticketAff.el.dataset.pulse = 'breath';
+        ticketAff.el.setAttribute('aria-current', 'true');
+        owned.push(ticketAff);
+      }
 
-    if (ticketAff) {
-      setTicketShape();
-      focusPulse(ticketAff, t, stage.reducedMotion, 0.8);
-    }
+      if (ticketAff) {
+        setTicketShape();
+        focusPulse(ticketAff, t, stage.reducedMotion, 0.8);
+      }
 
-    if (picked && now - pickedAt >= 300 * motion && !completed) {
-      completed = true;
-      ctx.handoff.frame = copyCanvas(layer.canvas);
-      ctx.handoff.ticket = { ...visibleTicket };
-      lines.clear();
-      audio.ambience('city', 0.12, 700);
-      resolveRun();
+      if (picked && now - pickedAt >= 300 * motion && !completed) {
+        completed = true;
+        ctx.handoff.frame = copyCanvas(layer.canvas);
+        ctx.handoff.ticket = { ...visibleTicket };
+        lines.clear();
+        audio.ambience('city', 0.12, 700);
+        resolveRun();
+      }
+    } else {
+      // isExpanded: 四站按序导引展开
+      const floorY = h * 0.7;
+      const oilX = w * 0.22;
+      const oilY = floorY + h * 0.04;
+      const oilS = Math.min(w * 0.24, h * 0.27);
+
+      const dirX = w * 0.44;
+      const dirY = floorY + h * 0.03;
+      const dirS = Math.min(w * 0.22, h * 0.24);
+
+      const shelfX = w * 0.68;
+      const shelfY = floorY - h * 0.30;
+      const shelfW = Math.min(w * 0.125, 175);
+      const shelfH = Math.min(h * 0.32, 220);
+
+      const doorStationX = w * 0.89;
+      const doorStationY = floorY + h * 0.01;
+      const doorStationW = Math.min(h * 0.26, w * 0.22);
+      const doorStationH = Math.min(h * 0.46, w * 0.38);
+
+      const unlockDoor = () => {
+        if (exitDoorAff) return;
+        exitDoorAff = aff.add({
+          id: 'door',
+          label: '推门进入',
+          shape: rectAround(doorStationX, doorStationY - doorStationH / 2, doorStationW, doorStationH, 16),
+          key: 'Enter',
+          represents: '推门：新标签页进入作品',
+          onActivate() {
+            if (exitDoorPushedAt) return;
+            exitDoorPushedAt = performance.now();
+            exitDoorOpen = 0.2;
+            exitDoorAff?.setEnabled(false);
+            audio.sfx('door-creak');
+            if (selectedWork?.url) {
+              try { window.open(selectedWork.url, '_blank'); } catch {}
+            }
+            void lines.say({
+              who: '导师',
+              text: selectedWork?.url ? '门开了，走吧。' : '这件还没开门。',
+              anchor: () => ({ x: doorStationX, y: doorStationY - doorStationH * 0.5 }),
+              tone: 'mentor',
+              sticky: true,
+              source: { source: 'script' },
+            });
+          },
+        });
+        exitDoorAff.el.dataset.pulse = 'breath';
+        exitDoorAff.el.setAttribute('aria-current', 'true');
+        owned.push(exitDoorAff);
+      };
+
+      const unlockShelf = () => {
+        if (shelfAff) return;
+        shelfAff = aff.add({
+          id: 'shelf',
+          label: '翻看作品架',
+          shape: rectAround(shelfX + shelfW / 2, shelfY + shelfH / 2, shelfW, shelfH, 12),
+          key: '3',
+          represents: '作品架：作品与盖印状态',
+          onActivate() {
+            audio.sfx('hover');
+            if (!worksList || worksList.length === 0) {
+              void lines.say({
+                who: '导师',
+                text: '架子还空着。',
+                anchor: () => ({ x: shelfX + shelfW / 2, y: shelfY - 10 }),
+                tone: 'mentor',
+                sticky: true,
+                source: { source: 'script' },
+              });
+            } else {
+              selectedWork = worksList[0]!;
+              ctx.handoff.selectedWork = selectedWork;
+              void lines.say({
+                who: '导师',
+                text: '选了这件，推门便能进去。',
+                anchor: () => ({ x: shelfX + shelfW / 2, y: shelfY - 10 }),
+                tone: 'mentor',
+                sticky: true,
+                source: { source: 'script' },
+              });
+            }
+            station = 'door';
+            shelfAff?.setEnabled(false);
+            unlockDoor();
+          },
+        });
+        shelfAff.el.dataset.workCount = String(worksList?.length ?? 0);
+        shelfAff.el.setAttribute('aria-description', worksList?.length ? `${worksList.length} 件作品，朱印表示已盖印，麻绳表示毛坯。` : '空架上只有白简和薄尘。');
+        shelfAff.el.dataset.pulse = 'breath';
+        shelfAff.el.setAttribute('aria-current', 'true');
+        owned.push(shelfAff);
+      };
+
+      const unlockDirectors = () => {
+        if (directorsAff) return;
+        directorsAff = aff.add({
+          id: 'directors',
+          label: '看工作台',
+          shape: rectAround(dirX, dirY - dirS * 0.1, dirS * 1.1, dirS * 0.6, 14),
+          key: '2',
+          represents: '导演廊：看基础导演与叔衡的工作台与毛坯',
+          onActivate() {
+            inspectingDirectors = true;
+            audio.sfx('hover');
+            void lines.say({
+              who: '导师',
+              text: '基础导演与叔衡，草稿钉在墙上。',
+              anchor: () => ({ x: dirX, y: dirY - dirS * 0.3 }),
+              tone: 'mentor',
+              sticky: true,
+              source: { source: 'script' },
+            });
+            station = 'shelf';
+            directorsAff?.setEnabled(false);
+            unlockShelf();
+          },
+        });
+        directorsAff.el.dataset.pulse = 'breath';
+        directorsAff.el.setAttribute('aria-current', 'true');
+        owned.push(directorsAff);
+      };
+
+      if (!oilAff && elapsed >= 3.05 * motion && greetRevealed && layout) {
+        oilAff = aff.add({
+          id: 'lamp-oil',
+          label: '倒油',
+          shape: rectAround(oilX, oilY - oilS * 0.1, oilS * 0.9, oilS * 0.6, 12),
+          key: '1',
+          represents: '灯油台：倒油（调整各世界/作品份额）',
+          onActivate() {
+            oilPoured = true;
+            pourAnimStart = performance.now();
+            ctx.store.set('mentor.lamp.poured', true);
+            ctx.store.set('mentor.lamps', { ...ctx.store.get<Record<string, number>>('mentor.lamps', {}), [ctx.plan.intent.id]: 1.6, 'han-act1': .8 });
+            audio.sfx('lamp', { index: 2, gain: 0.4 });
+            void lines.say({
+              who: '导师',
+              text: '分了油，这盏就亮些。',
+              anchor: () => ({ x: oilX, y: oilY - oilS * 0.3 }),
+              tone: 'mentor',
+              sticky: true,
+              source: { source: 'script' },
+            });
+            station = 'directors';
+            oilAff?.setEnabled(false);
+            unlockDirectors();
+          },
+        });
+        oilAff.el.dataset.pulse = 'breath';
+        oilAff.el.setAttribute('aria-current', 'true');
+        owned.push(oilAff);
+      }
+
+      if (station === 'oil' && oilAff) {
+        setShapeIfChanged(shapeCache, oilAff, rectAround(oilX, oilY - oilS * 0.1, oilS * 0.9, oilS * 0.6, 12));
+        oilAff.el.setAttribute('aria-current', 'true');
+        oilAff.el.style.boxShadow = 'none';
+      } else if (station === 'directors' && directorsAff) {
+        setShapeIfChanged(shapeCache, directorsAff, rectAround(dirX, dirY - dirS * 0.1, dirS * 1.1, dirS * 0.6, 14));
+        directorsAff.el.setAttribute('aria-current', 'true');
+        directorsAff.el.style.boxShadow = 'none';
+      } else if (station === 'shelf' && shelfAff) {
+        setShapeIfChanged(shapeCache, shelfAff, rectAround(shelfX + shelfW / 2, shelfY + shelfH / 2, shelfW, shelfH, 12));
+        shelfAff.el.setAttribute('aria-current', 'true');
+        shelfAff.el.style.boxShadow = 'none';
+      } else if (station === 'door' && exitDoorAff) {
+        setShapeIfChanged(shapeCache, exitDoorAff, rectAround(doorStationX, doorStationY - doorStationH / 2, doorStationW, doorStationH, 16));
+        exitDoorAff.el.setAttribute('aria-current', 'true');
+        exitDoorAff.el.style.boxShadow = 'none';
+      }
+
+      if (exitDoorPushedAt && now - exitDoorPushedAt >= 320 * motion && !completed) {
+        completed = true;
+        ctx.handoff.frame = copyCanvas(layer.canvas);
+        lines.clear();
+        audio.ambience('night', 0.1, 600);
+        resolveRun();
+      }
     }
   });
 
@@ -289,13 +570,14 @@ async function runThreshold(act: Parameters<Framework['run']>[0], ctx: Ctx) {
   } finally {
     offFrame();
     offResize();
+    stage.root.removeEventListener('pointerdown', inspectHypothesis);
     stage.root.removeEventListener('pointermove', trackPointer);
     stage.root.removeEventListener('pointerleave', leavePointer);
     chronicle.remove();
     books.remove();
     for (const a of owned) a.remove();
   }
-  return { act: act.id, data: { affordances: ['door', 'ticket'], ticket: ctx.handoff.ticket, frame: Boolean(ctx.handoff.frame) } };
+  return { act: act.id, data: { affordances: isExpanded ? ['door', 'lamp-oil', 'directors', 'shelf'] : ['door', 'ticket'], ticket: ctx.handoff.ticket, frame: Boolean(ctx.handoff.frame) } };
 }
 
 function returnPlaceLine(placeRaw: string, durationMs: number) {

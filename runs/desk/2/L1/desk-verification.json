@@ -1,0 +1,56 @@
+{
+  "stations": [
+    "desk-lamp",
+    "desk-directors",
+    "desk-shelf",
+    "desk-gate"
+  ],
+  "indexed": 31,
+  "browser": [
+    {
+      "name": "wide",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "stations": [
+        "desk-lamp",
+        "desk-directors",
+        "desk-shelf",
+        "desk-gate"
+      ],
+      "lamps": {
+        "console": 0.55,
+        "cafe-map": 1.05
+      },
+      "rolled": "three-look-at-sky/2/L2",
+      "chosen": "cafe-map/5/L1",
+      "popup": "http://127.0.0.1:63967/runs/cafe-map/5/L1/index.html",
+      "errors": [],
+      "layers": "PASS"
+    },
+    {
+      "name": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "stations": [
+        "desk-lamp",
+        "desk-directors",
+        "desk-shelf",
+        "desk-gate"
+      ],
+      "lamps": {
+        "console": 0.35,
+        "cafe-map": 0.85
+      },
+      "rolled": "three-look-at-sky/2/L2",
+      "chosen": "east-suburb-3d/4/L3",
+      "popup": "http://127.0.0.1:63967/runs/east-suburb-3d/4/L3/index.html",
+      "errors": [],
+      "layers": "PASS"
+    }
+  ],
+  "missingURL": "PASS"
+}

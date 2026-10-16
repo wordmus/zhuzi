@@ -1,0 +1,81 @@
+{
+  "indexExists": true,
+  "indexCount": 31,
+  "missingIndexFixture": "/var/folders/k2/1lmlwp6j3gvcd829zvvgl4pw0000gn/T/cafe-no-index-ETBqej",
+  "missingPlanCount": 0,
+  "before": {
+    "intentId": "cafe-map",
+    "title": "咖啡厅入口总览",
+    "hypothesis": {
+      "id": "h-cafe-map",
+      "text": "第二次来访，咖啡厅展开成四站，你可以总览整台机器并推门进入",
+      "mode": "satisfy"
+    },
+    "target": "四站展开：灯油台、导演廊、作品架、门；物件具象、一屏一焦点",
+    "stop": "推门进入作品",
+    "budget": {
+      "tier": "L1",
+      "lamp": 1,
+      "note": "白天·宽屏·第2次来；按本机力气分灯，1幕"
+    },
+    "userModel": {
+      "visits": 2,
+      "sinceLastMs": 86400000,
+      "lastEnding": "lend",
+      "dwellTop": "mentor",
+      "dayPart": "白天",
+      "device": "宽屏"
+    },
+    "why": "你惦记导师身旁，再给它一次。"
+  },
+  "hypothesisLine": [
+    "你更在意人物的处境，而非战局剧本"
+  ],
+  "after": {
+    "intentId": "cafe-map",
+    "title": "咖啡厅入口总览",
+    "hypothesis": {
+      "id": "h-cafe-map",
+      "text": "第二次来访，咖啡厅展开成四站，你可以总览整台机器并推门进入",
+      "mode": "satisfy"
+    },
+    "target": "四站展开：灯油台、导演廊、作品架、门；物件具象、一屏一焦点",
+    "stop": "推门进入作品",
+    "budget": {
+      "tier": "L1",
+      "lamp": 1.6,
+      "note": "白天·宽屏·第2次来；依调配分配，1幕"
+    },
+    "userModel": {
+      "visits": 2,
+      "sinceLastMs": 86400000,
+      "lastEnding": "lend",
+      "dwellTop": "mentor",
+      "dayPart": "白天",
+      "device": "宽屏"
+    },
+    "why": "依你调过的灯油（1.6盏），重排此程。"
+  },
+  "renderedWorkCount": 31,
+  "hitAreaShadows": [
+    {
+      "id": "door",
+      "shadow": "none"
+    },
+    {
+      "id": "lamp-oil",
+      "shadow": "none"
+    },
+    {
+      "id": "directors",
+      "shadow": "none"
+    },
+    {
+      "id": "shelf",
+      "shadow": "none"
+    }
+  ],
+  "emptyText": [
+    "架子还空着。剧本"
+  ]
+}

@@ -58,6 +58,7 @@ export interface ActorReport {
   act: string;
   who: string;
   did: string[];
+  voice?: string[];
   predicted: string;
   actual: string;
   error?: { layer: Layer; unit?: string; e?: number; eps?: number; note?: string };

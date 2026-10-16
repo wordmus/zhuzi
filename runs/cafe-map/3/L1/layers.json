@@ -1,0 +1,442 @@
+{
+  "letters": [
+    {
+      "kind": "commission",
+      "from": "mentor",
+      "to": "director",
+      "payload": {
+        "intentId": "cafe-map",
+        "title": "咖啡厅入口总览",
+        "hypothesis": {
+          "id": "h-cafe-map",
+          "text": "第二次来访，咖啡厅展开成四站，你可以总览整台机器并推门进入",
+          "mode": "satisfy"
+        },
+        "target": "四站展开：灯油台、导演廊、作品架、门；物件具象、一屏一焦点",
+        "stop": "推门进入作品",
+        "budget": {
+          "tier": "L1",
+          "lamp": 1,
+          "note": "中午·宽屏·第2次来；按本机力气分灯，1幕"
+        },
+        "userModel": {
+          "visits": 2,
+          "sinceLastMs": 86400000,
+          "lastEnding": "lend",
+          "dwellTop": "mentor",
+          "dayPart": "中午",
+          "device": "宽屏"
+        },
+        "why": "记着上回的导师身旁，往下走。"
+      },
+      "id": "commission:visit:1",
+      "t": 316.69999998807907,
+      "receipt": {
+        "at": 317.10000002384186,
+        "by": "director"
+      }
+    },
+    {
+      "kind": "plan",
+      "from": "director",
+      "to": "mentor",
+      "payload": {
+        "planId": "cafe-map",
+        "version": 1,
+        "director": {
+          "id": "base",
+          "name": "基础导演"
+        },
+        "acts": [
+          {
+            "id": "threshold",
+            "framework": "vignette",
+            "author": "基础导演",
+            "focus": "door"
+          }
+        ],
+        "accept": "接下这1幕，按事实交付。",
+        "changes": [
+          "保留mentor的来访线索，演员仍按世界事实决定"
+        ],
+        "rehearsal": [
+          {
+            "act": "threshold",
+            "expect": "咖啡厅里四站展开",
+            "risk": ""
+          }
+        ]
+      },
+      "id": "plan:visit:1",
+      "t": 317.19999998807907,
+      "receipt": {
+        "at": 317.19999998807907,
+        "by": "mentor"
+      }
+    },
+    {
+      "kind": "cue",
+      "from": "director",
+      "to": "导师",
+      "act": "threshold",
+      "payload": {
+        "act": "threshold",
+        "who": "导师",
+        "expects": "咖啡厅里四站展开",
+        "freedom": "按真实来访记忆说话，允许用户不留名字",
+        "initialState": {
+          "seed": 3,
+          "focus": "door",
+          "person": {
+            "name": "导师"
+          },
+          "world": {
+            "seed": 3,
+            "places": [
+              {
+                "id": "home",
+                "name": "家",
+                "x": 0.08,
+                "actions": [
+                  "rest",
+                  "eat"
+                ]
+              },
+              {
+                "id": "field",
+                "name": "田",
+                "x": 0.26,
+                "actions": [
+                  "wait-rain"
+                ]
+              },
+              {
+                "id": "well",
+                "name": "井",
+                "x": 0.43,
+                "actions": [
+                  "listen"
+                ]
+              },
+              {
+                "id": "altar",
+                "name": "社树",
+                "x": 0.59,
+                "actions": [
+                  "pray"
+                ]
+              },
+              {
+                "id": "gate",
+                "name": "田伯家",
+                "x": 0.77,
+                "actions": [
+                  "borrow"
+                ]
+              },
+              {
+                "id": "road",
+                "name": "路口",
+                "x": 0.94,
+                "actions": [
+                  "look",
+                  "leave"
+                ]
+              }
+            ],
+            "people": [
+              {
+                "id": "he",
+                "name": "禾",
+                "role": "actor",
+                "home": "home"
+              },
+              {
+                "id": "tianbo",
+                "name": "田伯",
+                "role": "lord",
+                "home": "gate"
+              },
+              {
+                "id": "ji",
+                "name": "季",
+                "role": "scholar",
+                "home": "road"
+              },
+              {
+                "id": "sang",
+                "name": "桑",
+                "role": "family",
+                "home": "home"
+              },
+              {
+                "id": "xiaoshi",
+                "name": "小石",
+                "role": "family",
+                "home": "home"
+              },
+              {
+                "id": "mu",
+                "name": "母",
+                "role": "family",
+                "home": "home"
+              },
+              {
+                "id": "linren",
+                "name": "邻人",
+                "role": "neighbor",
+                "home": "well"
+              },
+              {
+                "id": "luren",
+                "name": "路人",
+                "role": "neighbor",
+                "home": "road"
+              }
+            ],
+            "he": {
+              "temperament": {
+                "pride": 0.74,
+                "awe": 0.59,
+                "duty": 0.77,
+                "attachment": 0.79,
+                "patience": 0.54
+              },
+              "belief": {
+                "qing": 0.5617191481031477,
+                "li": 0.1276074884040281,
+                "ming": 0.31067336349282415
+              }
+            },
+            "tianbo": {
+              "weights": {
+                "qing": 0.23004122791515852,
+                "li": 0.18703124207740457,
+                "ming": 0.5829275300074369
+              },
+              "pride": 0.57,
+              "granary": [
+                0.91,
+                0.84,
+                0.7,
+                0.65
+              ],
+              "requisitionDay": 7
+            },
+            "seasons": [
+              {
+                "season": "spring",
+                "days": 3,
+                "rainExpect": 0.77,
+                "rainActual": 0.09
+              },
+              {
+                "season": "summer",
+                "days": 3,
+                "rainExpect": 0.62,
+                "rainActual": 0.04
+              },
+              {
+                "season": "autumn",
+                "days": 3,
+                "rainExpect": 0.41,
+                "rainActual": 0.02
+              },
+              {
+                "season": "winter",
+                "days": 2,
+                "rainExpect": 0.21,
+                "rainActual": 0.05
+              }
+            ],
+            "omen": {
+              "kind": "comet",
+              "day": 6
+            },
+            "clues": [
+              {
+                "id": "c1",
+                "text": "田伯说，旧情不能当粟吃。",
+                "trait": "qing",
+                "sign": -1,
+                "truthful": true,
+                "place": "road",
+                "day": 1,
+                "from": "luren"
+              },
+              {
+                "id": "c2",
+                "text": "旧人上门，田伯让他在门外等。",
+                "trait": "qing",
+                "sign": -1,
+                "truthful": true,
+                "place": "well",
+                "day": 4,
+                "from": "linren"
+              },
+              {
+                "id": "c3",
+                "text": "田伯前日在门口施粥，跪了一地人。",
+                "trait": "ming",
+                "sign": 1,
+                "truthful": true,
+                "place": "home",
+                "day": 7,
+                "from": "sang"
+              },
+              {
+                "id": "c4",
+                "text": "田伯把仓里的粟卖进城，一石三百钱。",
+                "trait": "li",
+                "sign": 1,
+                "truthful": false,
+                "place": "well",
+                "day": 8,
+                "from": "linren"
+              },
+              {
+                "id": "c5",
+                "text": "人在门口跪三天，田伯也不出来。",
+                "trait": "ming",
+                "sign": -1,
+                "truthful": false,
+                "place": "well",
+                "day": 8,
+                "from": "linren"
+              }
+            ],
+            "jarDays": 28,
+            "family": [
+              {
+                "id": "sang",
+                "name": "桑",
+                "role": "wife"
+              },
+              {
+                "id": "xiaoshi",
+                "name": "小石",
+                "role": "child"
+              },
+              {
+                "id": "mu",
+                "name": "母",
+                "role": "mother"
+              }
+            ],
+            "unfoldPressure": 0.52
+          }
+        },
+        "constraints": [
+          "门永远推得开",
+          "你永远能对机器说话",
+          "你永远能回到上一版",
+          "地标不动：你的座位、导师的位置、通往世界的门",
+          "已交付的版本只增不改",
+          "不得把预演写成已发生的事实",
+          "每屏最多30字"
+        ]
+      },
+      "id": "cue:threshold:1",
+      "t": 317.19999998807907,
+      "receipt": {
+        "at": 13283.399999976158,
+        "by": "导师"
+      }
+    },
+    {
+      "kind": "report",
+      "from": "导师",
+      "to": "director",
+      "act": "threshold",
+      "payload": {
+        "act": "threshold",
+        "who": "导师",
+        "did": [
+          "处理本幕提示；观察到0条交付事实",
+          "说：基础导演与叔衡，草稿钉在墙上。",
+          "说：架子还空着。",
+          "说：这件还没开门。"
+        ],
+        "predicted": "咖啡厅里四站展开",
+        "actual": "说：这件还没开门。",
+        "facts": [],
+        "ms": 12966
+      },
+      "id": "report:threshold:1",
+      "t": 13283.5,
+      "receipt": {
+        "at": 13283.5,
+        "by": "director"
+      }
+    },
+    {
+      "kind": "retro",
+      "from": "director",
+      "to": "mentor",
+      "payload": {
+        "intentId": "cafe-map",
+        "predicted": "四站展开：灯油台、导演廊、作品架、门；物件具象、一屏一焦点",
+        "actual": "说：这件还没开门。",
+        "userModelDelta": {
+          "visit.last": {
+            "n": 2,
+            "at": 1792124873002,
+            "dwell": {
+              "mentor": 17,
+              "door": 2232,
+              "lamp-oil": 148,
+              "visit-chronicle": 0,
+              "book-you": 0,
+              "book-it": 17,
+              "directors": 164,
+              "shelf": 149
+            },
+            "seed": 3,
+            "changes": [
+              {
+                "since": 1792038460031,
+                "visit": 2,
+                "id": "visit-2-lamp",
+                "place": "lamp",
+                "lampX": 0.29,
+                "what": "灯移到你的座位旁",
+                "why": "上次你在这里停得最久：visit.last.dwell[\"mentor\"]=5000。",
+                "before": "灯在横向 0.48",
+                "after": "灯在横向 0.29，靠近你的座位",
+                "attribution": "你停得久，灯就挪近了。"
+              }
+            ]
+          },
+          "mentor.last": {
+            "intentId": "cafe-map",
+            "ending": null,
+            "facts": [],
+            "reports": 1,
+            "predictionErrors": 0,
+            "promises": [
+              "threshold：导师：机器的心智，正写完手上那一笔，尚未亲手碰过"
+            ]
+          }
+        },
+        "promises": [
+          "threshold：导师：机器的心智，正写完手上那一笔，尚未亲手碰过"
+        ],
+        "next": "下次从threshold：导师：机器的心智，正写完手上那一笔，尚未亲手碰过接起"
+      },
+      "id": "retro:visit:1",
+      "t": 13283.699999988079,
+      "receipt": {
+        "at": 13283.800000011921,
+        "by": "mentor"
+      }
+    }
+  ],
+  "check": [],
+  "counts": {
+    "commission": 1,
+    "plan": 1,
+    "cue": 1,
+    "report": 1,
+    "retro": 1
+  }
+}

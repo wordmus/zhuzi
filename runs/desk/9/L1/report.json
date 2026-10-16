@@ -1,0 +1,77 @@
+{
+  "intent": "desk",
+  "seed": 9,
+  "tier": "L1",
+  "when": "2026-10-16T05:44:01.719Z",
+  "status": "play-crashed",
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": []
+  },
+  "build": {
+    "ok": true,
+    "ms": 973,
+    "bytes": 33467506,
+    "singleFile": true,
+    "external": []
+  },
+  "play": {
+    "error": "page.evaluate: Target page, context or browser has been closed\n    at ev (/Users/lidechi/orca/workspaces/Zhuzi-claude/ds/bench/lib.ts:143:75)\n    at readPageData (/Users/lidechi/orca/workspaces/Zhuzi-claude/ds/bench/lib.ts:164:10)\n    at main (/Users/lidechi/orca/workspaces/Zhuzi-claude/ds/director/pipeline/present.ts:173:24)"
+  },
+  "seconds": 46.3,
+  "files": [
+    {
+      "path": "bench.json",
+      "bytes": 6677
+    },
+    {
+      "path": "curve.csv",
+      "bytes": 150
+    },
+    {
+      "path": "index.html",
+      "bytes": 33467510
+    },
+    {
+      "path": "layers.json",
+      "bytes": 35414
+    },
+    {
+      "path": "plan.json",
+      "bytes": 660187
+    },
+    {
+      "path": "report.json",
+      "bytes": 4251
+    },
+    {
+      "path": "shots/01-desk-entry-enter.png",
+      "bytes": 469601
+    },
+    {
+      "path": "shots/02-desk-mentor-enter.png",
+      "bytes": 481786
+    },
+    {
+      "path": "shots/03-desk-directors-enter.png",
+      "bytes": 458177
+    },
+    {
+      "path": "shots/04-desk-shelf-enter.png",
+      "bytes": 521584
+    },
+    {
+      "path": "shots/05-desk-shelf-s3.png",
+      "bytes": 532517
+    },
+    {
+      "path": "shots/06-final-done.png",
+      "bytes": 532517
+    },
+    {
+      "path": "trace.jsonl",
+      "bytes": 38089
+    }
+  ]
+}

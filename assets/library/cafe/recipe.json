@@ -1,0 +1,76 @@
+{
+  "id": "cafe",
+  "created": "2026-10-16",
+  "method": "原创 Canvas 2D 过程绘制：复用 props-room.lowTable；木梁端面与木纹、毛边帛丝与卷边、青铜浅盏、陶壶弧线、钉眼旧纸与朱笔旧痕；物件光斑和导师视线表示焦点，透明命中区不画外框。",
+  "license": "本项目原创漆画画具与布局，遵循漆书汉画风格。",
+  "stations": [
+    {
+      "id": "lamp-oil",
+      "name": "灯油台",
+      "objects": [
+        "四足矮案",
+        "三只青铜小灯",
+        "陶壶",
+        "三至五条假设的小木架"
+      ],
+      "data": [
+        "commission().budget.lamp / mentor.lamps",
+        "visit-changes.currentLampX",
+        "mentor.hypotheses confidence/status/originalText"
+      ],
+      "action": "倒油（调整各世界/作品份额）"
+    },
+    {
+      "id": "directors",
+      "name": "导演廊",
+      "objects": [
+        "基础导演矮案",
+        "叔衡矮案",
+        "按真实 form 画出的毛坯",
+        "笔与印",
+        "双钉旧纸年谱"
+      ],
+      "data": [
+        "runs/index.json 中两位导演的 form；无记录则当前 intent.form"
+      ],
+      "action": "走近看草稿"
+    },
+    {
+      "id": "shelf",
+      "name": "作品架",
+      "objects": [
+        "开放背板侧视木架",
+        "每件一条帛",
+        "朱印或麻绳",
+        "缺索引时白简与薄尘"
+      ],
+      "data": [
+        "真实 works.length，不截断为六件；无索引为 null"
+      ],
+      "action": "拿起一件、展开「为什么值得你看」"
+    },
+    {
+      "id": "door",
+      "name": "门",
+      "objects": [
+        "黑漆夜门",
+        "铜铺首",
+        "门缝微光"
+      ],
+      "data": [
+        "选中作品的 index.html 相对路径"
+      ],
+      "action": "推门（新标签页进入作品）"
+    }
+  ],
+  "revision": "2026-10-16 场景化返工",
+  "source": "frameworks/vignette/cafe-map.ts",
+  "materials": {
+    "silk": "不规则多边形＋3px 间隔纤维＋底沿卷边；置信度决定长度与墨色；edited/originalText 留刮改痕",
+    "wood": "正面/侧面/顶面三个明度的木梁＋细木纹，开放背板，蹄足着地",
+    "paper": "歪斜多边形、细纸纹、双钉眼、卷起一角、淡墨原草图与朱笔改线",
+    "miniatures": "film/animation＝胶片格；gallery＝叠帛；3d/spatial/studio＝线格方；game/vignette 等＝棋盘",
+    "seal": "不规则朱印与阴刻短笔；无印作品以麻绳系简",
+    "empty": "三枚空白简、三层横梁薄尘；走近才由导师说「架子还空着。」"
+  }
+}

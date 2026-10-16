@@ -1,0 +1,195 @@
+{
+  "results": [
+    {
+      "name": "wide",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "pictures": [
+        {
+          "file": "runs/desk/9/L1/shots/entry-wide-L0.png",
+          "hash": "3174b0a254816fb4f9ad4f2613f6a72276476fb1e58a4202346cbfc9a9c60d7f"
+        },
+        {
+          "file": "runs/desk/9/L1/shots/entry-wide-L1.png",
+          "hash": "91b914abecb07506e1c8db1580193af55928f93014de2504d1f6c4cbdb0d2e54"
+        },
+        {
+          "file": "runs/desk/9/L1/shots/entry-wide-L2.png",
+          "hash": "363541bc53b8b2e863fc6cfbf03be12a5ee1ac599008918b02c5fae96c9cfdbb"
+        },
+        {
+          "file": "runs/desk/9/L1/shots/entry-wide-L3.png",
+          "hash": "989098f3abc6df84d1ca4614cdb82e489031da66bc2e9b605e48edc89345064e"
+        },
+        {
+          "file": "runs/desk/9/L1/shots/entry-wide-drawer.png",
+          "hash": "251344e6a7306820403c23eade602338346290954f9ceea62166e95b799c4755"
+        }
+      ],
+      "chars": [
+        15,
+        8,
+        11,
+        15,
+        9,
+        8,
+        9,
+        9,
+        9,
+        9
+      ],
+      "expandedChars": 121,
+      "before": {
+        "why": "还没有来访记录，先看禾这一件。",
+        "id": "desk"
+      },
+      "after": {
+        "why": "依你纠正的「我更想看人物如何改变」，重排此程。",
+        "id": "desk",
+        "saved": [
+          {
+            "id": "h-focus",
+            "text": "我更想看人物如何改变环境",
+            "evidence": [
+              {
+                "visit": 1,
+                "what": "尚无足够来访记录；这是待确认的问题。"
+              }
+            ],
+            "confidence": 0.9,
+            "status": "edited",
+            "originalText": "还不知道你在意谁"
+          },
+          {
+            "id": "h-dwell",
+            "text": "还不知道你愿意在哪停留",
+            "evidence": [
+              {
+                "visit": 1,
+                "what": "尚无足够来访记录；这是待确认的问题。"
+              }
+            ],
+            "confidence": 0,
+            "status": "active"
+          },
+          {
+            "id": "h-night",
+            "text": "还不知道你喜欢多长的故事",
+            "evidence": [
+              {
+                "visit": 1,
+                "what": "尚无足够来访记录；这是待确认的问题。"
+              }
+            ],
+            "confidence": 0,
+            "status": "active"
+          }
+        ],
+        "persistent": true
+      },
+      "persistedWhy": "依你纠正的「我更想看人物如何改变」，重排此程。",
+      "errors": [],
+      "layers": "PASS",
+      "popup": "200"
+    },
+    {
+      "name": "narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pictures": [
+        {
+          "file": "runs/desk/9/L1/shots/entry-narrow-L0.png",
+          "hash": "f4be5187d7341f77189b94a9f79814bdf4b7003b374684d9e1fc23d7535d988c"
+        },
+        {
+          "file": "runs/desk/9/L1/shots/entry-narrow-L1.png",
+          "hash": "7e9241d0014c8cb701a8bbb4acd661d142168ed9779064bfb58e3bb4353302cf"
+        },
+        {
+          "file": "runs/desk/9/L1/shots/entry-narrow-L2.png",
+          "hash": "4e520a747e279fb8b18ce1f9ff24f854adc4b67828a7aebc24e230ca4960de2e"
+        },
+        {
+          "file": "runs/desk/9/L1/shots/entry-narrow-L3.png",
+          "hash": "1afbd27e1a6bbc5989f33cbc39a83a04032cef8f5728aa20facb1934afd745d2"
+        },
+        {
+          "file": "runs/desk/9/L1/shots/entry-narrow-drawer.png",
+          "hash": "d78fb82396c485984c06220b5e04d8a1d3f805fb249f6ed2ba8ccf7c230eef07"
+        }
+      ],
+      "chars": [
+        15,
+        8,
+        11,
+        15,
+        9,
+        8,
+        9,
+        9,
+        9,
+        9
+      ],
+      "expandedChars": 169,
+      "before": {
+        "why": "还没有来访记录，先看禾这一件。",
+        "id": "desk"
+      },
+      "after": {
+        "why": "依你纠正的「我更想看人物如何改变」，重排此程。",
+        "id": "desk",
+        "saved": [
+          {
+            "id": "h-focus",
+            "text": "我更想看人物如何改变环境",
+            "evidence": [
+              {
+                "visit": 1,
+                "what": "尚无足够来访记录；这是待确认的问题。"
+              }
+            ],
+            "confidence": 0.9,
+            "status": "edited",
+            "originalText": "还不知道你在意谁"
+          },
+          {
+            "id": "h-dwell",
+            "text": "还不知道你愿意在哪停留",
+            "evidence": [
+              {
+                "visit": 1,
+                "what": "尚无足够来访记录；这是待确认的问题。"
+              }
+            ],
+            "confidence": 0,
+            "status": "active"
+          },
+          {
+            "id": "h-night",
+            "text": "还不知道你喜欢多长的故事",
+            "evidence": [
+              {
+                "visit": 1,
+                "what": "尚无足够来访记录；这是待确认的问题。"
+              }
+            ],
+            "confidence": 0,
+            "status": "active"
+          }
+        ],
+        "persistent": true
+      },
+      "persistedWhy": "依你纠正的「我更想看人物如何改变」，重排此程。",
+      "errors": [],
+      "layers": "PASS",
+      "popup": "200"
+    }
+  ],
+  "missingIndex": "PASS",
+  "mainTextPolicy": "≤30 characters including navigation; expanded mentor drawer excluded, measured separately",
+  "comparison": "shots/entry-four-layers-comparison.png"
+}

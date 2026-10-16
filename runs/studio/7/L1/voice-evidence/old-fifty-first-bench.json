@@ -1,0 +1,418 @@
+{
+  "target": "../../../../../../private/tmp/gap-actors-regression/runs/fifty-years/9/L1",
+  "url": "http://127.0.0.1:60108/index.html",
+  "when": "2026-10-16T06:16:44.822Z",
+  "verdict": "FAIL",
+  "hard": {
+    "pass": 7,
+    "total": 9
+  },
+  "summary": "FAIL hard 7/9 · first-action 0.23s · first3s 1 · feedback p90 none (limit 900) · max-chars 28 · errors 0 · fps-p5 30 (limit 55) · notext PASS · repro PASS · layers PASS",
+  "checks": [
+    {
+      "id": "first-action",
+      "label": "首个可操作元素",
+      "pass": true,
+      "value": 0.22630000001192094,
+      "limit": 0.6
+    },
+    {
+      "id": "first3s",
+      "label": "每幕前 3 秒可做的事",
+      "pass": true,
+      "value": 1,
+      "limit": 1,
+      "note": "threshold:1 chronicle-356:1 reveal:1 han:1 chronicle-334:1 ji-speakers:1 ji-wude:1 chronicle-314:1 tianbo-knife:1 bells-rest:1 chronicle-306:1 studio:1 return:0"
+    },
+    {
+      "id": "feedback",
+      "label": "反馈延迟 p90",
+      "pass": false,
+      "value": "none",
+      "limit": 900,
+      "note": "样本 8，100ms 内有反馈的占 13%（目标 100ms）"
+    },
+    {
+      "id": "max-chars",
+      "label": "每屏可见字数",
+      "pass": true,
+      "value": 28,
+      "limit": 30,
+      "note": "DOM 28 / trace 17"
+    },
+    {
+      "id": "errors",
+      "label": "控制台报错",
+      "pass": true,
+      "value": 0,
+      "limit": 0
+    },
+    {
+      "id": "fps-p5",
+      "label": "帧率 p5",
+      "pass": false,
+      "value": 30,
+      "limit": 55,
+      "note": "7076 帧；整局 rAF p5=30；stage.fpsP5()=30（已计入）"
+    },
+    {
+      "id": "notext",
+      "label": "删字测试",
+      "pass": true,
+      "value": "PASS",
+      "limit": "hidden + done"
+    },
+    {
+      "id": "repro",
+      "label": "同 seed 复现",
+      "pass": true,
+      "value": "PASS",
+      "limit": "same",
+      "note": "事实 65 条；账本一致，幕序一致，台词一致"
+    },
+    {
+      "id": "layers",
+      "label": "三层信息流与回执",
+      "pass": true,
+      "value": "PASS",
+      "limit": "五类齐全、幕序与回执完整",
+      "note": "43封信；未回执0；检查通过"
+    }
+  ],
+  "metrics": {
+    "layers": {
+      "required": true,
+      "letters": 43,
+      "counts": {
+        "commission": 2,
+        "plan": 2,
+        "cue": 19,
+        "report": 19,
+        "retro": 1
+      },
+      "pending": 0,
+      "check": []
+    },
+    "firstActionSec": 0.22630000001192094,
+    "first3s": {
+      "perAct": [
+        {
+          "act": "threshold",
+          "n": 1
+        },
+        {
+          "act": "chronicle-356",
+          "n": 1
+        },
+        {
+          "act": "reveal",
+          "n": 1
+        },
+        {
+          "act": "han",
+          "n": 1
+        },
+        {
+          "act": "chronicle-334",
+          "n": 1
+        },
+        {
+          "act": "ji-speakers",
+          "n": 1
+        },
+        {
+          "act": "ji-wude",
+          "n": 1
+        },
+        {
+          "act": "chronicle-314",
+          "n": 1
+        },
+        {
+          "act": "tianbo-knife",
+          "n": 1
+        },
+        {
+          "act": "bells-rest",
+          "n": 1
+        },
+        {
+          "act": "chronicle-306",
+          "n": 1
+        },
+        {
+          "act": "studio",
+          "n": 1
+        },
+        {
+          "act": "return",
+          "n": 0
+        }
+      ],
+      "max": 1,
+      "source": "trace"
+    },
+    "feedback": {
+      "samples": [
+        {
+          "step": 0,
+          "aff": "door",
+          "ambient": {
+            "g": 0.0019346788194444444,
+            "l": 0.0021717804785001908
+          },
+          "first": {
+            "g": 0.19753797743055557,
+            "l": 0.28262848111613714
+          },
+          "latencyMs": 695,
+          "shots": 3
+        },
+        {
+          "step": 1,
+          "aff": "ticket",
+          "ambient": {
+            "g": 0.00396484375,
+            "l": 0.008504905056629194
+          },
+          "first": {
+            "g": 0.011023220486111112,
+            "l": 0.042372952717780306
+          },
+          "latencyMs": 214,
+          "shots": 19
+        },
+        {
+          "step": 2,
+          "aff": "chronicle-next",
+          "ambient": {
+            "g": 0,
+            "l": 0
+          },
+          "first": {
+            "g": 0.11065104166666667,
+            "l": 0.12399256651017214
+          },
+          "latencyMs": 56,
+          "shots": 19
+        },
+        {
+          "step": 4,
+          "aff": "walk2d-he",
+          "ambient": {
+            "g": 0.0025575086805555555,
+            "l": 0.013955333459643804
+          },
+          "first": {
+            "g": 0.2069411892361111,
+            "l": 0.47445765441455096
+          },
+          "latencyMs": 235,
+          "shots": 6
+        },
+        {
+          "step": 8,
+          "aff": "walk2d-he",
+          "ambient": {
+            "g": 0.004280598958333334,
+            "l": 0.000769704433497537
+          },
+          "first": {
+            "g": 0.20588650173611112,
+            "l": 0.47352808829101933
+          },
+          "latencyMs": 206,
+          "shots": 8
+        },
+        {
+          "step": 12,
+          "aff": "walk2d-gate-ring",
+          "ambient": {
+            "g": 0.0033506944444444443,
+            "l": 0.022556610664718774
+          },
+          "first": null,
+          "latencyMs": null,
+          "shots": 8
+        },
+        {
+          "step": 16,
+          "aff": "heart-weight-li",
+          "ambient": {
+            "g": 0.0015625,
+            "l": 0.004879907792980369
+          },
+          "first": {
+            "g": 0.0035753038194444443,
+            "l": 0.03048780487804878
+          },
+          "latencyMs": 465,
+          "shots": 2
+        },
+        {
+          "step": 20,
+          "aff": "heart-close",
+          "ambient": {
+            "g": 0.0014789496527777778,
+            "l": 0.002066291751874574
+          },
+          "first": {
+            "g": 0.2300954861111111,
+            "l": 0.5310369802317655
+          },
+          "latencyMs": 311,
+          "shots": 4
+        }
+      ],
+      "p90Ms": null,
+      "within100Ratio": 0.125
+    },
+    "chars": {
+      "dom": 28,
+      "trace": 17,
+      "max": 28
+    },
+    "errors": {
+      "total": 0,
+      "console": [],
+      "page": [],
+      "trace": 0,
+      "warnings": 0
+    },
+    "fps": {
+      "p5": 29.940119760484258,
+      "own": 30.030030030027405,
+      "stage": 29.940119760484258,
+      "usedStage": true,
+      "frames": 7076
+    },
+    "notext": {
+      "done": true,
+      "hidden": true,
+      "reason": "done"
+    },
+    "repro": {
+      "facts": 65,
+      "factsEqual": true,
+      "actsEqual": true,
+      "linesEqual": true,
+      "bothDone": true,
+      "actualLedgerEqual": true,
+      "sameActionSequence": true,
+      "firstFactDifference": null,
+      "firstActionDifference": null
+    },
+    "seedDiff": {
+      "checked": false
+    },
+    "stepsPolicy": {
+      "seed": null,
+      "preferCounts": {
+        "focus": 17,
+        "pulse": 31,
+        "least-clicked": 12,
+        "input": 1
+      }
+    }
+  },
+  "runs": {
+    "main": {
+      "done": true,
+      "reason": "done",
+      "steps": 61,
+      "seconds": 182.6,
+      "fallbackClicks": 0,
+      "shots": 0
+    },
+    "notext": {
+      "done": true,
+      "reason": "done",
+      "steps": 61,
+      "seconds": 124.6,
+      "fallbackClicks": 0,
+      "shots": 0
+    },
+    "repro": {
+      "done": true,
+      "reason": "done",
+      "steps": 61,
+      "seconds": 125.1,
+      "fallbackClicks": 0,
+      "shots": 0
+    }
+  },
+  "curve": [
+    {
+      "minute": 1,
+      "decisions": 14,
+      "new_info": 48,
+      "want_continue": 5,
+      "numbers_on_screen": 0,
+      "words_on_screen": 16,
+      "note": "14 次动手，起于 threshold/door；48 条新东西"
+    },
+    {
+      "minute": 2,
+      "decisions": 17,
+      "new_info": 52,
+      "want_continue": 5,
+      "numbers_on_screen": 0,
+      "words_on_screen": 24,
+      "note": "17 次动手，起于 han/heart-weight-qing；52 条新东西"
+    },
+    {
+      "minute": 3,
+      "decisions": 27,
+      "new_info": 97,
+      "want_continue": 5,
+      "numbers_on_screen": 0,
+      "words_on_screen": 12,
+      "note": "28 次动手，起于 ji-wude/virtue-0；97 条新东西"
+    },
+    {
+      "minute": 4,
+      "decisions": 2,
+      "new_info": 2,
+      "want_continue": 5,
+      "numbers_on_screen": 0,
+      "words_on_screen": 11,
+      "note": "2 次动手，起于 return/?；2 条新东西"
+    }
+  ],
+  "curveSummary": {
+    "decisionDensity": 15.5,
+    "firstDecisionMinute": 1,
+    "wantContinueMin": 5,
+    "wantContinueEnd": 5,
+    "numbersMedian": 0
+  },
+  "thresholds": {
+    "version": 1,
+    "note": "棘轮：每次 /goal 达成后只升不降。数值来自 docs/design/demo-spec.md 第八节。",
+    "firstActionSec": 0.6,
+    "first3sActionsMax": 1,
+    "feedbackMsMax": 900,
+    "feedbackMsTarget": 100,
+    "maxChars": 30,
+    "consoleErrorsMax": 0,
+    "fpsP5Min": 55,
+    "notext": true,
+    "repro": true,
+    "layers": true,
+    "feedback": {
+      "pixelDelta": 20,
+      "globalFrac": 0.0003,
+      "localFrac": 0.002,
+      "baselineMul": 2,
+      "maxProbes": 8
+    },
+    "player": {
+      "maxSteps": 240,
+      "maxSeconds": 420,
+      "settleMs": 450,
+      "minGapMs": 600,
+      "emptyAffSeconds": 45
+    }
+  },
+  "outDir": "/private/tmp/gap-actors-regression/runs/fifty-years/9/L1"
+}

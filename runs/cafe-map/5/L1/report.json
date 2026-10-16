@@ -1,0 +1,185 @@
+{
+  "intent": "cafe-map",
+  "seed": 5,
+  "tier": "L1",
+  "when": "2026-10-16T05:08:50.631Z",
+  "status": "ok",
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": []
+  },
+  "build": {
+    "ok": true,
+    "ms": 973,
+    "bytes": 33217753,
+    "singleFile": true,
+    "external": []
+  },
+  "play": {
+    "done": true,
+    "reason": "done",
+    "seconds": 13,
+    "steps": 5,
+    "stepLog": [
+      {
+        "i": 0,
+        "act": "threshold",
+        "aff": "door",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 1,
+        "act": "threshold",
+        "aff": "lamp-oil",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 2,
+        "act": "threshold",
+        "aff": "directors",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 3,
+        "act": "threshold",
+        "aff": "shelf",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 4,
+        "act": "threshold",
+        "aff": "door",
+        "prefer": "focus",
+        "progressed": true
+      }
+    ],
+    "shots": [
+      "01-threshold-enter.png",
+      "02-threshold-s0.png",
+      "03-threshold-s1.png",
+      "04-threshold-s2.png",
+      "05-threshold-s3.png",
+      "06-final-done.png"
+    ],
+    "traceEvents": 47,
+    "errors": 0,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "fallbackClicks": 0,
+    "firstActionSec": 0.29,
+    "stageFpsP5": 59.52380952380888,
+    "ledger": null,
+    "acts": [
+      {
+        "act": "threshold",
+        "expected": "咖啡厅里四站展开",
+        "entered": true,
+        "exited": true,
+        "durationMs": 12258,
+        "firstAffMs": 3,
+        "firstActionMs": 2223,
+        "predictedFirstActionMs": 4000,
+        "note": "与预演相近",
+        "lines": [
+          "你停得久，灯就挪近了。",
+          "分了油，这盏就亮些。",
+          "基础导演与叔衡，草稿钉在墙上。",
+          "选了这件，推门便能进去。",
+          "门开了，走吧。"
+        ]
+      }
+    ]
+  },
+  "seconds": 14.5,
+  "files": [
+    {
+      "path": "art-review/01-oil.png",
+      "bytes": 1058144
+    },
+    {
+      "path": "art-review/02-directors.png",
+      "bytes": 1055225
+    },
+    {
+      "path": "art-review/03-shelf.png",
+      "bytes": 1058961
+    },
+    {
+      "path": "art-review/04-door.png",
+      "bytes": 1060945
+    },
+    {
+      "path": "art-review/05-empty-shelf.png",
+      "bytes": 1042448
+    },
+    {
+      "path": "art-review/before-after-directors.png",
+      "bytes": 2091389
+    },
+    {
+      "path": "art-review/evidence.json",
+      "bytes": 2154
+    },
+    {
+      "path": "art-review/old-02-directors.png",
+      "bytes": 1061317
+    },
+    {
+      "path": "bench.json",
+      "bytes": 6494
+    },
+    {
+      "path": "curve.csv",
+      "bytes": 145
+    },
+    {
+      "path": "index.html",
+      "bytes": 33217753
+    },
+    {
+      "path": "layers.json",
+      "bytes": 12125
+    },
+    {
+      "path": "plan.json",
+      "bytes": 184570
+    },
+    {
+      "path": "report.json",
+      "bytes": 3044
+    },
+    {
+      "path": "shots/01-threshold-enter.png",
+      "bytes": 936465
+    },
+    {
+      "path": "shots/02-threshold-s0.png",
+      "bytes": 1072240
+    },
+    {
+      "path": "shots/03-threshold-s1.png",
+      "bytes": 1055711
+    },
+    {
+      "path": "shots/04-threshold-s2.png",
+      "bytes": 1059532
+    },
+    {
+      "path": "shots/05-threshold-s3.png",
+      "bytes": 1061317
+    },
+    {
+      "path": "shots/06-final-done.png",
+      "bytes": 1089061
+    },
+    {
+      "path": "trace.jsonl",
+      "bytes": 15676
+    }
+  ]
+}

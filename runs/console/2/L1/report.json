@@ -1,0 +1,120 @@
+{
+  "intent": "console",
+  "seed": 2,
+  "tier": "L1",
+  "when": "2026-10-16T04:35:49.411Z",
+  "status": "ok",
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": []
+  },
+  "build": {
+    "ok": true,
+    "ms": 1370,
+    "bytes": 33118761,
+    "singleFile": true,
+    "external": []
+  },
+  "play": {
+    "done": true,
+    "reason": "done",
+    "seconds": 6.3,
+    "steps": 3,
+    "stepLog": [
+      {
+        "i": 0,
+        "act": "console",
+        "aff": "console-mentor-correct",
+        "prefer": "first",
+        "progressed": true
+      },
+      {
+        "i": 1,
+        "act": "console",
+        "aff": "console-oil-adjust",
+        "prefer": "first",
+        "progressed": false
+      },
+      {
+        "i": 2,
+        "act": "console",
+        "aff": "console-exit",
+        "prefer": "first",
+        "progressed": true
+      }
+    ],
+    "shots": [
+      "01-console-enter.png",
+      "02-console-s0.png",
+      "03-console-s1.png",
+      "04-console-s2.png",
+      "05-final-done.png"
+    ],
+    "traceEvents": 33,
+    "errors": 0,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "fallbackClicks": 0,
+    "firstActionSec": 0.396,
+    "stageFpsP5": 59.523809523812105,
+    "ledger": null,
+    "acts": [
+      {
+        "act": "console",
+        "expected": "仪表没有人物场景，所有数据真实可动",
+        "entered": true,
+        "exited": true,
+        "durationMs": 5373,
+        "firstAffMs": 4,
+        "firstActionMs": 2544,
+        "predictedFirstActionMs": 300,
+        "note": "首个动作 2544ms，比预演的 300ms 慢很多（模拟玩家要先等画面稳定约 450ms）",
+        "lines": []
+      }
+    ]
+  },
+  "seconds": 8.6,
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 33118761
+    },
+    {
+      "path": "layers.json",
+      "bytes": 12465
+    },
+    {
+      "path": "plan.json",
+      "bytes": 16586
+    },
+    {
+      "path": "report.json",
+      "bytes": 2396
+    },
+    {
+      "path": "shots/01-console-enter.png",
+      "bytes": 183719
+    },
+    {
+      "path": "shots/02-console-s0.png",
+      "bytes": 184433
+    },
+    {
+      "path": "shots/03-console-s1.png",
+      "bytes": 184456
+    },
+    {
+      "path": "shots/04-console-s2.png",
+      "bytes": 4258
+    },
+    {
+      "path": "shots/05-final-done.png",
+      "bytes": 4258
+    },
+    {
+      "path": "trace.jsonl",
+      "bytes": 15213
+    }
+  ]
+}

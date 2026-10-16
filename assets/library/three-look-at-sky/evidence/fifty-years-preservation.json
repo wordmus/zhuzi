@@ -1,0 +1,7 @@
+{
+  "pass": true,
+  "files": 51,
+  "allSha256Equal": true,
+  "newRegressionReport": "assets/library/three-look-at-sky/evidence/fifty-years-regression-bench.json",
+  "summary": "PASS hard 9/9 · first-action 0.08s · first3s 1 · feedback p90 369ms · max-chars 28 · errors 0 · fps-p5 60 · notext PASS · repro PASS · layers PASS"
+}

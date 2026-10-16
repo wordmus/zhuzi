@@ -1,0 +1,17 @@
+{
+  "pass": true,
+  "plates": 8,
+  "first3s": 1,
+  "dragged": 0.5748285599031869,
+  "restored": 0.5748285599031869,
+  "wheeled": 0.9782170229931426,
+  "narrowDragged": 1.6673555997721687,
+  "narrowRestored": 1.6673555997721687,
+  "narrow": "single column",
+  "questionChars": 12,
+  "completion": [
+    "end",
+    "fold"
+  ],
+  "evidence": "/Users/lidechi/orca/workspaces/Zhuzi-claude/ds/frameworks/gallery/evidence"
+}

@@ -28,11 +28,15 @@ export interface Intent {
   director: string;
   /** 组合意图：先后串起来的子意图（如 first-visit = 导师台 + 旱） */
   compose?: string[];
+  /** 来访期次覆盖（如第二次来访展开四站） */
+  visit?: { n?: number };
   notes?: string;
 }
 
 /** 呈现方案中的一个元素：代表什么、能对它做什么、多显眼、作者预测你会怎样对待它 */
 export interface PlanElement {
+  /** assets/library/ 下的图像资产 id。 */
+  asset?: string;
   id: string;
   component: string;
   represents: string;
@@ -65,7 +69,37 @@ export interface Prediction {
 /** 呈现方案里的「形」。已知的形有自动补全；新加的框架（小游戏等）按框架目录命名，直接写 id 即可。 */
 export type FrameworkId = 'vignette' | 'reveal' | 'walk2d' | (string & {});
 
+/** 镜头表的一镜：画面独立于字幕与热点推进。 */
+export interface Shot {
+  id: string;
+  image: string;
+  ms: number;
+  move?: 'still' | 'pan-left' | 'pan-right' | 'zoom-in' | 'zoom-out' | 'tilt-up';
+  who?: string;
+  text?: string;
+  sound?: string;
+  hotspots?: { id: string; x: number; y: number; r: number; represents: string }[];
+}
+
+/** 只读作品目录：字段取自真实 run，url 相对于导师台所在目录。 */
+export interface WorkEntry {
+  intent: string;
+  title: string;
+  form: Intent['form'];
+  tier: Tier;
+  seed: number;
+  url: string | null;
+  director: string;
+  sealed: boolean;
+  facts: { id: string; text: string; kind: string }[];
+  version: number;
+  madeAt: string;
+}
+
 export interface PlanAct {
+  works?: WorkEntry[];
+  shots?: Shot[];
+  cafeMap?: { expanded: boolean; stations?: string[]; works?: any[] | null };
   id: string;
   framework: FrameworkId;
   /** 这一幕的作者（基础导演 / 叔衡） */

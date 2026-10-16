@@ -1,0 +1,58 @@
+{
+  "id": "three-look-at-sky",
+  "tier": "L2",
+  "form": "animatic",
+  "model": "codex/gpt-image-2",
+  "generatedDate": "2026-10-16",
+  "source": "协调者预生成并归档，P4未重新生成或修改关键帧",
+  "reference": "assets/library/three-look-at-sky/refs/style-probe.png",
+  "promptProvenance": "协调者手写并实际提交给 magpie-image 的原始提示词，2026-10-16 经 orchestration 提供。",
+  "stylePrompt": "战国漆画与帛画质感，暖赭旧纸、黑金云纹、朱红日轮，克制的平面构图，无文字，无现代物件，五镜风格一致。",
+  "license": {
+    "status": "项目内使用的生成素材",
+    "note": "由协调者提供；仓库未附单独开源许可，不宣称公共领域或第三方再分发许可。"
+  },
+  "shots": [
+    {
+      "asset": "three-look-at-sky/shots/shot-01-he.png",
+      "prompt": "战国楚齐漆画风格的静帧：白热帛色天空下一片龟裂的黄土田，远处一枚朱红日轮低垂；画面下三分之一是一个跪着抬头望天的农夫侧影（赭石短褐、发髻、身形修长、侧面剪影式）；黑漆底、朱砂与赭石平涂、细金线云纹；构图留白、一屏一个焦点；无文字、无数字、无 UI。",
+      "sha256": "f50d9afcbf10bf7829a02a7237c32feaf0d8d57dbc61a011f95880d294b05578",
+      "reference_images": [],
+      "note": "即 style-probe.png 原件；先做风格探针再归档。"
+    },
+    {
+      "asset": "three-look-at-sky/shots/shot-02-sky.png",
+      "prompt": "与参考图同一套风格（战国漆画：帛色做底、朱砂红日、细金线云纹、平涂色块、漆纹颗粒）。这一帧只有天空与日轮：大面积留白的帛色天，右下角一枚朱红圆日，几缕金线卷云从中景飘过，地平线极低只留一线远山剪影；无人、无田、无建筑；一屏一个焦点（太阳）；无文字、无数字、无 UI。",
+      "sha256": "3f538d66814ccd4182770a5229603c595844529776dc695ef1ffa799b7f2419c",
+      "reference_images": [
+        "assets/library/three-look-at-sky/refs/style-probe.png"
+      ]
+    },
+    {
+      "asset": "three-look-at-sky/shots/shot-03-ji.png",
+      "prompt": "与参考图同一套风格（战国漆画：帛色天、平涂剪影、细金线、漆纹颗粒）。画面：稷下学宫的学舍高台上，一个青年士人（青色深衣、高冠、宽袖、身形修长）立在竹简架旁抬头望天；竹简一束束立在架上，脚下是夯土台；远景是临淄城低矮的屋顶剪影；他抬头面向朱红日轮的方向；一屏一个焦点（士人与他望向的方向）；无文字、无数字、无 UI。",
+      "sha256": "2ca853eb447afa4ff6b2daedcbebe0510b97f2e02de4fd2ce9c3ae6a4c02d747",
+      "reference_images": [
+        "assets/library/three-look-at-sky/refs/style-probe.png"
+      ],
+      "note": "首次生成 EOF 失败，重试成功。"
+    },
+    {
+      "asset": "three-look-at-sky/shots/shot-04-tianbo.png",
+      "prompt": "与参考图同一套风格（战国漆画：帛色天、朱砂与赭石平涂、细金线、漆纹颗粒）。画面：齐地贵族的宅院檐下，一个穿朱红宽袖深衣、戴冠的中年男子站在廊柱旁抬头望天，手按腰间佩玉；身后是高大的粮仓与闭着的库门，仓廪上有麻布盖顶；庭中一棵老树只露枝；远景是旱天与朱红日轮；一屏一个焦点（贵族与他抬头望的方向）；无文字、无数字、无 UI。",
+      "sha256": "8e9575c25b42d069e02477b875ae42e29c246b4fd619413198a4a1db5bc22bbe",
+      "reference_images": [
+        "assets/library/three-look-at-sky/refs/style-probe.png"
+      ]
+    },
+    {
+      "asset": "three-look-at-sky/shots/shot-05-city.png",
+      "prompt": "与参考图同一套风格（战国漆画：帛色天、细金线、平涂与漆纹颗粒）。画面：临淄城墙与低矮屋顶的远景剪影，成片的人家屋顶、几缕炊烟、城门楼；天空占画面三分之二，朱红日轮挂在中偏右；整体低对比、像一团安静的统计点阵；没有人脸、没有文字、没有数字、没有 UI。",
+      "sha256": "dca4888e60d59c866d14af740a1d6f0e4c89391a465960c7a1caa28d3e0accd3",
+      "reference_images": [
+        "assets/library/three-look-at-sky/refs/style-probe.png"
+      ]
+    }
+  ],
+  "size": "1536x1024"
+}

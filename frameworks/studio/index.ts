@@ -1,5 +1,6 @@
 import type { ActResult, Framework } from '../../app/context';
 import type { ActorCue, ActorReport, Commission, DirectorAck, Letter } from '../../engine/layers/types';
+import { actorVoice } from '../../engine/layers/voice';
 import type { Fact } from '../../engine/types';
 import type { Affordance } from '../../engine/affordance';
 import type { Longscroll } from '../../director/pipeline/fifty-years-state';
@@ -48,6 +49,7 @@ export const studio: Framework = {
     const mentor = makeMentor();
     const director = makeFigure('ji', { pose: 'sit-look', facing: 1, onDark: true });
     const start = performance.now();
+    let voiceAt = 0, voiceIndex = -1;
     let phaseAt = start, finishAt = 0, control: Affordance | undefined;
     let planLetter: Letter<DirectorAck> | undefined, cueLetter: Letter<ActorCue> | undefined, reportLetter: Letter<ActorReport> | undefined;
     const facts: Fact[] = [];
@@ -59,6 +61,17 @@ export const studio: Framework = {
       caption.dataset.letter = letter;
       caption.dataset.field = field;
       bus.log('line.say', { who: state.phase === 'commission' ? '导师' : state.phase === 'report' ? who : '叔衡', text: caption.textContent, fullText: text, letter, field, act: act.id });
+    };
+    const sayVoice = (index: number) => {
+      const text = reportLetter?.payload.voice?.[index];
+      if (!text) return;
+      voiceIndex = index; voiceAt = performance.now();
+      caption.textContent = [...text][0] ?? '';
+      caption.dataset.letter = reportLetter!.id;
+      caption.dataset.field = 'voice';
+      caption.dataset.voiceIndex = String(index);
+      bus.log('line.say', { who, text, chars: [...text].length, fullText: text,
+        letter: reportLetter!.id, field: 'voice', actorVoice: true, act: act.id });
     };
     const draw = () => {
       const w = stage.width, h = stage.height, c = canvas.ctx;
@@ -114,6 +127,7 @@ export const studio: Framework = {
         ...(source ? structuredClone(source.payload) : { facts: [], predicted: expected, did: [`${who}已接收提示信`] }),
         act: act.id, who, actual, ms: Math.round(performance.now() - phaseAt),
       };
+      report.voice ??= actorVoice(report);
       report.did = [...report.did, `复核原件：${source?.id ?? cueLetter!.id}`];
       reportLetter = layers.send({ kind: 'report', from: who, to: 'director', act: act.id, payload: report });
       letterIds.push(reportLetter.id);
@@ -128,7 +142,8 @@ export const studio: Framework = {
         bus.log('director.compare', { act: act.id, sourceReport: source?.id ?? null, predicted: expected, actual, error: report.error ?? null });
         const decisions = scroll?.decide(act.id, '叔衡', `收妥${who}的回报，保留${report.error ? '预演的误差' : '原局实际'}`, {}) ?? [];
         for (const fact of decisions) { facts.push(fact); bus.log('world.fact', { fact }); }
-        finishAt = performance.now() + 1800;
+        sayVoice(0);
+        finishAt = performance.now() + (report.voice?.length ?? 0) * 1600 + 650;
       });
     };
     tell(commission.why, commissionLetter.id, 'why');
@@ -154,6 +169,11 @@ export const studio: Framework = {
           bus.log('world.event', { kind: 'studio.cue-delivered', act: act.id, who, letter: cueLetter!.id });
         }
         if (now - phaseAt >= 2600) receiveReport();
+      }
+      if (voiceIndex >= 0) {
+        const voice = reportLetter!.payload.voice!;
+        if (now - voiceAt >= 1600 && voiceIndex + 1 < voice.length) sayVoice(voiceIndex + 1);
+        caption.textContent = [...voice[voiceIndex]!].slice(0, 1 + Math.floor((now - voiceAt) / 55)).join('');
       }
       if (finishAt) {
         state.archive = Math.max(0, Math.min(1, (now - finishAt + 650) / 650));

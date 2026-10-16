@@ -1,0 +1,12 @@
+{
+  "id": "desk",
+  "title": "案上 · 往里看",
+  "hypothesis": { "id": "h-desk", "text": "你想一次只看一层，自己决定何时往里走", "mode": "probe" },
+  "target": "从案上逐层走到导师、导演与架上一件真实作品",
+  "stop": "在新标签页打开作品，或说明入口尚未装上",
+  "form": "vignette",
+  "perspective": { "who": "你", "control": 1 },
+  "era": "zhanguo",
+  "durationMin": 2,
+  "director": "base"
+}

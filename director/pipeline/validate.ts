@@ -24,7 +24,7 @@ export interface ValidateOptions {
   rules?: { rules: { id: string; param?: Record<string, number> }[] };
 }
 
-const FRAMEWORKS = ['vignette', 'reveal', 'walk2d', 'chronicle', 'jixia-speakers', 'wude-wheel', 'qi-knife', 'bells', 'studio', 'east3d'];
+const FRAMEWORKS = ['vignette', 'reveal', 'walk2d', 'chronicle', 'jixia-speakers', 'wude-wheel', 'qi-knife', 'bells', 'studio', 'east3d', 'film', 'gallery', 'console', 'desk'];
 const TIERS = ['L0', 'L1', 'L2', 'L3', 'L4'];
 /** 一句话的字数：不含空白，按码位数，与 components/line.ts 的算法一致 */
 export const countChars = (s: string) => [...String(s).replace(/\s/g, '')].length;
@@ -84,6 +84,29 @@ export function validatePlan(plan: Plan, opts: ValidateOptions = {}): Validation
     if (act.framework === 'walk2d' && !(plan.world?.places?.length > 0)) err(`${at}.framework`, 'walk2d 幕需要 plan.world.places', aid);
     if (!isStr(act.author)) warn(`${at}.author`, '幕没有作者', aid);
     if (!isStr(act.exit)) err(`${at}.exit`, '幕没有离开条件', aid);
+
+    if (act.framework === 'film') {
+      const shots = Array.isArray(act.shots) ? act.shots : [];
+      const total = shots.reduce((n, s) => n + (isNum(s.ms) ? s.ms : 0), 0);
+      if (!shots.length || total < 60000 || total > 90000) err(`${at}.shots`, `镜头总时长 ${total}ms，需要60–90秒`, aid);
+      const shotIds = new Set<string>();
+      shots.forEach((shot, si) => {
+        const st = `${at}.shots[${si}]`;
+        if (!isStr(shot.id) || shotIds.has(shot.id)) err(`${st}.id`, '镜头 id 缺失或重复', aid);
+        shotIds.add(shot.id);
+        if (!isStr(shot.image) || !/^[a-zA-Z0-9_/-]+\.(png|jpe?g|webp)$/.test(shot.image) || shot.image.includes('..')) err(`${st}.image`, '镜头需要 assets/library 下的图像 id', aid);
+        if (!isNum(shot.ms) || shot.ms <= 0) err(`${st}.ms`, '镜头时长必须为正数', aid);
+        if (shot.move && !['still', 'pan-left', 'pan-right', 'zoom-in', 'zoom-out', 'tilt-up'].includes(shot.move)) err(`${st}.move`, '未知运镜', aid);
+        if (shot.text && (countChars(shot.text) > 30 || countSentences(shot.text) > 1)) err(`${st}.text`, '每镜只能一句且≤30字', aid);
+        const hotspots = shot.hotspots ?? [];
+        if (hotspots.length > 2) err(`${st}.hotspots`, '每镜最多两个热点', aid);
+        const hotspotIds = new Set<string>();
+        hotspots.forEach((h, hi) => {
+          if (!isStr(h.id) || hotspotIds.has(h.id) || !isStr(h.represents) || countChars(h.represents) > 18 || countSentences(h.represents) > 1 || ![h.x, h.y, h.r].every(isNum) || h.x < 0 || h.x > 1 || h.y < 0 || h.y > 1 || h.r <= 0 || h.r > 0.5) err(`${st}.hotspots[${hi}]`, '热点需唯一id、归一化位置、正半径与≤18字的一句', aid);
+          hotspotIds.add(h.id);
+        });
+      });
+    }
 
     // 元素
     const els: PlanElement[] = Array.isArray(act.elements) ? act.elements : [];

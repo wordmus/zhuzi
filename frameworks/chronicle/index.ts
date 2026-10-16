@@ -1,3 +1,5 @@
+import { actorReport } from '../../engine/layers/report';
+import type { ActorCue } from '../../engine/layers/types';
 import type { Framework } from '../../app/context';
 import { CHAPTER_YEARS } from '../../director/pipeline/fifty-years-plan';
 import type { Longscroll } from '../../director/pipeline/fifty-years-state';
@@ -5,6 +7,7 @@ import type { Longscroll } from '../../director/pipeline/fifty-years-state';
 /** 年表只给一件消息和一个继续动作；人物轮廓把时间留在身体上。 */
 export const chronicle: Framework = {
   async run(act, ctx) {
+    const traceStart = ctx.bus.trace.length;
     const scroll = ctx.handoff.longscroll as Longscroll;
     const year = CHAPTER_YEARS[act.id]!;
     const due = scroll.advance(Math.max(year, scroll.history.state().year));
@@ -22,6 +25,7 @@ export const chronicle: Framework = {
     ctx.lines.clear();
     const layer = ctx.stage.layer('chronicle', 35);
     let pressed = false;
+    let closingVoice: string[] | undefined;
     const draw = () => {
       const c = layer.ctx, w = ctx.stage.width, h = ctx.stage.height;
       layer.clear();
@@ -43,11 +47,23 @@ export const chronicle: Framework = {
     const done = new Promise<void>(r => { resolve = r; });
     const shape = () => ({ kind: 'rect' as const, x: ctx.stage.width * .25, y: ctx.stage.height * .78, w: ctx.stage.width * .5, h: ctx.stage.height * .14 });
     const next = ctx.aff.add({ id: 'chronicle-next', label: '继续长卷', shape: shape(), key: 'Enter', represents: act.elements[0]!.represents,
-      onActivate: () => { if (pressed) return; pressed = true; draw(); resolve(); } });
+      onActivate: () => {
+        if (pressed) return;
+        pressed = true; draw();
+        const cue = (ctx.handoff.actorCues as ActorCue[] | undefined)?.[0];
+        if (!cue) { resolve(); return; }
+        const report = actorReport(ctx.plan, act, cue, { act: act.id }, ctx.bus.trace.slice(traceStart), 0);
+        closingVoice = report.voice;
+        // 长卷没有 verify-entry 的展开豁免：主屏只留第一句，全文由 report payload 存档。
+        void ctx.lines.say({ who: cue.who, text: closingVoice![0]!,
+          anchor: () => ({ x: ctx.stage.width / 2, y: ctx.stage.height * .4 }),
+          sticky: true, charMs: 55, source: { source: 'rules', why: 'actor-report' } });
+        setTimeout(resolve, 1800);
+      } });
     const off = ctx.stage.onResize(() => { draw(); next.setShape(shape()); });
     void ctx.lines.say({ who: resumed ? '导师' : entry.who, text: line, anchor: () => ({ x: ctx.stage.width / 2, y: ctx.stage.height * .4 }), sticky: true, charMs: 0 });
     ctx.bus.log('world.event', { kind: 'history.entry', act: act.id, year: scroll.history.state().year, who: entry.who, line, age, resumed });
     try { await done; } finally { next.remove(); off(); ctx.lines.clear(); ctx.stage.removeLayer('chronicle'); }
-    return { act: act.id, data: { year: scroll.history.state().year, line, entered: entry, events: due.map(e => e.id) } };
+    return { act: act.id, data: { year: scroll.history.state().year, line, voice: closingVoice, entered: entry, events: due.map(e => e.id) } };
   },
 };

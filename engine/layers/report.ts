@@ -2,6 +2,7 @@ import type { ActResult } from '../../app/context';
 import type { TraceEvent } from '../bus';
 import type { Plan, PlanAct } from '../types';
 import type { ActorCue, ActorReport } from './types';
+import { actorVoice } from './voice';
 
 export function factsIn(values: unknown[]): ActorReport['facts'] {
   const found = new Map<string, ActorReport['facts'][number]>();
@@ -18,7 +19,8 @@ export function actorReport(plan: Plan, act: PlanAct, cue: ActorCue, result: Act
   const person = plan.world.people.find(p => p.name === cue.who);
   const isActor = (value: unknown) => value === cue.who || (person !== undefined && value === person.id);
   const owns = (event: TraceEvent) => isActor(event.who) || isActor(event.actor) || isActor(event.by) || isActor(event.mind);
-  const mine = trace.filter(owns);
+  // 新增的报告朗读不能反过来充作本幕原有行动证据。
+  const mine = trace.filter(e => owns(e) && !e.actorVoice && e.why !== 'actor-report');
   const sceneFacts = trace.filter(e => e.kind === 'world.fact').map(e => e.fact);
   const supplied = Array.isArray(result.data?.facts) ? result.data.facts : [];
   const facts = factsIn([...sceneFacts, ...supplied]);
@@ -52,5 +54,7 @@ export function actorReport(plan: Plan, act: PlanAct, cue: ActorCue, result: Act
     return { id: String(seed.id ?? e.unit ?? '未编号'), concept: String(seed.concept ?? e.note ?? ''), ...(typeof seed.blockedBy === 'string' ? { blockedBy: seed.blockedBy } : {}) };
   });
   const actual = error?.note ?? facts.at(-1)?.text ?? said.at(-1) ?? `本幕已结束；${trace.filter(e => e.kind === 'aff.click').length}次动手，未新增世界事实`;
-  return { act: act.id, who: cue.who, did, predicted: cue.expects, actual, ...(error ? { error } : {}), facts, ...(seeds.length ? { seeds } : {}), ms: Math.round(ms) };
+  const report: ActorReport = { act: act.id, who: cue.who, did, predicted: cue.expects, actual, ...(error ? { error } : {}), facts, ...(seeds.length ? { seeds } : {}), ms: Math.round(ms) };
+  report.voice = actorVoice(report);
+  return report;
 }

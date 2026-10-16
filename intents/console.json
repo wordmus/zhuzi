@@ -1,0 +1,20 @@
+{
+  "id": "console",
+  "title": "机器仪表",
+  "hypothesis": {
+    "id": "h-console-ui",
+    "text": "导师层不做场景、只做可用仪表，能承载更直接的纠正回路",
+    "mode": "probe"
+  },
+  "target": "三栏面板清晰展现导师假设、导演工作台与呈现作品架，支持就地纠正与灯油调配",
+  "stop": "完成仪表操作或进入作品",
+  "form": "vignette",
+  "perspective": {
+    "who": "你",
+    "control": 1
+  },
+  "era": "zhanguo",
+  "durationMin": 2,
+  "director": "base",
+  "notes": "对照实验 C：导师层做成 UI。漆底金线 DOM 面板，真实数据驱动，无场景、无人物。"
+}

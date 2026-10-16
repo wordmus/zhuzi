@@ -233,3 +233,12 @@ export function allRuleLines(): string[] {
   for (const e of Object.values(ENDING)) out.push(e.mentor, e.echo.replace('{days}', '12'), e.fact);
   return out;
 }
+
+/** 报告的口气；只由 voice.ts 在对应证据存在时选用，不另造世界事实。 */
+export const ACTOR_VOICE = {
+  禾: { idle: '这一幕我没动手。', action: '这事我确曾经手。', mind: '我在心里掂过此事。', said: '我说过：', fact: '我记下：', empty: '旁的，我不敢添话。', error: '我心里有了偏差。' },
+  田伯: { idle: '这一幕我没动手。', action: '此事是我经的手。', mind: '这事我心里算过。', said: '我说了：', fact: '我记着：', empty: '旁的，我不替人认账。', error: '我也有算偏的时候。' },
+  季: { idle: '这一幕我没动手。', action: '此事我曾亲自过问。', mind: '此事我在心中辨过。', said: '我曾言：', fact: '我记下：', empty: '我不拿空话充实据。', error: '我所料的，出了偏差。' },
+  桑: { idle: '这一幕我没动手。', action: '这事是我做的。', mind: '我心里掂量过了。', said: '我说过：', fact: '我记着：', empty: '别的，我不敢乱说。', error: '我也有料不准的。' },
+  小石: { idle: '这一幕我没动手。', action: '这事我做过。', mind: '这事我想过了。', said: '我说了：', fact: '我记住：', empty: '别的，我不敢乱讲。', error: '我先前想岔了。' },
+} as const;

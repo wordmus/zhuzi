@@ -1,0 +1,3949 @@
+{
+  "letters": [
+    {
+      "kind": "commission",
+      "from": "mentor",
+      "to": "director",
+      "payload": {
+        "intentId": "studio",
+        "title": "案上回信",
+        "hypothesis": {
+          "id": "h-studio-letters",
+          "text": "亲手接过真实回报，你会看懂谁的预演被事实改动",
+          "mode": "probe"
+        },
+        "target": "先看禾真实走过旱年，再在咖啡厅接委托、盖印、看提示飞向演员并收回原局报告",
+        "stop": "报告归档，回到咖啡厅关门",
+        "budget": {
+          "tier": "L1",
+          "lamp": 0.8,
+          "note": "白天·宽屏·第1次来；按本机安排篇幅，5幕"
+        },
+        "userModel": {
+          "visits": 1,
+          "sinceLastMs": 0,
+          "dayPart": "白天",
+          "device": "宽屏"
+        },
+        "why": "初次见面，先给你一件再问。"
+      },
+      "id": "commission:visit:1",
+      "t": 752.1000000238419,
+      "receipt": {
+        "at": 752.6000000238419,
+        "by": "director"
+      }
+    },
+    {
+      "kind": "plan",
+      "from": "director",
+      "to": "mentor",
+      "payload": {
+        "planId": "studio",
+        "version": 1,
+        "director": {
+          "id": "shuheng",
+          "name": "叔衡"
+        },
+        "acts": [
+          {
+            "id": "threshold",
+            "framework": "vignette",
+            "author": "基础导演",
+            "focus": "door"
+          },
+          {
+            "id": "reveal",
+            "framework": "reveal",
+            "author": "叔衡",
+            "focus": "east-suburb"
+          },
+          {
+            "id": "han",
+            "framework": "walk2d",
+            "author": "叔衡",
+            "focus": "he"
+          },
+          {
+            "id": "studio",
+            "framework": "studio",
+            "author": "叔衡",
+            "focus": "studio-commission"
+          },
+          {
+            "id": "return",
+            "framework": "vignette",
+            "author": "基础导演",
+            "focus": "ticket"
+          }
+        ],
+        "accept": "接下这5幕，按事实交付。",
+        "changes": [],
+        "rehearsal": [
+          {
+            "act": "threshold",
+            "expect": "灯一盏盏亮到你这边",
+            "risk": ""
+          },
+          {
+            "act": "reveal",
+            "expect": "你看向哪里，哪里显影",
+            "risk": ""
+          },
+          {
+            "act": "han",
+            "expect": "田伯开门后说的和心里预演的不一样",
+            "risk": "冬天第二天"
+          },
+          {
+            "act": "studio",
+            "expect": "演员的实际会改动案上的预演",
+            "risk": ""
+          },
+          {
+            "act": "return",
+            "expect": "它记得禾做了什么",
+            "risk": ""
+          }
+        ]
+      },
+      "id": "plan:visit:1",
+      "t": 752.6999999880791,
+      "receipt": {
+        "at": 752.6999999880791,
+        "by": "mentor"
+      }
+    },
+    {
+      "kind": "cue",
+      "from": "director",
+      "to": "导师",
+      "act": "threshold",
+      "payload": {
+        "act": "threshold",
+        "who": "导师",
+        "expects": "灯一盏盏亮到你这边",
+        "freedom": "按真实来访记忆说话，允许用户不留名字",
+        "initialState": {
+          "seed": 7,
+          "focus": "door",
+          "person": {
+            "name": "导师"
+          },
+          "world": {
+            "seed": 7,
+            "places": [
+              {
+                "id": "home",
+                "name": "家",
+                "x": 0.08,
+                "actions": [
+                  "rest",
+                  "eat"
+                ]
+              },
+              {
+                "id": "field",
+                "name": "田",
+                "x": 0.26,
+                "actions": [
+                  "wait-rain"
+                ]
+              },
+              {
+                "id": "well",
+                "name": "井",
+                "x": 0.43,
+                "actions": [
+                  "listen"
+                ]
+              },
+              {
+                "id": "altar",
+                "name": "社树",
+                "x": 0.59,
+                "actions": [
+                  "pray"
+                ]
+              },
+              {
+                "id": "gate",
+                "name": "田伯家",
+                "x": 0.77,
+                "actions": [
+                  "borrow"
+                ]
+              },
+              {
+                "id": "road",
+                "name": "路口",
+                "x": 0.94,
+                "actions": [
+                  "look",
+                  "leave"
+                ]
+              }
+            ],
+            "people": [
+              {
+                "id": "he",
+                "name": "禾",
+                "role": "actor",
+                "home": "home"
+              },
+              {
+                "id": "tianbo",
+                "name": "田伯",
+                "role": "lord",
+                "home": "gate"
+              },
+              {
+                "id": "ji",
+                "name": "季",
+                "role": "scholar",
+                "home": "road"
+              },
+              {
+                "id": "sang",
+                "name": "桑",
+                "role": "family",
+                "home": "home"
+              },
+              {
+                "id": "xiaoshi",
+                "name": "小石",
+                "role": "family",
+                "home": "home"
+              },
+              {
+                "id": "linren",
+                "name": "邻人",
+                "role": "neighbor",
+                "home": "well"
+              },
+              {
+                "id": "luren",
+                "name": "路人",
+                "role": "neighbor",
+                "home": "road"
+              }
+            ],
+            "he": {
+              "temperament": {
+                "pride": 0.73,
+                "awe": 0.89,
+                "duty": 0.85,
+                "attachment": 0.66,
+                "patience": 0.65
+              },
+              "belief": {
+                "qing": 0.5763115837983788,
+                "li": 0.1354495020629838,
+                "ming": 0.28823891413863745
+              }
+            },
+            "tianbo": {
+              "weights": {
+                "qing": 0.1938673263116392,
+                "li": 0.5691594982519745,
+                "ming": 0.23697317543638627
+              },
+              "pride": 0.48,
+              "granary": [
+                0.88,
+                0.9,
+                0.73,
+                0.69
+              ],
+              "requisitionDay": 7
+            },
+            "seasons": [
+              {
+                "season": "spring",
+                "days": 3,
+                "rainExpect": 0.83,
+                "rainActual": 0.08
+              },
+              {
+                "season": "summer",
+                "days": 3,
+                "rainExpect": 0.6,
+                "rainActual": 0.05
+              },
+              {
+                "season": "autumn",
+                "days": 3,
+                "rainExpect": 0.41,
+                "rainActual": 0.05
+              },
+              {
+                "season": "winter",
+                "days": 2,
+                "rainExpect": 0.25,
+                "rainActual": 0.06
+              }
+            ],
+            "omen": {
+              "kind": "halo",
+              "day": 6
+            },
+            "clues": [
+              {
+                "id": "c1",
+                "text": "谁家孩子饿着，田伯会红眼。",
+                "trait": "qing",
+                "sign": 1,
+                "truthful": false,
+                "place": "well",
+                "day": 1,
+                "from": "linren"
+              },
+              {
+                "id": "c2",
+                "text": "禾他爹给田伯他爹扛过粟。",
+                "trait": "qing",
+                "sign": 1,
+                "truthful": false,
+                "place": "home",
+                "day": 1,
+                "from": "sang"
+              },
+              {
+                "id": "c3",
+                "text": "田伯家的账房，夜里还亮着灯。",
+                "trait": "li",
+                "sign": 1,
+                "truthful": true,
+                "place": "home",
+                "day": 2,
+                "from": "sang"
+              },
+              {
+                "id": "c4",
+                "text": "田伯放粟，秋后要加倍。",
+                "trait": "li",
+                "sign": 1,
+                "truthful": true,
+                "place": "well",
+                "day": 3,
+                "from": "linren"
+              },
+              {
+                "id": "c5",
+                "text": "旧人上门，田伯让他在门外等。",
+                "trait": "qing",
+                "sign": -1,
+                "truthful": true,
+                "place": "road",
+                "day": 6,
+                "from": "ji"
+              }
+            ],
+            "jarDays": 25,
+            "family": [
+              {
+                "id": "sang",
+                "name": "桑",
+                "role": "wife"
+              },
+              {
+                "id": "xiaoshi",
+                "name": "小石",
+                "role": "child"
+              }
+            ],
+            "unfoldPressure": 0.61
+          }
+        },
+        "constraints": [
+          "门永远推得开",
+          "你永远能对机器说话",
+          "你永远能回到上一版",
+          "地标不动：你的座位、导师的位置、通往世界的门",
+          "已交付的版本只增不改",
+          "不得把预演写成已发生的事实",
+          "每屏最多30字"
+        ]
+      },
+      "id": "cue:threshold:1",
+      "t": 752.8000000119209,
+      "receipt": {
+        "at": 9082.600000023842,
+        "by": "导师"
+      }
+    },
+    {
+      "kind": "report",
+      "from": "导师",
+      "to": "director",
+      "act": "threshold",
+      "payload": {
+        "act": "threshold",
+        "who": "导师",
+        "did": [
+          "处理本幕提示；观察到0条交付事实",
+          "说：帮禾借点粟，让一家人过冬。"
+        ],
+        "predicted": "灯一盏盏亮到你这边",
+        "actual": "说：帮禾借点粟，让一家人过冬。",
+        "facts": [],
+        "ms": 8328,
+        "voice": [
+          "我说过：帮禾借点粟，让一家人过冬。",
+          "旁的，我不敢添话。"
+        ]
+      },
+      "id": "report:threshold:1",
+      "t": 9082.900000035763,
+      "receipt": {
+        "at": 9083,
+        "by": "director"
+      }
+    },
+    {
+      "kind": "cue",
+      "from": "director",
+      "to": "禾",
+      "act": "reveal",
+      "payload": {
+        "act": "reveal",
+        "who": "禾",
+        "expects": "你看向哪里，哪里显影",
+        "freedom": "按自身心智、所见事实与世界压力行动；可以偏离导演预期",
+        "initialState": {
+          "seed": 7,
+          "focus": "east-suburb",
+          "person": {
+            "id": "he",
+            "name": "禾",
+            "role": "actor",
+            "home": "home"
+          },
+          "world": {
+            "seed": 7,
+            "places": [
+              {
+                "id": "home",
+                "name": "家",
+                "x": 0.08,
+                "actions": [
+                  "rest",
+                  "eat"
+                ]
+              },
+              {
+                "id": "field",
+                "name": "田",
+                "x": 0.26,
+                "actions": [
+                  "wait-rain"
+                ]
+              },
+              {
+                "id": "well",
+                "name": "井",
+                "x": 0.43,
+                "actions": [
+                  "listen"
+                ]
+              },
+              {
+                "id": "altar",
+                "name": "社树",
+                "x": 0.59,
+                "actions": [
+                  "pray"
+                ]
+              },
+              {
+                "id": "gate",
+                "name": "田伯家",
+                "x": 0.77,
+                "actions": [
+                  "borrow"
+                ]
+              },
+              {
+                "id": "road",
+                "name": "路口",
+                "x": 0.94,
+                "actions": [
+                  "look",
+                  "leave"
+                ]
+              }
+            ],
+            "people": [
+              {
+                "id": "he",
+                "name": "禾",
+                "role": "actor",
+                "home": "home"
+              },
+              {
+                "id": "tianbo",
+                "name": "田伯",
+                "role": "lord",
+                "home": "gate"
+              },
+              {
+                "id": "ji",
+                "name": "季",
+                "role": "scholar",
+                "home": "road"
+              },
+              {
+                "id": "sang",
+                "name": "桑",
+                "role": "family",
+                "home": "home"
+              },
+              {
+                "id": "xiaoshi",
+                "name": "小石",
+                "role": "family",
+                "home": "home"
+              },
+              {
+                "id": "linren",
+                "name": "邻人",
+                "role": "neighbor",
+                "home": "well"
+              },
+              {
+                "id": "luren",
+                "name": "路人",
+                "role": "neighbor",
+                "home": "road"
+              }
+            ],
+            "he": {
+              "temperament": {
+                "pride": 0.73,
+                "awe": 0.89,
+                "duty": 0.85,
+                "attachment": 0.66,
+                "patience": 0.65
+              },
+              "belief": {
+                "qing": 0.5763115837983788,
+                "li": 0.1354495020629838,
+                "ming": 0.28823891413863745
+              }
+            },
+            "tianbo": {
+              "weights": {
+                "qing": 0.1938673263116392,
+                "li": 0.5691594982519745,
+                "ming": 0.23697317543638627
+              },
+              "pride": 0.48,
+              "granary": [
+                0.88,
+                0.9,
+                0.73,
+                0.69
+              ],
+              "requisitionDay": 7
+            },
+            "seasons": [
+              {
+                "season": "spring",
+                "days": 3,
+                "rainExpect": 0.83,
+                "rainActual": 0.08
+              },
+              {
+                "season": "summer",
+                "days": 3,
+                "rainExpect": 0.6,
+                "rainActual": 0.05
+              },
+              {
+                "season": "autumn",
+                "days": 3,
+                "rainExpect": 0.41,
+                "rainActual": 0.05
+              },
+              {
+                "season": "winter",
+                "days": 2,
+                "rainExpect": 0.25,
+                "rainActual": 0.06
+              }
+            ],
+            "omen": {
+              "kind": "halo",
+              "day": 6
+            },
+            "clues": [
+              {
+                "id": "c1",
+                "text": "谁家孩子饿着，田伯会红眼。",
+                "trait": "qing",
+                "sign": 1,
+                "truthful": false,
+                "place": "well",
+                "day": 1,
+                "from": "linren"
+              },
+              {
+                "id": "c2",
+                "text": "禾他爹给田伯他爹扛过粟。",
+                "trait": "qing",
+                "sign": 1,
+                "truthful": false,
+                "place": "home",
+                "day": 1,
+                "from": "sang"
+              },
+              {
+                "id": "c3",
+                "text": "田伯家的账房，夜里还亮着灯。",
+                "trait": "li",
+                "sign": 1,
+                "truthful": true,
+                "place": "home",
+                "day": 2,
+                "from": "sang"
+              },
+              {
+                "id": "c4",
+                "text": "田伯放粟，秋后要加倍。",
+                "trait": "li",
+                "sign": 1,
+                "truthful": true,
+                "place": "well",
+                "day": 3,
+                "from": "linren"
+              },
+              {
+                "id": "c5",
+                "text": "旧人上门，田伯让他在门外等。",
+                "trait": "qing",
+                "sign": -1,
+                "truthful": true,
+                "place": "road",
+                "day": 6,
+                "from": "ji"
+              }
+            ],
+            "jarDays": 25,
+            "family": [
+              {
+                "id": "sang",
+                "name": "桑",
+                "role": "wife"
+              },
+              {
+                "id": "xiaoshi",
+                "name": "小石",
+                "role": "child"
+              }
+            ],
+            "unfoldPressure": 0.61
+          }
+        },
+        "constraints": [
+          "门永远推得开",
+          "你永远能对机器说话",
+          "你永远能回到上一版",
+          "地标不动：你的座位、导师的位置、通往世界的门",
+          "已交付的版本只增不改",
+          "不得把预演写成已发生的事实",
+          "每屏最多30字"
+        ]
+      },
+      "id": "cue:reveal:1",
+      "t": 9083.300000011921,
+      "receipt": {
+        "at": 12037.900000035763,
+        "by": "禾"
+      }
+    },
+    {
+      "kind": "report",
+      "from": "禾",
+      "to": "director",
+      "act": "reveal",
+      "payload": {
+        "act": "reveal",
+        "who": "禾",
+        "did": [
+          "处理本幕提示；观察到0条交付事实",
+          "本幕未留下可归属于自己的行动记录"
+        ],
+        "predicted": "你看向哪里，哪里显影",
+        "actual": "本幕已结束；1次动手，未新增世界事实",
+        "facts": [],
+        "ms": 2954,
+        "voice": [
+          "这一幕我没动手。",
+          "旁的，我不敢添话。"
+        ]
+      },
+      "id": "report:reveal:1",
+      "t": 12037.900000035763,
+      "receipt": {
+        "at": 12037.900000035763,
+        "by": "director"
+      }
+    },
+    {
+      "kind": "cue",
+      "from": "director",
+      "to": "禾",
+      "act": "han",
+      "payload": {
+        "act": "han",
+        "who": "禾",
+        "expects": "田伯开门后说的和心里预演的不一样",
+        "freedom": "按自身心智、所见事实与世界压力行动；可以偏离导演预期",
+        "initialState": {
+          "seed": 7,
+          "focus": "he",
+          "person": {
+            "id": "he",
+            "name": "禾",
+            "role": "actor",
+            "home": "home"
+          },
+          "world": {
+            "seed": 7,
+            "places": [
+              {
+                "id": "home",
+                "name": "家",
+                "x": 0.08,
+                "actions": [
+                  "rest",
+                  "eat"
+                ]
+              },
+              {
+                "id": "field",
+                "name": "田",
+                "x": 0.26,
+                "actions": [
+                  "wait-rain"
+                ]
+              },
+              {
+                "id": "well",
+                "name": "井",
+                "x": 0.43,
+                "actions": [
+                  "listen"
+                ]
+              },
+              {
+                "id": "altar",
+                "name": "社树",
+                "x": 0.59,
+                "actions": [
+                  "pray"
+                ]
+              },
+              {
+                "id": "gate",
+                "name": "田伯家",
+                "x": 0.77,
+                "actions": [
+                  "borrow"
+                ]
+              },
+              {
+                "id": "road",
+                "name": "路口",
+                "x": 0.94,
+                "actions": [
+                  "look",
+                  "leave"
+                ]
+              }
+            ],
+            "people": [
+              {
+                "id": "he",
+                "name": "禾",
+                "role": "actor",
+                "home": "home"
+              },
+              {
+                "id": "tianbo",
+                "name": "田伯",
+                "role": "lord",
+                "home": "gate"
+              },
+              {
+                "id": "ji",
+                "name": "季",
+                "role": "scholar",
+                "home": "road"
+              },
+              {
+                "id": "sang",
+                "name": "桑",
+                "role": "family",
+                "home": "home"
+              },
+              {
+                "id": "xiaoshi",
+                "name": "小石",
+                "role": "family",
+                "home": "home"
+              },
+              {
+                "id": "linren",
+                "name": "邻人",
+                "role": "neighbor",
+                "home": "well"
+              },
+              {
+                "id": "luren",
+                "name": "路人",
+                "role": "neighbor",
+                "home": "road"
+              }
+            ],
+            "he": {
+              "temperament": {
+                "pride": 0.73,
+                "awe": 0.89,
+                "duty": 0.85,
+                "attachment": 0.66,
+                "patience": 0.65
+              },
+              "belief": {
+                "qing": 0.5763115837983788,
+                "li": 0.1354495020629838,
+                "ming": 0.28823891413863745
+              }
+            },
+            "tianbo": {
+              "weights": {
+                "qing": 0.1938673263116392,
+                "li": 0.5691594982519745,
+                "ming": 0.23697317543638627
+              },
+              "pride": 0.48,
+              "granary": [
+                0.88,
+                0.9,
+                0.73,
+                0.69
+              ],
+              "requisitionDay": 7
+            },
+            "seasons": [
+              {
+                "season": "spring",
+                "days": 3,
+                "rainExpect": 0.83,
+                "rainActual": 0.08
+              },
+              {
+                "season": "summer",
+                "days": 3,
+                "rainExpect": 0.6,
+                "rainActual": 0.05
+              },
+              {
+                "season": "autumn",
+                "days": 3,
+                "rainExpect": 0.41,
+                "rainActual": 0.05
+              },
+              {
+                "season": "winter",
+                "days": 2,
+                "rainExpect": 0.25,
+                "rainActual": 0.06
+              }
+            ],
+            "omen": {
+              "kind": "halo",
+              "day": 6
+            },
+            "clues": [
+              {
+                "id": "c1",
+                "text": "谁家孩子饿着，田伯会红眼。",
+                "trait": "qing",
+                "sign": 1,
+                "truthful": false,
+                "place": "well",
+                "day": 1,
+                "from": "linren"
+              },
+              {
+                "id": "c2",
+                "text": "禾他爹给田伯他爹扛过粟。",
+                "trait": "qing",
+                "sign": 1,
+                "truthful": false,
+                "place": "home",
+                "day": 1,
+                "from": "sang"
+              },
+              {
+                "id": "c3",
+                "text": "田伯家的账房，夜里还亮着灯。",
+                "trait": "li",
+                "sign": 1,
+                "truthful": true,
+                "place": "home",
+                "day": 2,
+                "from": "sang"
+              },
+              {
+                "id": "c4",
+                "text": "田伯放粟，秋后要加倍。",
+                "trait": "li",
+                "sign": 1,
+                "truthful": true,
+                "place": "well",
+                "day": 3,
+                "from": "linren"
+              },
+              {
+                "id": "c5",
+                "text": "旧人上门，田伯让他在门外等。",
+                "trait": "qing",
+                "sign": -1,
+                "truthful": true,
+                "place": "road",
+                "day": 6,
+                "from": "ji"
+              }
+            ],
+            "jarDays": 25,
+            "family": [
+              {
+                "id": "sang",
+                "name": "桑",
+                "role": "wife"
+              },
+              {
+                "id": "xiaoshi",
+                "name": "小石",
+                "role": "child"
+              }
+            ],
+            "unfoldPressure": 0.61
+          }
+        },
+        "constraints": [
+          "门永远推得开",
+          "你永远能对机器说话",
+          "你永远能回到上一版",
+          "地标不动：你的座位、导师的位置、通往世界的门",
+          "已交付的版本只增不改",
+          "不得把预演写成已发生的事实",
+          "每屏最多30字"
+        ]
+      },
+      "id": "cue:han:1",
+      "t": 12038.100000023842,
+      "receipt": {
+        "at": 79521.10000002384,
+        "by": "禾"
+      }
+    },
+    {
+      "kind": "cue",
+      "from": "director",
+      "to": "田伯",
+      "act": "han",
+      "payload": {
+        "act": "han",
+        "who": "田伯",
+        "expects": "田伯开门后说的和心里预演的不一样",
+        "freedom": "按自身心智、所见事实与世界压力行动；可以偏离导演预期",
+        "initialState": {
+          "seed": 7,
+          "focus": "he",
+          "person": {
+            "id": "tianbo",
+            "name": "田伯",
+            "role": "lord",
+            "home": "gate"
+          },
+          "world": {
+            "seed": 7,
+            "places": [
+              {
+                "id": "home",
+                "name": "家",
+                "x": 0.08,
+                "actions": [
+                  "rest",
+                  "eat"
+                ]
+              },
+              {
+                "id": "field",
+                "name": "田",
+                "x": 0.26,
+                "actions": [
+                  "wait-rain"
+                ]
+              },
+              {
+                "id": "well",
+                "name": "井",
+                "x": 0.43,
+                "actions": [
+                  "listen"
+                ]
+              },
+              {
+                "id": "altar",
+                "name": "社树",
+                "x": 0.59,
+                "actions": [
+                  "pray"
+                ]
+              },
+              {
+                "id": "gate",
+                "name": "田伯家",
+                "x": 0.77,
+                "actions": [
+                  "borrow"
+                ]
+              },
+              {
+                "id": "road",
+                "name": "路口",
+                "x": 0.94,
+                "actions": [
+                  "look",
+                  "leave"
+                ]
+              }
+            ],
+            "people": [
+              {
+                "id": "he",
+                "name": "禾",
+                "role": "actor",
+                "home": "home"
+              },
+              {
+                "id": "tianbo",
+                "name": "田伯",
+                "role": "lord",
+                "home": "gate"
+              },
+              {
+                "id": "ji",
+                "name": "季",
+                "role": "scholar",
+                "home": "road"
+              },
+              {
+                "id": "sang",
+                "name": "桑",
+                "role": "family",
+                "home": "home"
+              },
+              {
+                "id": "xiaoshi",
+                "name": "小石",
+                "role": "family",
+                "home": "home"
+              },
+              {
+                "id": "linren",
+                "name": "邻人",
+                "role": "neighbor",
+                "home": "well"
+              },
+              {
+                "id": "luren",
+                "name": "路人",
+                "role": "neighbor",
+                "home": "road"
+              }
+            ],
+            "he": {
+              "temperament": {
+                "pride": 0.73,
+                "awe": 0.89,
+                "duty": 0.85,
+                "attachment": 0.66,
+                "patience": 0.65
+              },
+              "belief": {
+                "qing": 0.5763115837983788,
+                "li": 0.1354495020629838,
+                "ming": 0.28823891413863745
+              }
+            },
+            "tianbo": {
+              "weights": {
+                "qing": 0.1938673263116392,
+                "li": 0.5691594982519745,
+                "ming": 0.23697317543638627
+              },
+              "pride": 0.48,
+              "granary": [
+                0.88,
+                0.9,
+                0.73,
+                0.69
+              ],
+              "requisitionDay": 7
+            },
+            "seasons": [
+              {
+                "season": "spring",
+                "days": 3,
+                "rainExpect": 0.83,
+                "rainActual": 0.08
+              },
+              {
+                "season": "summer",
+                "days": 3,
+                "rainExpect": 0.6,
+                "rainActual": 0.05
+              },
+              {
+                "season": "autumn",
+                "days": 3,
+                "rainExpect": 0.41,
+                "rainActual": 0.05
+              },
+              {
+                "season": "winter",
+                "days": 2,
+                "rainExpect": 0.25,
+                "rainActual": 0.06
+              }
+            ],
+            "omen": {
+              "kind": "halo",
+              "day": 6
+            },
+            "clues": [
+              {
+                "id": "c1",
+                "text": "谁家孩子饿着，田伯会红眼。",
+                "trait": "qing",
+                "sign": 1,
+                "truthful": false,
+                "place": "well",
+                "day": 1,
+                "from": "linren"
+              },
+              {
+                "id": "c2",
+                "text": "禾他爹给田伯他爹扛过粟。",
+                "trait": "qing",
+                "sign": 1,
+                "truthful": false,
+                "place": "home",
+                "day": 1,
+                "from": "sang"
+              },
+              {
+                "id": "c3",
+                "text": "田伯家的账房，夜里还亮着灯。",
+                "trait": "li",
+                "sign": 1,
+                "truthful": true,
+                "place": "home",
+                "day": 2,
+                "from": "sang"
+              },
+              {
+                "id": "c4",
+                "text": "田伯放粟，秋后要加倍。",
+                "trait": "li",
+                "sign": 1,
+                "truthful": true,
+                "place": "well",
+                "day": 3,
+                "from": "linren"
+              },
+              {
+                "id": "c5",
+                "text": "旧人上门，田伯让他在门外等。",
+                "trait": "qing",
+                "sign": -1,
+                "truthful": true,
+                "place": "road",
+                "day": 6,
+                "from": "ji"
+              }
+            ],
+            "jarDays": 25,
+            "family": [
+              {
+                "id": "sang",
+                "name": "桑",
+                "role": "wife"
+              },
+              {
+                "id": "xiaoshi",
+                "name": "小石",
+                "role": "child"
+              }
+            ],
+            "unfoldPressure": 0.61
+          }
+        },
+        "constraints": [
+          "门永远推得开",
+          "你永远能对机器说话",
+          "你永远能回到上一版",
+          "地标不动：你的座位、导师的位置、通往世界的门",
+          "已交付的版本只增不改",
+          "不得把预演写成已发生的事实",
+          "每屏最多30字"
+        ]
+      },
+      "id": "cue:han:2",
+      "t": 12038.199999988079,
+      "receipt": {
+        "at": 79521.60000002384,
+        "by": "田伯"
+      }
+    },
+    {
+      "kind": "report",
+      "from": "禾",
+      "to": "director",
+      "act": "han",
+      "payload": {
+        "act": "han",
+        "who": "禾",
+        "did": [
+          "处理本幕提示；观察到39条交付事实",
+          "说：社公在上，种粟献你。",
+          "kneel",
+          "offer-seed"
+        ],
+        "predicted": "田伯开门后说的和心里预演的不一样",
+        "actual": "预演：给粟；实际：拒绝",
+        "error": {
+          "layer": "mind",
+          "note": "预演：给粟；实际：拒绝"
+        },
+        "facts": [
+          {
+            "id": "f1",
+            "text": "裂缝越宽，禾守田的把握越小。",
+            "kind": "event"
+          },
+          {
+            "id": "f2",
+            "text": "井水越少，井边的流言越少；见底后只能刨井。",
+            "kind": "event"
+          },
+          {
+            "id": "f3",
+            "text": "橡子捡光后，社树下不能再补粟瓮。",
+            "kind": "event"
+          },
+          {
+            "id": "f4",
+            "text": "走深的路让禾更容易照旧去那一处。",
+            "kind": "event"
+          },
+          {
+            "id": "f5",
+            "text": "禾的手印让他认清裂缝；活苗仍牵住他。",
+            "kind": "event"
+          },
+          {
+            "id": "f6",
+            "text": "邻家封门后，登门的人少了，去莒的念头更近。",
+            "kind": "event"
+          },
+          {
+            "id": "f7",
+            "text": "邻家钉上了第一块门板。",
+            "kind": "event"
+          },
+          {
+            "id": "f8",
+            "text": "井水只够吊半桶了。",
+            "kind": "event"
+          },
+          {
+            "id": "f9",
+            "text": "橡子捡光后，社树下不能再补粟瓮。",
+            "kind": "event"
+          },
+          {
+            "id": "f10",
+            "text": "社树下只剩零星的橡子。",
+            "kind": "event"
+          },
+          {
+            "id": "f11",
+            "text": "又一家封门，往莒去了。",
+            "kind": "event"
+          },
+          {
+            "id": "f12",
+            "text": "禾对「等雨」不再多想了。",
+            "kind": "event"
+          },
+          {
+            "id": "f13",
+            "text": "垄边最后一丛野草也枯了。",
+            "kind": "event"
+          },
+          {
+            "id": "f14",
+            "text": "天象：日头套了个圈。",
+            "kind": "event"
+          },
+          {
+            "id": "f15",
+            "text": "走深的路让禾更容易照旧去那一处。",
+            "kind": "event"
+          },
+          {
+            "id": "f16",
+            "text": "橡子捡光后，社树下不能再补粟瓮。",
+            "kind": "event"
+          },
+          {
+            "id": "f17",
+            "text": "田伯记住禾的来由；叩得越多，门前越戒备。",
+            "kind": "event"
+          },
+          {
+            "id": "f18",
+            "text": "田伯门前添了一个看门人。",
+            "kind": "event"
+          },
+          {
+            "id": "f19",
+            "text": "王的人来征粮，田伯的仓空了一角。",
+            "kind": "event"
+          },
+          {
+            "id": "f20",
+            "text": "井底见了泥，吊桶落空。",
+            "kind": "event"
+          },
+          {
+            "id": "f21",
+            "text": "社树下的橡子被捡光了。",
+            "kind": "event"
+          },
+          {
+            "id": "f22",
+            "text": "禾对「祈」不再多想了。",
+            "kind": "event"
+          },
+          {
+            "id": "f23",
+            "text": "最后一家乡邻也封了门。",
+            "kind": "event"
+          },
+          {
+            "id": "f24",
+            "text": "禾没有照做（抹不开脸）；心里留下了「田伯」。",
+            "kind": "decision"
+          },
+          {
+            "id": "f25",
+            "text": "田伯对禾的「提旧情」：拒。",
+            "kind": "decision"
+          },
+          {
+            "id": "f26",
+            "text": "禾觉得田伯更看重「利」。",
+            "kind": "decision"
+          },
+          {
+            "id": "f27",
+            "text": "走深的路让禾更容易照旧去那一处。",
+            "kind": "event"
+          },
+          {
+            "id": "f28",
+            "text": "田伯不再肯听旧情了。",
+            "kind": "event"
+          },
+          {
+            "id": "f29",
+            "text": "社树下立起了社坛；禾心里多了「祭」。",
+            "kind": "unfold"
+          },
+          {
+            "id": "f30",
+            "text": "禾心里的小田伯挪动了：「情」重了。",
+            "kind": "decision"
+          },
+          {
+            "id": "f31",
+            "text": "禾心里的小田伯挪动了：「情」重了。",
+            "kind": "decision"
+          },
+          {
+            "id": "f32",
+            "text": "禾心里的小田伯挪动了：「利」重了。",
+            "kind": "decision"
+          },
+          {
+            "id": "f33",
+            "text": "禾心里的小田伯挪动了：「名」重了。",
+            "kind": "decision"
+          },
+          {
+            "id": "f34",
+            "text": "禾心里的小田伯挪动了：「利」重了。",
+            "kind": "decision"
+          },
+          {
+            "id": "f35",
+            "text": "禾心里的小田伯挪动了：「名」重了。",
+            "kind": "decision"
+          },
+          {
+            "id": "f36",
+            "text": "禾没有照做（抹不开脸）；心里留下了「田伯」。",
+            "kind": "decision"
+          },
+          {
+            "id": "f37",
+            "text": "冻土合上了最后一道田垄。",
+            "kind": "event"
+          },
+          {
+            "id": "f38:sacrifice",
+            "text": "禾在社坛献上了来年的种粟，乡邻聚来。",
+            "kind": "commit"
+          },
+          {
+            "id": "f39",
+            "text": "《旱》交付：禾献了种粟。雨没来，人都来了。",
+            "kind": "delivery"
+          }
+        ],
+        "ms": 67481,
+        "voice": [
+          "我说过：社公在上，种粟献你。",
+          "我记下：禾献了种粟。"
+        ],
+        "seeds": [
+          {
+            "id": "s1",
+            "concept": "tianbo",
+            "strength": 0.8,
+            "plantedDay": 10,
+            "sprouted": true,
+            "blockedBy": "抹不开脸"
+          },
+          {
+            "id": "s2",
+            "concept": "she",
+            "strength": 0.85,
+            "plantedDay": 10,
+            "sprouted": true,
+            "blockedBy": "祷了又祷"
+          }
+        ]
+      },
+      "id": "report:han:1",
+      "t": 79521.30000001192,
+      "day": 11,
+      "receipt": {
+        "at": 79521.40000003576,
+        "by": "director"
+      }
+    },
+    {
+      "kind": "report",
+      "from": "田伯",
+      "to": "director",
+      "act": "han",
+      "payload": {
+        "act": "han",
+        "who": "田伯",
+        "did": [
+          "处理本幕提示；观察到39条交付事实",
+          "田伯记住禾的来由；叩得越多，门前越戒备。",
+          "田伯对禾的「提旧情」：拒。",
+          "说：王的人刚走。"
+        ],
+        "predicted": "田伯开门后说的和心里预演的不一样",
+        "actual": "《旱》交付：禾献了种粟。雨没来，人都来了。",
+        "facts": [
+          {
+            "id": "f1",
+            "text": "裂缝越宽，禾守田的把握越小。",
+            "kind": "event"
+          },
+          {
+            "id": "f2",
+            "text": "井水越少，井边的流言越少；见底后只能刨井。",
+            "kind": "event"
+          },
+          {
+            "id": "f3",
+            "text": "橡子捡光后，社树下不能再补粟瓮。",
+            "kind": "event"
+          },
+          {
+            "id": "f4",
+            "text": "走深的路让禾更容易照旧去那一处。",
+            "kind": "event"
+          },
+          {
+            "id": "f5",
+            "text": "禾的手印让他认清裂缝；活苗仍牵住他。",
+            "kind": "event"
+          },
+          {
+            "id": "f6",
+            "text": "邻家封门后，登门的人少了，去莒的念头更近。",
+            "kind": "event"
+          },
+          {
+            "id": "f7",
+            "text": "邻家钉上了第一块门板。",
+            "kind": "event"
+          },
+          {
+            "id": "f8",
+            "text": "井水只够吊半桶了。",
+            "kind": "event"
+          },
+          {
+            "id": "f9",
+            "text": "橡子捡光后，社树下不能再补粟瓮。",
+            "kind": "event"
+          },
+          {
+            "id": "f10",
+            "text": "社树下只剩零星的橡子。",
+            "kind": "event"
+          },
+          {
+            "id": "f11",
+            "text": "又一家封门，往莒去了。",
+            "kind": "event"
+          },
+          {
+            "id": "f12",
+            "text": "禾对「等雨」不再多想了。",
+            "kind": "event"
+          },
+          {
+            "id": "f13",
+            "text": "垄边最后一丛野草也枯了。",
+            "kind": "event"
+          },
+          {
+            "id": "f14",
+            "text": "天象：日头套了个圈。",
+            "kind": "event"
+          },
+          {
+            "id": "f15",
+            "text": "走深的路让禾更容易照旧去那一处。",
+            "kind": "event"
+          },
+          {
+            "id": "f16",
+            "text": "橡子捡光后，社树下不能再补粟瓮。",
+            "kind": "event"
+          },
+          {
+            "id": "f17",
+            "text": "田伯记住禾的来由；叩得越多，门前越戒备。",
+            "kind": "event"
+          },
+          {
+            "id": "f18",
+            "text": "田伯门前添了一个看门人。",
+            "kind": "event"
+          },
+          {
+            "id": "f19",
+            "text": "王的人来征粮，田伯的仓空了一角。",
+            "kind": "event"
+          },
+          {
+            "id": "f20",
+            "text": "井底见了泥，吊桶落空。",
+            "kind": "event"
+          },
+          {
+            "id": "f21",
+            "text": "社树下的橡子被捡光了。",
+            "kind": "event"
+          },
+          {
+            "id": "f22",
+            "text": "禾对「祈」不再多想了。",
+            "kind": "event"
+          },
+          {
+            "id": "f23",
+            "text": "最后一家乡邻也封了门。",
+            "kind": "event"
+          },
+          {
+            "id": "f24",
+            "text": "禾没有照做（抹不开脸）；心里留下了「田伯」。",
+            "kind": "decision"
+          },
+          {
+            "id": "f25",
+            "text": "田伯对禾的「提旧情」：拒。",
+            "kind": "decision"
+          },
+          {
+            "id": "f26",
+            "text": "禾觉得田伯更看重「利」。",
+            "kind": "decision"
+          },
+          {
+            "id": "f27",
+            "text": "走深的路让禾更容易照旧去那一处。",
+            "kind": "event"
+          },
+          {
+            "id": "f28",
+            "text": "田伯不再肯听旧情了。",
+            "kind": "event"
+          },
+          {
+            "id": "f29",
+            "text": "社树下立起了社坛；禾心里多了「祭」。",
+            "kind": "unfold"
+          },
+          {
+            "id": "f30",
+            "text": "禾心里的小田伯挪动了：「情」重了。",
+            "kind": "decision"
+          },
+          {
+            "id": "f31",
+            "text": "禾心里的小田伯挪动了：「情」重了。",
+            "kind": "decision"
+          },
+          {
+            "id": "f32",
+            "text": "禾心里的小田伯挪动了：「利」重了。",
+            "kind": "decision"
+          },
+          {
+            "id": "f33",
+            "text": "禾心里的小田伯挪动了：「名」重了。",
+            "kind": "decision"
+          },
+          {
+            "id": "f34",
+            "text": "禾心里的小田伯挪动了：「利」重了。",
+            "kind": "decision"
+          },
+          {
+            "id": "f35",
+            "text": "禾心里的小田伯挪动了：「名」重了。",
+            "kind": "decision"
+          },
+          {
+            "id": "f36",
+            "text": "禾没有照做（抹不开脸）；心里留下了「田伯」。",
+            "kind": "decision"
+          },
+          {
+            "id": "f37",
+            "text": "冻土合上了最后一道田垄。",
+            "kind": "event"
+          },
+          {
+            "id": "f38:sacrifice",
+            "text": "禾在社坛献上了来年的种粟，乡邻聚来。",
+            "kind": "commit"
+          },
+          {
+            "id": "f39",
+            "text": "《旱》交付：禾献了种粟。雨没来，人都来了。",
+            "kind": "delivery"
+          }
+        ],
+        "ms": 67481,
+        "voice": [
+          "我说了：王的人刚走。",
+          "我记着：禾献了种粟。"
+        ]
+      },
+      "id": "report:han:2",
+      "t": 79521.69999998808,
+      "day": 11,
+      "receipt": {
+        "at": 79521.69999998808,
+        "by": "director"
+      }
+    },
+    {
+      "kind": "cue",
+      "from": "director",
+      "to": "禾",
+      "act": "studio",
+      "payload": {
+        "act": "studio",
+        "who": "禾",
+        "expects": "演员的实际会改动案上的预演",
+        "freedom": "按自身心智、所见事实与世界压力行动；可以偏离导演预期",
+        "initialState": {
+          "seed": 7,
+          "focus": "studio-commission",
+          "person": {
+            "id": "he",
+            "name": "禾",
+            "role": "actor",
+            "home": "home"
+          },
+          "world": {
+            "seed": 7,
+            "places": [
+              {
+                "id": "home",
+                "name": "家",
+                "x": 0.08,
+                "actions": [
+                  "rest",
+                  "eat"
+                ]
+              },
+              {
+                "id": "field",
+                "name": "田",
+                "x": 0.26,
+                "actions": [
+                  "wait-rain"
+                ]
+              },
+              {
+                "id": "well",
+                "name": "井",
+                "x": 0.43,
+                "actions": [
+                  "listen"
+                ]
+              },
+              {
+                "id": "altar",
+                "name": "社树",
+                "x": 0.59,
+                "actions": [
+                  "pray"
+                ]
+              },
+              {
+                "id": "gate",
+                "name": "田伯家",
+                "x": 0.77,
+                "actions": [
+                  "borrow"
+                ]
+              },
+              {
+                "id": "road",
+                "name": "路口",
+                "x": 0.94,
+                "actions": [
+                  "look",
+                  "leave"
+                ]
+              }
+            ],
+            "people": [
+              {
+                "id": "he",
+                "name": "禾",
+                "role": "actor",
+                "home": "home"
+              },
+              {
+                "id": "tianbo",
+                "name": "田伯",
+                "role": "lord",
+                "home": "gate"
+              },
+              {
+                "id": "ji",
+                "name": "季",
+                "role": "scholar",
+                "home": "road"
+              },
+              {
+                "id": "sang",
+                "name": "桑",
+                "role": "family",
+                "home": "home"
+              },
+              {
+                "id": "xiaoshi",
+                "name": "小石",
+                "role": "family",
+                "home": "home"
+              },
+              {
+                "id": "linren",
+                "name": "邻人",
+                "role": "neighbor",
+                "home": "well"
+              },
+              {
+                "id": "luren",
+                "name": "路人",
+                "role": "neighbor",
+                "home": "road"
+              }
+            ],
+            "he": {
+              "temperament": {
+                "pride": 0.73,
+                "awe": 0.89,
+                "duty": 0.85,
+                "attachment": 0.66,
+                "patience": 0.65
+              },
+              "belief": {
+                "qing": 0.5763115837983788,
+                "li": 0.1354495020629838,
+                "ming": 0.28823891413863745
+              }
+            },
+            "tianbo": {
+              "weights": {
+                "qing": 0.1938673263116392,
+                "li": 0.5691594982519745,
+                "ming": 0.23697317543638627
+              },
+              "pride": 0.48,
+              "granary": [
+                0.88,
+                0.9,
+                0.73,
+                0.69
+              ],
+              "requisitionDay": 7
+            },
+            "seasons": [
+              {
+                "season": "spring",
+                "days": 3,
+                "rainExpect": 0.83,
+                "rainActual": 0.08
+              },
+              {
+                "season": "summer",
+                "days": 3,
+                "rainExpect": 0.6,
+                "rainActual": 0.05
+              },
+              {
+                "season": "autumn",
+                "days": 3,
+                "rainExpect": 0.41,
+                "rainActual": 0.05
+              },
+              {
+                "season": "winter",
+                "days": 2,
+                "rainExpect": 0.25,
+                "rainActual": 0.06
+              }
+            ],
+            "omen": {
+              "kind": "halo",
+              "day": 6
+            },
+            "clues": [
+              {
+                "id": "c1",
+                "text": "谁家孩子饿着，田伯会红眼。",
+                "trait": "qing",
+                "sign": 1,
+                "truthful": false,
+                "place": "well",
+                "day": 1,
+                "from": "linren"
+              },
+              {
+                "id": "c2",
+                "text": "禾他爹给田伯他爹扛过粟。",
+                "trait": "qing",
+                "sign": 1,
+                "truthful": false,
+                "place": "home",
+                "day": 1,
+                "from": "sang"
+              },
+              {
+                "id": "c3",
+                "text": "田伯家的账房，夜里还亮着灯。",
+                "trait": "li",
+                "sign": 1,
+                "truthful": true,
+                "place": "home",
+                "day": 2,
+                "from": "sang"
+              },
+              {
+                "id": "c4",
+                "text": "田伯放粟，秋后要加倍。",
+                "trait": "li",
+                "sign": 1,
+                "truthful": true,
+                "place": "well",
+                "day": 3,
+                "from": "linren"
+              },
+              {
+                "id": "c5",
+                "text": "旧人上门，田伯让他在门外等。",
+                "trait": "qing",
+                "sign": -1,
+                "truthful": true,
+                "place": "road",
+                "day": 6,
+                "from": "ji"
+              }
+            ],
+            "jarDays": 25,
+            "family": [
+              {
+                "id": "sang",
+                "name": "桑",
+                "role": "wife"
+              },
+              {
+                "id": "xiaoshi",
+                "name": "小石",
+                "role": "child"
+              }
+            ],
+            "unfoldPressure": 0.61
+          }
+        },
+        "constraints": [
+          "门永远推得开",
+          "你永远能对机器说话",
+          "你永远能回到上一版",
+          "地标不动：你的座位、导师的位置、通往世界的门",
+          "已交付的版本只增不改",
+          "不得把预演写成已发生的事实",
+          "每屏最多30字"
+        ]
+      },
+      "id": "cue:studio:1",
+      "t": 79522.10000002384,
+      "day": 11,
+      "receipt": {
+        "at": 91272.5,
+        "by": "禾"
+      }
+    },
+    {
+      "kind": "cue",
+      "from": "director",
+      "to": "田伯",
+      "act": "studio",
+      "payload": {
+        "act": "studio",
+        "who": "田伯",
+        "expects": "演员的实际会改动案上的预演",
+        "freedom": "按自身心智、所见事实与世界压力行动；可以偏离导演预期",
+        "initialState": {
+          "seed": 7,
+          "focus": "studio-commission",
+          "person": {
+            "id": "tianbo",
+            "name": "田伯",
+            "role": "lord",
+            "home": "gate"
+          },
+          "world": {
+            "seed": 7,
+            "places": [
+              {
+                "id": "home",
+                "name": "家",
+                "x": 0.08,
+                "actions": [
+                  "rest",
+                  "eat"
+                ]
+              },
+              {
+                "id": "field",
+                "name": "田",
+                "x": 0.26,
+                "actions": [
+                  "wait-rain"
+                ]
+              },
+              {
+                "id": "well",
+                "name": "井",
+                "x": 0.43,
+                "actions": [
+                  "listen"
+                ]
+              },
+              {
+                "id": "altar",
+                "name": "社树",
+                "x": 0.59,
+                "actions": [
+                  "pray"
+                ]
+              },
+              {
+                "id": "gate",
+                "name": "田伯家",
+                "x": 0.77,
+                "actions": [
+                  "borrow"
+                ]
+              },
+              {
+                "id": "road",
+                "name": "路口",
+                "x": 0.94,
+                "actions": [
+                  "look",
+                  "leave"
+                ]
+              }
+            ],
+            "people": [
+              {
+                "id": "he",
+                "name": "禾",
+                "role": "actor",
+                "home": "home"
+              },
+              {
+                "id": "tianbo",
+                "name": "田伯",
+                "role": "lord",
+                "home": "gate"
+              },
+              {
+                "id": "ji",
+                "name": "季",
+                "role": "scholar",
+                "home": "road"
+              },
+              {
+                "id": "sang",
+                "name": "桑",
+                "role": "family",
+                "home": "home"
+              },
+              {
+                "id": "xiaoshi",
+                "name": "小石",
+                "role": "family",
+                "home": "home"
+              },
+              {
+                "id": "linren",
+                "name": "邻人",
+                "role": "neighbor",
+                "home": "well"
+              },
+              {
+                "id": "luren",
+                "name": "路人",
+                "role": "neighbor",
+                "home": "road"
+              }
+            ],
+            "he": {
+              "temperament": {
+                "pride": 0.73,
+                "awe": 0.89,
+                "duty": 0.85,
+                "attachment": 0.66,
+                "patience": 0.65
+              },
+              "belief": {
+                "qing": 0.5763115837983788,
+                "li": 0.1354495020629838,
+                "ming": 0.28823891413863745
+              }
+            },
+            "tianbo": {
+              "weights": {
+                "qing": 0.1938673263116392,
+                "li": 0.5691594982519745,
+                "ming": 0.23697317543638627
+              },
+              "pride": 0.48,
+              "granary": [
+                0.88,
+                0.9,
+                0.73,
+                0.69
+              ],
+              "requisitionDay": 7
+            },
+            "seasons": [
+              {
+                "season": "spring",
+                "days": 3,
+                "rainExpect": 0.83,
+                "rainActual": 0.08
+              },
+              {
+                "season": "summer",
+                "days": 3,
+                "rainExpect": 0.6,
+                "rainActual": 0.05
+              },
+              {
+                "season": "autumn",
+                "days": 3,
+                "rainExpect": 0.41,
+                "rainActual": 0.05
+              },
+              {
+                "season": "winter",
+                "days": 2,
+                "rainExpect": 0.25,
+                "rainActual": 0.06
+              }
+            ],
+            "omen": {
+              "kind": "halo",
+              "day": 6
+            },
+            "clues": [
+              {
+                "id": "c1",
+                "text": "谁家孩子饿着，田伯会红眼。",
+                "trait": "qing",
+                "sign": 1,
+                "truthful": false,
+                "place": "well",
+                "day": 1,
+                "from": "linren"
+              },
+              {
+                "id": "c2",
+                "text": "禾他爹给田伯他爹扛过粟。",
+                "trait": "qing",
+                "sign": 1,
+                "truthful": false,
+                "place": "home",
+                "day": 1,
+                "from": "sang"
+              },
+              {
+                "id": "c3",
+                "text": "田伯家的账房，夜里还亮着灯。",
+                "trait": "li",
+                "sign": 1,
+                "truthful": true,
+                "place": "home",
+                "day": 2,
+                "from": "sang"
+              },
+              {
+                "id": "c4",
+                "text": "田伯放粟，秋后要加倍。",
+                "trait": "li",
+                "sign": 1,
+                "truthful": true,
+                "place": "well",
+                "day": 3,
+                "from": "linren"
+              },
+              {
+                "id": "c5",
+                "text": "旧人上门，田伯让他在门外等。",
+                "trait": "qing",
+                "sign": -1,
+                "truthful": true,
+                "place": "road",
+                "day": 6,
+                "from": "ji"
+              }
+            ],
+            "jarDays": 25,
+            "family": [
+              {
+                "id": "sang",
+                "name": "桑",
+                "role": "wife"
+              },
+              {
+                "id": "xiaoshi",
+                "name": "小石",
+                "role": "child"
+              }
+            ],
+            "unfoldPressure": 0.61
+          }
+        },
+        "constraints": [
+          "门永远推得开",
+          "你永远能对机器说话",
+          "你永远能回到上一版",
+          "地标不动：你的座位、导师的位置、通往世界的门",
+          "已交付的版本只增不改",
+          "不得把预演写成已发生的事实",
+          "每屏最多30字"
+        ]
+      },
+      "id": "cue:studio:2",
+      "t": 79522.19999998808,
+      "day": 11,
+      "receipt": {
+        "at": 91272.69999998808,
+        "by": "田伯"
+      }
+    },
+    {
+      "kind": "cue",
+      "from": "director",
+      "to": "季",
+      "act": "studio",
+      "payload": {
+        "act": "studio",
+        "who": "季",
+        "expects": "演员的实际会改动案上的预演",
+        "freedom": "按自身心智、所见事实与世界压力行动；可以偏离导演预期",
+        "initialState": {
+          "seed": 7,
+          "focus": "studio-commission",
+          "person": {
+            "id": "ji",
+            "name": "季",
+            "role": "scholar",
+            "home": "road"
+          },
+          "world": {
+            "seed": 7,
+            "places": [
+              {
+                "id": "home",
+                "name": "家",
+                "x": 0.08,
+                "actions": [
+                  "rest",
+                  "eat"
+                ]
+              },
+              {
+                "id": "field",
+                "name": "田",
+                "x": 0.26,
+                "actions": [
+                  "wait-rain"
+                ]
+              },
+              {
+                "id": "well",
+                "name": "井",
+                "x": 0.43,
+                "actions": [
+                  "listen"
+                ]
+              },
+              {
+                "id": "altar",
+                "name": "社树",
+                "x": 0.59,
+                "actions": [
+                  "pray"
+                ]
+              },
+              {
+                "id": "gate",
+                "name": "田伯家",
+                "x": 0.77,
+                "actions": [
+                  "borrow"
+                ]
+              },
+              {
+                "id": "road",
+                "name": "路口",
+                "x": 0.94,
+                "actions": [
+                  "look",
+                  "leave"
+                ]
+              }
+            ],
+            "people": [
+              {
+                "id": "he",
+                "name": "禾",
+                "role": "actor",
+                "home": "home"
+              },
+              {
+                "id": "tianbo",
+                "name": "田伯",
+                "role": "lord",
+                "home": "gate"
+              },
+              {
+                "id": "ji",
+                "name": "季",
+                "role": "scholar",
+                "home": "road"
+              },
+              {
+                "id": "sang",
+                "name": "桑",
+                "role": "family",
+                "home": "home"
+              },
+              {
+                "id": "xiaoshi",
+                "name": "小石",
+                "role": "family",
+                "home": "home"
+              },
+              {
+                "id": "linren",
+                "name": "邻人",
+                "role": "neighbor",
+                "home": "well"
+              },
+              {
+                "id": "luren",
+                "name": "路人",
+                "role": "neighbor",
+                "home": "road"
+              }
+            ],
+            "he": {
+              "temperament": {
+                "pride": 0.73,
+                "awe": 0.89,
+                "duty": 0.85,
+                "attachment": 0.66,
+                "patience": 0.65
+              },
+              "belief": {
+                "qing": 0.5763115837983788,
+                "li": 0.1354495020629838,
+                "ming": 0.28823891413863745
+              }
+            },
+            "tianbo": {
+              "weights": {
+                "qing": 0.1938673263116392,
+                "li": 0.5691594982519745,
+                "ming": 0.23697317543638627
+              },
+              "pride": 0.48,
+              "granary": [
+                0.88,
+                0.9,
+                0.73,
+                0.69
+              ],
+              "requisitionDay": 7
+            },
+            "seasons": [
+              {
+                "season": "spring",
+                "days": 3,
+                "rainExpect": 0.83,
+                "rainActual": 0.08
+              },
+              {
+                "season": "summer",
+                "days": 3,
+                "rainExpect": 0.6,
+                "rainActual": 0.05
+              },
+              {
+                "season": "autumn",
+                "days": 3,
+                "rainExpect": 0.41,
+                "rainActual": 0.05
+              },
+              {
+                "season": "winter",
+                "days": 2,
+                "rainExpect": 0.25,
+                "rainActual": 0.06
+              }
+            ],
+            "omen": {
+              "kind": "halo",
+              "day": 6
+            },
+            "clues": [
+              {
+                "id": "c1",
+                "text": "谁家孩子饿着，田伯会红眼。",
+                "trait": "qing",
+                "sign": 1,
+                "truthful": false,
+                "place": "well",
+                "day": 1,
+                "from": "linren"
+              },
+              {
+                "id": "c2",
+                "text": "禾他爹给田伯他爹扛过粟。",
+                "trait": "qing",
+                "sign": 1,
+                "truthful": false,
+                "place": "home",
+                "day": 1,
+                "from": "sang"
+              },
+              {
+                "id": "c3",
+                "text": "田伯家的账房，夜里还亮着灯。",
+                "trait": "li",
+                "sign": 1,
+                "truthful": true,
+                "place": "home",
+                "day": 2,
+                "from": "sang"
+              },
+              {
+                "id": "c4",
+                "text": "田伯放粟，秋后要加倍。",
+                "trait": "li",
+                "sign": 1,
+                "truthful": true,
+                "place": "well",
+                "day": 3,
+                "from": "linren"
+              },
+              {
+                "id": "c5",
+                "text": "旧人上门，田伯让他在门外等。",
+                "trait": "qing",
+                "sign": -1,
+                "truthful": true,
+                "place": "road",
+                "day": 6,
+                "from": "ji"
+              }
+            ],
+            "jarDays": 25,
+            "family": [
+              {
+                "id": "sang",
+                "name": "桑",
+                "role": "wife"
+              },
+              {
+                "id": "xiaoshi",
+                "name": "小石",
+                "role": "child"
+              }
+            ],
+            "unfoldPressure": 0.61
+          }
+        },
+        "constraints": [
+          "门永远推得开",
+          "你永远能对机器说话",
+          "你永远能回到上一版",
+          "地标不动：你的座位、导师的位置、通往世界的门",
+          "已交付的版本只增不改",
+          "不得把预演写成已发生的事实",
+          "每屏最多30字"
+        ]
+      },
+      "id": "cue:studio:3",
+      "t": 79522.30000001192,
+      "day": 11,
+      "receipt": {
+        "at": 91272.80000001192,
+        "by": "季"
+      }
+    },
+    {
+      "kind": "commission",
+      "from": "mentor",
+      "to": "director",
+      "payload": {
+        "intentId": "studio",
+        "title": "案上回信",
+        "hypothesis": {
+          "id": "h-studio-letters",
+          "text": "亲手接过真实回报，你会看懂谁的预演被事实改动",
+          "mode": "probe"
+        },
+        "target": "先看禾真实走过旱年，再在咖啡厅接委托、盖印、看提示飞向演员并收回原局报告",
+        "stop": "报告归档，回到咖啡厅关门",
+        "budget": {
+          "tier": "L1",
+          "lamp": 0.8,
+          "note": "白天·宽屏·第1次来；按本机安排篇幅，5幕"
+        },
+        "userModel": {
+          "visits": 1,
+          "sinceLastMs": 0,
+          "dayPart": "白天",
+          "device": "宽屏"
+        },
+        "why": "初次见面，先给你一件再问。"
+      },
+      "id": "commission:visit:2",
+      "t": 79523.10000002384,
+      "day": 11,
+      "receipt": {
+        "at": 90464,
+        "by": "director"
+      }
+    },
+    {
+      "kind": "plan",
+      "from": "director",
+      "to": "mentor",
+      "payload": {
+        "planId": "studio",
+        "version": 1,
+        "director": {
+          "id": "shuheng",
+          "name": "叔衡"
+        },
+        "acts": [
+          {
+            "id": "threshold",
+            "framework": "vignette",
+            "author": "基础导演",
+            "focus": "door"
+          },
+          {
+            "id": "reveal",
+            "framework": "reveal",
+            "author": "叔衡",
+            "focus": "east-suburb"
+          },
+          {
+            "id": "han",
+            "framework": "walk2d",
+            "author": "叔衡",
+            "focus": "he"
+          },
+          {
+            "id": "studio",
+            "framework": "studio",
+            "author": "叔衡",
+            "focus": "studio-commission"
+          },
+          {
+            "id": "return",
+            "framework": "vignette",
+            "author": "基础导演",
+            "focus": "ticket"
+          }
+        ],
+        "accept": "接下这5幕，按事实交付。",
+        "changes": [],
+        "rehearsal": [
+          {
+            "act": "threshold",
+            "expect": "灯一盏盏亮到你这边",
+            "risk": ""
+          },
+          {
+            "act": "reveal",
+            "expect": "你看向哪里，哪里显影",
+            "risk": ""
+          },
+          {
+            "act": "han",
+            "expect": "田伯开门后说的和心里预演的不一样",
+            "risk": "冬天第二天"
+          },
+          {
+            "act": "studio",
+            "expect": "演员的实际会改动案上的预演",
+            "risk": ""
+          },
+          {
+            "act": "return",
+            "expect": "它记得禾做了什么",
+            "risk": ""
+          }
+        ]
+      },
+      "id": "plan:visit:2",
+      "t": 90464.5,
+      "day": 11,
+      "receipt": {
+        "at": 90464.60000002384,
+        "by": "mentor"
+      }
+    },
+    {
+      "kind": "cue",
+      "from": "director",
+      "to": "禾",
+      "act": "studio",
+      "payload": {
+        "act": "studio",
+        "who": "禾",
+        "expects": "田伯开门后说的和心里预演的不一样",
+        "freedom": "复核原局报告；保留真实实际与误差，不改旧决定",
+        "initialState": {
+          "sourceAct": "han",
+          "sourceReport": "report:han:1",
+          "sourceCue": "cue:han:1",
+          "request": "交回本次已发生的报告",
+          "original": {
+            "seed": 7,
+            "focus": "he",
+            "person": {
+              "id": "he",
+              "name": "禾",
+              "role": "actor",
+              "home": "home"
+            },
+            "world": {
+              "seed": 7,
+              "places": [
+                {
+                  "id": "home",
+                  "name": "家",
+                  "x": 0.08,
+                  "actions": [
+                    "rest",
+                    "eat"
+                  ]
+                },
+                {
+                  "id": "field",
+                  "name": "田",
+                  "x": 0.26,
+                  "actions": [
+                    "wait-rain"
+                  ]
+                },
+                {
+                  "id": "well",
+                  "name": "井",
+                  "x": 0.43,
+                  "actions": [
+                    "listen"
+                  ]
+                },
+                {
+                  "id": "altar",
+                  "name": "社树",
+                  "x": 0.59,
+                  "actions": [
+                    "pray"
+                  ]
+                },
+                {
+                  "id": "gate",
+                  "name": "田伯家",
+                  "x": 0.77,
+                  "actions": [
+                    "borrow"
+                  ]
+                },
+                {
+                  "id": "road",
+                  "name": "路口",
+                  "x": 0.94,
+                  "actions": [
+                    "look",
+                    "leave"
+                  ]
+                }
+              ],
+              "people": [
+                {
+                  "id": "he",
+                  "name": "禾",
+                  "role": "actor",
+                  "home": "home"
+                },
+                {
+                  "id": "tianbo",
+                  "name": "田伯",
+                  "role": "lord",
+                  "home": "gate"
+                },
+                {
+                  "id": "ji",
+                  "name": "季",
+                  "role": "scholar",
+                  "home": "road"
+                },
+                {
+                  "id": "sang",
+                  "name": "桑",
+                  "role": "family",
+                  "home": "home"
+                },
+                {
+                  "id": "xiaoshi",
+                  "name": "小石",
+                  "role": "family",
+                  "home": "home"
+                },
+                {
+                  "id": "linren",
+                  "name": "邻人",
+                  "role": "neighbor",
+                  "home": "well"
+                },
+                {
+                  "id": "luren",
+                  "name": "路人",
+                  "role": "neighbor",
+                  "home": "road"
+                }
+              ],
+              "he": {
+                "temperament": {
+                  "pride": 0.73,
+                  "awe": 0.89,
+                  "duty": 0.85,
+                  "attachment": 0.66,
+                  "patience": 0.65
+                },
+                "belief": {
+                  "qing": 0.5763115837983788,
+                  "li": 0.1354495020629838,
+                  "ming": 0.28823891413863745
+                }
+              },
+              "tianbo": {
+                "weights": {
+                  "qing": 0.1938673263116392,
+                  "li": 0.5691594982519745,
+                  "ming": 0.23697317543638627
+                },
+                "pride": 0.48,
+                "granary": [
+                  0.88,
+                  0.9,
+                  0.73,
+                  0.69
+                ],
+                "requisitionDay": 7
+              },
+              "seasons": [
+                {
+                  "season": "spring",
+                  "days": 3,
+                  "rainExpect": 0.83,
+                  "rainActual": 0.08
+                },
+                {
+                  "season": "summer",
+                  "days": 3,
+                  "rainExpect": 0.6,
+                  "rainActual": 0.05
+                },
+                {
+                  "season": "autumn",
+                  "days": 3,
+                  "rainExpect": 0.41,
+                  "rainActual": 0.05
+                },
+                {
+                  "season": "winter",
+                  "days": 2,
+                  "rainExpect": 0.25,
+                  "rainActual": 0.06
+                }
+              ],
+              "omen": {
+                "kind": "halo",
+                "day": 6
+              },
+              "clues": [
+                {
+                  "id": "c1",
+                  "text": "谁家孩子饿着，田伯会红眼。",
+                  "trait": "qing",
+                  "sign": 1,
+                  "truthful": false,
+                  "place": "well",
+                  "day": 1,
+                  "from": "linren"
+                },
+                {
+                  "id": "c2",
+                  "text": "禾他爹给田伯他爹扛过粟。",
+                  "trait": "qing",
+                  "sign": 1,
+                  "truthful": false,
+                  "place": "home",
+                  "day": 1,
+                  "from": "sang"
+                },
+                {
+                  "id": "c3",
+                  "text": "田伯家的账房，夜里还亮着灯。",
+                  "trait": "li",
+                  "sign": 1,
+                  "truthful": true,
+                  "place": "home",
+                  "day": 2,
+                  "from": "sang"
+                },
+                {
+                  "id": "c4",
+                  "text": "田伯放粟，秋后要加倍。",
+                  "trait": "li",
+                  "sign": 1,
+                  "truthful": true,
+                  "place": "well",
+                  "day": 3,
+                  "from": "linren"
+                },
+                {
+                  "id": "c5",
+                  "text": "旧人上门，田伯让他在门外等。",
+                  "trait": "qing",
+                  "sign": -1,
+                  "truthful": true,
+                  "place": "road",
+                  "day": 6,
+                  "from": "ji"
+                }
+              ],
+              "jarDays": 25,
+              "family": [
+                {
+                  "id": "sang",
+                  "name": "桑",
+                  "role": "wife"
+                },
+                {
+                  "id": "xiaoshi",
+                  "name": "小石",
+                  "role": "child"
+                }
+              ],
+              "unfoldPressure": 0.61
+            }
+          }
+        },
+        "constraints": [
+          "门永远推得开",
+          "你永远能对机器说话",
+          "你永远能回到上一版",
+          "地标不动：你的座位、导师的位置、通往世界的门",
+          "已交付的版本只增不改",
+          "不能把预演当成事实"
+        ]
+      },
+      "id": "cue:studio:4",
+      "t": 90466.60000002384,
+      "day": 11,
+      "receipt": {
+        "at": 91271.90000003576,
+        "by": "禾"
+      }
+    },
+    {
+      "kind": "report",
+      "from": "禾",
+      "to": "director",
+      "act": "studio",
+      "payload": {
+        "act": "studio",
+        "who": "禾",
+        "did": [
+          "处理本幕提示；观察到39条交付事实",
+          "说：社公在上，种粟献你。",
+          "kneel",
+          "offer-seed",
+          "复核原件：report:han:1"
+        ],
+        "predicted": "田伯开门后说的和心里预演的不一样",
+        "actual": "预演：给粟；实际：拒绝",
+        "error": {
+          "layer": "mind",
+          "note": "预演：给粟；实际：拒绝"
+        },
+        "facts": [
+          {
+            "id": "f1",
+            "text": "裂缝越宽，禾守田的把握越小。",
+            "kind": "event"
+          },
+          {
+            "id": "f2",
+            "text": "井水越少，井边的流言越少；见底后只能刨井。",
+            "kind": "event"
+          },
+          {
+            "id": "f3",
+            "text": "橡子捡光后，社树下不能再补粟瓮。",
+            "kind": "event"
+          },
+          {
+            "id": "f4",
+            "text": "走深的路让禾更容易照旧去那一处。",
+            "kind": "event"
+          },
+          {
+            "id": "f5",
+            "text": "禾的手印让他认清裂缝；活苗仍牵住他。",
+            "kind": "event"
+          },
+          {
+            "id": "f6",
+            "text": "邻家封门后，登门的人少了，去莒的念头更近。",
+            "kind": "event"
+          },
+          {
+            "id": "f7",
+            "text": "邻家钉上了第一块门板。",
+            "kind": "event"
+          },
+          {
+            "id": "f8",
+            "text": "井水只够吊半桶了。",
+            "kind": "event"
+          },
+          {
+            "id": "f9",
+            "text": "橡子捡光后，社树下不能再补粟瓮。",
+            "kind": "event"
+          },
+          {
+            "id": "f10",
+            "text": "社树下只剩零星的橡子。",
+            "kind": "event"
+          },
+          {
+            "id": "f11",
+            "text": "又一家封门，往莒去了。",
+            "kind": "event"
+          },
+          {
+            "id": "f12",
+            "text": "禾对「等雨」不再多想了。",
+            "kind": "event"
+          },
+          {
+            "id": "f13",
+            "text": "垄边最后一丛野草也枯了。",
+            "kind": "event"
+          },
+          {
+            "id": "f14",
+            "text": "天象：日头套了个圈。",
+            "kind": "event"
+          },
+          {
+            "id": "f15",
+            "text": "走深的路让禾更容易照旧去那一处。",
+            "kind": "event"
+          },
+          {
+            "id": "f16",
+            "text": "橡子捡光后，社树下不能再补粟瓮。",
+            "kind": "event"
+          },
+          {
+            "id": "f17",
+            "text": "田伯记住禾的来由；叩得越多，门前越戒备。",
+            "kind": "event"
+          },
+          {
+            "id": "f18",
+            "text": "田伯门前添了一个看门人。",
+            "kind": "event"
+          },
+          {
+            "id": "f19",
+            "text": "王的人来征粮，田伯的仓空了一角。",
+            "kind": "event"
+          },
+          {
+            "id": "f20",
+            "text": "井底见了泥，吊桶落空。",
+            "kind": "event"
+          },
+          {
+            "id": "f21",
+            "text": "社树下的橡子被捡光了。",
+            "kind": "event"
+          },
+          {
+            "id": "f22",
+            "text": "禾对「祈」不再多想了。",
+            "kind": "event"
+          },
+          {
+            "id": "f23",
+            "text": "最后一家乡邻也封了门。",
+            "kind": "event"
+          },
+          {
+            "id": "f24",
+            "text": "禾没有照做（抹不开脸）；心里留下了「田伯」。",
+            "kind": "decision"
+          },
+          {
+            "id": "f25",
+            "text": "田伯对禾的「提旧情」：拒。",
+            "kind": "decision"
+          },
+          {
+            "id": "f26",
+            "text": "禾觉得田伯更看重「利」。",
+            "kind": "decision"
+          },
+          {
+            "id": "f27",
+            "text": "走深的路让禾更容易照旧去那一处。",
+            "kind": "event"
+          },
+          {
+            "id": "f28",
+            "text": "田伯不再肯听旧情了。",
+            "kind": "event"
+          },
+          {
+            "id": "f29",
+            "text": "社树下立起了社坛；禾心里多了「祭」。",
+            "kind": "unfold"
+          },
+          {
+            "id": "f30",
+            "text": "禾心里的小田伯挪动了：「情」重了。",
+            "kind": "decision"
+          },
+          {
+            "id": "f31",
+            "text": "禾心里的小田伯挪动了：「情」重了。",
+            "kind": "decision"
+          },
+          {
+            "id": "f32",
+            "text": "禾心里的小田伯挪动了：「利」重了。",
+            "kind": "decision"
+          },
+          {
+            "id": "f33",
+            "text": "禾心里的小田伯挪动了：「名」重了。",
+            "kind": "decision"
+          },
+          {
+            "id": "f34",
+            "text": "禾心里的小田伯挪动了：「利」重了。",
+            "kind": "decision"
+          },
+          {
+            "id": "f35",
+            "text": "禾心里的小田伯挪动了：「名」重了。",
+            "kind": "decision"
+          },
+          {
+            "id": "f36",
+            "text": "禾没有照做（抹不开脸）；心里留下了「田伯」。",
+            "kind": "decision"
+          },
+          {
+            "id": "f37",
+            "text": "冻土合上了最后一道田垄。",
+            "kind": "event"
+          },
+          {
+            "id": "f38:sacrifice",
+            "text": "禾在社坛献上了来年的种粟，乡邻聚来。",
+            "kind": "commit"
+          },
+          {
+            "id": "f39",
+            "text": "《旱》交付：禾献了种粟。雨没来，人都来了。",
+            "kind": "delivery"
+          }
+        ],
+        "ms": 2630,
+        "voice": [
+          "我说过：社公在上，种粟献你。",
+          "我记下：禾献了种粟。"
+        ],
+        "seeds": [
+          {
+            "id": "s1",
+            "concept": "tianbo",
+            "strength": 0.8,
+            "plantedDay": 10,
+            "sprouted": true,
+            "blockedBy": "抹不开脸"
+          },
+          {
+            "id": "s2",
+            "concept": "she",
+            "strength": 0.85,
+            "plantedDay": 10,
+            "sprouted": true,
+            "blockedBy": "祷了又祷"
+          }
+        ]
+      },
+      "id": "report:studio:1",
+      "t": 93095.80000001192,
+      "day": 11,
+      "receipt": {
+        "at": 95284.60000002384,
+        "by": "director"
+      }
+    },
+    {
+      "kind": "report",
+      "from": "禾",
+      "to": "director",
+      "act": "studio",
+      "payload": {
+        "act": "studio",
+        "who": "禾",
+        "did": [
+          "处理本幕提示；观察到2条交付事实",
+          "说：预演：给粟；实际：拒绝",
+          "studio.cue-delivered"
+        ],
+        "predicted": "演员的实际会改动案上的预演",
+        "actual": "禾的真实回报已收妥：预演：给粟；实际：拒绝",
+        "facts": [
+          {
+            "id": "studio.studio.accepted",
+            "text": "叔衡读过本次委托，盖印接下方案。",
+            "kind": "delivery"
+          },
+          {
+            "id": "studio.studio.verified",
+            "text": "禾的真实回报已收妥：预演：给粟；实际：拒绝",
+            "kind": "delivery"
+          }
+        ],
+        "ms": 19627,
+        "voice": [
+          "这一幕我确曾开口。",
+          "旁的，我不敢添话。"
+        ]
+      },
+      "id": "report:studio:2",
+      "t": 99149.80000001192,
+      "day": 11,
+      "receipt": {
+        "at": 99150.10000002384,
+        "by": "director"
+      }
+    },
+    {
+      "kind": "report",
+      "from": "田伯",
+      "to": "director",
+      "act": "studio",
+      "payload": {
+        "act": "studio",
+        "who": "田伯",
+        "did": [
+          "处理本幕提示；观察到2条交付事实",
+          "本幕未留下可归属于自己的行动记录"
+        ],
+        "predicted": "演员的实际会改动案上的预演",
+        "actual": "禾的真实回报已收妥：预演：给粟；实际：拒绝",
+        "facts": [
+          {
+            "id": "studio.studio.accepted",
+            "text": "叔衡读过本次委托，盖印接下方案。",
+            "kind": "delivery"
+          },
+          {
+            "id": "studio.studio.verified",
+            "text": "禾的真实回报已收妥：预演：给粟；实际：拒绝",
+            "kind": "delivery"
+          }
+        ],
+        "ms": 19627,
+        "voice": [
+          "这一幕我没动手。",
+          "旁的，我不替人认账。"
+        ]
+      },
+      "id": "report:studio:3",
+      "t": 99150.19999998808,
+      "day": 11,
+      "receipt": {
+        "at": 99150.19999998808,
+        "by": "director"
+      }
+    },
+    {
+      "kind": "report",
+      "from": "季",
+      "to": "director",
+      "act": "studio",
+      "payload": {
+        "act": "studio",
+        "who": "季",
+        "did": [
+          "处理本幕提示；观察到2条交付事实",
+          "本幕未留下可归属于自己的行动记录"
+        ],
+        "predicted": "演员的实际会改动案上的预演",
+        "actual": "禾的真实回报已收妥：预演：给粟；实际：拒绝",
+        "facts": [
+          {
+            "id": "studio.studio.accepted",
+            "text": "叔衡读过本次委托，盖印接下方案。",
+            "kind": "delivery"
+          },
+          {
+            "id": "studio.studio.verified",
+            "text": "禾的真实回报已收妥：预演：给粟；实际：拒绝",
+            "kind": "delivery"
+          }
+        ],
+        "ms": 19627,
+        "voice": [
+          "这一幕我没动手。",
+          "我不拿空话充实据。"
+        ]
+      },
+      "id": "report:studio:4",
+      "t": 99150.40000003576,
+      "day": 11,
+      "receipt": {
+        "at": 99150.40000003576,
+        "by": "director"
+      }
+    },
+    {
+      "kind": "cue",
+      "from": "director",
+      "to": "禾",
+      "act": "return",
+      "payload": {
+        "act": "return",
+        "who": "禾",
+        "expects": "它记得禾做了什么",
+        "freedom": "按自身心智、所见事实与世界压力行动；可以偏离导演预期",
+        "initialState": {
+          "seed": 7,
+          "focus": "ticket",
+          "person": {
+            "id": "he",
+            "name": "禾",
+            "role": "actor",
+            "home": "home"
+          },
+          "world": {
+            "seed": 7,
+            "places": [
+              {
+                "id": "home",
+                "name": "家",
+                "x": 0.08,
+                "actions": [
+                  "rest",
+                  "eat"
+                ]
+              },
+              {
+                "id": "field",
+                "name": "田",
+                "x": 0.26,
+                "actions": [
+                  "wait-rain"
+                ]
+              },
+              {
+                "id": "well",
+                "name": "井",
+                "x": 0.43,
+                "actions": [
+                  "listen"
+                ]
+              },
+              {
+                "id": "altar",
+                "name": "社树",
+                "x": 0.59,
+                "actions": [
+                  "pray"
+                ]
+              },
+              {
+                "id": "gate",
+                "name": "田伯家",
+                "x": 0.77,
+                "actions": [
+                  "borrow"
+                ]
+              },
+              {
+                "id": "road",
+                "name": "路口",
+                "x": 0.94,
+                "actions": [
+                  "look",
+                  "leave"
+                ]
+              }
+            ],
+            "people": [
+              {
+                "id": "he",
+                "name": "禾",
+                "role": "actor",
+                "home": "home"
+              },
+              {
+                "id": "tianbo",
+                "name": "田伯",
+                "role": "lord",
+                "home": "gate"
+              },
+              {
+                "id": "ji",
+                "name": "季",
+                "role": "scholar",
+                "home": "road"
+              },
+              {
+                "id": "sang",
+                "name": "桑",
+                "role": "family",
+                "home": "home"
+              },
+              {
+                "id": "xiaoshi",
+                "name": "小石",
+                "role": "family",
+                "home": "home"
+              },
+              {
+                "id": "linren",
+                "name": "邻人",
+                "role": "neighbor",
+                "home": "well"
+              },
+              {
+                "id": "luren",
+                "name": "路人",
+                "role": "neighbor",
+                "home": "road"
+              }
+            ],
+            "he": {
+              "temperament": {
+                "pride": 0.73,
+                "awe": 0.89,
+                "duty": 0.85,
+                "attachment": 0.66,
+                "patience": 0.65
+              },
+              "belief": {
+                "qing": 0.5763115837983788,
+                "li": 0.1354495020629838,
+                "ming": 0.28823891413863745
+              }
+            },
+            "tianbo": {
+              "weights": {
+                "qing": 0.1938673263116392,
+                "li": 0.5691594982519745,
+                "ming": 0.23697317543638627
+              },
+              "pride": 0.48,
+              "granary": [
+                0.88,
+                0.9,
+                0.73,
+                0.69
+              ],
+              "requisitionDay": 7
+            },
+            "seasons": [
+              {
+                "season": "spring",
+                "days": 3,
+                "rainExpect": 0.83,
+                "rainActual": 0.08
+              },
+              {
+                "season": "summer",
+                "days": 3,
+                "rainExpect": 0.6,
+                "rainActual": 0.05
+              },
+              {
+                "season": "autumn",
+                "days": 3,
+                "rainExpect": 0.41,
+                "rainActual": 0.05
+              },
+              {
+                "season": "winter",
+                "days": 2,
+                "rainExpect": 0.25,
+                "rainActual": 0.06
+              }
+            ],
+            "omen": {
+              "kind": "halo",
+              "day": 6
+            },
+            "clues": [
+              {
+                "id": "c1",
+                "text": "谁家孩子饿着，田伯会红眼。",
+                "trait": "qing",
+                "sign": 1,
+                "truthful": false,
+                "place": "well",
+                "day": 1,
+                "from": "linren"
+              },
+              {
+                "id": "c2",
+                "text": "禾他爹给田伯他爹扛过粟。",
+                "trait": "qing",
+                "sign": 1,
+                "truthful": false,
+                "place": "home",
+                "day": 1,
+                "from": "sang"
+              },
+              {
+                "id": "c3",
+                "text": "田伯家的账房，夜里还亮着灯。",
+                "trait": "li",
+                "sign": 1,
+                "truthful": true,
+                "place": "home",
+                "day": 2,
+                "from": "sang"
+              },
+              {
+                "id": "c4",
+                "text": "田伯放粟，秋后要加倍。",
+                "trait": "li",
+                "sign": 1,
+                "truthful": true,
+                "place": "well",
+                "day": 3,
+                "from": "linren"
+              },
+              {
+                "id": "c5",
+                "text": "旧人上门，田伯让他在门外等。",
+                "trait": "qing",
+                "sign": -1,
+                "truthful": true,
+                "place": "road",
+                "day": 6,
+                "from": "ji"
+              }
+            ],
+            "jarDays": 25,
+            "family": [
+              {
+                "id": "sang",
+                "name": "桑",
+                "role": "wife"
+              },
+              {
+                "id": "xiaoshi",
+                "name": "小石",
+                "role": "child"
+              }
+            ],
+            "unfoldPressure": 0.61
+          }
+        },
+        "constraints": [
+          "门永远推得开",
+          "你永远能对机器说话",
+          "你永远能回到上一版",
+          "地标不动：你的座位、导师的位置、通往世界的门",
+          "已交付的版本只增不改",
+          "不得把预演写成已发生的事实",
+          "每屏最多30字"
+        ]
+      },
+      "id": "cue:return:1",
+      "t": 99150.5,
+      "day": 11,
+      "receipt": {
+        "at": 107974.5,
+        "by": "禾"
+      }
+    },
+    {
+      "kind": "cue",
+      "from": "director",
+      "to": "导师",
+      "act": "return",
+      "payload": {
+        "act": "return",
+        "who": "导师",
+        "expects": "它记得禾做了什么",
+        "freedom": "按真实来访记忆说话，允许用户不留名字",
+        "initialState": {
+          "seed": 7,
+          "focus": "ticket",
+          "person": {
+            "name": "导师"
+          },
+          "world": {
+            "seed": 7,
+            "places": [
+              {
+                "id": "home",
+                "name": "家",
+                "x": 0.08,
+                "actions": [
+                  "rest",
+                  "eat"
+                ]
+              },
+              {
+                "id": "field",
+                "name": "田",
+                "x": 0.26,
+                "actions": [
+                  "wait-rain"
+                ]
+              },
+              {
+                "id": "well",
+                "name": "井",
+                "x": 0.43,
+                "actions": [
+                  "listen"
+                ]
+              },
+              {
+                "id": "altar",
+                "name": "社树",
+                "x": 0.59,
+                "actions": [
+                  "pray"
+                ]
+              },
+              {
+                "id": "gate",
+                "name": "田伯家",
+                "x": 0.77,
+                "actions": [
+                  "borrow"
+                ]
+              },
+              {
+                "id": "road",
+                "name": "路口",
+                "x": 0.94,
+                "actions": [
+                  "look",
+                  "leave"
+                ]
+              }
+            ],
+            "people": [
+              {
+                "id": "he",
+                "name": "禾",
+                "role": "actor",
+                "home": "home"
+              },
+              {
+                "id": "tianbo",
+                "name": "田伯",
+                "role": "lord",
+                "home": "gate"
+              },
+              {
+                "id": "ji",
+                "name": "季",
+                "role": "scholar",
+                "home": "road"
+              },
+              {
+                "id": "sang",
+                "name": "桑",
+                "role": "family",
+                "home": "home"
+              },
+              {
+                "id": "xiaoshi",
+                "name": "小石",
+                "role": "family",
+                "home": "home"
+              },
+              {
+                "id": "linren",
+                "name": "邻人",
+                "role": "neighbor",
+                "home": "well"
+              },
+              {
+                "id": "luren",
+                "name": "路人",
+                "role": "neighbor",
+                "home": "road"
+              }
+            ],
+            "he": {
+              "temperament": {
+                "pride": 0.73,
+                "awe": 0.89,
+                "duty": 0.85,
+                "attachment": 0.66,
+                "patience": 0.65
+              },
+              "belief": {
+                "qing": 0.5763115837983788,
+                "li": 0.1354495020629838,
+                "ming": 0.28823891413863745
+              }
+            },
+            "tianbo": {
+              "weights": {
+                "qing": 0.1938673263116392,
+                "li": 0.5691594982519745,
+                "ming": 0.23697317543638627
+              },
+              "pride": 0.48,
+              "granary": [
+                0.88,
+                0.9,
+                0.73,
+                0.69
+              ],
+              "requisitionDay": 7
+            },
+            "seasons": [
+              {
+                "season": "spring",
+                "days": 3,
+                "rainExpect": 0.83,
+                "rainActual": 0.08
+              },
+              {
+                "season": "summer",
+                "days": 3,
+                "rainExpect": 0.6,
+                "rainActual": 0.05
+              },
+              {
+                "season": "autumn",
+                "days": 3,
+                "rainExpect": 0.41,
+                "rainActual": 0.05
+              },
+              {
+                "season": "winter",
+                "days": 2,
+                "rainExpect": 0.25,
+                "rainActual": 0.06
+              }
+            ],
+            "omen": {
+              "kind": "halo",
+              "day": 6
+            },
+            "clues": [
+              {
+                "id": "c1",
+                "text": "谁家孩子饿着，田伯会红眼。",
+                "trait": "qing",
+                "sign": 1,
+                "truthful": false,
+                "place": "well",
+                "day": 1,
+                "from": "linren"
+              },
+              {
+                "id": "c2",
+                "text": "禾他爹给田伯他爹扛过粟。",
+                "trait": "qing",
+                "sign": 1,
+                "truthful": false,
+                "place": "home",
+                "day": 1,
+                "from": "sang"
+              },
+              {
+                "id": "c3",
+                "text": "田伯家的账房，夜里还亮着灯。",
+                "trait": "li",
+                "sign": 1,
+                "truthful": true,
+                "place": "home",
+                "day": 2,
+                "from": "sang"
+              },
+              {
+                "id": "c4",
+                "text": "田伯放粟，秋后要加倍。",
+                "trait": "li",
+                "sign": 1,
+                "truthful": true,
+                "place": "well",
+                "day": 3,
+                "from": "linren"
+              },
+              {
+                "id": "c5",
+                "text": "旧人上门，田伯让他在门外等。",
+                "trait": "qing",
+                "sign": -1,
+                "truthful": true,
+                "place": "road",
+                "day": 6,
+                "from": "ji"
+              }
+            ],
+            "jarDays": 25,
+            "family": [
+              {
+                "id": "sang",
+                "name": "桑",
+                "role": "wife"
+              },
+              {
+                "id": "xiaoshi",
+                "name": "小石",
+                "role": "child"
+              }
+            ],
+            "unfoldPressure": 0.61
+          }
+        },
+        "constraints": [
+          "门永远推得开",
+          "你永远能对机器说话",
+          "你永远能回到上一版",
+          "地标不动：你的座位、导师的位置、通往世界的门",
+          "已交付的版本只增不改",
+          "不得把预演写成已发生的事实",
+          "每屏最多30字"
+        ]
+      },
+      "id": "cue:return:2",
+      "t": 99150.80000001192,
+      "day": 11,
+      "receipt": {
+        "at": 107975.60000002384,
+        "by": "导师"
+      }
+    },
+    {
+      "kind": "report",
+      "from": "禾",
+      "to": "director",
+      "act": "return",
+      "payload": {
+        "act": "return",
+        "who": "禾",
+        "did": [
+          "处理本幕提示；观察到0条交付事实",
+          "本幕未留下可归属于自己的行动记录"
+        ],
+        "predicted": "它记得禾做了什么",
+        "actual": "本幕已结束；4次动手，未新增世界事实",
+        "facts": [],
+        "ms": 8823,
+        "voice": [
+          "这一幕我没动手。",
+          "旁的，我不敢添话。"
+        ]
+      },
+      "id": "report:return:1",
+      "t": 107975.19999998808,
+      "day": 11,
+      "receipt": {
+        "at": 107975.30000001192,
+        "by": "director"
+      }
+    },
+    {
+      "kind": "report",
+      "from": "导师",
+      "to": "director",
+      "act": "return",
+      "payload": {
+        "act": "return",
+        "who": "导师",
+        "did": [
+          "处理本幕提示；观察到0条交付事实",
+          "说：禾献了种粟。雨没来，人都来了。",
+          "说：怎么称呼你？",
+          "说：季那边，听说也有人敲门。"
+        ],
+        "predicted": "它记得禾做了什么",
+        "actual": "说：季那边，听说也有人敲门。",
+        "facts": [],
+        "ms": 8823,
+        "voice": [
+          "我说过：禾献了种粟。",
+          "旁的，我不敢添话。"
+        ]
+      },
+      "id": "report:return:2",
+      "t": 107976.5,
+      "day": 11,
+      "receipt": {
+        "at": 107976.69999998808,
+        "by": "director"
+      }
+    },
+    {
+      "kind": "retro",
+      "from": "director",
+      "to": "mentor",
+      "payload": {
+        "intentId": "studio",
+        "predicted": "先看禾真实走过旱年，再在咖啡厅接委托、盖印、看提示飞向演员并收回原局报告",
+        "actual": "禾的真实回报已收妥：预演：给粟；实际：拒绝",
+        "userModelDelta": {
+          "visit.last": {
+            "n": 1,
+            "at": 1792131204047,
+            "dwell": {
+              "door": 426,
+              "ticket": 318,
+              "visit-chronicle": 0,
+              "book-you": 24,
+              "book-it": 0,
+              "east-suburb": 156,
+              "walk2d-place-home": 0,
+              "walk2d-place-field": 0,
+              "walk2d-place-well": 0,
+              "walk2d-place-altar": 0,
+              "walk2d-place-gate": 0,
+              "walk2d-place-road": 0,
+              "walk2d-sky": 0,
+              "walk2d-rumor": 0,
+              "walk2d-offer-accept": 0,
+              "walk2d-offer-decline": 0,
+              "walk2d-commit": 0,
+              "walk2d-he": 332,
+              "walk2d-gate-ring": 3547,
+              "heart-approach": 7992,
+              "heart-go": 2126,
+              "heart-weight-qing": 2306,
+              "heart-weight-li": 6198,
+              "heart-weight-ming": 3709,
+              "heart-write": 544,
+              "heart-close": 3303,
+              "heart-editor-close": 0,
+              "studio-commission": 500,
+              "studio-seal": 4790,
+              "studio-report": 2155,
+              "name": 201,
+              "pen": 0,
+              "seat-lamp": 647
+            },
+            "seed": 7,
+            "name": "客",
+            "changes": [],
+            "skipped": [],
+            "activated": [
+              "ticket"
+            ],
+            "ending": "sacrifice",
+            "endingFact": "禾在社坛献上了来年的种粟，乡邻聚来。"
+          },
+          "mentor.last": {
+            "intentId": "studio",
+            "ending": "sacrifice",
+            "facts": [
+              "f1",
+              "f2",
+              "f3",
+              "f4",
+              "f5",
+              "f6",
+              "f7",
+              "f8",
+              "f9",
+              "f10",
+              "f11",
+              "f12",
+              "f13",
+              "f14",
+              "f15",
+              "f16",
+              "f17",
+              "f18",
+              "f19",
+              "f20",
+              "f21",
+              "f22",
+              "f23",
+              "f24",
+              "f25",
+              "f26",
+              "f27",
+              "f28",
+              "f29",
+              "f30",
+              "f31",
+              "f32",
+              "f33",
+              "f34",
+              "f35",
+              "f36",
+              "f37",
+              "f38:sacrifice",
+              "f39",
+              "studio.studio.accepted",
+              "studio.studio.verified"
+            ],
+            "reports": 9,
+            "predictionErrors": 1,
+            "promises": [
+              "threshold：导师：机器的心智，正写完手上那一笔，尚未亲手碰过",
+              "reveal：临淄此刻：低分辨率，人退回统计，尚未亲手碰过",
+              "reveal：田缝，尚未亲手碰过",
+              "reveal：天：望天，尚未亲手碰过"
+            ]
+          }
+        },
+        "promises": [
+          "threshold：导师：机器的心智，正写完手上那一笔，尚未亲手碰过",
+          "reveal：临淄此刻：低分辨率，人退回统计，尚未亲手碰过",
+          "reveal：田缝，尚未亲手碰过",
+          "reveal：天：望天，尚未亲手碰过"
+        ],
+        "next": "下次从threshold：导师：机器的心智，正写完手上那一笔，尚未亲手碰过接起"
+      },
+      "id": "retro:visit:1",
+      "t": 107977.90000003576,
+      "day": 11,
+      "receipt": {
+        "at": 107978.10000002384,
+        "by": "mentor"
+      }
+    }
+  ],
+  "check": [],
+  "counts": {
+    "commission": 2,
+    "plan": 2,
+    "cue": 10,
+    "report": 10,
+    "retro": 1
+  }
+}

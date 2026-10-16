@@ -1,0 +1,1070 @@
+{
+  "intent": "fifty-years",
+  "seed": 11,
+  "tier": "L1",
+  "when": "2026-10-16T06:09:08.305Z",
+  "status": "ok",
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": [
+      {
+        "level": "warn",
+        "path": "acts[0].lines[0].text",
+        "msg": "「等你一会儿了。先看这个。」不止一句（每屏 ≤ 1 句）",
+        "act": "threshold"
+      },
+      {
+        "level": "warn",
+        "path": "acts[2].reveal",
+        "msg": "揭示顺序里的 he 不是这一幕的元素（若是运行时生成的可忽略）",
+        "act": "reveal"
+      },
+      {
+        "level": "warn",
+        "path": "acts[3].reveal",
+        "msg": "揭示顺序里的 rumor 不是这一幕的元素（若是运行时生成的可忽略）",
+        "act": "han"
+      },
+      {
+        "level": "warn",
+        "path": "acts[3].reveal",
+        "msg": "揭示顺序里的 altar 不是这一幕的元素（若是运行时生成的可忽略）",
+        "act": "han"
+      }
+    ]
+  },
+  "build": {
+    "ok": true,
+    "ms": 3948,
+    "bytes": 33247611,
+    "singleFile": true,
+    "external": []
+  },
+  "play": {
+    "done": true,
+    "reason": "done",
+    "seconds": 169.4,
+    "steps": 74,
+    "stepLog": [
+      {
+        "i": 0,
+        "act": "threshold",
+        "aff": "door",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 1,
+        "act": "threshold",
+        "aff": "ticket",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 2,
+        "act": "chronicle-356",
+        "aff": "chronicle-next",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 3,
+        "act": "chronicle-356",
+        "aff": "chronicle-next",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 4,
+        "act": "reveal",
+        "aff": "east-suburb",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 5,
+        "act": "han",
+        "aff": "walk2d-he",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 6,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 7,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 8,
+        "act": "han",
+        "aff": "heart-go",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 9,
+        "act": "han",
+        "aff": "walk2d-gate-ring",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 10,
+        "act": "han",
+        "aff": "walk2d-gate-ring",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 11,
+        "act": "han",
+        "aff": "walk2d-gate-ring",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 12,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 13,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 14,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 15,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 16,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 17,
+        "act": "han",
+        "aff": "walk2d-he",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 18,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 19,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 20,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 21,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 22,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 23,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 24,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 25,
+        "act": "han",
+        "aff": "walk2d-place-well",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 26,
+        "act": "han",
+        "aff": "walk2d-gate-ring",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 27,
+        "act": "han",
+        "aff": "walk2d-gate-ring",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 28,
+        "act": "han",
+        "aff": "walk2d-gate-ring",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 29,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 30,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 31,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 32,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 33,
+        "act": "chronicle-334",
+        "aff": "chronicle-next",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 34,
+        "act": "chronicle-334",
+        "aff": "chronicle-next",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 35,
+        "act": "ji-speakers",
+        "aff": "ji-scroll",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 36,
+        "act": "ji-speakers",
+        "aff": "school-0",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 37,
+        "act": "ji-speakers",
+        "aff": "school-0",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 38,
+        "act": "ji-speakers",
+        "aff": "school-1",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 39,
+        "act": "ji-speakers",
+        "aff": "school-2",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 40,
+        "act": "ji-speakers",
+        "aff": "school-3",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 41,
+        "act": "ji-wude",
+        "aff": "ji-scroll",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 42,
+        "act": "ji-wude",
+        "aff": "virtue-0",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 43,
+        "act": "ji-wude",
+        "aff": "virtue-1",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 44,
+        "act": "ji-wude",
+        "aff": "virtue-2",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 45,
+        "act": "ji-wude",
+        "aff": "virtue-3",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 46,
+        "act": "ji-wude",
+        "aff": "virtue-0",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 47,
+        "act": "ji-wude",
+        "aff": "virtue-1",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 48,
+        "act": "ji-wude",
+        "aff": "virtue-4",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 49,
+        "act": "chronicle-314",
+        "aff": "chronicle-next",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 50,
+        "act": "chronicle-314",
+        "aff": "chronicle-next",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 51,
+        "act": "tianbo-knife",
+        "aff": "qi-scale",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 52,
+        "act": "tianbo-knife",
+        "aff": "qi-people",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 53,
+        "act": "tianbo-knife",
+        "aff": "qi-king",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 54,
+        "act": "tianbo-knife",
+        "aff": "qi-home",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 55,
+        "act": "tianbo-knife",
+        "aff": "qi-give",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 56,
+        "act": "bells-rest",
+        "aff": "bells-start",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 57,
+        "act": "bells-rest",
+        "aff": "bell-0-r0-p0-a0",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 58,
+        "act": "bells-rest",
+        "aff": "bell-1-r0-p1-a1",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 59,
+        "act": "bells-rest",
+        "aff": "bell-0-r1-p0-a2",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 60,
+        "act": "bells-rest",
+        "aff": "bell-1-r1-p1-a3",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 61,
+        "act": "bells-rest",
+        "aff": "bell-3-r1-p2-a4",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 62,
+        "act": "bells-rest",
+        "aff": "bell-0-r2-p0-a5",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 63,
+        "act": "bells-rest",
+        "aff": "bell-1-r2-p1-a6",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 64,
+        "act": "bells-rest",
+        "aff": "bell-3-r2-p2-a7",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 65,
+        "act": "bells-rest",
+        "aff": "bell-0-r2-p3-a8",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 66,
+        "act": "chronicle-306",
+        "aff": "chronicle-next",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 67,
+        "act": "chronicle-306",
+        "aff": "chronicle-next",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 68,
+        "act": "studio",
+        "aff": "studio-commission",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 69,
+        "act": "studio",
+        "aff": "studio-seal",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 70,
+        "act": "studio",
+        "aff": "studio-report",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 71,
+        "act": "return",
+        "aff": "name",
+        "prefer": "pulse",
+        "progressed": false
+      },
+      {
+        "i": 72,
+        "act": "return",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 73,
+        "act": "return",
+        "aff": "door",
+        "prefer": "pulse",
+        "progressed": true
+      }
+    ],
+    "shots": [
+      "01-threshold-enter.png",
+      "02-threshold-s0.png",
+      "03-chronicle-356-enter.png",
+      "04-chronicle-356-s2.png",
+      "05-reveal-enter.png",
+      "06-han-enter.png",
+      "07-han-s5.png",
+      "08-han-s6.png",
+      "09-han-s7.png",
+      "10-han-s8.png",
+      "11-chronicle-334-enter.png",
+      "12-chronicle-334-s33.png",
+      "13-ji-speakers-enter.png",
+      "14-ji-speakers-s35.png",
+      "15-ji-speakers-s36.png",
+      "16-ji-speakers-s37.png",
+      "17-ji-speakers-s38.png",
+      "18-ji-wude-enter.png",
+      "19-ji-wude-s41.png",
+      "20-ji-wude-s42.png",
+      "21-ji-wude-s43.png",
+      "22-ji-wude-s44.png",
+      "23-chronicle-314-enter.png",
+      "24-chronicle-314-s49.png",
+      "25-tianbo-knife-enter.png",
+      "26-tianbo-knife-s51.png",
+      "27-tianbo-knife-s52.png",
+      "28-tianbo-knife-s53.png",
+      "29-tianbo-knife-s54.png",
+      "30-bells-rest-enter.png",
+      "31-bells-rest-s56.png",
+      "32-bells-rest-s57.png",
+      "33-bells-rest-s58.png",
+      "34-bells-rest-s59.png",
+      "35-chronicle-306-enter.png",
+      "36-chronicle-306-s66.png",
+      "37-studio-enter.png",
+      "38-studio-s68.png",
+      "39-studio-s69.png",
+      "40-studio-s70.png",
+      "41-return-enter.png",
+      "42-return-s71.png",
+      "43-return-s72.png",
+      "44-return-s73.png",
+      "45-final-done.png"
+    ],
+    "traceEvents": 1130,
+    "errors": 0,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "fallbackClicks": 0,
+    "firstActionSec": 0.425,
+    "stageFpsP5": 29.850746268656717,
+    "ledger": {
+      "source": "window.__zhuzi.ctx.handoff.ledger",
+      "facts": 70
+    },
+    "acts": [
+      {
+        "act": "threshold",
+        "expected": "灯一盏盏亮到你这边",
+        "entered": true,
+        "exited": true,
+        "durationMs": 8341,
+        "firstAffMs": 4,
+        "firstActionMs": 3140,
+        "predictedFirstActionMs": 4000,
+        "note": "与预演相近",
+        "lines": [
+          "帮禾借点粟，让一家人过冬。"
+        ]
+      },
+      {
+        "act": "chronicle-356",
+        "expected": "天下消息走到一个人面前",
+        "entered": true,
+        "exited": true,
+        "durationMs": 4849,
+        "firstAffMs": 3,
+        "firstActionMs": 3045,
+        "predictedFirstActionMs": 3000,
+        "note": "与预演相近",
+        "lines": [
+          "齐赵在平陆会盟了。",
+          "我曾言：齐赵在平陆会盟了。"
+        ]
+      },
+      {
+        "act": "reveal",
+        "expected": "你看向哪里，哪里显影",
+        "entered": true,
+        "exited": true,
+        "durationMs": 2463,
+        "firstAffMs": 3,
+        "firstActionMs": 2348,
+        "predictedFirstActionMs": 6000,
+        "note": "与预演相近",
+        "lines": []
+      },
+      {
+        "act": "han",
+        "expected": "田伯开门后说的和心里预演的不一样",
+        "entered": true,
+        "exited": true,
+        "durationMs": 60474,
+        "firstAffMs": 6,
+        "firstActionMs": 3116,
+        "predictedFirstActionMs": 3000,
+        "note": "与预演相近",
+        "lines": [
+          "秋旱未解，得向田伯借点粟。",
+          "选个借法，先看预想。",
+          "禾猜他会拒绝。",
+          "禾猜他会拒绝。",
+          "禾没用押田地：再等等，等他先看见我瘦。",
+          "禾另猜他肯借粟。",
+          "田伯，我爹给您爹扛过粟。",
+          "王的人刚走。",
+          "叙旧情：预想肯借粟，实际会拒绝。",
+          "听风声能当饭吃？",
+          "禾猜他肯借粟。",
+          "田伯，我爹给您爹扛过粟。",
+          "你爹的粟，我记着。",
+          "叙旧情：预想肯借粟，实际肯给粟。",
+          "这份情，我记下。"
+        ]
+      },
+      {
+        "act": "chronicle-334",
+        "expected": "天下消息走到一个人面前",
+        "entered": true,
+        "exited": true,
+        "durationMs": 3979,
+        "firstAffMs": 3,
+        "firstActionMs": 2176,
+        "predictedFirstActionMs": 3000,
+        "note": "与预演相近",
+        "lines": [
+          "如今齐魏互称王了。",
+          "我曾言：如今齐魏互称王了。"
+        ]
+      },
+      {
+        "act": "ji-speakers",
+        "expected": "季在诸家之言中争取递简的机会",
+        "entered": true,
+        "exited": true,
+        "durationMs": 10725,
+        "firstAffMs": 17,
+        "firstActionMs": 2453,
+        "predictedFirstActionMs": 3000,
+        "note": "与预演相近",
+        "lines": [
+          "借后世存下的诸家之言重掂王号。",
+          "代火者必将水。",
+          "这句话，先留下。",
+          "兼相爱，交相利。",
+          "这句话，先留下。",
+          "己所不欲，勿施于人。",
+          "这句话，先留下。",
+          "道可道，非常道。",
+          "这句话，先留下。",
+          "白马非马。",
+          "这句话，先留下。",
+          "我被问得答不上来。"
+        ]
+      },
+      {
+        "act": "ji-wude",
+        "expected": "季的齐水德设想可以被驳回",
+        "entered": true,
+        "exited": true,
+        "durationMs": 15933,
+        "firstAffMs": 10,
+        "firstActionMs": 2259,
+        "predictedFirstActionMs": 3000,
+        "note": "与预演相近",
+        "lines": [
+          "齐水德，是我在盘上的设想。",
+          "夏木既衰，何德继之？",
+          "再看相胜的来路。",
+          "再看相胜的来路。",
+          "再看相胜的来路。",
+          "此德相胜。",
+          "商金既衰，何德继之？",
+          "再看相胜的来路。",
+          "此德相胜。",
+          "若齐继周，当取何德？",
+          "此德相胜。",
+          "天命之说，被驳了一句。"
+        ]
+      },
+      {
+        "act": "chronicle-314",
+        "expected": "天下消息走到一个人面前",
+        "entered": true,
+        "exited": true,
+        "durationMs": 3959,
+        "firstAffMs": 2,
+        "firstActionMs": 2155,
+        "predictedFirstActionMs": 3000,
+        "note": "与预演相近",
+        "lines": [
+          "燕地拿下，征粮又来了。",
+          "我说过：燕地拿下，征粮又来了。"
+        ]
+      },
+      {
+        "act": "tianbo-knife",
+        "expected": "田伯掂过顾虑后仍能亲自选择",
+        "entered": true,
+        "exited": true,
+        "durationMs": 10258,
+        "firstAffMs": 2,
+        "firstActionMs": 2533,
+        "predictedFirstActionMs": 3000,
+        "note": "与预演相近",
+        "lines": [
+          "门外的粥，不能只在嘴上。",
+          "王的车，明日便到。",
+          "家里少一碗，还撑得住。",
+          "粟出了仓，王的车还会来。"
+        ]
+      },
+      {
+        "act": "bells-rest",
+        "expected": "机器先敲，来客敲回去",
+        "entered": true,
+        "exited": true,
+        "durationMs": 21748,
+        "firstAffMs": 1,
+        "firstActionMs": 2322,
+        "predictedFirstActionMs": 3000,
+        "note": "与预演相近",
+        "lines": [
+          "这些人做过的，我记着。"
+        ]
+      },
+      {
+        "act": "chronicle-306",
+        "expected": "天下消息走到一个人面前",
+        "entered": true,
+        "exited": true,
+        "durationMs": 3901,
+        "firstAffMs": 3,
+        "firstActionMs": 2095,
+        "predictedFirstActionMs": 3000,
+        "note": "与预演相近",
+        "lines": [
+          "秦来的大臣也进齐了。",
+          "我说过：秦来的大臣也进齐了。"
+        ]
+      },
+      {
+        "act": "studio",
+        "expected": "演员的实际会改动案上的预演",
+        "entered": true,
+        "exited": true,
+        "durationMs": 12223,
+        "firstAffMs": 5,
+        "firstActionMs": 2608,
+        "predictedFirstActionMs": 2000,
+        "note": "与预演相近",
+        "lines": [
+          "第一次来，先让你推开门。",
+          "田伯开门后说的和心里预演的不一样",
+          "预演：借粟；实际：给粟",
+          "我说过：禾猜他肯借粟。",
+          "我记下：禾心里的小田伯挪动了：「…。"
+        ]
+      },
+      {
+        "act": "return",
+        "expected": "它记得禾做了什么",
+        "entered": true,
+        "exited": true,
+        "durationMs": 9187,
+        "firstAffMs": 4214,
+        "firstActionMs": 5308,
+        "predictedFirstActionMs": 5000,
+        "note": "与预演相近",
+        "lines": [
+          "田伯给了粟。禾欠下一份情。",
+          "怎么称呼你？",
+          "小石接过禾的杖，还想往前走。"
+        ]
+      }
+    ]
+  },
+  "seconds": 179.2,
+  "files": [
+    {
+      "path": "history-save.json",
+      "bytes": 36208
+    },
+    {
+      "path": "index.html",
+      "bytes": 33247611
+    },
+    {
+      "path": "layers.json",
+      "bytes": 199390
+    },
+    {
+      "path": "ledger.json",
+      "bytes": 10302
+    },
+    {
+      "path": "plan.json",
+      "bytes": 157505
+    },
+    {
+      "path": "report.json",
+      "bytes": 24933
+    },
+    {
+      "path": "shots/01-threshold-enter.png",
+      "bytes": 936421
+    },
+    {
+      "path": "shots/02-threshold-s0.png",
+      "bytes": 1086410
+    },
+    {
+      "path": "shots/03-chronicle-356-enter.png",
+      "bytes": 23958
+    },
+    {
+      "path": "shots/04-chronicle-356-s2.png",
+      "bytes": 28678
+    },
+    {
+      "path": "shots/05-reveal-enter.png",
+      "bytes": 95455
+    },
+    {
+      "path": "shots/06-han-enter.png",
+      "bytes": 1481132
+    },
+    {
+      "path": "shots/07-han-s5.png",
+      "bytes": 1313404
+    },
+    {
+      "path": "shots/08-han-s6.png",
+      "bytes": 1324556
+    },
+    {
+      "path": "shots/09-han-s7.png",
+      "bytes": 1327616
+    },
+    {
+      "path": "shots/10-han-s8.png",
+      "bytes": 1493388
+    },
+    {
+      "path": "shots/11-chronicle-334-enter.png",
+      "bytes": 23102
+    },
+    {
+      "path": "shots/12-chronicle-334-s33.png",
+      "bytes": 27882
+    },
+    {
+      "path": "shots/13-ji-speakers-enter.png",
+      "bytes": 1034324
+    },
+    {
+      "path": "shots/14-ji-speakers-s35.png",
+      "bytes": 1019630
+    },
+    {
+      "path": "shots/15-ji-speakers-s36.png",
+      "bytes": 1020362
+    },
+    {
+      "path": "shots/16-ji-speakers-s37.png",
+      "bytes": 1021518
+    },
+    {
+      "path": "shots/17-ji-speakers-s38.png",
+      "bytes": 1019585
+    },
+    {
+      "path": "shots/18-ji-wude-enter.png",
+      "bytes": 1010218
+    },
+    {
+      "path": "shots/19-ji-wude-s41.png",
+      "bytes": 939473
+    },
+    {
+      "path": "shots/20-ji-wude-s42.png",
+      "bytes": 939700
+    },
+    {
+      "path": "shots/21-ji-wude-s43.png",
+      "bytes": 940514
+    },
+    {
+      "path": "shots/22-ji-wude-s44.png",
+      "bytes": 940448
+    },
+    {
+      "path": "shots/23-chronicle-314-enter.png",
+      "bytes": 27025
+    },
+    {
+      "path": "shots/24-chronicle-314-s49.png",
+      "bytes": 31796
+    },
+    {
+      "path": "shots/25-tianbo-knife-enter.png",
+      "bytes": 944020
+    },
+    {
+      "path": "shots/26-tianbo-knife-s51.png",
+      "bytes": 952652
+    },
+    {
+      "path": "shots/27-tianbo-knife-s52.png",
+      "bytes": 969004
+    },
+    {
+      "path": "shots/28-tianbo-knife-s53.png",
+      "bytes": 967405
+    },
+    {
+      "path": "shots/29-tianbo-knife-s54.png",
+      "bytes": 972152
+    },
+    {
+      "path": "shots/30-bells-rest-enter.png",
+      "bytes": 922035
+    },
+    {
+      "path": "shots/31-bells-rest-s56.png",
+      "bytes": 919125
+    },
+    {
+      "path": "shots/32-bells-rest-s57.png",
+      "bytes": 919666
+    },
+    {
+      "path": "shots/33-bells-rest-s58.png",
+      "bytes": 924628
+    },
+    {
+      "path": "shots/34-bells-rest-s59.png",
+      "bytes": 921370
+    },
+    {
+      "path": "shots/35-chronicle-306-enter.png",
+      "bytes": 25818
+    },
+    {
+      "path": "shots/36-chronicle-306-s66.png",
+      "bytes": 30406
+    },
+    {
+      "path": "shots/37-studio-enter.png",
+      "bytes": 276376
+    },
+    {
+      "path": "shots/38-studio-s68.png",
+      "bytes": 278855
+    },
+    {
+      "path": "shots/39-studio-s69.png",
+      "bytes": 274651
+    },
+    {
+      "path": "shots/40-studio-s70.png",
+      "bytes": 279705
+    },
+    {
+      "path": "shots/41-return-enter.png",
+      "bytes": 358316
+    },
+    {
+      "path": "shots/42-return-s71.png",
+      "bytes": 373614
+    },
+    {
+      "path": "shots/43-return-s72.png",
+      "bytes": 379359
+    },
+    {
+      "path": "shots/44-return-s73.png",
+      "bytes": 319564
+    },
+    {
+      "path": "shots/45-final-done.png",
+      "bytes": 319240
+    },
+    {
+      "path": "trace.jsonl",
+      "bytes": 321128
+    }
+  ]
+}

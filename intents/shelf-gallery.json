@@ -1,0 +1,20 @@
+{
+  "id": "shelf-gallery",
+  "title": "作品架",
+  "hypothesis": {
+    "id": "h-shelf",
+    "text": "把交付与改版铺开，你会愿意停在某张画上追问",
+    "mode": "probe"
+  },
+  "target": "拖开一卷既有作品，看见从灯前到东郊的变化，离开后记住停处",
+  "stop": "展卷到底或收起",
+  "form": "gallery",
+  "perspective": {
+    "who": "你",
+    "control": 1
+  },
+  "era": "zhanguo",
+  "durationMin": 2,
+  "director": "shuheng",
+  "notes": "L2 图集；8 张本项目现有截图/空间稿，原样复制；来源和许可限制见 assets/library/shelf-gallery/recipe.json。"
+}

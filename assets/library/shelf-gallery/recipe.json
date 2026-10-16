@@ -1,0 +1,88 @@
+{
+  "id": "shelf-gallery",
+  "created": "2026-10-16",
+  "method": "从 runs 与 docs/3d-design 挑选现有图片，原样复制，未重新生成或修改图像。",
+  "license": "本项目生成/截图，外部分发需确认；不主张这些图片采用任何开放许可证。",
+  "plates": [
+    {
+      "id": "shelf-gallery/plates/01-threshold.png",
+      "source": "runs/studio/2/L1/shots/02-threshold-s0.png",
+      "title": "初访的门",
+      "caption": "门后先亮起一盏灯",
+      "question": "推门以后，你先看见了谁？",
+      "sha256": "75dc4d1b837d1d34fd74e4f2795c05b59bf13eec5009cf4a23b70b95fffbc5dd",
+      "provenance": "本项目生成/截图；从仓库现有文件原样复制。",
+      "license": "未声明开放许可；本项目生成/截图，外部分发需确认。"
+    },
+    {
+      "id": "shelf-gallery/plates/02-drought.png",
+      "source": "runs/han-act1/3/L1/shots/05-han-s3.png",
+      "title": "旱田里的禾",
+      "caption": "旱田把禾留在原地",
+      "question": "若天不答，禾还能向谁开口？",
+      "sha256": "699d75aaa3fa9c11478bf5e467d4123d6b24c206bd207c7464bc725c9c3061c5",
+      "provenance": "本项目生成/截图；从仓库现有文件原样复制。",
+      "license": "未声明开放许可；本项目生成/截图，外部分发需确认。"
+    },
+    {
+      "id": "shelf-gallery/plates/03-studio.png",
+      "source": "runs/studio/2/L1/shots/11-studio-s32.png",
+      "title": "最初的工作室",
+      "caption": "作品开始有了自己的架子",
+      "question": "你会把哪件作品留在手边？",
+      "sha256": "98241c6a4e3a5c912d9646596cd66476e8c482d224d9430046d762b469bab020",
+      "provenance": "本项目生成/截图；从仓库现有文件原样复制。",
+      "license": "未声明开放许可；本项目生成/截图，外部分发需确认。"
+    },
+    {
+      "id": "shelf-gallery/plates/04-return.png",
+      "source": "runs/studio/2/L1/shots/16-return-s36.png",
+      "title": "回到灯前",
+      "caption": "走过一遭，灯下多了痕迹",
+      "question": "再来一次，你还会走同一条路吗？",
+      "sha256": "d704dd43c74782c2bfd9ed4ece737f24b967b53687396770f8962cfdb6e4ec45",
+      "provenance": "本项目生成/截图；从仓库现有文件原样复制。",
+      "license": "未声明开放许可；本项目生成/截图，外部分发需确认。"
+    },
+    {
+      "id": "shelf-gallery/plates/05-chronicle.png",
+      "source": "runs/fifty-years/3/L1/shots/10-chronicle-334-enter.png",
+      "title": "五十年长卷",
+      "caption": "一幕之间，岁月已经过去",
+      "question": "岁月拿走的，谁还记得？",
+      "sha256": "780419239a6f613a3e6c36329642b3c1a5cc6c791600494bf1ea6a5480c61552",
+      "provenance": "本项目生成/截图；从仓库现有文件原样复制。",
+      "license": "未声明开放许可；本项目生成/截图，外部分发需确认。"
+    },
+    {
+      "id": "shelf-gallery/plates/06-jixia.png",
+      "source": "runs/fifty-years/3/L1/shots/14-ji-speakers-s30.png",
+      "title": "稷下的争辩",
+      "caption": "话传到另一人耳里就变了",
+      "question": "同一句话，为何各人听见不同？",
+      "sha256": "a264f256abbdc84361627f457e29276d7a4af50d17e476820bbf410e67ab1b01",
+      "provenance": "本项目生成/截图；从仓库现有文件原样复制。",
+      "license": "未声明开放许可；本项目生成/截图，外部分发需确认。"
+    },
+    {
+      "id": "shelf-gallery/plates/07-east-design.png",
+      "source": "docs/3d-design/east-suburb/views/front.png",
+      "title": "东郊的空间稿",
+      "caption": "纸上的东郊开始有了远近",
+      "question": "换一个站位，你还认得这片田吗？",
+      "sha256": "0e181e08ca95264365ef05526b9f9808cea8a32b0fa65760d586f70bf9ab7d18",
+      "provenance": "本项目生成/截图；从仓库现有文件原样复制。",
+      "license": "未声明开放许可；本项目生成/截图，外部分发需确认。"
+    },
+    {
+      "id": "shelf-gallery/plates/08-east-delivered.png",
+      "source": "runs/east-suburb-3d/4/L3/shots/05-east3d-s3.png",
+      "title": "东郊的交付画面",
+      "caption": "禾终于能在天地间抬头",
+      "question": "景深变了，禾的难处变了吗？",
+      "sha256": "2adbc127d4071a796b14a1fd9cb82ad415477a6d80f1f8069cf8db849ac0c233",
+      "provenance": "本项目生成/截图；从仓库现有文件原样复制。",
+      "license": "未声明开放许可；本项目生成/截图，外部分发需确认。"
+    }
+  ]
+}

@@ -1,0 +1,217 @@
+{
+  "intent": "desk",
+  "seed": 11,
+  "tier": "L1",
+  "when": "2026-10-16T09:01:16.599Z",
+  "status": "ok",
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": []
+  },
+  "build": {
+    "ok": true,
+    "ms": 979,
+    "bytes": 33564908,
+    "singleFile": true,
+    "external": []
+  },
+  "play": {
+    "done": true,
+    "reason": "done",
+    "seconds": 12.7,
+    "steps": 4,
+    "stepLog": [
+      {
+        "i": 0,
+        "act": "desk-entry",
+        "aff": "desk-in",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 1,
+        "act": "desk-mentor",
+        "aff": "desk-doing",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 2,
+        "act": "desk-directors",
+        "aff": "desk-shelf-in",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 3,
+        "act": "desk-shelf",
+        "aff": "desk-open",
+        "prefer": "focus",
+        "progressed": true
+      }
+    ],
+    "shots": [
+      "01-desk-entry-enter.png",
+      "02-desk-mentor-enter.png",
+      "03-desk-directors-enter.png",
+      "04-desk-shelf-enter.png",
+      "05-desk-shelf-s3.png",
+      "06-final-done.png"
+    ],
+    "traceEvents": 74,
+    "errors": 0,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "fallbackClicks": 0,
+    "firstActionSec": 0.397,
+    "stageFpsP5": 59.523809523812105,
+    "ledger": null,
+    "acts": [
+      {
+        "act": "desk-entry",
+        "expected": "案上一枚印",
+        "entered": true,
+        "exited": true,
+        "durationMs": 2300,
+        "firstAffMs": 6,
+        "firstActionMs": 2299,
+        "predictedFirstActionMs": 100,
+        "note": "首个动作 2299ms，比预演的 100ms 慢很多（模拟玩家要先等画面稳定约 450ms）",
+        "lines": [
+          "已有咖啡厅入口，先看一件，先看《咖啡"
+        ]
+      },
+      {
+        "act": "desk-mentor",
+        "expected": "导师对你的想法",
+        "entered": true,
+        "exited": true,
+        "durationMs": 3082,
+        "firstAffMs": 0,
+        "firstActionMs": 3082,
+        "predictedFirstActionMs": 100,
+        "note": "首个动作 3082ms，比预演的 100ms 慢很多（模拟玩家要先等画面稳定约 450ms）",
+        "lines": [
+          "上回停在案上，接着看"
+        ]
+      },
+      {
+        "act": "desk-directors",
+        "expected": "基础导演与叔衡各自的案",
+        "entered": true,
+        "exited": true,
+        "durationMs": 3068,
+        "firstAffMs": 0,
+        "firstActionMs": 3068,
+        "predictedFirstActionMs": 100,
+        "note": "首个动作 3068ms，比预演的 100ms 慢很多（模拟玩家要先等画面稳定约 450ms）",
+        "lines": [
+          "十样东西抢眼就找不到动作"
+        ]
+      },
+      {
+        "act": "desk-shelf",
+        "expected": "架上一件真实作品",
+        "entered": true,
+        "exited": true,
+        "durationMs": 3912,
+        "firstAffMs": 1,
+        "firstActionMs": 3080,
+        "predictedFirstActionMs": 100,
+        "note": "首个动作 3080ms，比预演的 100ms 慢很多（模拟玩家要先等画面稳定约 450ms）",
+        "lines": [
+          "抽出一卷，门便亮了",
+          "已在新页打开"
+        ]
+      }
+    ]
+  },
+  "seconds": 14.7,
+  "files": [
+    {
+      "path": "bench.json",
+      "bytes": 6680
+    },
+    {
+      "path": "curve.csv",
+      "bytes": 151
+    },
+    {
+      "path": "entry-verification.json",
+      "bytes": 5779
+    },
+    {
+      "path": "fifty-years-regression-attempt1.json",
+      "bytes": 9300
+    },
+    {
+      "path": "fifty-years-regression-curve.csv",
+      "bytes": 290
+    },
+    {
+      "path": "fifty-years-regression-run.json",
+      "bytes": 9298
+    },
+    {
+      "path": "first-visit-regression-attempt1.json",
+      "bytes": 8264
+    },
+    {
+      "path": "first-visit-regression-curve.csv",
+      "bytes": 210
+    },
+    {
+      "path": "first-visit-regression-run.json",
+      "bytes": 8294
+    },
+    {
+      "path": "index.html",
+      "bytes": 33564908
+    },
+    {
+      "path": "layers.json",
+      "bytes": 35953
+    },
+    {
+      "path": "plan.json",
+      "bytes": 748214
+    },
+    {
+      "path": "report.json",
+      "bytes": 4942
+    },
+    {
+      "path": "schedule-verification.json",
+      "bytes": 4948
+    },
+    {
+      "path": "shots/01-desk-entry-enter.png",
+      "bytes": 470032
+    },
+    {
+      "path": "shots/02-desk-mentor-enter.png",
+      "bytes": 490894
+    },
+    {
+      "path": "shots/03-desk-directors-enter.png",
+      "bytes": 477711
+    },
+    {
+      "path": "shots/04-desk-shelf-enter.png",
+      "bytes": 523533
+    },
+    {
+      "path": "shots/05-desk-shelf-s3.png",
+      "bytes": 533839
+    },
+    {
+      "path": "shots/06-final-done.png",
+      "bytes": 533839
+    },
+    {
+      "path": "trace.jsonl",
+      "bytes": 38970
+    }
+  ]
+}

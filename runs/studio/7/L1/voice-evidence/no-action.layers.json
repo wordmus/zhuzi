@@ -1,0 +1,371 @@
+[
+  {
+    "kind": "commission",
+    "from": "mentor",
+    "to": "director",
+    "payload": {
+      "intentId": "studio-no-action",
+      "title": "没有旧演出的回信",
+      "hypothesis": {
+        "id": "honest-report",
+        "text": "没有行动时不冒认行动",
+        "mode": "probe"
+      },
+      "target": "演员只收提示，明说没有动手",
+      "stop": "report:archived",
+      "budget": {
+        "tier": "L1",
+        "lamp": 0.8,
+        "note": "白天·宽屏·第1次来；按本机安排篇幅，1幕"
+      },
+      "userModel": {
+        "visits": 1,
+        "sinceLastMs": 0,
+        "dayPart": "白天",
+        "device": "宽屏"
+      },
+      "why": "初次见面，先给你一件再问。"
+    },
+    "id": "commission:visit:1",
+    "t": 13,
+    "receipt": {
+      "at": 3968,
+      "by": "director"
+    }
+  },
+  {
+    "kind": "plan",
+    "from": "director",
+    "to": "mentor",
+    "payload": {
+      "planId": "studio-no-action",
+      "version": 1,
+      "director": {
+        "id": "selftest",
+        "name": "自测导演"
+      },
+      "acts": [
+        {
+          "id": "studio",
+          "framework": "studio",
+          "author": "叔衡",
+          "focus": "studio-commission"
+        }
+      ],
+      "accept": "接下这1幕，按事实交付。",
+      "changes": [],
+      "rehearsal": [
+        {
+          "act": "studio",
+          "expect": "只接提示，不造行动",
+          "risk": "不能借用别人的事实"
+        }
+      ]
+    },
+    "id": "plan:visit:1",
+    "t": 3969,
+    "receipt": {
+      "at": 3969,
+      "by": "mentor"
+    }
+  },
+  {
+    "kind": "cue",
+    "from": "director",
+    "to": "禾",
+    "act": "studio",
+    "payload": {
+      "act": "studio",
+      "who": "禾",
+      "expects": "演员的实际会改动案上的预演",
+      "freedom": "复核原局报告；保留真实实际与误差，不改旧决定",
+      "initialState": {
+        "sourceAct": "studio",
+        "sourceReport": null,
+        "sourceCue": null,
+        "request": "交回本次已发生的报告",
+        "original": {
+          "seed": 7,
+          "places": [
+            {
+              "id": "home",
+              "name": "家",
+              "x": 0.08,
+              "actions": [
+                "rest",
+                "eat"
+              ]
+            },
+            {
+              "id": "field",
+              "name": "田",
+              "x": 0.26,
+              "actions": [
+                "wait-rain"
+              ]
+            },
+            {
+              "id": "well",
+              "name": "井",
+              "x": 0.43,
+              "actions": [
+                "listen"
+              ]
+            },
+            {
+              "id": "altar",
+              "name": "社树",
+              "x": 0.59,
+              "actions": [
+                "pray"
+              ]
+            },
+            {
+              "id": "gate",
+              "name": "田伯家",
+              "x": 0.77,
+              "actions": [
+                "borrow"
+              ]
+            },
+            {
+              "id": "road",
+              "name": "路口",
+              "x": 0.94,
+              "actions": [
+                "look",
+                "leave"
+              ]
+            }
+          ],
+          "people": [
+            {
+              "id": "he",
+              "name": "禾",
+              "role": "actor",
+              "home": "home"
+            },
+            {
+              "id": "tianbo",
+              "name": "田伯",
+              "role": "lord",
+              "home": "gate"
+            },
+            {
+              "id": "ji",
+              "name": "季",
+              "role": "scholar",
+              "home": "road"
+            },
+            {
+              "id": "sang",
+              "name": "桑",
+              "role": "family",
+              "home": "home"
+            },
+            {
+              "id": "xiaoshi",
+              "name": "小石",
+              "role": "family",
+              "home": "home"
+            },
+            {
+              "id": "mu",
+              "name": "母",
+              "role": "family",
+              "home": "home"
+            },
+            {
+              "id": "linren",
+              "name": "邻人",
+              "role": "neighbor",
+              "home": "well"
+            },
+            {
+              "id": "luren",
+              "name": "路人",
+              "role": "neighbor",
+              "home": "road"
+            }
+          ],
+          "he": {
+            "temperament": {
+              "pride": 0.56,
+              "awe": 0.79,
+              "duty": 0.79,
+              "attachment": 0.84,
+              "patience": 0.54
+            },
+            "belief": {
+              "qing": 0.5394447192922235,
+              "li": 0.17907316773664206,
+              "ming": 0.28148211297113446
+            }
+          },
+          "tianbo": {
+            "weights": {
+              "qing": 0.15783014907837517,
+              "li": 0.5411736644990742,
+              "ming": 0.3009961864225506
+            },
+            "pride": 0.78,
+            "granary": [
+              0.94,
+              0.9,
+              0.64,
+              0.53
+            ],
+            "requisitionDay": 8
+          },
+          "seasons": [
+            {
+              "season": "spring",
+              "days": 3,
+              "rainExpect": 0.77,
+              "rainActual": 0.04
+            },
+            {
+              "season": "summer",
+              "days": 3,
+              "rainExpect": 0.61,
+              "rainActual": 0.09
+            },
+            {
+              "season": "autumn",
+              "days": 3,
+              "rainExpect": 0.35,
+              "rainActual": 0.08
+            },
+            {
+              "season": "winter",
+              "days": 2,
+              "rainExpect": 0.25,
+              "rainActual": 0.06
+            }
+          ],
+          "omen": {
+            "kind": "yinghuo",
+            "day": 5
+          },
+          "clues": [
+            {
+              "id": "c1",
+              "text": "东头那三亩地，田伯早看中了。",
+              "trait": "li",
+              "sign": 1,
+              "truthful": true,
+              "place": "home",
+              "day": 2,
+              "from": "sang"
+            },
+            {
+              "id": "c2",
+              "text": "谁家孩子饿着，田伯会红眼。",
+              "trait": "qing",
+              "sign": 1,
+              "truthful": false,
+              "place": "road",
+              "day": 4,
+              "from": "ji"
+            },
+            {
+              "id": "c3",
+              "text": "田伯把仓里的粟卖进城，一石三百钱。",
+              "trait": "li",
+              "sign": 1,
+              "truthful": true,
+              "place": "well",
+              "day": 4,
+              "from": "linren"
+            },
+            {
+              "id": "c4",
+              "text": "田伯收地契，不收人情。",
+              "trait": "li",
+              "sign": 1,
+              "truthful": true,
+              "place": "well",
+              "day": 8,
+              "from": "linren"
+            }
+          ],
+          "jarDays": 25,
+          "family": [
+            {
+              "id": "sang",
+              "name": "桑",
+              "role": "wife"
+            },
+            {
+              "id": "xiaoshi",
+              "name": "小石",
+              "role": "child"
+            },
+            {
+              "id": "mu",
+              "name": "母",
+              "role": "mother"
+            }
+          ],
+          "unfoldPressure": 0.63
+        }
+      },
+      "constraints": [
+        "不能把预演当成事实"
+      ]
+    },
+    "id": "cue:studio:1",
+    "t": 3969,
+    "receipt": {
+      "at": 4778,
+      "by": "禾"
+    }
+  },
+  {
+    "kind": "report",
+    "from": "禾",
+    "to": "director",
+    "act": "studio",
+    "payload": {
+      "facts": [],
+      "predicted": "演员的实际会改动案上的预演",
+      "did": [
+        "禾已接收提示信",
+        "复核原件：cue:studio:1"
+      ],
+      "act": "studio",
+      "who": "禾",
+      "actual": "禾接过了提示信。",
+      "ms": 2614,
+      "voice": [
+        "这一幕我没动手。",
+        "旁的，我不敢添话。"
+      ]
+    },
+    "id": "report:studio:1",
+    "t": 6584,
+    "receipt": {
+      "at": 11141,
+      "by": "director"
+    }
+  },
+  {
+    "kind": "retro",
+    "from": "director",
+    "to": "mentor",
+    "payload": {
+      "intentId": "studio-no-action",
+      "predicted": "演员的实际会改动案上的预演",
+      "actual": "禾接过了提示信。",
+      "userModelDelta": {},
+      "promises": [],
+      "next": "查阅本幕真实报告"
+    },
+    "id": "retro:visit:1",
+    "t": 15007,
+    "receipt": {
+      "at": 15007,
+      "by": "mentor"
+    }
+  }
+]

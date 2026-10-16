@@ -10,3 +10,6 @@ docs/resume/
 docs/notes/
 .pi/
 ~$*.docx
+
+# 构建产物与 index.html 逐字节相同，不入库（bench 缺 index.html 时才回退读它）
+runs/**/build/

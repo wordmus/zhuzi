@@ -157,6 +157,15 @@ export function mountPresenter(ctx: Ctx): void {
   const layerLetters = node('pre');
   dialog.append(layerStatus, layerLetters);
 
+  const machineDetails = node('details');
+  machineDetails.style.cssText = 'margin:14px 0;padding:10px 14px;background:#18110b;border:1px solid #4a3824;border-radius:4px;';
+  const machineSummary = node('summary', '看整台机器');
+  machineSummary.style.cssText = 'cursor:pointer;color:#c9a24a;font-weight:500;';
+  const machineBody = node('div');
+  machineBody.style.cssText = 'margin-top:10px;font-size:13px;line-height:1.6;color:#d8cbb0;';
+  machineDetails.append(machineSummary, machineBody);
+  dialog.appendChild(machineDetails);
+
   title('心智停在哪一层');
   const mind = node('p');
   dialog.appendChild(mind);
@@ -228,6 +237,33 @@ export function mountPresenter(ctx: Ctx): void {
       delete (data as Partial<typeof e>).kind;
       return `${(e.t / 1000).toFixed(1)}秒 ${kindNames[e.kind] ?? e.kind} ${JSON.stringify(data)}`;
     }).join('\n');
+
+    const poured = ctx.store.get<boolean>('mentor.lamp.poured', false);
+    const dismissed = ctx.store.get<boolean>('director.draft.dismissed', false);
+    const lampVal = (ctx.handoff.commission as any)?.budget?.lamp ?? (poured ? '已调配' : '按感官分配');
+    const worksList = (window as any).__runsIndex as any[] | undefined;
+    machineBody.innerHTML = `
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <div style="background:#20140c;padding:8px;border-left:2px solid #c9a24a;">
+          <strong>① 灯油台</strong><br/>
+          灯油份额：${lampVal}<br/>
+          状态：${poured ? '已倒油微调' : '原样运行'}
+        </div>
+        <div style="background:#20140c;padding:8px;border-left:2px solid #c9a24a;">
+          <strong>② 导演廊</strong><br/>
+          台位：基础导演与叔衡<br/>
+          草稿状态：${dismissed ? '已撤掉一版' : '毛坯在案'}
+        </div>
+        <div style="background:#20140c;padding:8px;border-left:2px solid #c9a24a;">
+          <strong>③ 作品架</strong><br/>
+          作品：${worksList && worksList.length > 0 ? `收录 ${worksList.length} 卷` : '架子还空着'}
+        </div>
+        <div style="background:#20140c;padding:8px;border-left:2px solid #c9a24a;">
+          <strong>④ 门</strong><br/>
+          地标：夜门通往各世界
+        </div>
+      </div>
+    `;
   }
   function download(name: string, data: string, type: string) {
     const url = URL.createObjectURL(new Blob([data], { type }));

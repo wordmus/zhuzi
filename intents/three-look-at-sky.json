@@ -1,0 +1,9 @@
+{
+  "id": "three-look-at-sky", "title": "三人看天",
+  "hypothesis": { "id": "same-sky", "text": "同一片天在三个人眼里，会压出三种行动", "mode": "probe" },
+  "target": "从禾的田、季的竹简、田伯的门，感受同一场旱里的三种能动性",
+  "stop": "五镜共75秒自动播完；热点只让画面停一口气",
+  "form": "film", "perspective": { "who": "禾、季、田伯", "control": 0 },
+  "era": "zhanguo", "durationMin": 1.25, "director": "shuheng",
+  "notes": "L2 animatic；五张既有 gpt-image-2 关键帧，镜头表确定播放，无模型依赖。"
+}

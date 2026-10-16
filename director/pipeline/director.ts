@@ -4,10 +4,14 @@
 import { acceptCommission } from './mentor';
 import { fiftyYearsActs } from './fifty-years-plan';
 import { east3dActs } from './east3d-plan';
+import { filmActs } from './film-plan';
+import { galleryActs } from './gallery-plan';
+import { deskActs, type DeskData } from './desk-plan';
 import { studioAct } from '../../frameworks/studio/plan';
+import { consoleActs } from './console-plan';
 import type { Commission } from '../../engine/layers/types';
 import { createRng } from '../../engine/rng';
-import type { Intent, Plan, PlanAct, Tier } from '../../engine/types';
+import type { Intent, Plan, PlanAct, PlanElement, Tier } from '../../engine/types';
 import { generateWorld } from '../../engine/world/generate';
 
 export interface SeedMemory {
@@ -22,6 +26,9 @@ export interface DirectInput {
   seed: number;
   tier: Tier;
   rules: SeedMemory;
+  visitN?: number;
+  runsIndex?: any[] | null;
+  deskData?: DeskData;
 }
 
 const CONSTITUTION = [
@@ -45,30 +52,52 @@ export function direct(input: DirectInput): Plan {
 
   // 导师的第一句：按 seed 在几种说法里挑，但都只说一句、不报时间、不问名字
   const greet = rng.fork('greet').pick(['来了。这一件刚做好。', '你来得正好，墨还没干。', '等你一会儿了。先看这个。']);
+  const visitN = input.visitN ?? (intent.id === 'cafe-map' ? 2 : ((intent as any).visit?.n ?? 1));
+  const isCafeExpanded = visitN >= 2 || intent.id === 'cafe-map';
+
+  const thresholdElements: PlanElement[] = isCafeExpanded ? [
+    { id: 'door', component: 'door', represents: '通往机器的门（宪法：永远推得开）', actions: ['推'], prominence: { x: 0.5, y: 0.56, scale: 1, brightness: 0.35, folded: false }, predict: '你会先看窗里那点动的灯，然后找到门' },
+    { id: 'window', component: 'window-lamp', represents: '机器醒着，在你来之前就在做事', actions: [], prominence: { x: 0.62, y: 0.46, scale: 0.4, brightness: 0.9, folded: false } },
+    { id: 'omen', component: 'star', represents: '荧惑守心：之后才会有意义的一颗红星', actions: [], prominence: { x: 0.74, y: 0.16, scale: 0.1, brightness: 0.25, folded: false }, predict: '第二次来时有人会注意' },
+    { id: 'lamps', component: 'lamp-tree', represents: '连盏灯：灯一盏盏亮到你这边', actions: [], prominence: { x: 0.2, y: 0.5, scale: 1, brightness: 0, folded: false } },
+    { id: 'lamp-oil', component: 'oil-pot', represents: '灯油台：陶壶与小灯，分给各世界的灯油份额', actions: ['倒油'], prominence: { x: 0.22, y: 0.65, scale: 1, brightness: 0.9, folded: false }, predict: '你会先看灯树上多出的几盏小灯' },
+    { id: 'mentor', component: 'mentor', represents: '导师：机器的心智，正写完手上那一笔', actions: ['看'], prominence: { x: 0.55, y: 0.58, scale: 1, brightness: 0.6, folded: false } },
+    { id: 'directors', component: 'directors-bench', represents: '导演廊：基础导演与叔衡的工作台、毛坯与年谱', actions: ['看', '撤版'], prominence: { x: 0.45, y: 0.58, scale: 1, brightness: 0.85, folded: false } },
+    { id: 'shelf', component: 'shelf', represents: '作品架：启用现有折叠的 shelf，陈列作品与盖印状态', actions: ['拿起', '翻看'], prominence: { x: 0.86, y: 0.42, scale: 1, brightness: 0.85, folded: false } },
+    { id: 'seat', component: 'seat', represents: '你的座位（地标）', actions: [], prominence: { x: 0.5, y: 0.92, scale: 1, brightness: 0.3, folded: false } },
+    { id: 'books', component: 'books', represents: '两本册子：它眼中的你／你眼中的它', actions: [], prominence: { x: 0.3, y: 0.8, scale: 1, brightness: 0.1, folded: true } },
+    { id: 'senses', component: 'sense-shelf', represents: '感官架', actions: [], prominence: { x: 0.95, y: 0.5, scale: 1, brightness: 0.05, folded: true } },
+    { id: 'cup', component: 'ear-cup', represents: '耳杯里的热气：背景的呼吸；放在你常坐的那边', actions: [], prominence: { x: 0.64, y: 0.8, scale: 1, brightness: 0.4, folded: false } },
+  ] : [
+    { id: 'door', component: 'door', represents: '通往机器的门（宪法：永远推得开）', actions: ['推'], prominence: { x: 0.5, y: 0.56, scale: 1, brightness: 0.35, folded: false }, predict: '你会先看窗里那点动的灯，然后找到门' },
+    { id: 'window', component: 'window-lamp', represents: '机器醒着，在你来之前就在做事', actions: [], prominence: { x: 0.62, y: 0.46, scale: 0.4, brightness: 0.9, folded: false } },
+    { id: 'omen', component: 'star', represents: '荧惑守心：之后才会有意义的一颗红星', actions: [], prominence: { x: 0.74, y: 0.16, scale: 0.1, brightness: 0.25, folded: false }, predict: '几乎没人会注意；第二次来时有人会' },
+    { id: 'lamps', component: 'lamp-tree', represents: '连盏灯：灯一盏盏亮到你这边', actions: [], prominence: { x: 0.2, y: 0.5, scale: 1, brightness: 0, folded: false } },
+    { id: 'mentor', component: 'mentor', represents: '导师：机器的心智，正写完手上那一笔', actions: ['看'], prominence: { x: 0.55, y: 0.58, scale: 1, brightness: 0.6, folded: false } },
+    { id: 'ticket', component: 'ticket', represents: '《旱》的票根：先给，再问', actions: ['拿起'], prominence: { x: 0.5, y: 0.78, scale: 1, brightness: 1, folded: false }, predict: '你会在 3 秒内伸手' },
+    { id: 'seat', component: 'seat', represents: '你的座位（地标）', actions: [], prominence: { x: 0.5, y: 0.92, scale: 1, brightness: 0.3, folded: false } },
+    { id: 'shelf', component: 'shelf', represents: '作品架', actions: [], prominence: { x: 0.86, y: 0.42, scale: 1, brightness: 0.12, folded: true } },
+    { id: 'books', component: 'books', represents: '两本册子：它眼中的你／你眼中的它', actions: [], prominence: { x: 0.3, y: 0.8, scale: 1, brightness: 0.1, folded: true } },
+    { id: 'senses', component: 'sense-shelf', represents: '感官架', actions: [], prominence: { x: 0.95, y: 0.5, scale: 1, brightness: 0.05, folded: true } },
+    { id: 'cup', component: 'ear-cup', represents: '耳杯里的热气：背景的呼吸；放在你常坐的那边', actions: [], prominence: { x: 0.64, y: 0.8, scale: 1, brightness: 0.4, folded: false } },
+  ];
 
   const threshold: PlanAct = {
     id: 'threshold',
     framework: 'vignette',
     author: '基础导演',
     focus: 'door',
-    elements: [
-      { id: 'door', component: 'door', represents: '通往机器的门（宪法：永远推得开）', actions: ['推'], prominence: { x: 0.5, y: 0.56, scale: 1, brightness: 0.35, folded: false }, predict: '你会先看窗里那点动的灯，然后找到门' },
-      { id: 'window', component: 'window-lamp', represents: '机器醒着，在你来之前就在做事', actions: [], prominence: { x: 0.62, y: 0.46, scale: 0.4, brightness: 0.9, folded: false } },
-      { id: 'omen', component: 'star', represents: '荧惑守心：之后才会有意义的一颗红星', actions: [], prominence: { x: 0.74, y: 0.16, scale: 0.1, brightness: 0.25, folded: false }, predict: '几乎没人会注意；第二次来时有人会' },
-      { id: 'lamps', component: 'lamp-tree', represents: '连盏灯：灯一盏盏亮到你这边', actions: [], prominence: { x: 0.2, y: 0.5, scale: 1, brightness: 0, folded: false } },
-      { id: 'mentor', component: 'mentor', represents: '导师：机器的心智，正写完手上那一笔', actions: ['看'], prominence: { x: 0.55, y: 0.58, scale: 1, brightness: 0.6, folded: false } },
-      { id: 'ticket', component: 'ticket', represents: '《旱》的票根：先给，再问', actions: ['拿起'], prominence: { x: 0.5, y: 0.78, scale: 1, brightness: 1, folded: false }, predict: '你会在 3 秒内伸手' },
-      { id: 'seat', component: 'seat', represents: '你的座位（地标）', actions: [], prominence: { x: 0.5, y: 0.92, scale: 1, brightness: 0.3, folded: false } },
-      { id: 'shelf', component: 'shelf', represents: '作品架', actions: [], prominence: { x: 0.86, y: 0.42, scale: 1, brightness: 0.12, folded: true } },
-      { id: 'books', component: 'books', represents: '两本册子：它眼中的你／你眼中的它', actions: [], prominence: { x: 0.3, y: 0.8, scale: 1, brightness: 0.1, folded: true } },
-      { id: 'senses', component: 'sense-shelf', represents: '感官架', actions: [], prominence: { x: 0.95, y: 0.5, scale: 1, brightness: 0.05, folded: true } },
-      { id: 'cup', component: 'ear-cup', represents: '耳杯里的热气：背景的呼吸；放在你常坐的那边', actions: [], prominence: { x: 0.64, y: 0.8, scale: 1, brightness: 0.4, folded: false } },
-    ],
+    cafeMap: isCafeExpanded ? {
+      expanded: true,
+      stations: ['lamp-oil', 'directors', 'shelf', 'door'],
+      works: input.runsIndex ? (Array.isArray(input.runsIndex) ? input.runsIndex : (input.runsIndex as any).works ?? null) : null,
+    } : undefined,
+    elements: thresholdElements,
     lines: [{ id: 'greet', who: '导师', text: greet, when: 'after:mentor-look' }],
-    reveal: ['window', 'door', 'lamps', 'mentor', 'ticket'],
-    withhold: ['时间', '第几天', '名字', '灯油', '假设清单', '机器的仪表'],
-    exit: 'ticket:picked',
-    predict: { firstLook: 'window', dwell: 'mentor', surprise: '灯一盏盏亮到你这边', firstActionMs: 4000 },
+    reveal: isCafeExpanded ? ['window', 'door', 'lamps', 'mentor', 'lamp-oil', 'directors', 'shelf'] : ['window', 'door', 'lamps', 'mentor', 'ticket'],
+    withhold: isCafeExpanded ? ['时间', '第几天', '名字', '假设清单', '机器的仪表'] : ['时间', '第几天', '名字', '灯油', '假设清单', '机器的仪表'],
+    exit: isCafeExpanded ? 'door:entered' : 'ticket:picked',
+    predict: { firstLook: 'window', dwell: 'mentor', surprise: isCafeExpanded ? '咖啡厅里四站展开' : '灯一盏盏亮到你这边', firstActionMs: 4000 },
     budget,
   };
 
@@ -132,9 +161,14 @@ export function direct(input: DirectInput): Plan {
     budget,
   };
 
-  const acts = intent.id === 'east-suburb-3d' ? east3dActs(budget)
+  const acts = intent.id === 'desk' ? deskActs(budget, input.deskData)
+    : intent.form === 'film' ? filmActs(budget)
+    : intent.form === 'gallery' ? galleryActs(budget)
+    : intent.id === 'east-suburb-3d' ? east3dActs(budget)
     : intent.id === 'fifty-years' ? fiftyYearsActs(threshold, revealAct, han, ret)
     : intent.id === 'studio' ? [threshold, revealAct, han, studioAct(budget), ret]
+    : intent.id === 'console' ? consoleActs(budget)
+    : intent.id === 'cafe-map' ? [threshold]
     : intent.compose?.length ? [threshold, revealAct, han, ret] : intent.id === 'han-act1' ? [revealAct, han] : [threshold];
 
   const plan: Plan = {

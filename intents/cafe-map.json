@@ -1,0 +1,18 @@
+{
+  "id": "cafe-map",
+  "title": "咖啡厅入口总览",
+  "hypothesis": {
+    "id": "h-cafe-map",
+    "text": "第二次来访，咖啡厅展开成四站，你可以总览整台机器并推门进入",
+    "mode": "satisfy"
+  },
+  "target": "四站展开：灯油台、导演廊、作品架、门；物件具象、一屏一焦点",
+  "stop": "推门进入作品",
+  "form": "vignette",
+  "perspective": { "who": "你", "control": 1 },
+  "era": "zhanguo",
+  "durationMin": 3,
+  "director": "base",
+  "visit": { "n": 2 },
+  "notes": "A：咖啡厅作为入口总览（第二次来访展开四层：灯油台、导演廊、作品架、门）"
+}

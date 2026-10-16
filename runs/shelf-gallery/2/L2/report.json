@@ -1,0 +1,120 @@
+{
+  "intent": "shelf-gallery",
+  "seed": 2,
+  "tier": "L2",
+  "when": "2026-10-16T01:12:45.986Z",
+  "status": "ok",
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": []
+  },
+  "build": {
+    "ok": true,
+    "ms": 944,
+    "bytes": 33083655,
+    "singleFile": true,
+    "external": []
+  },
+  "play": {
+    "done": true,
+    "reason": "done",
+    "seconds": 6.1,
+    "steps": 3,
+    "stepLog": [
+      {
+        "i": 0,
+        "act": "shelf-gallery",
+        "aff": "plate-01-scroll",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 1,
+        "act": "shelf-gallery",
+        "aff": "plate-01-scroll",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 2,
+        "act": "shelf-gallery",
+        "aff": "gallery-fold",
+        "prefer": "least-clicked",
+        "progressed": true
+      }
+    ],
+    "shots": [
+      "01-shelf-gallery-enter.png",
+      "02-shelf-gallery-s0.png",
+      "03-shelf-gallery-s1.png",
+      "04-shelf-gallery-s2.png",
+      "05-final-done.png"
+    ],
+    "traceEvents": 37,
+    "errors": 0,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "fallbackClicks": 0,
+    "firstActionSec": 0.347,
+    "stageFpsP5": 59.52380952381049,
+    "ledger": null,
+    "acts": [
+      {
+        "act": "shelf-gallery",
+        "expected": "同一片旱田有了远近",
+        "entered": true,
+        "exited": true,
+        "durationMs": 5273,
+        "firstAffMs": 11,
+        "firstActionMs": 2337,
+        "predictedFirstActionMs": 800,
+        "note": "首个动作 2337ms，比预演的 800ms 慢很多（模拟玩家要先等画面稳定约 450ms）",
+        "lines": [
+          "门后先亮起一盏灯",
+          "推门以后，你先看见了谁？",
+          "推门以后，你先看见了谁？"
+        ]
+      }
+    ]
+  },
+  "seconds": 7.9,
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 33083655
+    },
+    {
+      "path": "layers.json",
+      "bytes": 21165
+    },
+    {
+      "path": "plan.json",
+      "bytes": 28331
+    },
+    {
+      "path": "shots/01-shelf-gallery-enter.png",
+      "bytes": 490247
+    },
+    {
+      "path": "shots/02-shelf-gallery-s0.png",
+      "bytes": 504486
+    },
+    {
+      "path": "shots/03-shelf-gallery-s1.png",
+      "bytes": 504486
+    },
+    {
+      "path": "shots/04-shelf-gallery-s2.png",
+      "bytes": 4258
+    },
+    {
+      "path": "shots/05-final-done.png",
+      "bytes": 4258
+    },
+    {
+      "path": "trace.jsonl",
+      "bytes": 23438
+    }
+  ]
+}
