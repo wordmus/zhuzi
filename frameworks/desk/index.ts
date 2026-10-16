@@ -34,7 +34,14 @@ export const desk: Framework = {
     let resolve!: () => void;
     const done = new Promise<void>(r => { resolve = r; });
     const controls: Affordance[] = [];
-    const works = [...(act.works ?? [])].filter(w => w.intent !== 'desk').sort((a, b) => b.madeAt.localeCompare(a.madeAt) || keyOf(a).localeCompare(keyOf(b)));
+    // 架子上一件作品一块帛条：同一个 intent 的旧 seed 是试作，不是作品。
+    // 不过滤的话 36 块帛条里只有 11 件作品（《第一次来访》一个节就有 16 个种子）。
+    const newest = new Map<string, WorkEntry>();
+    for (const w of [...(act.works ?? [])].filter(w => w.intent !== 'desk')
+      .sort((a, b) => b.madeAt.localeCompare(a.madeAt) || keyOf(a).localeCompare(keyOf(b)))) {
+      if (!newest.has(w.intent)) newest.set(w.intent, w);
+    }
+    const works = [...newest.values()];
     const groups = groupWorks(works);
     let group = Math.min(Number(ctx.handoff.deskGroup ?? 0), groups.length - 1), groupTurnAt = -1;
     const currentWorks = () => groups[group]?.works ?? [];

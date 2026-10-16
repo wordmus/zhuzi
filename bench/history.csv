@@ -127,3 +127,4 @@ when,target,verdict,hard,summary
 2026-10-16T08:57:15.196Z,"runs/studio/7/L1",FAIL,8/9,"FAIL hard 8/9 · first-action 0.31s · first3s 1 · feedback p90 none (limit 900) · max-chars 29 · errors 0 · fps-p5 60 · notext PASS · repro PASS · layers PASS"
 2026-10-16T09:01:52.778Z,"runs/desk/11/L1",PASS,9/9,"PASS hard 9/9 · first-action 0.29s · first3s 1 · feedback p90 117ms · max-chars 18 · errors 0 · fps-p5 60 · notext PASS · repro PASS · layers PASS"
 2026-10-16T09:06:17.564Z,"runs/studio/7/L1",PASS,9/9,"PASS hard 9/9 · first-action 0.34s · first3s 1 · feedback p90 369ms · max-chars 29 · errors 0 · fps-p5 60 · notext PASS · repro PASS · layers PASS"
+2026-10-16T09:38:28.948Z,"runs/desk/11/L1",PASS,9/9,"PASS hard 9/9 · first-action 0.29s · first3s 1 · feedback p90 82ms · max-chars 18 · errors 0 · fps-p5 60 · notext PASS · repro PASS · layers PASS"

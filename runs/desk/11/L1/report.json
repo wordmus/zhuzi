@@ -2,7 +2,7 @@
   "intent": "desk",
   "seed": 11,
   "tier": "L1",
-  "when": "2026-10-16T09:01:16.599Z",
+  "when": "2026-10-16T09:37:52.666Z",
   "status": "ok",
   "validation": {
     "ok": true,
@@ -11,15 +11,15 @@
   },
   "build": {
     "ok": true,
-    "ms": 979,
-    "bytes": 33564908,
+    "ms": 997,
+    "bytes": 33564994,
     "singleFile": true,
     "external": []
   },
   "play": {
     "done": true,
     "reason": "done",
-    "seconds": 12.7,
+    "seconds": 12.6,
     "steps": 4,
     "stepLog": [
       {
@@ -64,8 +64,8 @@
     "consoleErrors": [],
     "pageErrors": [],
     "fallbackClicks": 0,
-    "firstActionSec": 0.397,
-    "stageFpsP5": 59.523809523812105,
+    "firstActionSec": 0.461,
+    "stageFpsP5": 59.88023952095548,
     "ledger": null,
     "acts": [
       {
@@ -73,11 +73,11 @@
         "expected": "案上一枚印",
         "entered": true,
         "exited": true,
-        "durationMs": 2300,
+        "durationMs": 2359,
         "firstAffMs": 6,
-        "firstActionMs": 2299,
+        "firstActionMs": 2359,
         "predictedFirstActionMs": 100,
-        "note": "首个动作 2299ms，比预演的 100ms 慢很多（模拟玩家要先等画面稳定约 450ms）",
+        "note": "首个动作 2359ms，比预演的 100ms 慢很多（模拟玩家要先等画面稳定约 450ms）",
         "lines": [
           "已有咖啡厅入口，先看一件，先看《咖啡"
         ]
@@ -87,11 +87,11 @@
         "expected": "导师对你的想法",
         "entered": true,
         "exited": true,
-        "durationMs": 3082,
-        "firstAffMs": 0,
-        "firstActionMs": 3082,
+        "durationMs": 3061,
+        "firstAffMs": 1,
+        "firstActionMs": 3061,
         "predictedFirstActionMs": 100,
-        "note": "首个动作 3082ms，比预演的 100ms 慢很多（模拟玩家要先等画面稳定约 450ms）",
+        "note": "首个动作 3061ms，比预演的 100ms 慢很多（模拟玩家要先等画面稳定约 450ms）",
         "lines": [
           "上回停在案上，接着看"
         ]
@@ -103,9 +103,9 @@
         "exited": true,
         "durationMs": 3068,
         "firstAffMs": 0,
-        "firstActionMs": 3068,
+        "firstActionMs": 3067,
         "predictedFirstActionMs": 100,
-        "note": "首个动作 3068ms，比预演的 100ms 慢很多（模拟玩家要先等画面稳定约 450ms）",
+        "note": "首个动作 3067ms，比预演的 100ms 慢很多（模拟玩家要先等画面稳定约 450ms）",
         "lines": [
           "十样东西抢眼就找不到动作"
         ]
@@ -115,11 +115,11 @@
         "expected": "架上一件真实作品",
         "entered": true,
         "exited": true,
-        "durationMs": 3912,
+        "durationMs": 3929,
         "firstAffMs": 1,
-        "firstActionMs": 3080,
+        "firstActionMs": 3081,
         "predictedFirstActionMs": 100,
-        "note": "首个动作 3080ms，比预演的 100ms 慢很多（模拟玩家要先等画面稳定约 450ms）",
+        "note": "首个动作 3081ms，比预演的 100ms 慢很多（模拟玩家要先等画面稳定约 450ms）",
         "lines": [
           "抽出一卷，门便亮了",
           "已在新页打开"
@@ -127,11 +127,11 @@
       }
     ]
   },
-  "seconds": 14.7,
+  "seconds": 15,
   "files": [
     {
       "path": "bench.json",
-      "bytes": 6680
+      "bytes": 6692
     },
     {
       "path": "curve.csv",
@@ -139,7 +139,7 @@
     },
     {
       "path": "entry-verification.json",
-      "bytes": 5779
+      "bytes": 5767
     },
     {
       "path": "fifty-years-regression-attempt1.json",
@@ -167,11 +167,11 @@
     },
     {
       "path": "index.html",
-      "bytes": 33564908
+      "bytes": 33564994
     },
     {
       "path": "layers.json",
-      "bytes": 35953
+      "bytes": 35920
     },
     {
       "path": "plan.json",
@@ -179,39 +179,39 @@
     },
     {
       "path": "report.json",
-      "bytes": 4942
+      "bytes": 4930
     },
     {
       "path": "schedule-verification.json",
-      "bytes": 4948
+      "bytes": 4807
     },
     {
       "path": "shots/01-desk-entry-enter.png",
-      "bytes": 470032
+      "bytes": 470033
     },
     {
       "path": "shots/02-desk-mentor-enter.png",
-      "bytes": 490894
+      "bytes": 490514
     },
     {
       "path": "shots/03-desk-directors-enter.png",
-      "bytes": 477711
+      "bytes": 477676
     },
     {
       "path": "shots/04-desk-shelf-enter.png",
-      "bytes": 523533
+      "bytes": 515862
     },
     {
       "path": "shots/05-desk-shelf-s3.png",
-      "bytes": 533839
+      "bytes": 527573
     },
     {
       "path": "shots/06-final-done.png",
-      "bytes": 533839
+      "bytes": 527573
     },
     {
       "path": "trace.jsonl",
-      "bytes": 38970
+      "bytes": 38917
     }
   ]
 }

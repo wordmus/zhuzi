@@ -26,7 +26,7 @@
           "why": "上回停在案上，接着看",
           "evidence": {
             "kind": "dwell",
-            "ref": "visit.last.dwell[\"desk-in\"]=7;visit=1"
+            "ref": "visit.last.dwell[\"desk-in\"]=9;visit=1"
           }
         },
         {

@@ -1,19 +1,19 @@
 {
   "target": "runs/desk/11/L1",
-  "url": "http://127.0.0.1:54557/index.html",
-  "when": "2026-10-16T09:01:52.778Z",
+  "url": "http://127.0.0.1:61403/index.html",
+  "when": "2026-10-16T09:38:28.948Z",
   "verdict": "PASS",
   "hard": {
     "pass": 9,
     "total": 9
   },
-  "summary": "PASS hard 9/9 · first-action 0.29s · first3s 1 · feedback p90 117ms · max-chars 18 · errors 0 · fps-p5 60 · notext PASS · repro PASS · layers PASS",
+  "summary": "PASS hard 9/9 · first-action 0.29s · first3s 1 · feedback p90 82ms · max-chars 18 · errors 0 · fps-p5 60 · notext PASS · repro PASS · layers PASS",
   "checks": [
     {
       "id": "first-action",
       "label": "首个可操作元素",
       "pass": true,
-      "value": 0.29369999998807905,
+      "value": 0.28869999998807905,
       "limit": 0.6
     },
     {
@@ -28,9 +28,9 @@
       "id": "feedback",
       "label": "反馈延迟 p90",
       "pass": true,
-      "value": 117,
+      "value": 82,
       "limit": 900,
-      "note": "样本 4，100ms 内有反馈的占 75%（目标 100ms）"
+      "note": "样本 4，100ms 内有反馈的占 100%（目标 100ms）"
     },
     {
       "id": "max-chars",
@@ -53,7 +53,7 @@
       "pass": true,
       "value": 60,
       "limit": 55,
-      "note": "284 帧；整局 rAF p5=60；stage.fpsP5()=60（末 12 秒有探针，未计入）"
+      "note": "282 帧；整局 rAF p5=60；stage.fpsP5()=60（末 12 秒有探针，未计入）"
     },
     {
       "id": "notext",
@@ -93,7 +93,7 @@
       "pending": 0,
       "check": []
     },
-    "firstActionSec": 0.29369999998807905,
+    "firstActionSec": 0.28869999998807905,
     "first3s": {
       "perAct": [
         {
@@ -122,42 +122,42 @@
           "step": 0,
           "aff": "desk-in",
           "ambient": {
-            "g": 0.004850260416666667,
-            "l": 0.024620062514536616
+            "g": 0.004108072916666667,
+            "l": 0.02098945421746209
           },
           "first": {
-            "g": 0.09043728298611112,
-            "l": 0.32535355884705497
+            "g": 0.09056532118055556,
+            "l": 0.3257336381531549
           },
-          "latencyMs": 117,
+          "latencyMs": 82,
           "shots": 24
         },
         {
           "step": 1,
           "aff": "desk-doing",
           "ambient": {
-            "g": 0.006034071180555556,
-            "l": 0.0007745706978443551
+            "g": 0.005940755208333333,
+            "l": 0.0005017659237608087
           },
           "first": {
-            "g": 0.19098198784722223,
-            "l": 0.5539690658872245
+            "g": 0.19119466145833333,
+            "l": 0.5549920837900377
           },
-          "latencyMs": 50,
+          "latencyMs": 49,
           "shots": 24
         },
         {
           "step": 2,
           "aff": "desk-shelf-in",
           "ambient": {
-            "g": 0.0012065972222222222,
-            "l": 0.0036061499476133622
+            "g": 0.001201171875,
+            "l": 0.003334644449627028
           },
           "first": {
-            "g": 0.19397135416666667,
-            "l": 0.1690052108170575
+            "g": 0.1836935763888889,
+            "l": 0.13583628914639367
           },
-          "latencyMs": 50,
+          "latencyMs": 49,
           "shots": 24
         },
         {
@@ -171,12 +171,12 @@
             "g": 0.0003537326388888889,
             "l": 0.0010012408014840478
           },
-          "latencyMs": 35,
+          "latencyMs": 34,
           "shots": 24
         }
       ],
-      "p90Ms": 117,
-      "within100Ratio": 0.75
+      "p90Ms": 82,
+      "within100Ratio": 1
     },
     "chars": {
       "dom": 18,
@@ -193,9 +193,9 @@
     "fps": {
       "p5": 59.523809523812105,
       "own": 59.523809523812105,
-      "stage": 59.523809523812105,
+      "stage": 59.88023952095548,
       "usedStage": false,
-      "frames": 284
+      "frames": 282
     },
     "notext": {
       "done": true,
@@ -228,7 +228,7 @@
       "done": true,
       "reason": "done",
       "steps": 5,
-      "seconds": 15.8,
+      "seconds": 15.6,
       "fallbackClicks": 0,
       "shots": 0
     },
