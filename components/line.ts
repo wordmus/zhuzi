@@ -16,6 +16,8 @@ export interface SayOptions {
   text: string;
   /** 说话人的位置（每帧调用） */
   anchor: () => { x: number; y: number };
+  /** 物件内的文字行宽（CSS 像素，随布局更新）。 */
+  width?: () => number;
   /** 'light' 用在夜色/漆底上，'dark' 用在帛/土上 */
   ink?: 'light' | 'dark';
   tone?: 'speech' | 'thought' | 'mentor' | 'narration';
@@ -103,6 +105,7 @@ export function createLines(stage: Stage, bus: Bus, z = 60): Lines {
   interface Active {
     el: HTMLElement;
     anchor: () => { x: number; y: number };
+    width?: () => number;
     chars: number;
     dying: boolean;
   }
@@ -112,7 +115,9 @@ export function createLines(stage: Stage, bus: Bus, z = 60): Lines {
   stage.onFrame(() => {
     for (const a of active) {
       const p = a.anchor();
-      const x = Math.max(16, Math.min(stage.width - 16, p.x));
+      if (a.width) a.el.style.width = `${Math.max(24, Math.min(stage.width - 24, a.width()))}px`;
+      const halfWidth = Math.min(stage.width / 2 - 12, a.el.getBoundingClientRect().width / 2);
+      const x = Math.max(halfWidth + 12, Math.min(stage.width - halfWidth - 12, p.x));
       const y = Math.max(28, Math.min(stage.height - 12, p.y));
       a.el.style.left = `${x}px`;
       a.el.style.top = `${y}px`;
@@ -120,9 +125,16 @@ export function createLines(stage: Stage, bus: Bus, z = 60): Lines {
   });
 
   function kill(a: Active, fadeMs = 600) {
-    if (a.dying) return;
+    if (stage.reducedMotion) fadeMs = 0;
+    // 新句要立即替换；已经退场的旧句也必须移除，不能留下两句同时可见。
+    if (a.dying && fadeMs !== 0) return;
     a.dying = true;
     a.el.style.opacity = '0';
+    if (fadeMs === 0) {
+      a.el.remove();
+      active.delete(a);
+      return;
+    }
     setTimeout(() => {
       a.el.remove();
       active.delete(a);
@@ -135,7 +147,7 @@ export function createLines(stage: Stage, bus: Bus, z = 60): Lines {
     bus.log('line.say', { who: o.who, text, chars, source: o.source?.source ?? 'script', ms: o.source?.ms, why: o.source?.why, over: chars > MAX_CHARS });
     if (chars > MAX_CHARS) console.warn(`[line] 超过一句（${chars} 字）：${text}`);
     // 一屏一句：新话出现，旧话退下
-    for (const a of active) kill(a, 300);
+    for (const a of active) kill(a, 0);
 
     const el = document.createElement('div');
     el.className = 'zl' + (showSources ? ' showsrc' : '');
@@ -144,6 +156,7 @@ export function createLines(stage: Stage, bus: Bus, z = 60): Lines {
     el.dataset.size = o.size ?? 'normal';
     el.dataset.place = o.place ?? 'above';
     el.dataset.who = o.who;
+    if (o.width) el.style.width = `${Math.max(24, Math.min(stage.width - 24, o.width()))}px`;
     const charMs = stage.reducedMotion ? 0 : (o.charMs ?? 70);
     const spans: HTMLSpanElement[] = [];
     for (const ch of [...text]) {
@@ -171,7 +184,7 @@ export function createLines(stage: Stage, bus: Bus, z = 60): Lines {
     }
     layer.appendChild(el);
     live.textContent = `${o.who}：${text}`;
-    const a: Active = { el, anchor: o.anchor, chars, dying: false };
+    const a: Active = { el, anchor: o.anchor, width: o.width, chars, dying: false };
     active.add(a);
 
     return new Promise<void>((resolve) => {

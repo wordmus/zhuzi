@@ -1,0 +1,13 @@
+{
+  "id": "studio",
+  "title": "案上回信",
+  "hypothesis": { "id": "h-studio-letters", "text": "亲手接过真实回报，你会看懂谁的预演被事实改动", "mode": "probe" },
+  "target": "先看禾真实走过旱年，再在咖啡厅接委托、盖印、看提示飞向演员并收回原局报告",
+  "stop": "报告归档，回到咖啡厅关门",
+  "form": "game",
+  "perspective": { "who": "禾", "control": 0.3 },
+  "era": "zhanguo",
+  "durationMin": 3,
+  "director": "shuheng",
+  "notes": "threshold → reveal → han → studio → return；工作室展示这一次真实信件，复核回报保留原局误差。"
+}

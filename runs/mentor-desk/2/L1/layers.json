@@ -1,0 +1,434 @@
+{
+  "letters": [
+    {
+      "kind": "commission",
+      "from": "mentor",
+      "to": "director",
+      "payload": {
+        "intentId": "mentor-desk",
+        "title": "导师台",
+        "hypothesis": {
+          "id": "h-first-30s",
+          "text": "第一次来的人，30 秒内要有能做的事，并且感到被认出",
+          "mode": "satisfy"
+        },
+        "target": "推门 30 秒内开始玩；先给，再问；它在你来之前就在做事",
+        "stop": "你拿起票根",
+        "budget": {
+          "tier": "L1",
+          "lamp": 0.8,
+          "note": "上午·宽屏·第1次来；按本机力气分灯，1幕"
+        },
+        "userModel": {
+          "visits": 1,
+          "sinceLastMs": 0,
+          "dayPart": "上午",
+          "device": "宽屏"
+        },
+        "why": "第一次来，先让你推开门。"
+      },
+      "id": "commission:visit:1",
+      "t": 114.19999998807907,
+      "receipt": {
+        "at": 114.89999997615814,
+        "by": "director"
+      }
+    },
+    {
+      "kind": "plan",
+      "from": "director",
+      "to": "mentor",
+      "payload": {
+        "planId": "mentor-desk",
+        "version": 1,
+        "director": {
+          "id": "base",
+          "name": "基础导演"
+        },
+        "acts": [
+          {
+            "id": "threshold",
+            "framework": "vignette",
+            "author": "基础导演",
+            "focus": "door"
+          }
+        ],
+        "accept": "接下这1幕，按事实交付。",
+        "changes": [],
+        "rehearsal": [
+          {
+            "act": "threshold",
+            "expect": "灯一盏盏亮到你这边",
+            "risk": ""
+          }
+        ]
+      },
+      "id": "plan:visit:1",
+      "t": 114.89999997615814,
+      "receipt": {
+        "at": 114.89999997615814,
+        "by": "mentor"
+      }
+    },
+    {
+      "kind": "cue",
+      "from": "director",
+      "to": "导师",
+      "act": "threshold",
+      "payload": {
+        "act": "threshold",
+        "who": "导师",
+        "expects": "灯一盏盏亮到你这边",
+        "freedom": "按真实来访记忆说话，允许用户不留名字",
+        "initialState": {
+          "seed": 2,
+          "focus": "door",
+          "person": {
+            "name": "导师"
+          },
+          "world": {
+            "seed": 2,
+            "places": [
+              {
+                "id": "home",
+                "name": "家",
+                "x": 0.08,
+                "actions": [
+                  "rest",
+                  "eat"
+                ]
+              },
+              {
+                "id": "field",
+                "name": "田",
+                "x": 0.26,
+                "actions": [
+                  "wait-rain"
+                ]
+              },
+              {
+                "id": "well",
+                "name": "井",
+                "x": 0.43,
+                "actions": [
+                  "listen"
+                ]
+              },
+              {
+                "id": "altar",
+                "name": "社树",
+                "x": 0.59,
+                "actions": [
+                  "pray"
+                ]
+              },
+              {
+                "id": "gate",
+                "name": "田伯家",
+                "x": 0.77,
+                "actions": [
+                  "borrow"
+                ]
+              },
+              {
+                "id": "road",
+                "name": "路口",
+                "x": 0.94,
+                "actions": [
+                  "look",
+                  "leave"
+                ]
+              }
+            ],
+            "people": [
+              {
+                "id": "he",
+                "name": "禾",
+                "role": "actor",
+                "home": "home"
+              },
+              {
+                "id": "tianbo",
+                "name": "田伯",
+                "role": "lord",
+                "home": "gate"
+              },
+              {
+                "id": "ji",
+                "name": "季",
+                "role": "scholar",
+                "home": "road"
+              },
+              {
+                "id": "sang",
+                "name": "桑",
+                "role": "family",
+                "home": "home"
+              },
+              {
+                "id": "xiaoshi",
+                "name": "小石",
+                "role": "family",
+                "home": "home"
+              },
+              {
+                "id": "mu",
+                "name": "母",
+                "role": "family",
+                "home": "home"
+              },
+              {
+                "id": "linren",
+                "name": "邻人",
+                "role": "neighbor",
+                "home": "well"
+              },
+              {
+                "id": "luren",
+                "name": "路人",
+                "role": "neighbor",
+                "home": "road"
+              }
+            ],
+            "he": {
+              "temperament": {
+                "pride": 0.48,
+                "awe": 0.68,
+                "duty": 0.88,
+                "attachment": 0.77,
+                "patience": 0.58
+              },
+              "belief": {
+                "qing": 0.5665163339162246,
+                "li": 0.19654589568264783,
+                "ming": 0.2369377704011276
+              }
+            },
+            "tianbo": {
+              "weights": {
+                "qing": 0.5545851414650679,
+                "li": 0.1694224840905588,
+                "ming": 0.2759923744443733
+              },
+              "pride": 0.84,
+              "granary": [
+                0.85,
+                0.91,
+                0.7,
+                0.57
+              ],
+              "requisitionDay": 9
+            },
+            "seasons": [
+              {
+                "season": "spring",
+                "days": 3,
+                "rainExpect": 0.83,
+                "rainActual": 0.05
+              },
+              {
+                "season": "summer",
+                "days": 3,
+                "rainExpect": 0.55,
+                "rainActual": 0.07
+              },
+              {
+                "season": "autumn",
+                "days": 3,
+                "rainExpect": 0.41,
+                "rainActual": 0.01
+              },
+              {
+                "season": "winter",
+                "days": 2,
+                "rainExpect": 0.2,
+                "rainActual": 0.01
+              }
+            ],
+            "omen": {
+              "kind": "yinghuo",
+              "day": 5
+            },
+            "clues": [
+              {
+                "id": "c1",
+                "text": "田伯不爱地，爱的是门面。",
+                "trait": "li",
+                "sign": -1,
+                "truthful": true,
+                "place": "road",
+                "day": 1,
+                "from": "ji"
+              },
+              {
+                "id": "c2",
+                "text": "旧人上门，田伯让他在门外等。",
+                "trait": "qing",
+                "sign": -1,
+                "truthful": false,
+                "place": "well",
+                "day": 4,
+                "from": "linren"
+              },
+              {
+                "id": "c3",
+                "text": "东头那三亩地，田伯早看中了。",
+                "trait": "li",
+                "sign": 1,
+                "truthful": false,
+                "place": "home",
+                "day": 7,
+                "from": "sang"
+              },
+              {
+                "id": "c4",
+                "text": "谁家孩子饿着，田伯会红眼。",
+                "trait": "qing",
+                "sign": 1,
+                "truthful": true,
+                "place": "well",
+                "day": 7,
+                "from": "linren"
+              },
+              {
+                "id": "c5",
+                "text": "田伯说，旧情不能当粟吃。",
+                "trait": "qing",
+                "sign": -1,
+                "truthful": false,
+                "place": "well",
+                "day": 7,
+                "from": "linren"
+              },
+              {
+                "id": "c6",
+                "text": "禾他爹给田伯他爹扛过粟。",
+                "trait": "qing",
+                "sign": 1,
+                "truthful": true,
+                "place": "home",
+                "day": 7,
+                "from": "sang"
+              }
+            ],
+            "jarDays": 28,
+            "family": [
+              {
+                "id": "sang",
+                "name": "桑",
+                "role": "wife"
+              },
+              {
+                "id": "xiaoshi",
+                "name": "小石",
+                "role": "child"
+              },
+              {
+                "id": "mu",
+                "name": "母",
+                "role": "mother"
+              }
+            ],
+            "unfoldPressure": 0.65
+          }
+        },
+        "constraints": [
+          "门永远推得开",
+          "你永远能对机器说话",
+          "你永远能回到上一版",
+          "地标不动：你的座位、导师的位置、通往世界的门",
+          "已交付的版本只增不改",
+          "不得把预演写成已发生的事实",
+          "每屏最多30字"
+        ]
+      },
+      "id": "cue:threshold:1",
+      "t": 114.89999997615814,
+      "receipt": {
+        "at": 7446.599999964237,
+        "by": "导师"
+      }
+    },
+    {
+      "kind": "report",
+      "from": "导师",
+      "to": "director",
+      "act": "threshold",
+      "payload": {
+        "act": "threshold",
+        "who": "导师",
+        "did": [
+          "处理本幕提示；观察到0条交付事实",
+          "说：帮禾借点粟，让一家人过冬。"
+        ],
+        "predicted": "灯一盏盏亮到你这边",
+        "actual": "说：帮禾借点粟，让一家人过冬。",
+        "facts": [],
+        "ms": 7331
+      },
+      "id": "report:threshold:1",
+      "t": 7446.699999988079,
+      "receipt": {
+        "at": 7446.699999988079,
+        "by": "director"
+      }
+    },
+    {
+      "kind": "retro",
+      "from": "director",
+      "to": "mentor",
+      "payload": {
+        "intentId": "mentor-desk",
+        "predicted": "推门 30 秒内开始玩；先给，再问；它在你来之前就在做事",
+        "actual": "说：帮禾借点粟，让一家人过冬。",
+        "userModelDelta": {
+          "visit.last": {
+            "n": 1,
+            "at": 1792101666475,
+            "dwell": {
+              "door": 169,
+              "ticket": 179,
+              "visit-chronicle": 0,
+              "book-you": 0,
+              "book-it": 0
+            },
+            "seed": 2,
+            "changes": [],
+            "skipped": [],
+            "activated": [
+              "ticket"
+            ]
+          },
+          "mentor.last": {
+            "intentId": "mentor-desk",
+            "ending": null,
+            "facts": [],
+            "reports": 1,
+            "predictionErrors": 0,
+            "promises": [
+              "threshold：导师：机器的心智，正写完手上那一笔，尚未亲手碰过"
+            ]
+          }
+        },
+        "promises": [
+          "threshold：导师：机器的心智，正写完手上那一笔，尚未亲手碰过"
+        ],
+        "next": "下次从threshold：导师：机器的心智，正写完手上那一笔，尚未亲手碰过接起"
+      },
+      "id": "retro:visit:1",
+      "t": 7447.399999976158,
+      "receipt": {
+        "at": 7447.399999976158,
+        "by": "mentor"
+      }
+    }
+  ],
+  "check": [],
+  "counts": {
+    "commission": 1,
+    "plan": 1,
+    "cue": 1,
+    "report": 1,
+    "retro": 1
+  }
+}

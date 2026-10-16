@@ -1,0 +1,433 @@
+{
+  "intent": "first-visit",
+  "seed": 7,
+  "tier": "L1",
+  "when": "2026-10-15T14:00:40.741Z",
+  "status": "ok",
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": [
+      {
+        "level": "warn",
+        "path": "acts[0].lines[0].text",
+        "msg": "「来了。这一件刚做好。」不止一句（每屏 ≤ 1 句）",
+        "act": "threshold"
+      },
+      {
+        "level": "warn",
+        "path": "acts[1].reveal",
+        "msg": "揭示顺序里的 he 不是这一幕的元素（若是运行时生成的可忽略）",
+        "act": "reveal"
+      },
+      {
+        "level": "warn",
+        "path": "acts[2].reveal",
+        "msg": "揭示顺序里的 rumor 不是这一幕的元素（若是运行时生成的可忽略）",
+        "act": "han"
+      },
+      {
+        "level": "warn",
+        "path": "acts[2].reveal",
+        "msg": "揭示顺序里的 altar 不是这一幕的元素（若是运行时生成的可忽略）",
+        "act": "han"
+      }
+    ]
+  },
+  "build": {
+    "ok": true,
+    "ms": 383,
+    "bytes": 307771,
+    "singleFile": true,
+    "external": []
+  },
+  "play": {
+    "done": true,
+    "reason": "done",
+    "seconds": 71.2,
+    "steps": 28,
+    "stepLog": [
+      {
+        "i": 0,
+        "act": "threshold",
+        "aff": "door",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 1,
+        "act": "threshold",
+        "aff": "ticket",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 2,
+        "act": "reveal",
+        "aff": "east-suburb",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 3,
+        "act": "han",
+        "aff": "walk2d-he",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 4,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 5,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 6,
+        "act": "han",
+        "aff": "heart-go",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 7,
+        "act": "han",
+        "aff": "walk2d-gate-ring",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 8,
+        "act": "han",
+        "aff": "walk2d-gate-ring",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 9,
+        "act": "han",
+        "aff": "walk2d-gate-ring",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 10,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 11,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 12,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 13,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 14,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 15,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 16,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 17,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 18,
+        "act": "han",
+        "aff": "walk2d-he",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 19,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 20,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 21,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 22,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 23,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 24,
+        "act": "han",
+        "aff": "heart-go",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 25,
+        "act": "return",
+        "aff": "name",
+        "prefer": "pulse",
+        "progressed": false
+      },
+      {
+        "i": 26,
+        "act": "return",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 27,
+        "act": "return",
+        "aff": "door",
+        "prefer": "pulse",
+        "progressed": true
+      }
+    ],
+    "shots": [
+      "01-threshold-enter.png",
+      "02-threshold-s0.png",
+      "03-reveal-enter.png",
+      "04-han-enter.png",
+      "05-han-s3.png",
+      "06-han-s4.png",
+      "07-han-s5.png",
+      "08-han-s6.png",
+      "09-return-enter.png",
+      "10-return-s25.png",
+      "11-return-s26.png",
+      "12-return-s27.png",
+      "13-final-done.png"
+    ],
+    "traceEvents": 414,
+    "errors": 0,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "fallbackClicks": 0,
+    "firstActionSec": 0.028,
+    "stageFpsP5": 59.523809523824994,
+    "ledger": {
+      "source": "window.__zhuzi.ctx.handoff.world.ledger",
+      "facts": 39
+    },
+    "acts": [
+      {
+        "act": "threshold",
+        "expected": "灯一盏盏亮到你这边",
+        "entered": true,
+        "exited": true,
+        "durationMs": 6913,
+        "firstAffMs": 2,
+        "firstActionMs": 2265,
+        "predictedFirstActionMs": 4000,
+        "note": "与预演相近",
+        "lines": [
+          "帮禾借点粟，让一家人过冬。"
+        ]
+      },
+      {
+        "act": "reveal",
+        "expected": "你看向哪里，哪里显影",
+        "entered": true,
+        "exited": true,
+        "durationMs": 2752,
+        "firstAffMs": 2,
+        "firstActionMs": 2663,
+        "predictedFirstActionMs": 6000,
+        "note": "与预演相近",
+        "lines": []
+      },
+      {
+        "act": "han",
+        "expected": "田伯开门后说的和心里预演的不一样",
+        "entered": true,
+        "exited": true,
+        "durationMs": 52633,
+        "firstAffMs": 4,
+        "firstActionMs": 2959,
+        "predictedFirstActionMs": 3000,
+        "note": "与预演相近",
+        "lines": [
+          "冬旱未解，得向田伯借点粟。",
+          "选个借法，先看预想。",
+          "禾猜他会拒绝。",
+          "禾猜他会拒绝。",
+          "禾没用押田地：再等等，等他先看见我瘦。",
+          "禾另猜他肯给粟。",
+          "田伯，我爹给您爹扛过粟。",
+          "王的人刚走。",
+          "叙旧情：预想肯给粟，实际会拒绝。",
+          "社公，这回我备牲。",
+          "禾猜他要买地。",
+          "禾没用押田地：去了就是求人。",
+          "神要诚心？我只有粟。",
+          "社公在上，种粟献你。",
+          "乡邻都来了。"
+        ]
+      },
+      {
+        "act": "return",
+        "expected": "它记得禾做了什么",
+        "entered": true,
+        "exited": true,
+        "durationMs": 7821,
+        "firstAffMs": 4209,
+        "firstActionMs": 4922,
+        "predictedFirstActionMs": 5000,
+        "note": "与预演相近",
+        "lines": [
+          "禾献了种粟。雨没来，人都来了。",
+          "怎么称呼你？",
+          "季那边，听说也有人敲门。"
+        ]
+      }
+    ]
+  },
+  "seconds": 71.9,
+  "files": [
+    {
+      "path": "bench.json",
+      "bytes": 8342
+    },
+    {
+      "path": "curve.csv",
+      "bytes": 208
+    },
+    {
+      "path": "index.html",
+      "bytes": 307771
+    },
+    {
+      "path": "layers.json",
+      "bytes": 65409
+    },
+    {
+      "path": "ledger.json",
+      "bytes": 5449
+    },
+    {
+      "path": "plan.json",
+      "bytes": 57788
+    },
+    {
+      "path": "report.json",
+      "bytes": 9573
+    },
+    {
+      "path": "shots/01-threshold-enter.png",
+      "bytes": 936799
+    },
+    {
+      "path": "shots/02-threshold-s0.png",
+      "bytes": 1083994
+    },
+    {
+      "path": "shots/03-reveal-enter.png",
+      "bytes": 106057
+    },
+    {
+      "path": "shots/04-han-enter.png",
+      "bytes": 1426498
+    },
+    {
+      "path": "shots/05-han-s3.png",
+      "bytes": 1287870
+    },
+    {
+      "path": "shots/06-han-s4.png",
+      "bytes": 1300602
+    },
+    {
+      "path": "shots/07-han-s5.png",
+      "bytes": 1300503
+    },
+    {
+      "path": "shots/08-han-s6.png",
+      "bytes": 1449462
+    },
+    {
+      "path": "shots/09-return-enter.png",
+      "bytes": 361615
+    },
+    {
+      "path": "shots/10-return-s25.png",
+      "bytes": 379637
+    },
+    {
+      "path": "shots/11-return-s26.png",
+      "bytes": 381240
+    },
+    {
+      "path": "shots/12-return-s27.png",
+      "bytes": 320574
+    },
+    {
+      "path": "shots/13-final-done.png",
+      "bytes": 320402
+    },
+    {
+      "path": "trace.jsonl",
+      "bytes": 118108
+    }
+  ]
+}

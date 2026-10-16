@@ -1,6 +1,11 @@
 // 导演：意图 + seed → 呈现方案。纯函数，浏览器与 Node 都能跑，同一 seed 永远出同一份方案。
 // 编排写成数据：每一幕一个焦点、揭示顺序、不给的东西、一句话、对你的预测（策划文档第 11、19 节）。
 
+import { acceptCommission } from './mentor';
+import { fiftyYearsActs } from './fifty-years-plan';
+import { east3dActs } from './east3d-plan';
+import { studioAct } from '../../frameworks/studio/plan';
+import type { Commission } from '../../engine/layers/types';
 import { createRng } from '../../engine/rng';
 import type { Intent, Plan, PlanAct, Tier } from '../../engine/types';
 import { generateWorld } from '../../engine/world/generate';
@@ -11,6 +16,7 @@ export interface SeedMemory {
 }
 
 export interface DirectInput {
+  commission?: Commission;
   intent: Intent;
   parts: Intent[];
   seed: number;
@@ -126,9 +132,12 @@ export function direct(input: DirectInput): Plan {
     budget,
   };
 
-  const acts = intent.compose?.length ? [threshold, revealAct, han, ret] : intent.id === 'han-act1' ? [revealAct, han] : [threshold];
+  const acts = intent.id === 'east-suburb-3d' ? east3dActs(budget)
+    : intent.id === 'fifty-years' ? fiftyYearsActs(threshold, revealAct, han, ret)
+    : intent.id === 'studio' ? [threshold, revealAct, han, studioAct(budget), ret]
+    : intent.compose?.length ? [threshold, revealAct, han, ret] : intent.id === 'han-act1' ? [revealAct, han] : [threshold];
 
-  return {
+  const plan: Plan = {
     id: intent.id,
     version: 1,
     intent,
@@ -141,4 +150,5 @@ export function direct(input: DirectInput): Plan {
     constitution: CONSTITUTION,
     rehearsal: acts.map((a) => ({ act: a.id, expect: a.predict.surprise, risk: a.predict.tired ?? '' })),
   };
+  return { ...plan, ...acceptCommission(plan, input.commission) };
 }

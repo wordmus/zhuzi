@@ -1,0 +1,104 @@
+{
+  "era": "zhanguo",
+  "place": "临淄",
+  "span": { "from": -356, "to": -306, "note": "从平陆会盟到甘茂奔齐；按章推进五十年" },
+  "macro": { "minxin": 0.52, "grain": 0.48, "power": 0.5, "rites": 0.55 },
+  "events": [
+    {
+      "id": "pinglu-356", "year": -356, "title": "齐赵会平陆",
+      "text": "齐与赵在平陆会盟", "kind": "rite",
+      "effects": { "power": 0.02, "rites": 0.03 },
+      "enters": { "who": "季", "as": "盟约", "line": "齐赵在平陆会盟了。" },
+      "source": { "title": "《史记·六国年表》周显王十三年（前356）齐、赵栏", "url": "https://zh.wikisource.org/zh-hant/史記/卷015" },
+      "verified": true
+    },
+    {
+      "id": "guiling-353", "year": -353, "title": "桂陵之战",
+      "text": "齐救赵，在桂陵击败魏军", "kind": "war",
+      "effects": { "power": 0.06, "grain": -0.06, "minxin": -0.02 },
+      "enters": { "who": "禾", "as": "军粮", "line": "魏军败了，粮还得交。" },
+      "source": { "title": "《资治通鉴》卷二，显王十六年（前353）", "url": "https://zh.wikisource.org/wiki/資治通鑑/卷002" },
+      "verified": true
+    },
+    {
+      "id": "qianmo-350", "year": -350, "title": "秦开阡陌",
+      "text": "秦迁都咸阳，开阡陌并乡为县", "kind": "reform",
+      "effects": { "power": -0.02, "rites": -0.03 },
+      "enters": { "who": "田伯", "as": "田界", "line": "秦人连田界也改了。" },
+      "source": { "title": "《资治通鉴》卷二，显王十九年（前350）", "url": "https://zh.wikisource.org/wiki/資治通鑑/卷002" },
+      "verified": true
+    },
+    {
+      "id": "qi-zhou-348", "year": -348, "title": "齐威王朝周",
+      "text": "诸侯少朝周，齐威王独往朝见", "kind": "rite",
+      "effects": { "rites": 0.06, "minxin": 0.01 },
+      "enters": { "who": "季", "as": "朝礼", "line": "齐王还肯去朝周天子。" },
+      "source": { "title": "《资治通鉴》卷二，显王二十一年（前348）", "url": "https://zh.wikisource.org/wiki/資治通鑑/卷002" },
+      "verified": true
+    },
+    {
+      "id": "maling-341", "year": -341, "title": "马陵之战",
+      "text": "齐败魏于马陵，庞涓死，太子申被俘", "kind": "war",
+      "effects": { "power": 0.09, "grain": -0.07, "minxin": 0.02 },
+      "enters": { "who": "田伯", "as": "军功", "line": "魏败了，谁家的儿郎回？" },
+      "source": { "title": "《资治通鉴》卷二，显王二十八年（前341）", "url": "https://zh.wikisource.org/wiki/資治通鑑/卷002" },
+      "verified": true
+    },
+    {
+      "id": "xuzhou-334", "year": -334, "title": "徐州相王",
+      "text": "齐魏在徐州会见，互相承认王号", "kind": "rite",
+      "effects": { "power": 0.04, "rites": -0.08 },
+      "enters": { "who": "季", "as": "王号", "line": "如今齐魏互称王了。" },
+      "source": { "title": "《资治通鉴》卷二，显王三十五年（前334）", "url": "https://zh.wikisource.org/wiki/資治通鑑/卷002" },
+      "verified": true
+    },
+    {
+      "id": "qin-shu-316", "year": -316, "title": "秦取蜀",
+      "text": "秦取蜀，疆土与财力增长", "kind": "war",
+      "effects": { "power": -0.05, "minxin": -0.02 },
+      "enters": { "who": "田伯", "as": "强邻", "line": "秦又得了蜀地。" },
+      "source": { "title": "《资治通鉴》卷三，慎靓王五年（前316）", "url": "https://zh.wikisource.org/wiki/資治通鑑/卷003" },
+      "verified": true
+    },
+    {
+      "id": "qi-yan-314", "year": -314, "title": "齐伐燕",
+      "text": "齐乘燕乱取燕，孟子劝察燕民之意", "kind": "war",
+      "effects": { "power": 0.06, "grain": -0.1, "minxin": -0.08, "rites": -0.03 },
+      "enters": { "who": "禾", "as": "北征", "line": "燕地拿下，征粮又来了。" },
+      "source": { "title": "《资治通鉴》卷三，赧王元年（前314）；并见《孟子·梁惠王下》", "url": "https://zh.wikisource.org/wiki/資治通鑑/卷003" },
+      "verified": true
+    },
+    {
+      "id": "chu-qi-break-313", "year": -313, "title": "楚绝齐交",
+      "text": "张仪诱楚绝齐，齐楚盟约破裂", "kind": "rite",
+      "effects": { "power": -0.04, "rites": -0.04 },
+      "enters": { "who": "季", "as": "盟约破裂", "line": "楚把齐国的盟约断了。" },
+      "source": { "title": "《资治通鉴》卷三，赧王二年（前313）", "url": "https://zh.wikisource.org/wiki/資治通鑑/卷003" },
+      "verified": true
+    },
+    {
+      "id": "yan-zhao-311", "year": -311, "title": "燕昭王元年",
+      "text": "燕昭王开始纪年，燕国重建王统", "kind": "rite",
+      "effects": { "power": -0.03, "minxin": -0.03 },
+      "enters": { "who": "乡邻", "as": "北方消息", "line": "北边燕国有新王了。" },
+      "source": { "title": "《史记·六国年表》周赧王四年（前311）燕栏；前312年另记立公子平", "url": "https://zh.wikisource.org/zh-hant/史記/卷015" },
+      "verified": true
+    },
+    {
+      "id": "hufu-307", "year": -307, "title": "赵行胡服骑射",
+      "text": "赵武灵王推行胡服，招习骑射", "kind": "reform",
+      "effects": { "power": -0.02, "rites": -0.04 },
+      "enters": { "who": "小石", "as": "新军装束", "line": "赵人换了衣裳学骑射。" },
+      "source": { "title": "《资治通鉴》卷三，赧王八年（前307）", "url": "https://zh.wikisource.org/wiki/資治通鑑/卷003" },
+      "verified": true
+    },
+    {
+      "id": "ganmao-306", "year": -306, "title": "甘茂奔齐",
+      "text": "甘茂离秦奔齐", "kind": "scholar",
+      "effects": { "power": 0.03, "rites": 0.02 },
+      "enters": { "who": "禾", "as": "来客", "line": "秦来的大臣也进齐了。" },
+      "source": { "title": "《资治通鉴》卷三，赧王九年（前306）", "url": "https://zh.wikisource.org/wiki/資治通鑑/卷003" },
+      "verified": true
+    }
+  ]
+}

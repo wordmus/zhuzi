@@ -74,7 +74,8 @@ export class Bus {
   }
 
   log(kind: TraceKind, data: Record<string, unknown> = {}): TraceEvent {
-    const ev: TraceEvent = { t: this.now(), kind, ...data };
+    const ev: TraceEvent = { ...data, t: this.now(), kind };
+    if (data.kind !== undefined && data.kind !== kind) ev.eventKind = data.kind;
     this.trace.push(ev);
     this.emit('trace', ev);
     return ev;

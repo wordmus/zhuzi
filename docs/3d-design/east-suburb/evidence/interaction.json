@@ -1,0 +1,117 @@
+{
+  "done": true,
+  "state": {
+    "elapsed": 50,
+    "phase": "42–50",
+    "cracked": true,
+    "looked": true,
+    "gapCount": 1,
+    "handShifted": true,
+    "done": true,
+    "triangles": 39311,
+    "materials": 10,
+    "drawCalls": 39,
+    "peakDrawCalls": 39,
+    "reducedMotion": false
+  },
+  "events": [
+    {
+      "kind": "world.event",
+      "elapsed": 0,
+      "act": "east3d-selftest",
+      "triangles": 39311,
+      "quality": 0.62,
+      "t": 166,
+      "eventKind": "east3d.start"
+    },
+    {
+      "kind": "world.event",
+      "elapsed": 2.958,
+      "source": "user",
+      "t": 3280,
+      "eventKind": "east3d.crack"
+    },
+    {
+      "kind": "world.event",
+      "elapsed": 3.148,
+      "phase": "3–24",
+      "t": 3314,
+      "eventKind": "east3d.phase"
+    },
+    {
+      "kind": "world.event",
+      "elapsed": 3.266,
+      "t": 3459,
+      "eventKind": "east3d.touch-response"
+    },
+    {
+      "kind": "world.event",
+      "elapsed": 3.318,
+      "t": 3507,
+      "eventKind": "east3d.touch-response"
+    },
+    {
+      "kind": "world.event",
+      "elapsed": 4.122,
+      "reason": "rubble",
+      "from": [
+        0.34,
+        0.11,
+        0.74
+      ],
+      "to": [
+        0.56,
+        0.13,
+        0.6
+      ],
+      "t": 4288,
+      "eventKind": "east3d.hand-shift"
+    },
+    {
+      "kind": "world.event",
+      "elapsed": 24.001,
+      "phase": "24–42",
+      "t": 24167,
+      "eventKind": "east3d.phase"
+    },
+    {
+      "kind": "world.event",
+      "elapsed": 24.901,
+      "source": "user",
+      "t": 25081,
+      "eventKind": "east3d.sky"
+    },
+    {
+      "kind": "world.event",
+      "elapsed": 24.922,
+      "t": 25101,
+      "eventKind": "east3d.gaze-response"
+    },
+    {
+      "kind": "world.event",
+      "elapsed": 24.935,
+      "t": 25114,
+      "eventKind": "east3d.gaze-response"
+    },
+    {
+      "kind": "world.event",
+      "elapsed": 42.001,
+      "phase": "42–50",
+      "t": 42166,
+      "eventKind": "east3d.phase"
+    },
+    {
+      "kind": "world.event",
+      "elapsed": 50,
+      "cracked": true,
+      "looked": true,
+      "gapCount": 1,
+      "handShifted": true,
+      "t": 50166,
+      "eventKind": "east3d.done"
+    }
+  ],
+  "lines": [
+    "天老爷，东郊还有我呢。"
+  ]
+}

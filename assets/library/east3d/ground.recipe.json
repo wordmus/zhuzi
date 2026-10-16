@@ -1,0 +1,14 @@
+{
+  "id": "east3d-ground",
+  "file": "ground.glb",
+  "recipe": "26m 平面，7 级细分（32,768 三角面），抖动网格 Voronoi 板块裂缝（D1 同位烘焙细裂：板块约 1.4m、缝宽 0.14m、深 0.09m），Loess 材质",
+  "faces": 32768,
+  "face_unit": "triangles",
+  "source": "程序化生成（Blender 5.1，seed 7）",
+  "license": "本项目自有",
+  "era": "zhanguo",
+  "tags": [
+    "east3d",
+    "drought"
+  ]
+}

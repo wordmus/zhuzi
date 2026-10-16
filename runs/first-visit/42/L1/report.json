@@ -1,0 +1,55 @@
+{
+  "intent": "first-visit",
+  "seed": 42,
+  "tier": "L1",
+  "when": "2026-10-14T09:25:55.504Z",
+  "status": "built",
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": [
+      {
+        "level": "warn",
+        "path": "acts[0].lines[0].text",
+        "msg": "「来了。这一件刚做好。」不止一句（每屏 ≤ 1 句）",
+        "act": "threshold"
+      },
+      {
+        "level": "warn",
+        "path": "acts[1].reveal",
+        "msg": "揭示顺序里的 he 不是这一幕的元素（若是运行时生成的可忽略）",
+        "act": "reveal"
+      },
+      {
+        "level": "warn",
+        "path": "acts[2].reveal",
+        "msg": "揭示顺序里的 rumor 不是这一幕的元素（若是运行时生成的可忽略）",
+        "act": "han"
+      },
+      {
+        "level": "warn",
+        "path": "acts[2].reveal",
+        "msg": "揭示顺序里的 altar 不是这一幕的元素（若是运行时生成的可忽略）",
+        "act": "han"
+      }
+    ]
+  },
+  "build": {
+    "ok": true,
+    "ms": 901,
+    "bytes": 269524,
+    "singleFile": true,
+    "external": []
+  },
+  "seconds": 0.9,
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 269524
+    },
+    {
+      "path": "plan.json",
+      "bytes": 18612
+    }
+  ]
+}

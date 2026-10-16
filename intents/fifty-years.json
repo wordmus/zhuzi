@@ -1,0 +1,13 @@
+{
+  "id": "fifty-years",
+  "title": "五十年长卷",
+  "hypothesis": { "id": "h-history-in-person", "text": "天下的变动走进一个人的处境，你会为他下一步停下来", "mode": "probe" },
+  "target": "从禾的旱田走到季的竹简、田伯的粮仓，看见个人决定留下的天下回声",
+  "stop": "前356至前306的长卷收束，回到咖啡厅并留下下一次能接住的事实",
+  "form": "game",
+  "perspective": { "who": "禾", "control": 0.3 },
+  "era": "zhanguo",
+  "durationMin": 18,
+  "director": "shuheng",
+  "notes": "四个转折点按已核验年表推进；齐伐燕用前314年；稷下游戏属于导师回望材料，齐水德仅是季的设想。chronicle-306 后、return 前进入 studio，亲手收妥本次演员报告。"
+}

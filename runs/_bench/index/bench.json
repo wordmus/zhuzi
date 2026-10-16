@@ -1,0 +1,296 @@
+{
+  "target": "dist-wude-wheel/index.html",
+  "url": "http://127.0.0.1:64508/index.html",
+  "when": "2026-10-15T13:53:06.534Z",
+  "verdict": "FAIL",
+  "hard": {
+    "pass": 8,
+    "total": 9
+  },
+  "summary": "FAIL hard 8/9 · first-action 0.05s · first3s 1 · feedback p90 153ms · max-chars 15 · errors 0 · fps-p5 60 · notext PASS · repro PASS · layers FAIL",
+  "checks": [
+    {
+      "id": "first-action",
+      "label": "首个可操作元素",
+      "pass": true,
+      "value": 0.04790000003576279,
+      "limit": 0.9
+    },
+    {
+      "id": "first3s",
+      "label": "每幕前 3 秒可做的事",
+      "pass": true,
+      "value": 1,
+      "limit": 1,
+      "note": "wude-wheel-dev:1"
+    },
+    {
+      "id": "feedback",
+      "label": "反馈延迟 p90",
+      "pass": true,
+      "value": 153,
+      "limit": 1000,
+      "note": "样本 4，100ms 内有反馈的占 75%（目标 100ms）"
+    },
+    {
+      "id": "max-chars",
+      "label": "每屏可见字数",
+      "pass": true,
+      "value": 15,
+      "limit": 30,
+      "note": "DOM 15 / trace 11"
+    },
+    {
+      "id": "errors",
+      "label": "控制台报错",
+      "pass": true,
+      "value": 0,
+      "limit": 0
+    },
+    {
+      "id": "fps-p5",
+      "label": "帧率 p5",
+      "pass": true,
+      "value": 60,
+      "limit": 50,
+      "note": "704 帧；整局 rAF p5=60；stage.fpsP5()=60（末 12 秒有探针，未计入）"
+    },
+    {
+      "id": "notext",
+      "label": "删字测试",
+      "pass": true,
+      "value": "PASS",
+      "limit": "hidden + done"
+    },
+    {
+      "id": "repro",
+      "label": "同 seed 复现",
+      "pass": true,
+      "value": "PASS",
+      "limit": "same",
+      "note": "事实 1 条；账本一致，幕序一致，台词一致"
+    },
+    {
+      "id": "layers",
+      "label": "三层信息流与回执",
+      "pass": false,
+      "value": "FAIL",
+      "limit": "五类齐全、幕序与回执完整",
+      "note": "0封信；未回执0；缺少 commission 信；缺少 plan 信；缺少 cue 信；缺少 report 信；缺少 retro 信；幕没有演员提示：wude-wheel-dev"
+    }
+  ],
+  "metrics": {
+    "layers": {
+      "required": true,
+      "letters": 0,
+      "counts": {
+        "commission": 0,
+        "plan": 0,
+        "cue": 0,
+        "report": 0,
+        "retro": 0
+      },
+      "pending": 0,
+      "check": [
+        "缺少 commission 信",
+        "缺少 plan 信",
+        "缺少 cue 信",
+        "缺少 report 信",
+        "缺少 retro 信",
+        "幕没有演员提示：wude-wheel-dev"
+      ]
+    },
+    "firstActionSec": 0.04790000003576279,
+    "first3s": {
+      "perAct": [
+        {
+          "act": "wude-wheel-dev",
+          "n": 1
+        }
+      ],
+      "max": 1,
+      "source": "trace"
+    },
+    "feedback": {
+      "samples": [
+        {
+          "step": 0,
+          "aff": "ji-scroll",
+          "ambient": {
+            "g": 0.0020746527777777777,
+            "l": 0
+          },
+          "first": {
+            "g": 0.021631944444444443,
+            "l": 0.13204168243498945
+          },
+          "latencyMs": 153,
+          "shots": 24
+        },
+        {
+          "step": 1,
+          "aff": "virtue-0",
+          "ambient": {
+            "g": 0.001277126736111111,
+            "l": 0
+          },
+          "first": {
+            "g": 0.010903862847222221,
+            "l": 0.07086282440175261
+          },
+          "latencyMs": 35,
+          "shots": 23
+        },
+        {
+          "step": 2,
+          "aff": "virtue-1",
+          "ambient": {
+            "g": 0.00044813368055555557,
+            "l": 0
+          },
+          "first": {
+            "g": 0.01246853298611111,
+            "l": 0.07773156899810964
+          },
+          "latencyMs": 34,
+          "shots": 24
+        },
+        {
+          "step": 4,
+          "aff": "virtue-3",
+          "ambient": {
+            "g": 0.000380859375,
+            "l": 0
+          },
+          "first": {
+            "g": 0.020203993055555557,
+            "l": 0.07947910102919555
+          },
+          "latencyMs": 35,
+          "shots": 24
+        }
+      ],
+      "p90Ms": 153,
+      "within100Ratio": 0.75
+    },
+    "chars": {
+      "dom": 15,
+      "trace": 11,
+      "max": 15
+    },
+    "errors": {
+      "total": 0,
+      "console": [],
+      "page": [],
+      "trace": 0,
+      "warnings": 0
+    },
+    "fps": {
+      "p5": 59.88023952095548,
+      "own": 59.88023952095548,
+      "stage": 59.88023952095548,
+      "usedStage": false,
+      "frames": 704
+    },
+    "notext": {
+      "done": true,
+      "hidden": true,
+      "reason": "done"
+    },
+    "repro": {
+      "facts": 1,
+      "factsEqual": true,
+      "actsEqual": true,
+      "linesEqual": true,
+      "bothDone": true,
+      "actualLedgerEqual": null,
+      "sameActionSequence": true,
+      "firstFactDifference": null,
+      "firstActionDifference": null
+    },
+    "seedDiff": {
+      "checked": false
+    },
+    "stepsPolicy": {
+      "seed": null,
+      "preferCounts": {
+        "focus": 1,
+        "pulse": 6,
+        "least-clicked": 1
+      }
+    }
+  },
+  "runs": {
+    "main": {
+      "done": true,
+      "reason": "done",
+      "steps": 8,
+      "seconds": 23.5,
+      "fallbackClicks": 0,
+      "shots": 0
+    },
+    "notext": {
+      "done": true,
+      "reason": "done",
+      "steps": 8,
+      "seconds": 14.2,
+      "fallbackClicks": 0,
+      "shots": 0
+    },
+    "repro": {
+      "done": true,
+      "reason": "done",
+      "steps": 8,
+      "seconds": 14.3,
+      "fallbackClicks": 0,
+      "shots": 0
+    }
+  },
+  "curve": [
+    {
+      "minute": 1,
+      "decisions": 8,
+      "new_info": 15,
+      "want_continue": 5,
+      "numbers_on_screen": 0,
+      "words_on_screen": 13,
+      "note": "8 次动手，起于 wude-wheel-dev/ji-scroll；15 条新东西"
+    }
+  ],
+  "curveSummary": {
+    "decisionDensity": 8,
+    "firstDecisionMinute": 1,
+    "wantContinueMin": 5,
+    "wantContinueEnd": 5,
+    "numbersMedian": 0
+  },
+  "thresholds": {
+    "version": 1,
+    "note": "棘轮：每次 /goal 达成后只升不降。数值来自 docs/design/demo-spec.md 第八节。",
+    "firstActionSec": 0.9,
+    "first3sActionsMax": 1,
+    "feedbackMsMax": 1000,
+    "feedbackMsTarget": 100,
+    "maxChars": 30,
+    "consoleErrorsMax": 0,
+    "fpsP5Min": 50,
+    "notext": true,
+    "repro": true,
+    "layers": true,
+    "feedback": {
+      "pixelDelta": 20,
+      "globalFrac": 0.0003,
+      "localFrac": 0.002,
+      "baselineMul": 2,
+      "maxProbes": 8
+    },
+    "player": {
+      "maxSteps": 240,
+      "maxSeconds": 420,
+      "settleMs": 450,
+      "minGapMs": 600,
+      "emptyAffSeconds": 45
+    }
+  },
+  "outDir": "/Users/lidechi/orca/workspaces/Zhuzi-claude/ds/runs/_bench/index"
+}

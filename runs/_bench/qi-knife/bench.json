@@ -1,0 +1,288 @@
+{
+  "target": "dist-qi-knife/dev/qi-knife.html",
+  "url": "http://127.0.0.1:49617/qi-knife.html",
+  "when": "2026-10-15T13:56:58.793Z",
+  "verdict": "PASS",
+  "hard": {
+    "pass": 9,
+    "total": 9
+  },
+  "summary": "PASS hard 9/9 · first-action 0.07s · first3s 1 · feedback p90 313ms · max-chars 12 · errors 0 · fps-p5 60 · notext PASS · repro PASS · layers PASS",
+  "checks": [
+    {
+      "id": "first-action",
+      "label": "首个可操作元素",
+      "pass": true,
+      "value": 0.06680000001192093,
+      "limit": 0.9
+    },
+    {
+      "id": "first3s",
+      "label": "每幕前 3 秒可做的事",
+      "pass": true,
+      "value": 1,
+      "limit": 1,
+      "note": "qi-knife-selftest:1"
+    },
+    {
+      "id": "feedback",
+      "label": "反馈延迟 p90",
+      "pass": true,
+      "value": 313,
+      "limit": 1000,
+      "note": "样本 4，100ms 内有反馈的占 75%（目标 100ms）"
+    },
+    {
+      "id": "max-chars",
+      "label": "每屏可见字数",
+      "pass": true,
+      "value": 12,
+      "limit": 30,
+      "note": "DOM 12 / trace 12"
+    },
+    {
+      "id": "errors",
+      "label": "控制台报错",
+      "pass": true,
+      "value": 0,
+      "limit": 0
+    },
+    {
+      "id": "fps-p5",
+      "label": "帧率 p5",
+      "pass": true,
+      "value": 60,
+      "limit": 50,
+      "note": "308 帧；整局 rAF p5=60；stage.fpsP5()=60（末 12 秒有探针，未计入）"
+    },
+    {
+      "id": "notext",
+      "label": "删字测试",
+      "pass": true,
+      "value": "PASS",
+      "limit": "hidden + done"
+    },
+    {
+      "id": "repro",
+      "label": "同 seed 复现",
+      "pass": true,
+      "value": "PASS",
+      "limit": "same",
+      "note": "事实 1 条；账本一致，幕序一致，台词一致"
+    },
+    {
+      "id": "layers",
+      "label": "三层信息流与回执",
+      "pass": true,
+      "value": "PASS",
+      "limit": "五类齐全、幕序与回执完整",
+      "note": "5封信；未回执0；检查通过"
+    }
+  ],
+  "metrics": {
+    "layers": {
+      "required": true,
+      "letters": 5,
+      "counts": {
+        "commission": 1,
+        "plan": 1,
+        "cue": 1,
+        "report": 1,
+        "retro": 1
+      },
+      "pending": 0,
+      "check": []
+    },
+    "firstActionSec": 0.06680000001192093,
+    "first3s": {
+      "perAct": [
+        {
+          "act": "qi-knife-selftest",
+          "n": 1
+        }
+      ],
+      "max": 1,
+      "source": "trace"
+    },
+    "feedback": {
+      "samples": [
+        {
+          "step": 0,
+          "aff": "qi-scale",
+          "ambient": {
+            "g": 0,
+            "l": 0
+          },
+          "first": {
+            "g": 0.018863932291666666,
+            "l": 0.036131520506520506
+          },
+          "latencyMs": 313,
+          "shots": 22
+        },
+        {
+          "step": 1,
+          "aff": "qi-people",
+          "ambient": {
+            "g": 0,
+            "l": 0
+          },
+          "first": {
+            "g": 0.03544921875,
+            "l": 0.01684326496225009
+          },
+          "latencyMs": 77,
+          "shots": 24
+        },
+        {
+          "step": 2,
+          "aff": "qi-king",
+          "ambient": {
+            "g": 0,
+            "l": 0
+          },
+          "first": {
+            "g": 0.042470703125,
+            "l": 0.10010134871754892
+          },
+          "latencyMs": 50,
+          "shots": 21
+        },
+        {
+          "step": 4,
+          "aff": "qi-lend",
+          "ambient": {
+            "g": 0,
+            "l": 0
+          },
+          "first": {
+            "g": 0.06253363715277778,
+            "l": 0.18014456742715157
+          },
+          "latencyMs": 51,
+          "shots": 19
+        }
+      ],
+      "p90Ms": 313,
+      "within100Ratio": 0.75
+    },
+    "chars": {
+      "dom": 12,
+      "trace": 12,
+      "max": 12
+    },
+    "errors": {
+      "total": 0,
+      "console": [],
+      "page": [],
+      "trace": 0,
+      "warnings": 0
+    },
+    "fps": {
+      "p5": 59.88023952095548,
+      "own": 59.88023952095548,
+      "stage": 59.523809523812105,
+      "usedStage": false,
+      "frames": 308
+    },
+    "notext": {
+      "done": true,
+      "hidden": true,
+      "reason": "done"
+    },
+    "repro": {
+      "facts": 1,
+      "factsEqual": true,
+      "actsEqual": true,
+      "linesEqual": true,
+      "bothDone": true,
+      "actualLedgerEqual": null,
+      "sameActionSequence": true,
+      "firstFactDifference": null,
+      "firstActionDifference": null
+    },
+    "seedDiff": {
+      "checked": false
+    },
+    "stepsPolicy": {
+      "seed": null,
+      "preferCounts": {
+        "focus": 1,
+        "pulse": 4
+      }
+    }
+  },
+  "runs": {
+    "main": {
+      "done": true,
+      "reason": "done",
+      "steps": 5,
+      "seconds": 15.8,
+      "fallbackClicks": 0,
+      "shots": 0
+    },
+    "notext": {
+      "done": true,
+      "reason": "done",
+      "steps": 5,
+      "seconds": 7.9,
+      "fallbackClicks": 0,
+      "shots": 0
+    },
+    "repro": {
+      "done": true,
+      "reason": "done",
+      "steps": 5,
+      "seconds": 7.9,
+      "fallbackClicks": 0,
+      "shots": 0
+    }
+  },
+  "curve": [
+    {
+      "minute": 1,
+      "decisions": 5,
+      "new_info": 13,
+      "want_continue": 5,
+      "numbers_on_screen": 0,
+      "words_on_screen": 12,
+      "note": "5 次动手，起于 qi-knife-selftest/qi-scale；13 条新东西"
+    }
+  ],
+  "curveSummary": {
+    "decisionDensity": 5,
+    "firstDecisionMinute": 1,
+    "wantContinueMin": 5,
+    "wantContinueEnd": 5,
+    "numbersMedian": 0
+  },
+  "thresholds": {
+    "version": 1,
+    "note": "棘轮：每次 /goal 达成后只升不降。数值来自 docs/design/demo-spec.md 第八节。",
+    "firstActionSec": 0.9,
+    "first3sActionsMax": 1,
+    "feedbackMsMax": 1000,
+    "feedbackMsTarget": 100,
+    "maxChars": 30,
+    "consoleErrorsMax": 0,
+    "fpsP5Min": 50,
+    "notext": true,
+    "repro": true,
+    "layers": true,
+    "feedback": {
+      "pixelDelta": 20,
+      "globalFrac": 0.0003,
+      "localFrac": 0.002,
+      "baselineMul": 2,
+      "maxProbes": 8
+    },
+    "player": {
+      "maxSteps": 240,
+      "maxSeconds": 420,
+      "settleMs": 450,
+      "minGapMs": 600,
+      "emptyAffSeconds": 45
+    }
+  },
+  "outDir": "/Users/lidechi/orca/workspaces/Zhuzi-claude/ds/runs/_bench/qi-knife"
+}

@@ -11,6 +11,8 @@ import {
   Differ, REPO_ROOT, attachDiagnostics, factText, installBench, launch, loadThresholds, median, newContext, percentile,
   readPageData, serveDir, slug, type Diagnostics, type PageData, type Thresholds,
 } from './lib';
+import { checkLayerLetters, lettersFromTrace, letterCounts } from '../engine/layers/bus';
+import type { Letter } from '../engine/layers/types';
 import { play, type PlayResult } from './player';
 
 export interface BenchOptions {
@@ -48,11 +50,19 @@ export interface BenchReport {
   outDir: string;
 }
 
+interface LayerCapture {
+  letters: Letter[];
+  check: string[];
+  expectedActs: string[] | null;
+}
+
 interface Capture {
+  layers: LayerCapture | null;
   play: PlayResult;
   data: PageData;
   diag: Diagnostics;
   hidden?: boolean;
+  ledger: unknown[] | null;
 }
 
 // ---------------- 目标解析 ----------------
@@ -102,7 +112,17 @@ async function capture(browser: Browser, url: string, o: { noText?: boolean; dif
     ]).finally(() => clearTimeout(wd));
     const data = await readPageData(page);
     const hidden = o.noText ? await page.evaluate('!!document.getElementById("__bench_notext")').catch(() => false) as boolean : undefined;
-    return { play: result, data, diag, hidden };
+    const ledger = await page.evaluate(`(() => {
+      const world = window.__zhuzi?.ctx?.handoff?.world;
+      return typeof world?.ledger === 'function' ? world.ledger() : null;
+    })()`).catch(() => null) as unknown[] | null;
+    const layers = await page.evaluate(`(() => {
+      const z = window.__zhuzi;
+      if (!z?.layers && !z?.plan) return null;
+      return { letters: z.layers?.letters?.() ?? [], check: z.layers?.check?.() ?? [],
+        expectedActs: z.plan?.acts?.map(a => a.id) ?? null };
+    })()`).catch(() => ({ letters: [], check: ['读取三层信息流失败'], expectedActs: null })) as LayerCapture | null;
+    return { play: result, data, diag, hidden, ledger, layers };
   } finally {
     await ctx.close().catch(() => {});
   }
@@ -303,8 +323,16 @@ export async function runBench(targetArg: string, opts: BenchOptions = {}): Prom
     const factsC = C ? factsOf(C.data) : [];
     const actsA = actsOf(A.data);
     const actsC = C ? actsOf(C.data) : [];
+    const firstDifference = (a: string[], b: string[]) => {
+      const index = Array.from({ length: Math.max(a.length, b.length) }, (_, i) => i).find(i => a[i] !== b[i]);
+      return index === undefined ? null : { index, main: a[index] ?? null, replay: b[index] ?? null };
+    };
+    const actionsA = A.play.steps.map(step => `${step.aff ?? 'input'}:${step.how}`);
+    const actionsC = C ? C.play.steps.map(step => `${step.aff ?? 'input'}:${step.how}`) : [];
     const repro = C
-      ? { facts: factsA.length, factsEqual: eq(factsA, factsC), actsEqual: eq(actsA, actsC), linesEqual: eq(linesOf(A.data), linesOf(C.data)), bothDone: A.play.done && C.play.done }
+      ? { facts: factsA.length, factsEqual: eq(factsA, factsC), actsEqual: eq(actsA, actsC), linesEqual: eq(linesOf(A.data), linesOf(C.data)), bothDone: A.play.done && C.play.done,
+          actualLedgerEqual: A.ledger && C.ledger ? JSON.stringify(A.ledger) === JSON.stringify(C.ledger) : null,
+          sameActionSequence: eq(actionsA, actionsC), firstFactDifference: firstDifference(factsA, factsC), firstActionDifference: firstDifference(actionsA, actionsC) }
       : null;
     const reproPass = !!repro && repro.bothDone && repro.factsEqual && repro.actsEqual;
 
@@ -319,6 +347,16 @@ export async function runBench(targetArg: string, opts: BenchOptions = {}): Prom
       }
     }
 
+    const layerLetters = A.layers?.letters.length ? A.layers.letters : lettersFromTrace(A.data.trace);
+    const planActs: string[] | null = target.planPath
+      ? JSON.parse(fs.readFileSync(target.planPath, 'utf8')).acts.map((a: { id: string }) => a.id) : null;
+    const layerRequired = (th as Thresholds & { layers?: boolean }).layers !== false
+      && !!(planActs || A.layers || layerLetters.length);
+    const layerIssues = layerRequired
+      ? [...new Set([...(A.layers?.check ?? []), ...checkLayerLetters(layerLetters, planActs ?? A.layers?.expectedActs ?? actsA)])] : [];
+    const layers = { required: layerRequired, letters: layerLetters.length, counts: letterCounts(layerLetters),
+      pending: layerLetters.filter(l => !l.receipt).length, check: layerIssues };
+
     const checks: Check[] = [
       { id: 'first-action', label: '首个可操作元素', pass: firstAction != null && firstAction <= th.firstActionSec, value: firstAction, limit: th.firstActionSec, note: firstAction == null ? '整个过程没有出现 [data-aff]' : undefined },
       { id: 'first3s', label: '每幕前 3 秒可做的事', pass: f3.max <= th.first3sActionsMax, value: f3.max, limit: th.first3sActionsMax, note: f3.perAct.map((p) => `${p.act}:${p.n}`).join(' ') },
@@ -326,9 +364,12 @@ export async function runBench(targetArg: string, opts: BenchOptions = {}): Prom
       { id: 'max-chars', label: '每屏可见字数', pass: chars.max <= th.maxChars, value: chars.max, limit: th.maxChars, note: `DOM ${chars.dom} / trace ${chars.trace}` },
       { id: 'errors', label: '控制台报错', pass: errors <= th.consoleErrorsMax, value: errors, limit: th.consoleErrorsMax, note: [...A.diag.consoleErrors, ...A.diag.pageErrors].slice(0, 3).join(' | ') || undefined },
       { id: 'fps-p5', label: '帧率 p5', pass: fps.p5 != null && fps.p5 >= th.fpsP5Min, value: fps.p5 == null ? null : Math.round(fps.p5), limit: th.fpsP5Min, note: `${fps.frames} 帧；整局 rAF p5=${fps.own == null ? 'n/a' : Math.round(fps.own)}；stage.fpsP5()=${fps.stage == null ? 'n/a' : Math.round(fps.stage)}${fps.usedStage ? '（已计入）' : '（末 12 秒有探针，未计入）'}` },
-      { id: 'notext', label: '删字测试', pass: !th.notext || (!!notext && notext.done), value: notext ? (notext.done ? 'PASS' : 'FAIL') : 'skipped', limit: 'done', note: notext && !notext.done ? `停在 ${notext.reason}` : undefined },
+      { id: 'notext', label: '删字测试', pass: !th.notext || (!!notext && notext.hidden && notext.done), value: notext ? (notext.hidden && notext.done ? 'PASS' : 'FAIL') : 'skipped', limit: 'hidden + done', note: notext && !notext.hidden ? '隐藏样式未生效' : notext && !notext.done ? `停在 ${notext.reason}` : undefined },
       { id: 'repro', label: '同 seed 复现', pass: !th.repro || reproPass, value: repro ? (reproPass ? 'PASS' : 'FAIL') : 'skipped', limit: 'same', note: repro ? `事实 ${repro.facts} 条${repro.facts === 0 ? '（无 world.fact，只比较幕序）' : ''}；账本${repro.factsEqual ? '一致' : '不一致'}，幕序${repro.actsEqual ? '一致' : '不一致'}，台词${repro.linesEqual ? '一致' : '有差'}${repro.bothDone ? '' : '；有一次没跑完'}` : undefined },
     ];
+    checks.push({ id: 'layers', label: '三层信息流与回执', pass: !layerRequired || !layerIssues.length,
+      value: layerRequired ? (layerIssues.length ? 'FAIL' : 'PASS') : 'skipped', limit: '五类齐全、幕序与回执完整',
+      note: layerRequired ? `${layerLetters.length}封信；未回执${layers.pending}；${layerIssues.join('；') || '检查通过'}` : '通用测量夹具没有导演方案，不适用三层协议' });
     const pass = checks.filter((c) => c.pass).length;
     const completed = A.play.done;
     const verdict: 'PASS' | 'FAIL' = pass === checks.length && completed ? 'PASS' : 'FAIL';
@@ -347,6 +388,7 @@ export async function runBench(targetArg: string, opts: BenchOptions = {}): Prom
       seg('fps-p5', `fps-p5 ${fps.p5 == null ? 'n/a' : Math.round(fps.p5)}`),
       `notext ${checks.find((c) => c.id === 'notext')!.value === 'PASS' ? 'PASS' : notext ? 'FAIL' : 'skipped'}`,
       `repro ${checks.find((c) => c.id === 'repro')!.value}`,
+      `layers ${checks.find(c => c.id === 'layers')!.value}`,
       ...(completed ? [] : [`incomplete (${A.play.reason})`]),
       ...(seedDiff.checked ? [`seed-differs ${seedDiff.differs ? 'PASS' : 'FAIL'}`] : []),
     ].join(' · ');
@@ -363,6 +405,7 @@ export async function runBench(targetArg: string, opts: BenchOptions = {}): Prom
       summary,
       checks,
       metrics: {
+        layers,
         firstActionSec: firstAction,
         first3s: f3,
         feedback: { samples: fbSamples, p90Ms: fbP90 != null && Number.isFinite(fbP90) ? fbP90 : null, within100Ratio: within100 },

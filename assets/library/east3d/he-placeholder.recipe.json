@@ -1,0 +1,14 @@
+{
+  "id": "east3d-he-placeholder",
+  "file": "he-placeholder.glb",
+  "recipe": "D1 高跪农人：修长小头、交领大褶短褐、布带、发髻、鼻额、分指干手、沾土双膝与草履；命名分件支持髋部直身和肩肘端点动作；本机程序化替身，非绑骨；seed 7",
+  "faces": 2252,
+  "face_unit": "triangles",
+  "source": "程序化生成（Blender 5.1，seed 7）",
+  "license": "本项目自有",
+  "era": "zhanguo",
+  "tags": [
+    "east3d",
+    "drought"
+  ]
+}

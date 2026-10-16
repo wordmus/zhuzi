@@ -1,0 +1,564 @@
+{
+  "intent": "first-visit",
+  "seed": 45,
+  "tier": "L1",
+  "when": "2026-10-14T12:39:51.919Z",
+  "status": "ok",
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": [
+      {
+        "level": "warn",
+        "path": "acts[0].lines[0].text",
+        "msg": "「等你一会儿了。先看这个。」不止一句（每屏 ≤ 1 句）",
+        "act": "threshold"
+      },
+      {
+        "level": "warn",
+        "path": "acts[1].reveal",
+        "msg": "揭示顺序里的 he 不是这一幕的元素（若是运行时生成的可忽略）",
+        "act": "reveal"
+      },
+      {
+        "level": "warn",
+        "path": "acts[2].reveal",
+        "msg": "揭示顺序里的 rumor 不是这一幕的元素（若是运行时生成的可忽略）",
+        "act": "han"
+      },
+      {
+        "level": "warn",
+        "path": "acts[2].reveal",
+        "msg": "揭示顺序里的 altar 不是这一幕的元素（若是运行时生成的可忽略）",
+        "act": "han"
+      }
+    ]
+  },
+  "build": {
+    "ok": true,
+    "ms": 314,
+    "bytes": 273629,
+    "singleFile": true,
+    "external": []
+  },
+  "play": {
+    "done": true,
+    "reason": "done",
+    "seconds": 122.3,
+    "steps": 47,
+    "stepLog": [
+      {
+        "i": 0,
+        "act": "threshold",
+        "aff": "door",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 1,
+        "act": "threshold",
+        "aff": "ticket",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 2,
+        "act": "reveal",
+        "aff": "east-suburb",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 3,
+        "act": "han",
+        "aff": "walk2d-he",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 4,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 5,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 6,
+        "act": "han",
+        "aff": "heart-go",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 7,
+        "act": "han",
+        "aff": "heart-go",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 8,
+        "act": "han",
+        "aff": "walk2d-he",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 9,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 10,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 11,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 12,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 13,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 14,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 15,
+        "act": "han",
+        "aff": "walk2d-place-home",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 16,
+        "act": "han",
+        "aff": "walk2d-place-field",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 17,
+        "act": "han",
+        "aff": "walk2d-place-well",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 18,
+        "act": "han",
+        "aff": "walk2d-place-altar",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 19,
+        "act": "han",
+        "aff": "walk2d-place-gate",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 20,
+        "act": "han",
+        "aff": "walk2d-place-road",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 21,
+        "act": "han",
+        "aff": "walk2d-place-field",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 22,
+        "act": "han",
+        "aff": "walk2d-place-gate",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 23,
+        "act": "han",
+        "aff": "walk2d-gate-ring",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 24,
+        "act": "han",
+        "aff": "walk2d-gate-ring",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 25,
+        "act": "han",
+        "aff": "walk2d-gate-ring",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 26,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 27,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 28,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 29,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 30,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 31,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 32,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 33,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 34,
+        "act": "han",
+        "aff": "walk2d-place-well",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 35,
+        "act": "han",
+        "aff": "walk2d-gate-ring",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 36,
+        "act": "han",
+        "aff": "walk2d-gate-ring",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 37,
+        "act": "han",
+        "aff": "walk2d-gate-ring",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 38,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 39,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 40,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 41,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 42,
+        "act": "han",
+        "aff": "walk2d-place-road",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 43,
+        "act": "han",
+        "aff": "walk2d-commit",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 44,
+        "act": "return",
+        "aff": "name",
+        "prefer": "pulse",
+        "progressed": false
+      },
+      {
+        "i": 45,
+        "act": "return",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 46,
+        "act": "return",
+        "aff": "door",
+        "prefer": "pulse",
+        "progressed": true
+      }
+    ],
+    "shots": [
+      "01-threshold-enter.png",
+      "02-threshold-s0.png",
+      "03-reveal-enter.png",
+      "04-han-enter.png",
+      "05-han-s3.png",
+      "06-han-s4.png",
+      "07-han-s5.png",
+      "08-han-s6.png",
+      "09-return-enter.png",
+      "10-return-s44.png",
+      "11-return-s45.png",
+      "12-return-s46.png",
+      "13-final-done.png"
+    ],
+    "traceEvents": 734,
+    "errors": 0,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "fallbackClicks": 0,
+    "firstActionSec": 0.029,
+    "stageFpsP5": 59.52380952385077,
+    "ledger": {
+      "source": "window.__zhuzi.ctx.handoff.world.ledger",
+      "facts": 52
+    },
+    "acts": [
+      {
+        "act": "threshold",
+        "expected": "灯一盏盏亮到你这边",
+        "entered": true,
+        "exited": true,
+        "durationMs": 6897,
+        "firstAffMs": 5,
+        "firstActionMs": 2249,
+        "predictedFirstActionMs": 4000,
+        "note": "与预演相近",
+        "lines": [
+          "等你一会儿了。先看这个。"
+        ]
+      },
+      {
+        "act": "reveal",
+        "expected": "你看向哪里，哪里显影",
+        "entered": true,
+        "exited": true,
+        "durationMs": 2769,
+        "firstAffMs": 2,
+        "firstActionMs": 2681,
+        "predictedFirstActionMs": 6000,
+        "note": "与预演相近",
+        "lines": []
+      },
+      {
+        "act": "han",
+        "expected": "田伯开门后说的和心里预演的不一样",
+        "entered": true,
+        "exited": true,
+        "durationMs": 103780,
+        "firstAffMs": 2,
+        "firstActionMs": 2979,
+        "predictedFirstActionMs": 3000,
+        "note": "与预演相近",
+        "lines": [
+          "借你，秋后还。",
+          "今年不凑巧。",
+          "今年不凑巧。",
+          "脸还要，肚子再撑撑。",
+          "再等三天。我说过了。",
+          "天老爷，你是忘了东郊，还是忘了我？",
+          "先吃，别说话。",
+          "旧人上门，田伯让他在门外等。",
+          "缝又宽了一指。",
+          "云来了，又走了。",
+          "井边只有话，没有粟。",
+          "土在掉渣，像粟壳。",
+          "社公，这田你也有一份。",
+          "荧惑守心。要出大事。",
+          "天上那颗红星，不走了。",
+          "我的脸，比瓮还空么？",
+          "神要诚心？我只有粟。",
+          "我这双脚，只认这块土。",
+          "神要诚心？我只有粟。",
+          "田伯家的车，装了三趟。",
+          "再看，缝也合不上。",
+          "社公，这田你也有一份。",
+          "田伯，我爹给您爹扛过粟。",
+          "王的人刚走。",
+          "社公，这回我备牲。",
+          "听风声能当饭吃？",
+          "田伯，乡邻都陪我来了。",
+          "门口站这么多人，是借粮，还是看我？",
+          "走。天亮前就走。"
+        ]
+      },
+      {
+        "act": "return",
+        "expected": "它记得禾做了什么",
+        "entered": true,
+        "exited": true,
+        "durationMs": 7796,
+        "firstAffMs": 4000,
+        "firstActionMs": 4780,
+        "predictedFirstActionMs": 5000,
+        "note": "与预演相近",
+        "lines": [
+          "禾带着一家人，往莒去了。",
+          "怎么称呼你？",
+          "季那边，听说也有人敲门。"
+        ]
+      }
+    ]
+  },
+  "seconds": 123,
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 273629
+    },
+    {
+      "path": "ledger.json",
+      "bytes": 7393
+    },
+    {
+      "path": "plan.json",
+      "bytes": 18362
+    },
+    {
+      "path": "shots/01-threshold-enter.png",
+      "bytes": 936510
+    },
+    {
+      "path": "shots/02-threshold-s0.png",
+      "bytes": 1083286
+    },
+    {
+      "path": "shots/03-reveal-enter.png",
+      "bytes": 104138
+    },
+    {
+      "path": "shots/04-han-enter.png",
+      "bytes": 1479235
+    },
+    {
+      "path": "shots/05-han-s3.png",
+      "bytes": 1344481
+    },
+    {
+      "path": "shots/06-han-s4.png",
+      "bytes": 1356736
+    },
+    {
+      "path": "shots/07-han-s5.png",
+      "bytes": 1357126
+    },
+    {
+      "path": "shots/08-han-s6.png",
+      "bytes": 1358745
+    },
+    {
+      "path": "shots/09-return-enter.png",
+      "bytes": 361453
+    },
+    {
+      "path": "shots/10-return-s44.png",
+      "bytes": 379513
+    },
+    {
+      "path": "shots/11-return-s45.png",
+      "bytes": 381065
+    },
+    {
+      "path": "shots/12-return-s46.png",
+      "bytes": 319655
+    },
+    {
+      "path": "shots/13-final-done.png",
+      "bytes": 319508
+    },
+    {
+      "path": "trace.jsonl",
+      "bytes": 88278
+    }
+  ]
+}

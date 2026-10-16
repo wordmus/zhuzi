@@ -1,0 +1,367 @@
+{
+  "target": "runs/first-visit/7/L1",
+  "url": "http://127.0.0.1:64827/index.html",
+  "when": "2026-10-15T22:04:13.968Z",
+  "verdict": "PASS",
+  "hard": {
+    "pass": 9,
+    "total": 9
+  },
+  "summary": "PASS hard 9/9 · first-action 0.02s · first3s 1 · feedback p90 244ms · max-chars 29 · errors 0 · fps-p5 60 · notext PASS · repro PASS · layers PASS",
+  "checks": [
+    {
+      "id": "first-action",
+      "label": "首个可操作元素",
+      "pass": true,
+      "value": 0.01819999998807907,
+      "limit": 0.6
+    },
+    {
+      "id": "first3s",
+      "label": "每幕前 3 秒可做的事",
+      "pass": true,
+      "value": 1,
+      "limit": 1,
+      "note": "threshold:1 reveal:1 han:1 return:0"
+    },
+    {
+      "id": "feedback",
+      "label": "反馈延迟 p90",
+      "pass": true,
+      "value": 244,
+      "limit": 900,
+      "note": "样本 8，100ms 内有反馈的占 88%（目标 100ms）"
+    },
+    {
+      "id": "max-chars",
+      "label": "每屏可见字数",
+      "pass": true,
+      "value": 29,
+      "limit": 30,
+      "note": "DOM 29 / trace 19"
+    },
+    {
+      "id": "errors",
+      "label": "控制台报错",
+      "pass": true,
+      "value": 0,
+      "limit": 0
+    },
+    {
+      "id": "fps-p5",
+      "label": "帧率 p5",
+      "pass": true,
+      "value": 60,
+      "limit": 55,
+      "note": "3370 帧；整局 rAF p5=60；stage.fpsP5()=60（已计入）"
+    },
+    {
+      "id": "notext",
+      "label": "删字测试",
+      "pass": true,
+      "value": "PASS",
+      "limit": "hidden + done"
+    },
+    {
+      "id": "repro",
+      "label": "同 seed 复现",
+      "pass": true,
+      "value": "PASS",
+      "limit": "same",
+      "note": "事实 39 条；账本一致，幕序一致，台词一致"
+    },
+    {
+      "id": "layers",
+      "label": "三层信息流与回执",
+      "pass": true,
+      "value": "PASS",
+      "limit": "五类齐全、幕序与回执完整",
+      "note": "15封信；未回执0；检查通过"
+    }
+  ],
+  "metrics": {
+    "layers": {
+      "required": true,
+      "letters": 15,
+      "counts": {
+        "commission": 1,
+        "plan": 1,
+        "cue": 6,
+        "report": 6,
+        "retro": 1
+      },
+      "pending": 0,
+      "check": []
+    },
+    "firstActionSec": 0.01819999998807907,
+    "first3s": {
+      "perAct": [
+        {
+          "act": "threshold",
+          "n": 1
+        },
+        {
+          "act": "reveal",
+          "n": 1
+        },
+        {
+          "act": "han",
+          "n": 1
+        },
+        {
+          "act": "return",
+          "n": 0
+        }
+      ],
+      "max": 1,
+      "source": "trace"
+    },
+    "feedback": {
+      "samples": [
+        {
+          "step": 0,
+          "aff": "door",
+          "ambient": {
+            "g": 0.0006673177083333333,
+            "l": 0.000019074608970516104
+          },
+          "first": {
+            "g": 0.09388020833333334,
+            "l": 0.1581285083655785
+          },
+          "latencyMs": 244,
+          "shots": 8
+        },
+        {
+          "step": 1,
+          "aff": "ticket",
+          "ambient": {
+            "g": 0.004393446180555555,
+            "l": 0.010273251652561998
+          },
+          "first": {
+            "g": 0.004188368055555555,
+            "l": 0.016205633447012757
+          },
+          "latencyMs": 32,
+          "shots": 24
+        },
+        {
+          "step": 2,
+          "aff": "east-suburb",
+          "ambient": {
+            "g": 0.005159505208333333,
+            "l": 0
+          },
+          "first": {
+            "g": 0.0010774739583333333,
+            "l": 0.004406538734896943
+          },
+          "latencyMs": 51,
+          "shots": 20
+        },
+        {
+          "step": 4,
+          "aff": "heart-approach",
+          "ambient": {
+            "g": 0.0025694444444444445,
+            "l": 0.005632352482291634
+          },
+          "first": {
+            "g": 0.011684027777777778,
+            "l": 0.03356008362717259
+          },
+          "latencyMs": 52,
+          "shots": 20
+        },
+        {
+          "step": 8,
+          "aff": "walk2d-gate-ring",
+          "ambient": {
+            "g": 0.002692057291666667,
+            "l": 0.0181227173119065
+          },
+          "first": {
+            "g": 0.002435980902777778,
+            "l": 0.01639883126369613
+          },
+          "latencyMs": 69,
+          "shots": 19
+        },
+        {
+          "step": 12,
+          "aff": "heart-weight-li",
+          "ambient": {
+            "g": 0.004677734375,
+            "l": 0.004721891731112433
+          },
+          "first": {
+            "g": 0.003894314236111111,
+            "l": 0.033359979179060084
+          },
+          "latencyMs": 49,
+          "shots": 20
+        },
+        {
+          "step": 16,
+          "aff": "heart-weight-ming",
+          "ambient": {
+            "g": 0.003359375,
+            "l": 0.0028071088637715647
+          },
+          "first": {
+            "g": 0.0049685329861111115,
+            "l": 0.0378401992861392
+          },
+          "latencyMs": 50,
+          "shots": 20
+        },
+        {
+          "step": 24,
+          "aff": "heart-go",
+          "ambient": {
+            "g": 0.002605251736111111,
+            "l": 0.0045918319632653444
+          },
+          "first": {
+            "g": 0.0022471788194444444,
+            "l": 0.01767527985859776
+          },
+          "latencyMs": 50,
+          "shots": 21
+        }
+      ],
+      "p90Ms": 244,
+      "within100Ratio": 0.875
+    },
+    "chars": {
+      "dom": 29,
+      "trace": 19,
+      "max": 29
+    },
+    "errors": {
+      "total": 0,
+      "console": [],
+      "page": [],
+      "trace": 0,
+      "warnings": 0
+    },
+    "fps": {
+      "p5": 59.52380952385077,
+      "own": 59.52380952385077,
+      "stage": 59.52380952385077,
+      "usedStage": true,
+      "frames": 3370
+    },
+    "notext": {
+      "done": true,
+      "hidden": true,
+      "reason": "done"
+    },
+    "repro": {
+      "facts": 39,
+      "factsEqual": true,
+      "actsEqual": true,
+      "linesEqual": true,
+      "bothDone": true,
+      "actualLedgerEqual": true,
+      "sameActionSequence": true,
+      "firstFactDifference": null,
+      "firstActionDifference": null
+    },
+    "seedDiff": {
+      "checked": false
+    },
+    "stepsPolicy": {
+      "seed": null,
+      "preferCounts": {
+        "focus": 8,
+        "pulse": 7,
+        "least-clicked": 10,
+        "input": 3
+      }
+    }
+  },
+  "runs": {
+    "main": {
+      "done": true,
+      "reason": "done",
+      "steps": 28,
+      "seconds": 81,
+      "fallbackClicks": 0,
+      "shots": 0
+    },
+    "notext": {
+      "done": true,
+      "reason": "done",
+      "steps": 28,
+      "seconds": 59.7,
+      "fallbackClicks": 0,
+      "shots": 0
+    },
+    "repro": {
+      "done": true,
+      "reason": "done",
+      "steps": 28,
+      "seconds": 59.7,
+      "fallbackClicks": 0,
+      "shots": 0
+    }
+  },
+  "curve": [
+    {
+      "minute": 1,
+      "decisions": 21,
+      "new_info": 64,
+      "want_continue": 5,
+      "numbers_on_screen": 0,
+      "words_on_screen": 16,
+      "note": "21 次动手，起于 threshold/door；64 条新东西"
+    },
+    {
+      "minute": 2,
+      "decisions": 6,
+      "new_info": 15,
+      "want_continue": 5,
+      "numbers_on_screen": 0,
+      "words_on_screen": 12,
+      "note": "7 次动手，起于 han/heart-write；15 条新东西"
+    }
+  ],
+  "curveSummary": {
+    "decisionDensity": 13.5,
+    "firstDecisionMinute": 1,
+    "wantContinueMin": 5,
+    "wantContinueEnd": 5,
+    "numbersMedian": 0
+  },
+  "thresholds": {
+    "version": 1,
+    "note": "棘轮：每次 /goal 达成后只升不降。数值来自 docs/design/demo-spec.md 第八节。",
+    "firstActionSec": 0.6,
+    "first3sActionsMax": 1,
+    "feedbackMsMax": 900,
+    "feedbackMsTarget": 100,
+    "maxChars": 30,
+    "consoleErrorsMax": 0,
+    "fpsP5Min": 55,
+    "notext": true,
+    "repro": true,
+    "layers": true,
+    "feedback": {
+      "pixelDelta": 20,
+      "globalFrac": 0.0003,
+      "localFrac": 0.002,
+      "baselineMul": 2,
+      "maxProbes": 8
+    },
+    "player": {
+      "maxSteps": 240,
+      "maxSeconds": 420,
+      "settleMs": 450,
+      "minGapMs": 600,
+      "emptyAffSeconds": 45
+    }
+  },
+  "outDir": "/Users/lidechi/orca/workspaces/Zhuzi-claude/ds/runs/first-visit/7/L1"
+}

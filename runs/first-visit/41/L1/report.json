@@ -1,0 +1,1865 @@
+{
+  "intent": "first-visit",
+  "seed": 41,
+  "tier": "L1",
+  "when": "2026-10-14T09:25:55.502Z",
+  "status": "play-incomplete",
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": [
+      {
+        "level": "warn",
+        "path": "acts[0].lines[0].text",
+        "msg": "「来了。这一件刚做好。」不止一句（每屏 ≤ 1 句）",
+        "act": "threshold"
+      },
+      {
+        "level": "warn",
+        "path": "acts[1].reveal",
+        "msg": "揭示顺序里的 he 不是这一幕的元素（若是运行时生成的可忽略）",
+        "act": "reveal"
+      },
+      {
+        "level": "warn",
+        "path": "acts[2].reveal",
+        "msg": "揭示顺序里的 rumor 不是这一幕的元素（若是运行时生成的可忽略）",
+        "act": "han"
+      },
+      {
+        "level": "warn",
+        "path": "acts[2].reveal",
+        "msg": "揭示顺序里的 altar 不是这一幕的元素（若是运行时生成的可忽略）",
+        "act": "han"
+      }
+    ]
+  },
+  "build": {
+    "ok": true,
+    "ms": 900,
+    "bytes": 269508,
+    "singleFile": true,
+    "external": []
+  },
+  "play": {
+    "done": false,
+    "reason": "max-steps",
+    "seconds": 311.7,
+    "steps": 240,
+    "stepLog": [
+      {
+        "i": 0,
+        "act": "threshold",
+        "aff": "door",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 1,
+        "act": "threshold",
+        "aff": "ticket",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 2,
+        "act": "reveal",
+        "aff": "east-suburb",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 3,
+        "act": "han",
+        "aff": "walk2d-he",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 4,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 5,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 6,
+        "act": "han",
+        "aff": "heart-go",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 7,
+        "act": "han",
+        "aff": "heart-go",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 8,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 9,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 10,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 11,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 12,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 13,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 14,
+        "act": "han",
+        "aff": "walk2d-place-field",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 15,
+        "act": "han",
+        "aff": "walk2d-he",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 16,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 17,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 18,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 19,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 20,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 21,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 22,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 23,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 24,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "rotate",
+        "progressed": true
+      },
+      {
+        "i": 25,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 26,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 27,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 28,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 29,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 30,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 31,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 32,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "rotate",
+        "progressed": true
+      },
+      {
+        "i": 33,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 34,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 35,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 36,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 37,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 38,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 39,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 40,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 41,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 42,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 43,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "rotate",
+        "progressed": true
+      },
+      {
+        "i": 44,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 45,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 46,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 47,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 48,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 49,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 50,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 51,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "rotate",
+        "progressed": true
+      },
+      {
+        "i": 52,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 53,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 54,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 55,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 56,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 57,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 58,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 59,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "rotate",
+        "progressed": true
+      },
+      {
+        "i": 60,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 61,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 62,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 63,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 64,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 65,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 66,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 67,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 68,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 69,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 70,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "rotate",
+        "progressed": true
+      },
+      {
+        "i": 71,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 72,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 73,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 74,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 75,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 76,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 77,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 78,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "rotate",
+        "progressed": true
+      },
+      {
+        "i": 79,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 80,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 81,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 82,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 83,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 84,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 85,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 86,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "rotate",
+        "progressed": true
+      },
+      {
+        "i": 87,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 88,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 89,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 90,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 91,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 92,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 93,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 94,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 95,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 96,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 97,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "rotate",
+        "progressed": true
+      },
+      {
+        "i": 98,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 99,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 100,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 101,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 102,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 103,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 104,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 105,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "rotate",
+        "progressed": true
+      },
+      {
+        "i": 106,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 107,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 108,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 109,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 110,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 111,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 112,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 113,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "rotate",
+        "progressed": true
+      },
+      {
+        "i": 114,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 115,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 116,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 117,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 118,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 119,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 120,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 121,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "rotate",
+        "progressed": true
+      },
+      {
+        "i": 122,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 123,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 124,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 125,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 126,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 127,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 128,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 129,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 130,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 131,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 132,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "rotate",
+        "progressed": true
+      },
+      {
+        "i": 133,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 134,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 135,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 136,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 137,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 138,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 139,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 140,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "rotate",
+        "progressed": true
+      },
+      {
+        "i": 141,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 142,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 143,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 144,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 145,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 146,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 147,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 148,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "rotate",
+        "progressed": true
+      },
+      {
+        "i": 149,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 150,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 151,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 152,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 153,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 154,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 155,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 156,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "rotate",
+        "progressed": true
+      },
+      {
+        "i": 157,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 158,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 159,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 160,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 161,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 162,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 163,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 164,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 165,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 166,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 167,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "rotate",
+        "progressed": true
+      },
+      {
+        "i": 168,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 169,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 170,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 171,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 172,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 173,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 174,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 175,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "rotate",
+        "progressed": true
+      },
+      {
+        "i": 176,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 177,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 178,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 179,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 180,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 181,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 182,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 183,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "rotate",
+        "progressed": true
+      },
+      {
+        "i": 184,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 185,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 186,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 187,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 188,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 189,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 190,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 191,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "rotate",
+        "progressed": true
+      },
+      {
+        "i": 192,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 193,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 194,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 195,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 196,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 197,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 198,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 199,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 200,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 201,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 202,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "rotate",
+        "progressed": true
+      },
+      {
+        "i": 203,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 204,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 205,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 206,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 207,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 208,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 209,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 210,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "rotate",
+        "progressed": true
+      },
+      {
+        "i": 211,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 212,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 213,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 214,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 215,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 216,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 217,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 218,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "rotate",
+        "progressed": true
+      },
+      {
+        "i": 219,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 220,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 221,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 222,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 223,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 224,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 225,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 226,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "rotate",
+        "progressed": true
+      },
+      {
+        "i": 227,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 228,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 229,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 230,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 231,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 232,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "least-clicked",
+        "progressed": false
+      },
+      {
+        "i": 233,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 234,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 235,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 236,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "rotate",
+        "progressed": false
+      },
+      {
+        "i": 237,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "rotate",
+        "progressed": true
+      },
+      {
+        "i": 238,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 239,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": false
+      }
+    ],
+    "shots": [
+      "01-threshold-enter.png",
+      "02-threshold-s0.png",
+      "03-reveal-enter.png",
+      "04-han-enter.png",
+      "05-han-s3.png",
+      "06-han-s4.png",
+      "07-han-s5.png",
+      "08-han-s6.png"
+    ],
+    "traceEvents": 2514,
+    "errors": 0,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "fallbackClicks": 0,
+    "firstActionSec": 0.044,
+    "stageFpsP5": 59.88023952091634,
+    "ledger": {
+      "source": "trace(world.fact)",
+      "facts": 12
+    },
+    "acts": [
+      {
+        "act": "threshold",
+        "expected": "灯一盏盏亮到你这边",
+        "entered": true,
+        "exited": true,
+        "durationMs": 6942,
+        "firstAffMs": 4,
+        "firstActionMs": 2479,
+        "predictedFirstActionMs": 4000,
+        "note": "与预演相近",
+        "lines": [
+          "来了。这一件刚做好。"
+        ]
+      },
+      {
+        "act": "reveal",
+        "expected": "你看向哪里，哪里显影",
+        "entered": true,
+        "exited": true,
+        "durationMs": 2780,
+        "firstAffMs": 1,
+        "firstActionMs": 2681,
+        "predictedFirstActionMs": 6000,
+        "note": "与预演相近",
+        "lines": []
+      },
+      {
+        "act": "han",
+        "expected": "田伯开门后说的和心里预演的不一样",
+        "entered": true,
+        "exited": false,
+        "durationMs": null,
+        "firstAffMs": 2,
+        "firstActionMs": 2951,
+        "predictedFirstActionMs": 3000,
+        "note": "与预演相近",
+        "lines": [
+          "田伯放粟，秋后要加倍。",
+          "借你，秋后还。",
+          "借你，秋后还。",
+          "借你，秋后还。",
+          "春天开口，秋天拿什么还？",
+          "春天开口，秋天拿什么还？",
+          "缝又宽了一指。",
+          "天老爷，你是忘了东郊，还是忘了我？"
+        ]
+      },
+      {
+        "act": "return",
+        "expected": "它记得禾做了什么",
+        "entered": false,
+        "exited": false,
+        "durationMs": null,
+        "firstAffMs": null,
+        "firstActionMs": null,
+        "predictedFirstActionMs": 5000,
+        "note": "没进场",
+        "lines": []
+      }
+    ]
+  },
+  "seconds": 313.6,
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 269508
+    },
+    {
+      "path": "ledger.json",
+      "bytes": 1791
+    },
+    {
+      "path": "plan.json",
+      "bytes": 18596
+    },
+    {
+      "path": "shots/01-threshold-enter.png",
+      "bytes": 936791
+    },
+    {
+      "path": "shots/02-threshold-s0.png",
+      "bytes": 1084946
+    },
+    {
+      "path": "shots/03-reveal-enter.png",
+      "bytes": 104792
+    },
+    {
+      "path": "shots/04-han-enter.png",
+      "bytes": 1481464
+    },
+    {
+      "path": "shots/05-han-s3.png",
+      "bytes": 1346703
+    },
+    {
+      "path": "shots/06-han-s4.png",
+      "bytes": 1358184
+    },
+    {
+      "path": "shots/07-han-s5.png",
+      "bytes": 1359094
+    },
+    {
+      "path": "shots/08-han-s6.png",
+      "bytes": 1361759
+    },
+    {
+      "path": "trace.jsonl",
+      "bytes": 154703
+    }
+  ]
+}

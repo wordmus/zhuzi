@@ -1,0 +1,516 @@
+{
+  "intent": "first-visit",
+  "seed": 49,
+  "tier": "L1",
+  "when": "2026-10-14T19:31:32.870Z",
+  "status": "ok",
+  "validation": {
+    "ok": true,
+    "errors": [],
+    "warnings": [
+      {
+        "level": "warn",
+        "path": "acts[0].lines[0].text",
+        "msg": "「等你一会儿了。先看这个。」不止一句（每屏 ≤ 1 句）",
+        "act": "threshold"
+      },
+      {
+        "level": "warn",
+        "path": "acts[1].reveal",
+        "msg": "揭示顺序里的 he 不是这一幕的元素（若是运行时生成的可忽略）",
+        "act": "reveal"
+      },
+      {
+        "level": "warn",
+        "path": "acts[2].reveal",
+        "msg": "揭示顺序里的 rumor 不是这一幕的元素（若是运行时生成的可忽略）",
+        "act": "han"
+      },
+      {
+        "level": "warn",
+        "path": "acts[2].reveal",
+        "msg": "揭示顺序里的 altar 不是这一幕的元素（若是运行时生成的可忽略）",
+        "act": "han"
+      }
+    ]
+  },
+  "build": {
+    "ok": true,
+    "ms": 328,
+    "bytes": 278915,
+    "singleFile": true,
+    "external": []
+  },
+  "play": {
+    "done": true,
+    "reason": "done",
+    "seconds": 92.8,
+    "steps": 42,
+    "stepLog": [
+      {
+        "i": 0,
+        "act": "threshold",
+        "aff": "door",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 1,
+        "act": "threshold",
+        "aff": "ticket",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 2,
+        "act": "reveal",
+        "aff": "east-suburb",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 3,
+        "act": "han",
+        "aff": "walk2d-he",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 4,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 5,
+        "act": "han",
+        "aff": "heart-approach",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 6,
+        "act": "han",
+        "aff": "heart-go",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 7,
+        "act": "han",
+        "aff": "heart-go",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 8,
+        "act": "han",
+        "aff": "walk2d-gate-ring",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 9,
+        "act": "han",
+        "aff": "walk2d-gate-ring",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 10,
+        "act": "han",
+        "aff": "walk2d-gate-ring",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 11,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 12,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 13,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 14,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 15,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 16,
+        "act": "han",
+        "aff": "walk2d-he",
+        "prefer": "focus",
+        "progressed": true
+      },
+      {
+        "i": 17,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 18,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 19,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 20,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 21,
+        "act": "han",
+        "aff": "heart-write",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 22,
+        "act": "han",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 23,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 24,
+        "act": "han",
+        "aff": "walk2d-place-altar",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 25,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 26,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 27,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 28,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 29,
+        "act": "han",
+        "aff": "walk2d-place-field",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 30,
+        "act": "han",
+        "aff": "walk2d-place-gate",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 31,
+        "act": "han",
+        "aff": "walk2d-gate-ring",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 32,
+        "act": "han",
+        "aff": "walk2d-gate-ring",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 33,
+        "act": "han",
+        "aff": "walk2d-gate-ring",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 34,
+        "act": "han",
+        "aff": "heart-weight-qing",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 35,
+        "act": "han",
+        "aff": "heart-weight-li",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 36,
+        "act": "han",
+        "aff": "heart-weight-ming",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 37,
+        "act": "han",
+        "aff": "heart-close",
+        "prefer": "least-clicked",
+        "progressed": true
+      },
+      {
+        "i": 38,
+        "act": "han",
+        "aff": "walk2d-offer-accept",
+        "prefer": "pulse",
+        "progressed": true
+      },
+      {
+        "i": 39,
+        "act": "return",
+        "aff": "name",
+        "prefer": "pulse",
+        "progressed": false
+      },
+      {
+        "i": 40,
+        "act": "return",
+        "aff": null,
+        "prefer": "input",
+        "progressed": true
+      },
+      {
+        "i": 41,
+        "act": "return",
+        "aff": "door",
+        "prefer": "pulse",
+        "progressed": true
+      }
+    ],
+    "shots": [
+      "01-threshold-enter.png",
+      "02-threshold-s0.png",
+      "03-reveal-enter.png",
+      "04-han-enter.png",
+      "05-han-s3.png",
+      "06-han-s4.png",
+      "07-han-s5.png",
+      "08-han-s6.png",
+      "09-return-enter.png",
+      "10-return-s39.png",
+      "11-return-s40.png",
+      "12-return-s41.png",
+      "13-final-done.png"
+    ],
+    "traceEvents": 518,
+    "errors": 0,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "fallbackClicks": 0,
+    "firstActionSec": 0.058,
+    "stageFpsP5": 59.52380952385077,
+    "ledger": {
+      "source": "window.__zhuzi.ctx.handoff.world.ledger",
+      "facts": 48
+    },
+    "acts": [
+      {
+        "act": "threshold",
+        "expected": "灯一盏盏亮到你这边",
+        "entered": true,
+        "exited": true,
+        "durationMs": 7015,
+        "firstAffMs": 5,
+        "firstActionMs": 2349,
+        "predictedFirstActionMs": 4000,
+        "note": "与预演相近",
+        "lines": [
+          "帮禾借点粟，让一家人过冬。"
+        ]
+      },
+      {
+        "act": "reveal",
+        "expected": "你看向哪里，哪里显影",
+        "entered": true,
+        "exited": true,
+        "durationMs": 2781,
+        "firstAffMs": 1,
+        "firstActionMs": 2685,
+        "predictedFirstActionMs": 6000,
+        "note": "与预演相近",
+        "lines": []
+      },
+      {
+        "act": "han",
+        "expected": "田伯开门后说的和心里预演的不一样",
+        "entered": true,
+        "exited": true,
+        "durationMs": 74149,
+        "firstAffMs": 4,
+        "firstActionMs": 3003,
+        "predictedFirstActionMs": 3000,
+        "note": "与预演相近",
+        "lines": [
+          "秋旱未解，得向田伯借点粟。",
+          "先在心里试试，怎样借到粟？",
+          "禾以为：田伯会拒绝。",
+          "禾以为：田伯会拒绝。",
+          "我的脸，比瓮还空么？",
+          "田伯，我爹给您爹扛过粟。",
+          "王的人刚走。",
+          "预演借粟，实际拒绝。",
+          "我不求多，求一场透雨。",
+          "社公，这回我备牲。",
+          "再看，缝也合不上。",
+          "我不求多，求一场透雨。",
+          "田伯，东头那块地，押给您。",
+          "东头那块，我早看着了。",
+          "预演买地，实际买地。",
+          "地……拿去吧。"
+        ]
+      },
+      {
+        "act": "return",
+        "expected": "它记得禾做了什么",
+        "entered": true,
+        "exited": true,
+        "durationMs": 7780,
+        "firstAffMs": 4001,
+        "firstActionMs": 4781,
+        "predictedFirstActionMs": 5000,
+        "note": "与预演相近",
+        "lines": [
+          "禾卖了地，换来一冬的粟。",
+          "怎么称呼你？",
+          "季那边，听说也有人敲门。"
+        ]
+      }
+    ]
+  },
+  "seconds": 93.8,
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 278915
+    },
+    {
+      "path": "ledger.json",
+      "bytes": 6761
+    },
+    {
+      "path": "plan.json",
+      "bytes": 18819
+    },
+    {
+      "path": "shots/01-threshold-enter.png",
+      "bytes": 936338
+    },
+    {
+      "path": "shots/02-threshold-s0.png",
+      "bytes": 1084415
+    },
+    {
+      "path": "shots/03-reveal-enter.png",
+      "bytes": 104690
+    },
+    {
+      "path": "shots/04-han-enter.png",
+      "bytes": 1482174
+    },
+    {
+      "path": "shots/05-han-s3.png",
+      "bytes": 1311482
+    },
+    {
+      "path": "shots/06-han-s4.png",
+      "bytes": 1322064
+    },
+    {
+      "path": "shots/07-han-s5.png",
+      "bytes": 1322446
+    },
+    {
+      "path": "shots/08-han-s6.png",
+      "bytes": 1321384
+    },
+    {
+      "path": "shots/09-return-enter.png",
+      "bytes": 360700
+    },
+    {
+      "path": "shots/10-return-s39.png",
+      "bytes": 377990
+    },
+    {
+      "path": "shots/11-return-s40.png",
+      "bytes": 381783
+    },
+    {
+      "path": "shots/12-return-s41.png",
+      "bytes": 319908
+    },
+    {
+      "path": "shots/13-final-done.png",
+      "bytes": 319762
+    },
+    {
+      "path": "trace.jsonl",
+      "bytes": 68705
+    }
+  ]
+}

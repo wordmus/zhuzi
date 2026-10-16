@@ -1,0 +1,260 @@
+{
+  "target": "runs/east-suburb-3d/2/L3",
+  "url": "http://127.0.0.1:50497/index.html",
+  "when": "2026-10-15T16:49:13.381Z",
+  "verdict": "PASS",
+  "hard": {
+    "pass": 9,
+    "total": 9
+  },
+  "summary": "PASS hard 9/9 · first-action 0.32s · first3s 1 · feedback p90 365ms · max-chars 17 · errors 0 · fps-p5 60 · notext PASS · repro PASS · layers PASS",
+  "checks": [
+    {
+      "id": "first-action",
+      "label": "首个可操作元素",
+      "pass": true,
+      "value": 0.31639999997615814,
+      "limit": 0.9
+    },
+    {
+      "id": "first3s",
+      "label": "每幕前 3 秒可做的事",
+      "pass": true,
+      "value": 1,
+      "limit": 1,
+      "note": "east3d:1"
+    },
+    {
+      "id": "feedback",
+      "label": "反馈延迟 p90",
+      "pass": true,
+      "value": 365,
+      "limit": 1000,
+      "note": "样本 2，100ms 内有反馈的占 0%（目标 100ms）"
+    },
+    {
+      "id": "max-chars",
+      "label": "每屏可见字数",
+      "pass": true,
+      "value": 17,
+      "limit": 30,
+      "note": "DOM 17 / trace 17"
+    },
+    {
+      "id": "errors",
+      "label": "控制台报错",
+      "pass": true,
+      "value": 0,
+      "limit": 0
+    },
+    {
+      "id": "fps-p5",
+      "label": "帧率 p5",
+      "pass": true,
+      "value": 60,
+      "limit": 50,
+      "note": "167 帧；整局 rAF p5=60；stage.fpsP5()=30（末 12 秒有探针，未计入）"
+    },
+    {
+      "id": "notext",
+      "label": "删字测试",
+      "pass": true,
+      "value": "PASS",
+      "limit": "hidden + done"
+    },
+    {
+      "id": "repro",
+      "label": "同 seed 复现",
+      "pass": true,
+      "value": "PASS",
+      "limit": "same",
+      "note": "事实 0 条（无 world.fact，只比较幕序）；账本一致，幕序一致，台词一致"
+    },
+    {
+      "id": "layers",
+      "label": "三层信息流与回执",
+      "pass": true,
+      "value": "PASS",
+      "limit": "五类齐全、幕序与回执完整",
+      "note": "5封信；未回执0；检查通过"
+    }
+  ],
+  "metrics": {
+    "layers": {
+      "required": true,
+      "letters": 5,
+      "counts": {
+        "commission": 1,
+        "plan": 1,
+        "cue": 1,
+        "report": 1,
+        "retro": 1
+      },
+      "pending": 0,
+      "check": []
+    },
+    "firstActionSec": 0.31639999997615814,
+    "first3s": {
+      "perAct": [
+        {
+          "act": "east3d",
+          "n": 1
+        }
+      ],
+      "max": 1,
+      "source": "trace"
+    },
+    "feedback": {
+      "samples": [
+        {
+          "step": 0,
+          "aff": "east-crack",
+          "ambient": {
+            "g": 0.00952907986111111,
+            "l": 0.016737528344671203
+          },
+          "first": {
+            "g": 0.17173936631944445,
+            "l": 0.2487670068027211
+          },
+          "latencyMs": 365,
+          "shots": 7
+        },
+        {
+          "step": 1,
+          "aff": "east-sky",
+          "ambient": {
+            "g": 0.0056640625,
+            "l": 0.005597398952095808
+          },
+          "first": {
+            "g": 0.262939453125,
+            "l": 0.24751473615269462
+          },
+          "latencyMs": 118,
+          "shots": 15
+        }
+      ],
+      "p90Ms": 365,
+      "within100Ratio": 0
+    },
+    "chars": {
+      "dom": 17,
+      "trace": 17,
+      "max": 17
+    },
+    "errors": {
+      "total": 0,
+      "console": [],
+      "page": [],
+      "trace": 0,
+      "warnings": 4
+    },
+    "fps": {
+      "p5": 59.52380952380888,
+      "own": 59.52380952380888,
+      "stage": 30.030030030029867,
+      "usedStage": false,
+      "frames": 167
+    },
+    "notext": {
+      "done": true,
+      "hidden": true,
+      "reason": "done"
+    },
+    "repro": {
+      "facts": 0,
+      "factsEqual": true,
+      "actsEqual": true,
+      "linesEqual": true,
+      "bothDone": true,
+      "actualLedgerEqual": null,
+      "sameActionSequence": true,
+      "firstFactDifference": null,
+      "firstActionDifference": null
+    },
+    "seedDiff": {
+      "checked": false
+    },
+    "stepsPolicy": {
+      "seed": null,
+      "preferCounts": {
+        "focus": 1,
+        "first": 1
+      }
+    }
+  },
+  "runs": {
+    "main": {
+      "done": true,
+      "reason": "done",
+      "steps": 2,
+      "seconds": 12.3,
+      "fallbackClicks": 0,
+      "shots": 0
+    },
+    "notext": {
+      "done": true,
+      "reason": "done",
+      "steps": 2,
+      "seconds": 7,
+      "fallbackClicks": 0,
+      "shots": 0
+    },
+    "repro": {
+      "done": true,
+      "reason": "done",
+      "steps": 2,
+      "seconds": 7,
+      "fallbackClicks": 0,
+      "shots": 0
+    }
+  },
+  "curve": [
+    {
+      "minute": 1,
+      "decisions": 2,
+      "new_info": 3,
+      "want_continue": 5,
+      "numbers_on_screen": 0,
+      "words_on_screen": 17,
+      "note": "2 次动手，起于 east3d/east-crack；3 条新东西"
+    }
+  ],
+  "curveSummary": {
+    "decisionDensity": 2,
+    "firstDecisionMinute": 1,
+    "wantContinueMin": 5,
+    "wantContinueEnd": 5,
+    "numbersMedian": 0
+  },
+  "thresholds": {
+    "version": 1,
+    "note": "棘轮：每次 /goal 达成后只升不降。数值来自 docs/design/demo-spec.md 第八节。",
+    "firstActionSec": 0.9,
+    "first3sActionsMax": 1,
+    "feedbackMsMax": 1000,
+    "feedbackMsTarget": 100,
+    "maxChars": 30,
+    "consoleErrorsMax": 0,
+    "fpsP5Min": 50,
+    "notext": true,
+    "repro": true,
+    "layers": true,
+    "feedback": {
+      "pixelDelta": 20,
+      "globalFrac": 0.0003,
+      "localFrac": 0.002,
+      "baselineMul": 2,
+      "maxProbes": 8
+    },
+    "player": {
+      "maxSteps": 240,
+      "maxSeconds": 420,
+      "settleMs": 450,
+      "minGapMs": 600,
+      "emptyAffSeconds": 45
+    }
+  },
+  "outDir": "/Users/lidechi/orca/workspaces/Zhuzi-claude/ds/runs/east-suburb-3d/2/L3"
+}

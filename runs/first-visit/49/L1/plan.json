@@ -1,0 +1,832 @@
+{
+  "id": "first-visit",
+  "version": 1,
+  "intent": {
+    "id": "first-visit",
+    "title": "第一次来访",
+    "hypothesis": {
+      "id": "h-first-visit",
+      "text": "你会为一个人的处境停下来，并想知道他后来怎样",
+      "mode": "probe"
+    },
+    "target": "推门、被认出、拿起《旱》、住进禾的心、回到咖啡厅被回应、带着一条没收口的线离开",
+    "stop": "你关上门",
+    "form": "game",
+    "perspective": {
+      "who": "你",
+      "control": 0.3
+    },
+    "era": "zhanguo",
+    "durationMin": 14,
+    "director": "base",
+    "compose": [
+      "mentor-desk",
+      "han-act1"
+    ],
+    "notes": "策划文档第 19 节「第一次来访」逐秒表；第二次来访看见它因为你而变。"
+  },
+  "seed": 49,
+  "tier": "L1",
+  "director": {
+    "id": "base",
+    "name": "基础导演",
+    "rules": [
+      "one-focus",
+      "first-3s",
+      "one-sentence",
+      "no-labels",
+      "first-loop-readable",
+      "feedback",
+      "attention-budget",
+      "behavior-first",
+      "tradeoff-visible",
+      "landmarks-fixed",
+      "change-in-front",
+      "one-take",
+      "tone",
+      "give-then-ask",
+      "continuity",
+      "response",
+      "anticipate",
+      "timing",
+      "persistence",
+      "control",
+      "peak-end",
+      "leave-a-thread",
+      "fold-when-understood",
+      "plans-not-state",
+      "revision-trace",
+      "change-budget",
+      "sediment",
+      "chronicle"
+    ]
+  },
+  "era": "zhanguo",
+  "acts": [
+    {
+      "id": "threshold",
+      "framework": "vignette",
+      "author": "基础导演",
+      "focus": "door",
+      "elements": [
+        {
+          "id": "door",
+          "component": "door",
+          "represents": "通往机器的门（宪法：永远推得开）",
+          "actions": [
+            "推"
+          ],
+          "prominence": {
+            "x": 0.5,
+            "y": 0.56,
+            "scale": 1,
+            "brightness": 0.35,
+            "folded": false
+          },
+          "predict": "你会先看窗里那点动的灯，然后找到门"
+        },
+        {
+          "id": "window",
+          "component": "window-lamp",
+          "represents": "机器醒着，在你来之前就在做事",
+          "actions": [],
+          "prominence": {
+            "x": 0.62,
+            "y": 0.46,
+            "scale": 0.4,
+            "brightness": 0.9,
+            "folded": false
+          }
+        },
+        {
+          "id": "omen",
+          "component": "star",
+          "represents": "荧惑守心：之后才会有意义的一颗红星",
+          "actions": [],
+          "prominence": {
+            "x": 0.74,
+            "y": 0.16,
+            "scale": 0.1,
+            "brightness": 0.25,
+            "folded": false
+          },
+          "predict": "几乎没人会注意；第二次来时有人会"
+        },
+        {
+          "id": "lamps",
+          "component": "lamp-tree",
+          "represents": "连盏灯：灯一盏盏亮到你这边",
+          "actions": [],
+          "prominence": {
+            "x": 0.2,
+            "y": 0.5,
+            "scale": 1,
+            "brightness": 0,
+            "folded": false
+          }
+        },
+        {
+          "id": "mentor",
+          "component": "mentor",
+          "represents": "导师：机器的心智，正写完手上那一笔",
+          "actions": [
+            "看"
+          ],
+          "prominence": {
+            "x": 0.55,
+            "y": 0.58,
+            "scale": 1,
+            "brightness": 0.6,
+            "folded": false
+          }
+        },
+        {
+          "id": "ticket",
+          "component": "ticket",
+          "represents": "《旱》的票根：先给，再问",
+          "actions": [
+            "拿起"
+          ],
+          "prominence": {
+            "x": 0.5,
+            "y": 0.78,
+            "scale": 1,
+            "brightness": 1,
+            "folded": false
+          },
+          "predict": "你会在 3 秒内伸手"
+        },
+        {
+          "id": "seat",
+          "component": "seat",
+          "represents": "你的座位（地标）",
+          "actions": [],
+          "prominence": {
+            "x": 0.5,
+            "y": 0.92,
+            "scale": 1,
+            "brightness": 0.3,
+            "folded": false
+          }
+        },
+        {
+          "id": "shelf",
+          "component": "shelf",
+          "represents": "作品架",
+          "actions": [],
+          "prominence": {
+            "x": 0.86,
+            "y": 0.42,
+            "scale": 1,
+            "brightness": 0.12,
+            "folded": true
+          }
+        },
+        {
+          "id": "books",
+          "component": "books",
+          "represents": "两本册子：它眼中的你／你眼中的它",
+          "actions": [],
+          "prominence": {
+            "x": 0.3,
+            "y": 0.8,
+            "scale": 1,
+            "brightness": 0.1,
+            "folded": true
+          }
+        },
+        {
+          "id": "senses",
+          "component": "sense-shelf",
+          "represents": "感官架",
+          "actions": [],
+          "prominence": {
+            "x": 0.95,
+            "y": 0.5,
+            "scale": 1,
+            "brightness": 0.05,
+            "folded": true
+          }
+        },
+        {
+          "id": "cup",
+          "component": "ear-cup",
+          "represents": "耳杯里的热气：背景的呼吸；放在你常坐的那边",
+          "actions": [],
+          "prominence": {
+            "x": 0.64,
+            "y": 0.8,
+            "scale": 1,
+            "brightness": 0.4,
+            "folded": false
+          }
+        }
+      ],
+      "lines": [
+        {
+          "id": "greet",
+          "who": "导师",
+          "text": "等你一会儿了。先看这个。",
+          "when": "after:mentor-look"
+        }
+      ],
+      "reveal": [
+        "window",
+        "door",
+        "lamps",
+        "mentor",
+        "ticket"
+      ],
+      "withhold": [
+        "时间",
+        "第几天",
+        "名字",
+        "灯油",
+        "假设清单",
+        "机器的仪表"
+      ],
+      "exit": "ticket:picked",
+      "predict": {
+        "firstLook": "window",
+        "dwell": "mentor",
+        "surprise": "灯一盏盏亮到你这边",
+        "firstActionMs": 4000
+      },
+      "budget": {
+        "maxChars": 30,
+        "maxActionsFirst3s": 1,
+        "feedbackMs": 100
+      }
+    },
+    {
+      "id": "reveal",
+      "framework": "reveal",
+      "author": "叔衡",
+      "focus": "east-suburb",
+      "elements": [
+        {
+          "id": "city",
+          "component": "dot-city",
+          "represents": "临淄此刻：低分辨率，人退回统计",
+          "actions": [
+            "看"
+          ],
+          "prominence": {
+            "x": 0.5,
+            "y": 0.5,
+            "scale": 1,
+            "brightness": 0.5,
+            "folded": false
+          }
+        },
+        {
+          "id": "east-suburb",
+          "component": "dot-region",
+          "represents": "东郊：唯一在呼吸的一片",
+          "actions": [
+            "看",
+            "点"
+          ],
+          "prominence": {
+            "x": 0.8,
+            "y": 0.52,
+            "scale": 1,
+            "brightness": 0.8,
+            "folded": false
+          },
+          "predict": "视线 5 秒内会被东郊的呼吸吸过去"
+        },
+        {
+          "id": "crack",
+          "component": "field-crack",
+          "represents": "田缝",
+          "actions": [
+            "碰"
+          ],
+          "prominence": {
+            "x": 0.5,
+            "y": 0.7,
+            "scale": 1,
+            "brightness": 1,
+            "folded": false
+          }
+        },
+        {
+          "id": "sky",
+          "component": "sky",
+          "represents": "天：望天",
+          "actions": [
+            "望"
+          ],
+          "prominence": {
+            "x": 0.5,
+            "y": 0.12,
+            "scale": 1,
+            "brightness": 0.8,
+            "folded": false
+          }
+        }
+      ],
+      "lines": [
+        {
+          "id": "he-sky",
+          "who": "禾",
+          "text": "天老爷，你是忘了东郊，还是忘了我？",
+          "when": "after:sky"
+        }
+      ],
+      "reveal": [
+        "city",
+        "east-suburb",
+        "he",
+        "crack",
+        "sky"
+      ],
+      "withhold": [
+        "分辨率的解释",
+        "临淄的说明文字"
+      ],
+      "exit": "crack-or-sky:done",
+      "predict": {
+        "firstLook": "east-suburb",
+        "dwell": "crack",
+        "surprise": "你看向哪里，哪里显影",
+        "firstActionMs": 6000
+      },
+      "budget": {
+        "maxChars": 30,
+        "maxActionsFirst3s": 1,
+        "feedbackMs": 100
+      }
+    },
+    {
+      "id": "han",
+      "framework": "walk2d",
+      "author": "叔衡",
+      "focus": "he",
+      "elements": [
+        {
+          "id": "he",
+          "component": "figure",
+          "represents": "禾：你能部分影响的那个人（约 0.3）",
+          "actions": [
+            "看进他心里"
+          ],
+          "prominence": {
+            "x": 0.3,
+            "y": 0.7,
+            "scale": 1,
+            "brightness": 1,
+            "folded": false
+          }
+        },
+        {
+          "id": "heart",
+          "component": "heart-mirror",
+          "represents": "心象：禾的心是一块田；小田伯站在田埂上",
+          "actions": [
+            "放念头",
+            "拨小田伯的秤",
+            "预演"
+          ],
+          "prominence": {
+            "x": 0.5,
+            "y": 0.4,
+            "scale": 1,
+            "brightness": 1,
+            "folded": true
+          }
+        },
+        {
+          "id": "jar",
+          "component": "jar",
+          "represents": "粟瓮：饥饱不用数字",
+          "actions": [],
+          "prominence": {
+            "x": 0.1,
+            "y": 0.75,
+            "scale": 1,
+            "brightness": 0.7,
+            "folded": false
+          }
+        },
+        {
+          "id": "dial",
+          "component": "season-dial",
+          "represents": "四季转盘",
+          "actions": [],
+          "prominence": {
+            "x": 0.06,
+            "y": 0.1,
+            "scale": 1,
+            "brightness": 0.5,
+            "folded": false
+          }
+        },
+        {
+          "id": "gate",
+          "component": "gate",
+          "represents": "田伯家的门：峰值在这里打开",
+          "actions": [
+            "叩门"
+          ],
+          "prominence": {
+            "x": 0.77,
+            "y": 0.6,
+            "scale": 1,
+            "brightness": 0.8,
+            "folded": false
+          }
+        }
+      ],
+      "lines": [],
+      "reveal": [
+        "he",
+        "jar",
+        "heart",
+        "gate",
+        "rumor",
+        "altar"
+      ],
+      "withhold": [
+        "田伯真正掂量什么",
+        "粮价的数字（只在流言里出现一次）",
+        "结局列表"
+      ],
+      "exit": "commit",
+      "predict": {
+        "firstLook": "he",
+        "dwell": "gate",
+        "surprise": "田伯开门后说的和心里预演的不一样",
+        "tired": "冬天第二天",
+        "firstActionMs": 3000
+      },
+      "budget": {
+        "maxChars": 30,
+        "maxActionsFirst3s": 1,
+        "feedbackMs": 100
+      }
+    },
+    {
+      "id": "return",
+      "framework": "vignette",
+      "author": "基础导演",
+      "focus": "ticket",
+      "elements": [
+        {
+          "id": "ticket",
+          "component": "ticket",
+          "represents": "《旱》盖上红印：交付即事实",
+          "actions": [],
+          "prominence": {
+            "x": 0.5,
+            "y": 0.75,
+            "scale": 1,
+            "brightness": 1,
+            "folded": false
+          }
+        },
+        {
+          "id": "mentor",
+          "component": "mentor",
+          "represents": "导师说一句禾做了什么，这才问你怎么称呼",
+          "actions": [
+            "说名字",
+            "不说"
+          ],
+          "prominence": {
+            "x": 0.55,
+            "y": 0.58,
+            "scale": 1,
+            "brightness": 0.8,
+            "folded": false
+          }
+        },
+        {
+          "id": "door",
+          "component": "door",
+          "represents": "门：关上它",
+          "actions": [
+            "关门"
+          ],
+          "prominence": {
+            "x": 0.5,
+            "y": 0.5,
+            "scale": 1,
+            "brightness": 0.5,
+            "folded": false
+          }
+        }
+      ],
+      "lines": [
+        {
+          "id": "ask-name",
+          "who": "导师",
+          "text": "怎么称呼你？",
+          "when": "after:seal"
+        },
+        {
+          "id": "thread",
+          "who": "导师",
+          "text": "季那边，听说也有人敲门。",
+          "when": "before:leave"
+        }
+      ],
+      "reveal": [
+        "ticket",
+        "mentor",
+        "door"
+      ],
+      "withhold": [
+        "评分",
+        "结局名"
+      ],
+      "exit": "door:closed",
+      "predict": {
+        "firstLook": "ticket",
+        "dwell": "mentor",
+        "surprise": "它记得禾做了什么",
+        "firstActionMs": 5000
+      },
+      "budget": {
+        "maxChars": 30,
+        "maxActionsFirst3s": 1,
+        "feedbackMs": 100
+      }
+    }
+  ],
+  "world": {
+    "seed": 49,
+    "places": [
+      {
+        "id": "home",
+        "name": "家",
+        "x": 0.08,
+        "actions": [
+          "rest",
+          "eat"
+        ]
+      },
+      {
+        "id": "field",
+        "name": "田",
+        "x": 0.26,
+        "actions": [
+          "wait-rain"
+        ]
+      },
+      {
+        "id": "well",
+        "name": "井",
+        "x": 0.43,
+        "actions": [
+          "listen"
+        ]
+      },
+      {
+        "id": "altar",
+        "name": "社树",
+        "x": 0.59,
+        "actions": [
+          "pray"
+        ]
+      },
+      {
+        "id": "gate",
+        "name": "田伯家",
+        "x": 0.77,
+        "actions": [
+          "borrow"
+        ]
+      },
+      {
+        "id": "road",
+        "name": "路口",
+        "x": 0.94,
+        "actions": [
+          "look",
+          "leave"
+        ]
+      }
+    ],
+    "people": [
+      {
+        "id": "he",
+        "name": "禾",
+        "role": "actor",
+        "home": "home"
+      },
+      {
+        "id": "tianbo",
+        "name": "田伯",
+        "role": "lord",
+        "home": "gate"
+      },
+      {
+        "id": "ji",
+        "name": "季",
+        "role": "scholar",
+        "home": "road"
+      },
+      {
+        "id": "sang",
+        "name": "桑",
+        "role": "family",
+        "home": "home"
+      },
+      {
+        "id": "xiaoshi",
+        "name": "小石",
+        "role": "family",
+        "home": "home"
+      },
+      {
+        "id": "mu",
+        "name": "母",
+        "role": "family",
+        "home": "home"
+      },
+      {
+        "id": "linren",
+        "name": "邻人",
+        "role": "neighbor",
+        "home": "well"
+      },
+      {
+        "id": "luren",
+        "name": "路人",
+        "role": "neighbor",
+        "home": "road"
+      }
+    ],
+    "he": {
+      "temperament": {
+        "pride": 0.64,
+        "awe": 0.62,
+        "duty": 0.75,
+        "attachment": 0.77,
+        "patience": 0.41
+      },
+      "belief": {
+        "qing": 0.521135885673575,
+        "li": 0.1693859431007877,
+        "ming": 0.30947817122563726
+      }
+    },
+    "tianbo": {
+      "weights": {
+        "qing": 0.13695213343228232,
+        "li": 0.61987150458619,
+        "ming": 0.24317636198152767
+      },
+      "pride": 0.82,
+      "granary": [
+        0.97,
+        0.85,
+        0.67,
+        0.53
+      ],
+      "requisitionDay": 7
+    },
+    "seasons": [
+      {
+        "season": "spring",
+        "days": 3,
+        "rainExpect": 0.81,
+        "rainActual": 0.02
+      },
+      {
+        "season": "summer",
+        "days": 3,
+        "rainExpect": 0.65,
+        "rainActual": 0.05
+      },
+      {
+        "season": "autumn",
+        "days": 3,
+        "rainExpect": 0.35,
+        "rainActual": 0.06
+      },
+      {
+        "season": "winter",
+        "days": 2,
+        "rainExpect": 0.24,
+        "rainActual": 0.05
+      }
+    ],
+    "omen": {
+      "kind": "halo",
+      "day": 4
+    },
+    "clues": [
+      {
+        "id": "c1",
+        "text": "田伯放粟，秋后要加倍。",
+        "trait": "li",
+        "sign": 1,
+        "truthful": true,
+        "place": "road",
+        "day": 1,
+        "from": "luren"
+      },
+      {
+        "id": "c2",
+        "text": "东头那三亩地，田伯早看中了。",
+        "trait": "li",
+        "sign": 1,
+        "truthful": true,
+        "place": "road",
+        "day": 3,
+        "from": "ji"
+      },
+      {
+        "id": "c3",
+        "text": "田伯把去年的债，一笔勾了。",
+        "trait": "li",
+        "sign": -1,
+        "truthful": false,
+        "place": "well",
+        "day": 4,
+        "from": "linren"
+      },
+      {
+        "id": "c4",
+        "text": "田伯去年赶走了同乡的穷亲。",
+        "trait": "qing",
+        "sign": -1,
+        "truthful": true,
+        "place": "well",
+        "day": 4,
+        "from": "linren"
+      },
+      {
+        "id": "c5",
+        "text": "田伯说，旧情不能当粟吃。",
+        "trait": "qing",
+        "sign": -1,
+        "truthful": true,
+        "place": "well",
+        "day": 6,
+        "from": "linren"
+      },
+      {
+        "id": "c6",
+        "text": "田伯不理乡里怎么说他。",
+        "trait": "ming",
+        "sign": -1,
+        "truthful": true,
+        "place": "home",
+        "day": 7,
+        "from": "sang"
+      }
+    ],
+    "jarDays": 25,
+    "family": [
+      {
+        "id": "sang",
+        "name": "桑",
+        "role": "wife"
+      },
+      {
+        "id": "xiaoshi",
+        "name": "小石",
+        "role": "child"
+      },
+      {
+        "id": "mu",
+        "name": "母",
+        "role": "mother"
+      }
+    ],
+    "unfoldPressure": 0.65
+  },
+  "constitution": [
+    "门永远推得开",
+    "你永远能对机器说话",
+    "你永远能回到上一版",
+    "地标不动：你的座位、导师的位置、通往世界的门",
+    "已交付的版本只增不改"
+  ],
+  "rehearsal": [
+    {
+      "act": "threshold",
+      "expect": "灯一盏盏亮到你这边",
+      "risk": ""
+    },
+    {
+      "act": "reveal",
+      "expect": "你看向哪里，哪里显影",
+      "risk": ""
+    },
+    {
+      "act": "han",
+      "expect": "田伯开门后说的和心里预演的不一样",
+      "risk": "冬天第二天"
+    },
+    {
+      "act": "return",
+      "expect": "它记得禾做了什么",
+      "risk": ""
+    }
+  ]
+}

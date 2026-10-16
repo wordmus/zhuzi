@@ -1,0 +1,1349 @@
+{
+  "version": 1,
+  "state": {
+    "year": -306,
+    "fired": [
+      "pinglu-356",
+      "guiling-353",
+      "qianmo-350",
+      "qi-zhou-348",
+      "maling-341",
+      "xuzhou-334",
+      "qin-shu-316",
+      "qi-yan-314",
+      "chu-qi-break-313",
+      "yan-zhao-311",
+      "hufu-307",
+      "ganmao-306"
+    ],
+    "macro": {
+      "minxin": 0.42000000000000004,
+      "grain": 0.24000000000000002,
+      "power": 0.6599999999999999,
+      "rites": 0.43000000000000016
+    }
+  },
+  "ledger": [
+    {
+      "id": "history.event.pinglu-356",
+      "day": 0,
+      "kind": "event",
+      "text": "前356年·齐赵会平陆：齐与赵在平陆会盟"
+    },
+    {
+      "id": "f1",
+      "day": 1,
+      "text": "裂缝越宽，禾守田的把握越小。",
+      "kind": "event",
+      "by": "world"
+    },
+    {
+      "id": "f2",
+      "day": 1,
+      "text": "井水越少，井边的流言越少；见底后只能刨井。",
+      "kind": "event",
+      "by": "world"
+    },
+    {
+      "id": "f3",
+      "day": 1,
+      "text": "橡子捡光后，社树下不能再补粟瓮。",
+      "kind": "event",
+      "by": "world"
+    },
+    {
+      "id": "f4",
+      "day": 1,
+      "text": "走深的路让禾更容易照旧去那一处。",
+      "kind": "event",
+      "by": "he"
+    },
+    {
+      "id": "f5",
+      "day": 1,
+      "text": "禾的手印让他认清裂缝；活苗仍牵住他。",
+      "kind": "event",
+      "by": "he"
+    },
+    {
+      "id": "f6",
+      "day": 1,
+      "text": "邻家封门后，登门的人少了，去莒的念头更近。",
+      "kind": "event",
+      "by": "neighbors"
+    },
+    {
+      "id": "f7",
+      "day": 1,
+      "text": "邻家钉上了第一块门板。",
+      "kind": "event",
+      "by": "world"
+    },
+    {
+      "id": "f8",
+      "day": 2,
+      "text": "井水只够吊半桶了。",
+      "kind": "event",
+      "by": "world"
+    },
+    {
+      "id": "f9",
+      "day": 3,
+      "text": "橡子捡光后，社树下不能再补粟瓮。",
+      "kind": "event",
+      "by": "neighbors"
+    },
+    {
+      "id": "f10",
+      "day": 3,
+      "text": "社树下只剩零星的橡子。",
+      "kind": "event",
+      "by": "world"
+    },
+    {
+      "id": "f11",
+      "day": 4,
+      "text": "天象：荧惑守心。要出大事。",
+      "kind": "event"
+    },
+    {
+      "id": "f12",
+      "day": 4,
+      "text": "走深的路让禾更容易照旧去那一处。",
+      "kind": "event",
+      "by": "he"
+    },
+    {
+      "id": "f13",
+      "day": 4,
+      "text": "橡子捡光后，社树下不能再补粟瓮。",
+      "kind": "event",
+      "by": "he"
+    },
+    {
+      "id": "f14",
+      "day": 4,
+      "text": "又一家封门，往莒去了。",
+      "kind": "event",
+      "by": "world"
+    },
+    {
+      "id": "f15",
+      "day": 5,
+      "text": "垄边最后一丛野草也枯了。",
+      "kind": "event",
+      "by": "world"
+    },
+    {
+      "id": "f16",
+      "day": 6,
+      "text": "田伯记住禾的来由；叩得越多，门前越戒备。",
+      "kind": "event",
+      "by": "tianbo"
+    },
+    {
+      "id": "f17",
+      "day": 6,
+      "text": "田伯门前添了一个看门人。",
+      "kind": "event",
+      "by": "world"
+    },
+    {
+      "id": "f18",
+      "day": 7,
+      "text": "走深的路让禾更容易照旧去那一处。",
+      "kind": "event",
+      "by": "he"
+    },
+    {
+      "id": "f19",
+      "day": 7,
+      "text": "井底见了泥，吊桶落空。",
+      "kind": "event",
+      "by": "world"
+    },
+    {
+      "id": "f20",
+      "day": 8,
+      "text": "王的人来征粮，田伯的仓空了一角。",
+      "kind": "event"
+    },
+    {
+      "id": "f21",
+      "day": 8,
+      "text": "社树下的橡子被捡光了。",
+      "kind": "event",
+      "by": "world"
+    },
+    {
+      "id": "f22",
+      "day": 8,
+      "text": "禾对「祈」不再多想了。",
+      "kind": "event",
+      "by": "he"
+    },
+    {
+      "id": "f23",
+      "day": 9,
+      "text": "禾没有照做（抹不开脸）；心里留下了「田伯」。",
+      "kind": "decision",
+      "by": "he"
+    },
+    {
+      "id": "f24",
+      "day": 9,
+      "text": "最后一家乡邻也封了门。",
+      "kind": "event",
+      "by": "world"
+    },
+    {
+      "id": "f25",
+      "day": 10,
+      "text": "田伯对禾的「提旧情」：拒。",
+      "kind": "decision",
+      "by": "tianbo"
+    },
+    {
+      "id": "f26",
+      "day": 10,
+      "text": "禾觉得田伯没那么看重「情」。",
+      "kind": "decision",
+      "by": "he"
+    },
+    {
+      "id": "f27",
+      "day": 10,
+      "text": "走深的路让禾更容易照旧去那一处。",
+      "kind": "event",
+      "by": "he"
+    },
+    {
+      "id": "f28",
+      "day": 10,
+      "text": "田伯不再肯听旧情了。",
+      "kind": "event",
+      "by": "world"
+    },
+    {
+      "id": "f29",
+      "day": 11,
+      "text": "禾心里的小田伯挪动了：「情」重了。",
+      "kind": "decision",
+      "by": "player"
+    },
+    {
+      "id": "f30",
+      "day": 11,
+      "text": "禾心里的小田伯挪动了：「情」重了。",
+      "kind": "decision",
+      "by": "player"
+    },
+    {
+      "id": "f31",
+      "day": 11,
+      "text": "禾心里的小田伯挪动了：「利」重了。",
+      "kind": "decision",
+      "by": "player"
+    },
+    {
+      "id": "f32",
+      "day": 11,
+      "text": "禾心里的小田伯挪动了：「名」重了。",
+      "kind": "decision",
+      "by": "player"
+    },
+    {
+      "id": "f33",
+      "day": 11,
+      "text": "禾心里的小田伯挪动了：「利」重了。",
+      "kind": "decision",
+      "by": "player"
+    },
+    {
+      "id": "f34",
+      "day": 11,
+      "text": "禾心里的小田伯挪动了：「名」重了。",
+      "kind": "decision",
+      "by": "player"
+    },
+    {
+      "id": "f35",
+      "day": 11,
+      "text": "禾没有照做（用处不大）；心里留下了「粟」。",
+      "kind": "decision",
+      "by": "he"
+    },
+    {
+      "id": "f36",
+      "day": 11,
+      "text": "冻土合上了最后一道田垄。",
+      "kind": "event",
+      "by": "world"
+    },
+    {
+      "id": "f37:endure",
+      "day": 11,
+      "text": "禾没有借、没有走，熬过了冬。",
+      "kind": "commit",
+      "by": "he"
+    },
+    {
+      "id": "f38",
+      "day": 11,
+      "text": "《旱》交付：禾熬到了冬末，还在东郊。",
+      "kind": "delivery"
+    },
+    {
+      "id": "history.decision.1",
+      "day": 0,
+      "kind": "decision",
+      "by": "禾",
+      "text": "前356年·禾：禾没有借、没有走，熬过了冬。"
+    },
+    {
+      "id": "history.event.guiling-353",
+      "day": 3,
+      "kind": "event",
+      "text": "前353年·桂陵之战：齐救赵，在桂陵击败魏军"
+    },
+    {
+      "id": "history.event.qianmo-350",
+      "day": 6,
+      "kind": "event",
+      "text": "前350年·秦开阡陌：秦迁都咸阳，开阡陌并乡为县"
+    },
+    {
+      "id": "history.event.qi-zhou-348",
+      "day": 8,
+      "kind": "event",
+      "text": "前348年·齐威王朝周：诸侯少朝周，齐威王独往朝见"
+    },
+    {
+      "id": "history.event.maling-341",
+      "day": 15,
+      "kind": "event",
+      "text": "前341年·马陵之战：齐败魏于马陵，庞涓死，太子申被俘"
+    },
+    {
+      "id": "history.event.xuzhou-334",
+      "day": 22,
+      "kind": "event",
+      "text": "前334年·徐州相王：齐魏在徐州会见，互相承认王号"
+    },
+    {
+      "id": "jixia-speakers-questioned",
+      "text": "季辨言受挫，错题留作心中种子",
+      "kind": "event",
+      "by": "季",
+      "day": 22
+    },
+    {
+      "id": "jixia-seed-water",
+      "text": "季重掂代火者必将水。",
+      "kind": "decision",
+      "by": "季",
+      "day": 22
+    },
+    {
+      "id": "jixia-seed-bai",
+      "text": "季重掂白马非马。",
+      "kind": "decision",
+      "by": "季",
+      "day": 22
+    },
+    {
+      "id": "jixia-seed-shu",
+      "text": "季重掂己所不欲，勿施于人。",
+      "kind": "decision",
+      "by": "季",
+      "day": 22
+    },
+    {
+      "id": "jixia-seed-dao",
+      "text": "季重掂道可道，非常道。",
+      "kind": "decision",
+      "by": "季",
+      "day": 22
+    },
+    {
+      "id": "jixia-seed-fa",
+      "text": "季重掂法不阿贵，绳不挠曲。",
+      "kind": "decision",
+      "by": "季",
+      "day": 22
+    },
+    {
+      "id": "wude-wheel-challenged",
+      "text": "季推齐水德受驳，重辨天命之说",
+      "kind": "decision",
+      "by": "季",
+      "day": 22
+    },
+    {
+      "id": "history.decision.2",
+      "day": 22,
+      "kind": "decision",
+      "by": "季",
+      "text": "前334年·季：天命之说受驳，留下重辨的简"
+    },
+    {
+      "id": "history.event.qin-shu-316",
+      "day": 40,
+      "kind": "event",
+      "text": "前316年·秦取蜀：秦取蜀，疆土与财力增长"
+    },
+    {
+      "id": "history.event.qi-yan-314",
+      "day": 42,
+      "kind": "event",
+      "text": "前314年·齐伐燕：齐乘燕乱取燕，孟子劝察燕民之意"
+    },
+    {
+      "id": "qi-knife-lend",
+      "text": "田伯借出三袋粟，立券来年还六袋。",
+      "kind": "decision",
+      "by": "田伯",
+      "day": 42
+    },
+    {
+      "id": "history.decision.3",
+      "day": 42,
+      "kind": "decision",
+      "by": "田伯",
+      "text": "前314年·田伯：借粟立券"
+    },
+    {
+      "id": "bells-remembered",
+      "text": "机器与来客回成三轮五声，最长记住四声。",
+      "kind": "event",
+      "by": "导师",
+      "day": 42
+    },
+    {
+      "id": "history.event.chu-qi-break-313",
+      "day": 43,
+      "kind": "event",
+      "text": "前313年·楚绝齐交：张仪诱楚绝齐，齐楚盟约破裂"
+    },
+    {
+      "id": "history.event.yan-zhao-311",
+      "day": 45,
+      "kind": "event",
+      "text": "前311年·燕昭王元年：燕昭王开始纪年，燕国重建王统"
+    },
+    {
+      "id": "history.event.hufu-307",
+      "day": 49,
+      "kind": "event",
+      "text": "前307年·赵行胡服骑射：赵武灵王推行胡服，招习骑射"
+    },
+    {
+      "id": "history.event.ganmao-306",
+      "day": 50,
+      "kind": "event",
+      "text": "前306年·甘茂奔齐：甘茂离秦奔齐"
+    },
+    {
+      "id": "studio.fifty-years.accepted",
+      "day": 50,
+      "by": "叔衡",
+      "text": "叔衡读过本次委托，盖印接下方案。",
+      "kind": "delivery"
+    },
+    {
+      "id": "studio.fifty-years.verified",
+      "day": 50,
+      "by": "叔衡",
+      "text": "禾的真实回报已收妥：预演：给粟；实际：拒绝",
+      "kind": "delivery"
+    },
+    {
+      "id": "history.decision.4",
+      "day": 50,
+      "kind": "decision",
+      "by": "叔衡",
+      "text": "前306年·叔衡：收妥禾的回报，保留预演的误差"
+    }
+  ],
+  "completed": {
+    "threshold": {
+      "act": "threshold",
+      "data": {
+        "affordances": [
+          "door",
+          "ticket"
+        ],
+        "ticket": {
+          "x": 560.2880000000001,
+          "y": 423.30292949803913,
+          "w": 79.2
+        },
+        "frame": true,
+        "facts": [],
+        "history": {
+          "year": -356,
+          "fired": [],
+          "macro": {
+            "minxin": 0.52,
+            "grain": 0.48,
+            "power": 0.5,
+            "rites": 0.55
+          }
+        }
+      }
+    },
+    "chronicle-356": {
+      "act": "chronicle-356",
+      "data": {
+        "year": -356,
+        "line": "齐赵在平陆会盟了。",
+        "entered": {
+          "who": "季",
+          "line": "齐赵在平陆会盟了。",
+          "year": -356
+        },
+        "events": [
+          "pinglu-356"
+        ],
+        "facts": [
+          {
+            "id": "history.event.pinglu-356",
+            "day": 0,
+            "kind": "event",
+            "text": "前356年·齐赵会平陆：齐与赵在平陆会盟"
+          }
+        ],
+        "history": {
+          "year": -356,
+          "fired": [
+            "pinglu-356"
+          ],
+          "macro": {
+            "minxin": 0.52,
+            "grain": 0.48,
+            "power": 0.52,
+            "rites": 0.5800000000000001
+          }
+        }
+      }
+    },
+    "reveal": {
+      "act": "reveal",
+      "data": {
+        "affordances": [
+          "east-suburb"
+        ],
+        "focus": "east-suburb",
+        "handoffFrame": true,
+        "handoffTicket": {
+          "x": 560.2880000000001,
+          "y": 423.30292949803913,
+          "w": 79.2
+        },
+        "facts": [],
+        "history": {
+          "year": -356,
+          "fired": [
+            "pinglu-356"
+          ],
+          "macro": {
+            "minxin": 0.52,
+            "grain": 0.48,
+            "power": 0.52,
+            "rites": 0.5800000000000001
+          }
+        }
+      }
+    },
+    "han": {
+      "act": "han",
+      "data": {
+        "ending": "endure",
+        "day": 11,
+        "fact": "f37:endure",
+        "source": "rules",
+        "facts": [
+          {
+            "id": "f1",
+            "day": 1,
+            "text": "裂缝越宽，禾守田的把握越小。",
+            "kind": "event",
+            "by": "world"
+          },
+          {
+            "id": "f2",
+            "day": 1,
+            "text": "井水越少，井边的流言越少；见底后只能刨井。",
+            "kind": "event",
+            "by": "world"
+          },
+          {
+            "id": "f3",
+            "day": 1,
+            "text": "橡子捡光后，社树下不能再补粟瓮。",
+            "kind": "event",
+            "by": "world"
+          },
+          {
+            "id": "f4",
+            "day": 1,
+            "text": "走深的路让禾更容易照旧去那一处。",
+            "kind": "event",
+            "by": "he"
+          },
+          {
+            "id": "f5",
+            "day": 1,
+            "text": "禾的手印让他认清裂缝；活苗仍牵住他。",
+            "kind": "event",
+            "by": "he"
+          },
+          {
+            "id": "f6",
+            "day": 1,
+            "text": "邻家封门后，登门的人少了，去莒的念头更近。",
+            "kind": "event",
+            "by": "neighbors"
+          },
+          {
+            "id": "f7",
+            "day": 1,
+            "text": "邻家钉上了第一块门板。",
+            "kind": "event",
+            "by": "world"
+          },
+          {
+            "id": "f8",
+            "day": 2,
+            "text": "井水只够吊半桶了。",
+            "kind": "event",
+            "by": "world"
+          },
+          {
+            "id": "f9",
+            "day": 3,
+            "text": "橡子捡光后，社树下不能再补粟瓮。",
+            "kind": "event",
+            "by": "neighbors"
+          },
+          {
+            "id": "f10",
+            "day": 3,
+            "text": "社树下只剩零星的橡子。",
+            "kind": "event",
+            "by": "world"
+          },
+          {
+            "id": "f11",
+            "day": 4,
+            "text": "天象：荧惑守心。要出大事。",
+            "kind": "event"
+          },
+          {
+            "id": "f12",
+            "day": 4,
+            "text": "走深的路让禾更容易照旧去那一处。",
+            "kind": "event",
+            "by": "he"
+          },
+          {
+            "id": "f13",
+            "day": 4,
+            "text": "橡子捡光后，社树下不能再补粟瓮。",
+            "kind": "event",
+            "by": "he"
+          },
+          {
+            "id": "f14",
+            "day": 4,
+            "text": "又一家封门，往莒去了。",
+            "kind": "event",
+            "by": "world"
+          },
+          {
+            "id": "f15",
+            "day": 5,
+            "text": "垄边最后一丛野草也枯了。",
+            "kind": "event",
+            "by": "world"
+          },
+          {
+            "id": "f16",
+            "day": 6,
+            "text": "田伯记住禾的来由；叩得越多，门前越戒备。",
+            "kind": "event",
+            "by": "tianbo"
+          },
+          {
+            "id": "f17",
+            "day": 6,
+            "text": "田伯门前添了一个看门人。",
+            "kind": "event",
+            "by": "world"
+          },
+          {
+            "id": "f18",
+            "day": 7,
+            "text": "走深的路让禾更容易照旧去那一处。",
+            "kind": "event",
+            "by": "he"
+          },
+          {
+            "id": "f19",
+            "day": 7,
+            "text": "井底见了泥，吊桶落空。",
+            "kind": "event",
+            "by": "world"
+          },
+          {
+            "id": "f20",
+            "day": 8,
+            "text": "王的人来征粮，田伯的仓空了一角。",
+            "kind": "event"
+          },
+          {
+            "id": "f21",
+            "day": 8,
+            "text": "社树下的橡子被捡光了。",
+            "kind": "event",
+            "by": "world"
+          },
+          {
+            "id": "f22",
+            "day": 8,
+            "text": "禾对「祈」不再多想了。",
+            "kind": "event",
+            "by": "he"
+          },
+          {
+            "id": "f23",
+            "day": 9,
+            "text": "禾没有照做（抹不开脸）；心里留下了「田伯」。",
+            "kind": "decision",
+            "by": "he"
+          },
+          {
+            "id": "f24",
+            "day": 9,
+            "text": "最后一家乡邻也封了门。",
+            "kind": "event",
+            "by": "world"
+          },
+          {
+            "id": "f25",
+            "day": 10,
+            "text": "田伯对禾的「提旧情」：拒。",
+            "kind": "decision",
+            "by": "tianbo"
+          },
+          {
+            "id": "f26",
+            "day": 10,
+            "text": "禾觉得田伯没那么看重「情」。",
+            "kind": "decision",
+            "by": "he"
+          },
+          {
+            "id": "f27",
+            "day": 10,
+            "text": "走深的路让禾更容易照旧去那一处。",
+            "kind": "event",
+            "by": "he"
+          },
+          {
+            "id": "f28",
+            "day": 10,
+            "text": "田伯不再肯听旧情了。",
+            "kind": "event",
+            "by": "world"
+          },
+          {
+            "id": "f29",
+            "day": 11,
+            "text": "禾心里的小田伯挪动了：「情」重了。",
+            "kind": "decision",
+            "by": "player"
+          },
+          {
+            "id": "f30",
+            "day": 11,
+            "text": "禾心里的小田伯挪动了：「情」重了。",
+            "kind": "decision",
+            "by": "player"
+          },
+          {
+            "id": "f31",
+            "day": 11,
+            "text": "禾心里的小田伯挪动了：「利」重了。",
+            "kind": "decision",
+            "by": "player"
+          },
+          {
+            "id": "f32",
+            "day": 11,
+            "text": "禾心里的小田伯挪动了：「名」重了。",
+            "kind": "decision",
+            "by": "player"
+          },
+          {
+            "id": "f33",
+            "day": 11,
+            "text": "禾心里的小田伯挪动了：「利」重了。",
+            "kind": "decision",
+            "by": "player"
+          },
+          {
+            "id": "f34",
+            "day": 11,
+            "text": "禾心里的小田伯挪动了：「名」重了。",
+            "kind": "decision",
+            "by": "player"
+          },
+          {
+            "id": "f35",
+            "day": 11,
+            "text": "禾没有照做（用处不大）；心里留下了「粟」。",
+            "kind": "decision",
+            "by": "he"
+          },
+          {
+            "id": "f36",
+            "day": 11,
+            "text": "冻土合上了最后一道田垄。",
+            "kind": "event",
+            "by": "world"
+          },
+          {
+            "id": "f37:endure",
+            "day": 11,
+            "text": "禾没有借、没有走，熬过了冬。",
+            "kind": "commit",
+            "by": "he"
+          },
+          {
+            "id": "f38",
+            "day": 11,
+            "text": "《旱》交付：禾熬到了冬末，还在东郊。",
+            "kind": "delivery"
+          },
+          {
+            "id": "history.decision.1",
+            "day": 0,
+            "kind": "decision",
+            "by": "禾",
+            "text": "前356年·禾：禾没有借、没有走，熬过了冬。"
+          }
+        ],
+        "history": {
+          "year": -356,
+          "fired": [
+            "pinglu-356"
+          ],
+          "macro": {
+            "minxin": 0.53,
+            "grain": 0.49,
+            "power": 0.52,
+            "rites": 0.5800000000000001
+          }
+        }
+      }
+    },
+    "chronicle-334": {
+      "act": "chronicle-334",
+      "data": {
+        "year": -334,
+        "line": "如今齐魏互称王了。",
+        "entered": {
+          "who": "季",
+          "line": "如今齐魏互称王了。",
+          "year": -334
+        },
+        "events": [
+          "guiling-353",
+          "qianmo-350",
+          "qi-zhou-348",
+          "maling-341",
+          "xuzhou-334"
+        ],
+        "facts": [
+          {
+            "id": "history.event.guiling-353",
+            "day": 3,
+            "kind": "event",
+            "text": "前353年·桂陵之战：齐救赵，在桂陵击败魏军"
+          },
+          {
+            "id": "history.event.qianmo-350",
+            "day": 6,
+            "kind": "event",
+            "text": "前350年·秦开阡陌：秦迁都咸阳，开阡陌并乡为县"
+          },
+          {
+            "id": "history.event.qi-zhou-348",
+            "day": 8,
+            "kind": "event",
+            "text": "前348年·齐威王朝周：诸侯少朝周，齐威王独往朝见"
+          },
+          {
+            "id": "history.event.maling-341",
+            "day": 15,
+            "kind": "event",
+            "text": "前341年·马陵之战：齐败魏于马陵，庞涓死，太子申被俘"
+          },
+          {
+            "id": "history.event.xuzhou-334",
+            "day": 22,
+            "kind": "event",
+            "text": "前334年·徐州相王：齐魏在徐州会见，互相承认王号"
+          }
+        ],
+        "history": {
+          "year": -334,
+          "fired": [
+            "pinglu-356",
+            "guiling-353",
+            "qianmo-350",
+            "qi-zhou-348",
+            "maling-341",
+            "xuzhou-334"
+          ],
+          "macro": {
+            "minxin": 0.54,
+            "grain": 0.36,
+            "power": 0.6900000000000001,
+            "rites": 0.5300000000000001
+          }
+        }
+      }
+    },
+    "ji-speakers": {
+      "act": "ji-speakers",
+      "data": {
+        "facts": [
+          {
+            "id": "jixia-speakers-questioned",
+            "text": "季辨言受挫，错题留作心中种子",
+            "kind": "event",
+            "by": "季",
+            "day": 22
+          },
+          {
+            "id": "jixia-seed-water",
+            "text": "季重掂代火者必将水。",
+            "kind": "decision",
+            "by": "季",
+            "day": 22
+          },
+          {
+            "id": "jixia-seed-bai",
+            "text": "季重掂白马非马。",
+            "kind": "decision",
+            "by": "季",
+            "day": 22
+          },
+          {
+            "id": "jixia-seed-shu",
+            "text": "季重掂己所不欲，勿施于人。",
+            "kind": "decision",
+            "by": "季",
+            "day": 22
+          },
+          {
+            "id": "jixia-seed-dao",
+            "text": "季重掂道可道，非常道。",
+            "kind": "decision",
+            "by": "季",
+            "day": 22
+          },
+          {
+            "id": "jixia-seed-fa",
+            "text": "季重掂法不阿贵，绳不挠曲。",
+            "kind": "decision",
+            "by": "季",
+            "day": 22
+          }
+        ],
+        "metrics": {
+          "correct": 0,
+          "answered": 5,
+          "accuracy": 0,
+          "maxStreak": 0,
+          "seeds": 5
+        },
+        "line": "我被问得答不上来。",
+        "history": {
+          "year": -334,
+          "fired": [
+            "pinglu-356",
+            "guiling-353",
+            "qianmo-350",
+            "qi-zhou-348",
+            "maling-341",
+            "xuzhou-334"
+          ],
+          "macro": {
+            "minxin": 0.54,
+            "grain": 0.36,
+            "power": 0.6900000000000001,
+            "rites": 0.5300000000000001
+          }
+        }
+      }
+    },
+    "ji-wude": {
+      "act": "ji-wude",
+      "data": {
+        "facts": [
+          {
+            "id": "wude-wheel-challenged",
+            "text": "季推齐水德受驳，重辨天命之说",
+            "kind": "decision",
+            "by": "季",
+            "day": 22
+          },
+          {
+            "id": "history.decision.2",
+            "day": 22,
+            "kind": "decision",
+            "by": "季",
+            "text": "前334年·季：天命之说受驳，留下重辨的简"
+          }
+        ],
+        "metrics": {
+          "correct": 3,
+          "rounds": 3,
+          "attempts": 7,
+          "mistakes": 4,
+          "firstTry": 1,
+          "perfect": 0
+        },
+        "line": "天命之说，被驳了一句。",
+        "history": {
+          "year": -334,
+          "fired": [
+            "pinglu-356",
+            "guiling-353",
+            "qianmo-350",
+            "qi-zhou-348",
+            "maling-341",
+            "xuzhou-334"
+          ],
+          "macro": {
+            "minxin": 0.56,
+            "grain": 0.36,
+            "power": 0.6900000000000001,
+            "rites": 0.5200000000000001
+          }
+        }
+      }
+    },
+    "chronicle-314": {
+      "act": "chronicle-314",
+      "data": {
+        "year": -314,
+        "line": "燕地拿下，征粮又来了。",
+        "entered": {
+          "who": "禾",
+          "line": "燕地拿下，征粮又来了。",
+          "year": -314
+        },
+        "events": [
+          "qin-shu-316",
+          "qi-yan-314"
+        ],
+        "facts": [
+          {
+            "id": "history.event.qin-shu-316",
+            "day": 40,
+            "kind": "event",
+            "text": "前316年·秦取蜀：秦取蜀，疆土与财力增长"
+          },
+          {
+            "id": "history.event.qi-yan-314",
+            "day": 42,
+            "kind": "event",
+            "text": "前314年·齐伐燕：齐乘燕乱取燕，孟子劝察燕民之意"
+          }
+        ],
+        "history": {
+          "year": -314,
+          "fired": [
+            "pinglu-356",
+            "guiling-353",
+            "qianmo-350",
+            "qi-zhou-348",
+            "maling-341",
+            "xuzhou-334",
+            "qin-shu-316",
+            "qi-yan-314"
+          ],
+          "macro": {
+            "minxin": 0.46,
+            "grain": 0.26,
+            "power": 0.7,
+            "rites": 0.4900000000000001
+          }
+        }
+      }
+    },
+    "tianbo-knife": {
+      "act": "tianbo-knife",
+      "data": {
+        "facts": [
+          {
+            "id": "qi-knife-lend",
+            "text": "田伯借出三袋粟，立券来年还六袋。",
+            "kind": "decision",
+            "by": "田伯",
+            "day": 42
+          },
+          {
+            "id": "history.decision.3",
+            "day": 42,
+            "kind": "decision",
+            "by": "田伯",
+            "text": "前314年·田伯：借粟立券"
+          }
+        ],
+        "metrics": {
+          "weighings": 3,
+          "choice": 1,
+          "stock": 9,
+          "levy": 4,
+          "durationMs": 10717
+        },
+        "history": {
+          "year": -314,
+          "fired": [
+            "pinglu-356",
+            "guiling-353",
+            "qianmo-350",
+            "qi-zhou-348",
+            "maling-341",
+            "xuzhou-334",
+            "qin-shu-316",
+            "qi-yan-314"
+          ],
+          "macro": {
+            "minxin": 0.45,
+            "grain": 0.24000000000000002,
+            "power": 0.72,
+            "rites": 0.4900000000000001
+          }
+        }
+      }
+    },
+    "bells-rest": {
+      "act": "bells-rest",
+      "data": {
+        "facts": [
+          {
+            "id": "bells-remembered",
+            "text": "机器与来客回成三轮五声，最长记住四声。",
+            "kind": "event",
+            "by": "导师",
+            "day": 42
+          }
+        ],
+        "metrics": {
+          "longest": 4,
+          "rounds": 3,
+          "mistakes": 0,
+          "accuracy": 1,
+          "durationMs": 21397
+        },
+        "line": "这些人做过的，我记着。",
+        "history": {
+          "year": -314,
+          "fired": [
+            "pinglu-356",
+            "guiling-353",
+            "qianmo-350",
+            "qi-zhou-348",
+            "maling-341",
+            "xuzhou-334",
+            "qin-shu-316",
+            "qi-yan-314"
+          ],
+          "macro": {
+            "minxin": 0.45,
+            "grain": 0.24000000000000002,
+            "power": 0.72,
+            "rites": 0.4900000000000001
+          }
+        }
+      }
+    },
+    "chronicle-306": {
+      "act": "chronicle-306",
+      "data": {
+        "year": -306,
+        "line": "秦来的大臣也进齐了。",
+        "entered": {
+          "who": "禾",
+          "line": "秦来的大臣也进齐了。",
+          "year": -306
+        },
+        "events": [
+          "chu-qi-break-313",
+          "yan-zhao-311",
+          "hufu-307",
+          "ganmao-306"
+        ],
+        "facts": [
+          {
+            "id": "history.event.chu-qi-break-313",
+            "day": 43,
+            "kind": "event",
+            "text": "前313年·楚绝齐交：张仪诱楚绝齐，齐楚盟约破裂"
+          },
+          {
+            "id": "history.event.yan-zhao-311",
+            "day": 45,
+            "kind": "event",
+            "text": "前311年·燕昭王元年：燕昭王开始纪年，燕国重建王统"
+          },
+          {
+            "id": "history.event.hufu-307",
+            "day": 49,
+            "kind": "event",
+            "text": "前307年·赵行胡服骑射：赵武灵王推行胡服，招习骑射"
+          },
+          {
+            "id": "history.event.ganmao-306",
+            "day": 50,
+            "kind": "event",
+            "text": "前306年·甘茂奔齐：甘茂离秦奔齐"
+          }
+        ],
+        "history": {
+          "year": -306,
+          "fired": [
+            "pinglu-356",
+            "guiling-353",
+            "qianmo-350",
+            "qi-zhou-348",
+            "maling-341",
+            "xuzhou-334",
+            "qin-shu-316",
+            "qi-yan-314",
+            "chu-qi-break-313",
+            "yan-zhao-311",
+            "hufu-307",
+            "ganmao-306"
+          ],
+          "macro": {
+            "minxin": 0.42000000000000004,
+            "grain": 0.24000000000000002,
+            "power": 0.6599999999999999,
+            "rites": 0.43000000000000016
+          }
+        }
+      }
+    },
+    "studio": {
+      "act": "studio",
+      "data": {
+        "facts": [
+          {
+            "id": "studio.fifty-years.accepted",
+            "day": 50,
+            "by": "叔衡",
+            "text": "叔衡读过本次委托，盖印接下方案。",
+            "kind": "delivery"
+          },
+          {
+            "id": "studio.fifty-years.verified",
+            "day": 50,
+            "by": "叔衡",
+            "text": "禾的真实回报已收妥：预演：给粟；实际：拒绝",
+            "kind": "delivery"
+          },
+          {
+            "id": "history.decision.4",
+            "day": 50,
+            "kind": "decision",
+            "by": "叔衡",
+            "text": "前306年·叔衡：收妥禾的回报，保留预演的误差"
+          }
+        ],
+        "letters": [
+          "commission:visit:2",
+          "plan:visit:2",
+          "cue:studio:4",
+          "report:studio:1"
+        ],
+        "sourceReport": "report:han:1",
+        "actual": "预演：给粟；实际：拒绝",
+        "error": {
+          "layer": "mind",
+          "note": "预演：给粟；实际：拒绝"
+        },
+        "receipts": 4,
+        "affordances": [
+          "studio-commission",
+          "studio-seal",
+          "studio-report"
+        ]
+      }
+    },
+    "return": {
+      "act": "return",
+      "data": {
+        "affordances": [
+          "name",
+          "pen",
+          "seat-lamp",
+          "door"
+        ],
+        "ending": "endure",
+        "world": true,
+        "echo": false,
+        "memoryForgotten": false,
+        "facts": [],
+        "history": {
+          "year": -306,
+          "fired": [
+            "pinglu-356",
+            "guiling-353",
+            "qianmo-350",
+            "qi-zhou-348",
+            "maling-341",
+            "xuzhou-334",
+            "qin-shu-316",
+            "qi-yan-314",
+            "chu-qi-break-313",
+            "yan-zhao-311",
+            "hufu-307",
+            "ganmao-306"
+          ],
+          "macro": {
+            "minxin": 0.42000000000000004,
+            "grain": 0.24000000000000002,
+            "power": 0.6599999999999999,
+            "rites": 0.43000000000000016
+          }
+        }
+      }
+    }
+  },
+  "decisions": [
+    "han",
+    "ji-wude",
+    "tianbo-knife",
+    "studio"
+  ],
+  "ending": {
+    "id": "endure",
+    "day": 11,
+    "mentorLine": "禾熬到了冬末，还在东郊。",
+    "echo": "禾熬过了那个冬天。你走后第{days}天。",
+    "fact": {
+      "id": "f37:endure",
+      "day": 11,
+      "text": "禾没有借、没有走，熬过了冬。",
+      "kind": "commit",
+      "by": "he"
+    }
+  }
+}

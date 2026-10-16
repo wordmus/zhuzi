@@ -1,0 +1,61 @@
+{
+  "first": {
+    "n": 1,
+    "changes": [],
+    "lines": [
+      "帮禾借点粟，让一家人过冬。"
+    ]
+  },
+  "second": {
+    "n": 2,
+    "changes": [
+      {
+        "since": 1792080000000,
+        "visit": 2,
+        "id": "visit-2-lamp",
+        "place": "lamp",
+        "lampX": 0.29,
+        "what": "灯移到你的座位旁",
+        "why": "上次你在这里停得最久：visit.last.dwell[\"mentor\"]=40000。",
+        "before": "灯在横向 0.48",
+        "after": "灯在横向 0.29，靠近你的座位",
+        "attribution": "你停得久，灯就挪近了。"
+      }
+    ],
+    "saved": [
+      {
+        "since": 1792080000000,
+        "visit": 2,
+        "id": "visit-2-lamp",
+        "place": "lamp",
+        "lampX": 0.29,
+        "what": "灯移到你的座位旁",
+        "why": "上次你在这里停得最久：visit.last.dwell[\"mentor\"]=40000。",
+        "before": "灯在横向 0.48",
+        "after": "灯在横向 0.29，靠近你的座位",
+        "attribution": "你停得久，灯就挪近了。"
+      }
+    ],
+    "lines": [
+      "你停得久，灯就挪近了。"
+    ]
+  },
+  "preloaded": {
+    "n": 1,
+    "at": 1792080000000,
+    "seed": 13,
+    "dwell": {
+      "mentor": 40000,
+      "ticket": 0
+    },
+    "skipped": [
+      "ticket"
+    ]
+  },
+  "pageErrors": [],
+  "screenshots": [
+    "second-visit-before.png",
+    "second-visit-after.png",
+    "second-visit-why.png"
+  ]
+}

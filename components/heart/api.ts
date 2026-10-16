@@ -4,6 +4,8 @@
 import type { Approach, Layer, MindSnapshot, Rehearsal, Response, Seed, Trait, Weights } from '../../engine/types';
 
 export interface HeartErrorView {
+  /** 该次真实叩门的借法；缺失时只显示借法未明，不回退到当前选项。 */
+  approach?: Approach;
   trait: Trait;
   before: Weights;
   after: Weights;
@@ -39,6 +41,8 @@ export interface HeartView {
   sprout(seed: Seed): Promise<void>;
   /** 一件事停在哪层：那盏心灯亮一下 */
   flashLayer(layer: Layer): void;
+  /** 首轮先呈现来由和预测，真实登门后再展开砝码、心灯与写念头。 */
+  setAdvanced(on: boolean): void;
   /** 可用的来由（社坛未起时没有「祭」等）；默认三种都可 */
   setApproaches(list: Approach[]): void;
   /** 是否允许你写一句话（模型可用或规则可用时都允许） */
