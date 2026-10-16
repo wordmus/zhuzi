@@ -18,7 +18,7 @@ const keyOf = (w: WorkEntry) => `${w.intent}/${w.seed}/${w.tier}`;
 /** This entry bases its reasons on visits and explicit corrections, including for returning users. */
 export function deskMentorStore(store: Store): Store {
   return { ...store, get<T>(key: string, fallback: T): T {
-    return ['visit.last', 'mentor.hypotheses', 'mentor.schedule', 'desk.experience'].includes(key) ? store.get(key, fallback) : fallback;
+    return ['visit.last', 'mentor.hypotheses', 'mentor.schedule', 'mentor.assign', 'desk.experience'].includes(key) ? store.get(key, fallback) : fallback;
   } };
 }
 
@@ -42,6 +42,65 @@ export const desk: Framework = {
       if (!newest.has(w.intent)) newest.set(w.intent, w);
     }
     const works = [...newest.values()];
+    let l2EnterAt = -1;
+    const getAssignments = () => store.get<Record<string, 'base' | 'shuheng'>>('mentor.assign', {});
+    const assignedWorks = () => {
+      const assigns = getAssignments();
+      return works.map(w => ({ ...w, director: assigns[w.intent] ?? w.director }));
+    };
+    function assignTo(director: 'base' | 'shuheng') {
+      const head = schedule().entries.find(e => e.when === 'next');
+      if (!head) return;
+      const assigns = { ...getAssignments() };
+      const currentHeadDir = assigns[head.intentId] ?? (works.find(w => w.intent === head.intentId)?.director ?? 'base');
+      if (currentHeadDir === director) return;
+      const otherDir = director === 'shuheng' ? 'base' : 'shuheng';
+      const otherWork = works.find(w => (assigns[w.intent] ?? w.director) === director);
+      assigns[head.intentId] = director;
+      if (otherWork && otherWork.intent !== head.intentId) {
+        assigns[otherWork.intent] = otherDir;
+      }
+      store.set('mentor.assign', assigns);
+      event('desk.assign.changed', { intentId: head.intentId, director });
+      say(); mount(); draw();
+    }
+    function getScheduleState(): { when: 'next' | 'later' | 'dropped'; target: any } {
+      const planned = schedule();
+      const head = planned.entries.find(e => e.when === 'next');
+      const postponed = !head ? planned.entries.find(e => e.when === 'later') : undefined;
+      const target = head ?? postponed ?? planned.entries[0];
+      const when = head ? 'next' : postponed ? 'later' : 'dropped';
+      return { when, target };
+    }
+    function setSlipsState(action: 'next' | 'later' | 'dropped') {
+      const planned = schedule();
+      const entries = planned.entries.map(e => ({ ...e }));
+      if (action === 'later') {
+        const headIndex = entries.findIndex(e => e.when === 'next');
+        if (headIndex >= 0) entries[headIndex]!.when = 'later';
+        else entries.forEach(e => { if (e.when !== 'dropped') e.when = 'later'; });
+      } else if (action === 'dropped') {
+        entries.forEach(e => { e.when = 'dropped'; });
+      } else if (action === 'next') {
+        if (entries.length > 0) {
+          entries[0]!.when = 'next';
+          for (let i = 1; i < entries.length; i++) {
+            if (entries[i]!.when !== 'dropped') entries[i]!.when = 'later';
+          }
+        }
+      }
+      store.set('mentor.schedule', { ...planned, entries });
+      event('desk.schedule.slips.changed', { action });
+      say(); mount(); draw();
+    }
+    const act2Withhold = ctx.plan.acts.find(a => a.id === 'desk-directors')?.withhold ?? ctx.plan.acts[2]?.withhold ?? [];
+    const tradeoffItem = act2Withhold.find(w => w.includes('：') || w.includes('选') || w.includes('舍'));
+    const tradeoffReason = tradeoffItem ?? (act2Withhold.length > 0 && act2Withhold[0] !== '其它层' && act2Withhold[0] !== '导师明细' ? `取舍：${act2Withhold[0]}` : undefined);
+    const hasRehearsal = Array.isArray(ctx.plan.rehearsal) && ctx.plan.rehearsal.length > 0;
+    const rehearsalFailed = hasRehearsal && ctx.plan.rehearsal.some(r => r.risk && (r.risk.includes('重来') || r.risk.includes('失败') || r.risk.includes('不一致')));
+    const priorDwell = Object.entries(ctx.visit.previous?.dwell ?? {}).filter(([, ms]) => Number.isFinite(ms) && ms > 0).sort((a, b) => b[1] - a[1]);
+    const topDwellKey = priorDwell[0]?.[0];
+    const dwellActIndex = topDwellKey ? ctx.plan.acts.findIndex(a => a.id === topDwellKey || a.focus === topDwellKey || a.elements.some(e => e.id === topDwellKey) || (topDwellKey === 'ticket' && a.id === 'desk-entry') || (topDwellKey === 'mentor' && a.id === 'desk-mentor') || (topDwellKey.includes('director') && a.id === 'desk-directors') || (topDwellKey.includes('shelf') && a.id === 'desk-shelf')) : -1;
     const groups = groupWorks(works);
     let group = Math.min(Number(ctx.handoff.deskGroup ?? 0), groups.length - 1), groupTurnAt = -1;
     const currentWorks = () => groups[group]?.works ?? [];
@@ -159,6 +218,12 @@ export const desk: Framework = {
         for (const item of planned.entries.slice(3)) add('p', `${item.title} · ${item.why}`, fold);
       }
     }
+    const onWindowKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && drawerOpen) {
+        e.preventDefault(); e.stopPropagation(); toggleDrawer(false);
+      }
+    };
+    window.addEventListener('keydown', onWindowKey);
     drawer.addEventListener('keydown', e => {
       // Editing and submitting belong to the drawer, not the scene's Enter shortcut.
       if (e.key !== 'Escape') e.stopPropagation();
@@ -181,7 +246,7 @@ export const desk: Framework = {
         if (span.textContent === '\n') { span.style.display = 'block'; span.style.height = '10px'; }
       }
       const line = stage.root.querySelector<HTMLElement>('[data-layer=lines] .zl');
-      if (line && depth === 2) line.setAttribute('aria-label', ['base', 'shuheng'].map(id => { const w = works.find(w => w.director === id); return `${id === 'base' ? '基础导演' : '叔衡'}：${w ? `《${w.title}》，${w.sealed ? '已交付' : '在做'}` : '还没装上'}`; }).join('；'));
+      if (line && depth === 2) line.setAttribute('aria-label', ['base', 'shuheng'].map(id => { const w = assignedWorks().find(w => w.director === id); return `${id === 'base' ? '基础导演' : '叔衡'}：${w ? `《${w.title}》，${w.sealed ? '已交付' : '在做'}` : '还没装上'}`; }).join('；'));
       if (line && depth === 3 && work()) line.title = work()!.title;
     }
     const finish = () => { if (!finished) { finished = true; ctx.handoff.deskSelected = selected; ctx.handoff.deskGroup = group; resolve(); } };
@@ -211,7 +276,20 @@ export const desk: Framework = {
       if (!drawerOpen) {
         button(FOCUS[depth]!, ['往里看', '看它在做什么', '看架上', '拿起进入'][depth]!, boxes.main!, inward, 'Enter');
         if (ready && depth > 0) button('desk-back', '退回', boxes.back!, () => { depth--; enter(); }, 'ArrowLeft');
+        if (ready && depth === 1) {
+          button('desk-assign-base', '派给基础导演', boxes.assignBase!, () => assignTo('base'), 'ArrowLeft');
+          button('desk-assign-shuheng', '派给叔衡', boxes.assignShuheng!, () => assignTo('shuheng'), 'ArrowRight');
+          button('desk-slips', '竹简笺', boxes.slips!, () => {
+            const state = getScheduleState();
+            if (state.when === 'next') setSlipsState('later');
+            else if (state.when === 'later') setSlipsState('dropped');
+            else setSlipsState('next');
+          });
+        }
         if (ready && depth === 1 && active().length > 1) button('desk-thought', '下一条想法', boxes.thought!, () => { thought++; say(); draw(); }, 'ArrowDown');
+        if (ready && depth === 2 && tradeoffReason) {
+          button('desk-tradeoff', '取舍留痕', boxes.tradeoff!, () => { say(tradeoffReason); draw(); }, 'Enter');
+        }
         if (ready && depth === 2 && experience.length > 1) {
           const e = experience[memory]!;
           const item = button('desk-memory-next', '移灯看另一条年谱', boxes.memory!, () => { memory = (memory + 1) % experience.length; say(); mount(); draw(); }, 'ArrowDown');
@@ -229,14 +307,61 @@ export const desk: Framework = {
     }
     function draw() {
       layer.clear(); layer.reset();
-      ui.dataset.deskGroup = groups[group]?.form ?? ''; ui.dataset.deskMemory = experience[memory]?.id ?? '';
-      scene.draw(depth, depth === 3 ? currentWorks() : works, selected, (active()[thought % Math.max(1, active().length)]?.confidence ?? 0) === 0,
+      const { when: currentWhen, target } = getScheduleState();
+      const assigned = target ? (getAssignments()[target.intentId] ?? (works.find(w => w.intent === target.intentId)?.director ?? 'base')) : 'base';
+      const slipsCount = (commission().budget as any).slips ?? 3;
+
+      ui.dataset.deskGroup = groups[group]?.form ?? '';
+      ui.dataset.deskMemory = experience[memory]?.id ?? '';
+
+      if (depth === 1) {
+        ui.dataset.deskAssign = assigned;
+        ui.dataset.deskSlips = String(slipsCount);
+        ui.dataset.deskScheduleWhen = currentWhen;
+        layer.canvas.dataset.deskAssign = assigned;
+        layer.canvas.dataset.deskSlips = String(slipsCount);
+        layer.canvas.dataset.deskScheduleWhen = currentWhen;
+      }
+
+      const l2Time = depth === 2 ? (stage.reducedMotion ? 999 : (l2EnterAt >= 0 ? Math.max(0, stage.time - l2EnterAt) : 0)) : 0;
+      const tierCapacity: Record<string, number> = { L0: 1, L1: 4, L2: 6, L3: 8, L4: 10 };
+      const maxActs = tierCapacity[ctx.plan.tier] ?? 4;
+      const totalActs = Math.min(ctx.plan.acts.length, maxActs);
+      const visibleActs = stage.reducedMotion ? totalActs : Math.min(totalActs, Math.floor(l2Time / 0.4) + 1);
+
+      if (depth === 2) {
+        ui.dataset.actStrokes = String(visibleActs);
+        ui.dataset.totalActStrokes = String(totalActs);
+        ui.dataset.focusStroke = '2';
+        ui.dataset.hasTradeoff = String(!!tradeoffReason);
+        ui.dataset.hasRehearsal = String(hasRehearsal);
+        ui.dataset.rehearsalFailed = String(rehearsalFailed);
+        ui.dataset.hasDwell = String(dwellActIndex !== undefined && dwellActIndex >= 0);
+        layer.canvas.dataset.actStrokes = String(visibleActs);
+        layer.canvas.dataset.totalActStrokes = String(totalActs);
+        layer.canvas.dataset.focusStroke = '2';
+      }
+
+      scene.draw(depth, depth === 3 ? currentWorks() : assignedWorks(), selected, (active()[thought % Math.max(1, active().length)]?.confidence ?? 0) === 0,
         ready, drawerOpen, id => aff.get(id)?.hovering ?? false, opened, {
-          scheduleTitle: cut(schedule().entries.find(e => e.when === 'next')?.title ?? '', 6),
+          scheduleTitle: cut(target?.title ?? '', 6),
           group: groups[group]?.title ?? '', groupTurnAt, entries: experience.map(e => ({ title: memoryTitle(e) })), memory,
+          assignedDirector: assigned,
+          scheduleWhen: currentWhen,
+          budgetSlips: slipsCount,
+          l2Time,
+          acts: ctx.plan.acts,
+          tier: ctx.plan.tier,
+          currentActId: 'desk-directors',
+          tradeoffReason,
+          hasRehearsal,
+          rehearsalFailed,
+          dwellActIndex,
         });
     }
     function enter() {
+      if (depth === 2 && l2EnterAt < 0) l2EnterAt = stage.time;
+      else if (depth !== 2) l2EnterAt = -1;
       ui.dataset.deskLayer = `L${depth}`; layer.canvas.dataset.deskScene = `L${depth}`;
       ui.dataset.deskGroup = groups[group]?.form ?? ''; ui.dataset.deskMemory = experience[memory]?.id ?? '';
       event('desk.layer.enter'); say(); mount(); draw();
@@ -246,7 +371,7 @@ export const desk: Framework = {
     const offFrame = stage.onFrame(() => draw());
     const offResize = stage.onResize(() => { mount(); draw(); });
     await done;
-    clearTimeout(timer); offFrame(); offResize(); for (const a of controls) a.remove(); stage.removeLayer('desk-ui');
+    clearTimeout(timer); offFrame(); offResize(); window.removeEventListener('keydown', onWindowKey); for (const a of controls) a.remove(); stage.removeLayer('desk-ui');
     ctx.handoff.deskSelected = selected;
     ctx.handoff.deskGroup = group;
     return { act: act.id, data: { layer: `L${depth}`, selected: work() ? keyOf(work()!) : null,

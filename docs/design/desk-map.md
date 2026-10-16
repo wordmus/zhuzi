@@ -120,3 +120,53 @@ node frameworks/desk/verify-entry.mjs
 主屏DOM/台词最大15字；抽屉展开整页wide 121字、narrow 169字，导师明细不计主屏。14张验收图均已生成，五处同机位对比另见 `runs/desk/9/L1/shots/entry-art-before-after-all.png`。旧作回归评分另存后，既有fifty-years的51个文件逐字节复验一致；bench生成的全局产物恢复原值，保留并发无关历史行；未改bench判定、门槛、critic、旧run或runs/index.json，未操作git。
 
 未完成的必需验收项：无；未来新标题未收录的字形留空框，需要补刻字形，原始完整标题始终保留。
+
+## 2026-10-16 差距⑤⑥（GAP-ACTIVITY）· 导师的"给多少" 与 导演的"正在设计"
+
+针对用户「导师分配资源呢？导演的活动呢」两个真缺口，依照全部场景物件、禁止数字/灯油比喻、每屏≤30字、一次一焦点的原则完成落水：
+
+### 一、导师的"给多少"（场景物件驱动）
+1. **派活（给谁做）**：L1 木牍旁两枚小木签，篆刻「基」与「衡」。推到哪一枚签即派给基础导演或叔衡。落盘写回 store 键 `mentor.assign`，重载页面完全保留。L2 对应案上的毛坯真的换侧，下一次 `commission().budget.note`（`·派叔衡`/`·派基础导演`）与 `why`（`派叔衡做`）真实反映派活。
+2. **篇幅（给多少）**：木牍下压着的竹简笺数直观反映该件作品打算做多长。根据 `commission().budget` 的力气/档位计算，由作品形式的不同力气缩放（vignette 0.8 / gallery 0.9 / film 1.0 / game 1.2 / east3d 1.3），L0–L4 对应 1/3/6/10 简取整。把另一件作品排到接下来时，竹简笺数根据形式力气真实改变（例如 2 简 → 4 简），不写任何数字面板。
+3. **撤下与压后**：撤下＝竹简笺推到案角，压后＝竹简笺移到木牍右侧。两者均可在抽屉排期中与案上物件点击中互相转换与逆转。压后时 `commission().why` 变为 `排期已压后，稍后再看...`，撤下时变为 `你已撤下所有排期，先停一停。`，恢复为接下来后完全还原。
+
+### 二、导演的"正在设计"（L2 场景动作化）
+1. **分幕落笔**：进 L2 后，帛在案上铺开，按 `plan.acts` 真实数据每 0.4s 落一笔（一笔＝一幕，总数取 `min(acts.length, tierLimit)`）。落笔伴随 ≤100ms 的墨迹晕染扩散；在 `reducedMotion` 开启时直接呈现终态。
+2. **焦点高亮**：当前幕焦点对应的那一笔施加金色高光（PAL.millet/TONE.goldHot），其余各幕笔画退暗，视觉上呈现严格的「一屏一个焦点」。
+3. **取舍留痕**：被方案放弃的备选方向在帛面上留下一道淡痕（PAL.silkDim），悬停或聚焦按 Enter 弹出真实取舍理由（来自 `plan.acts.withhold`，无真实记录时不造痕）。
+4. **预演与重来划痕**：帛角盖有小朱印（PAL.cinnabar）；若方案预演中检测到风险/失败，朱印旁留有一道朱色划痕。
+5. **记忆落点圈出**：若来访记录中含有上次停留记录（`visit.last.dwell`），命中的对应幕由朱墨圈出；无记录不画。
+6. **卷帛牵线**：设计帛末端卷起，一条细墨线牵引延伸至 L3 架子，表明「设计→呈现」是同一流水线。
+
+### 三、本轮验收实测
+
+| 命令 | 结果 |
+| --- | --- |
+| `pnpm typecheck` | **PASS** · exit 0，`tsc --noEmit` 0 errors |
+| `pnpm present --intent intents/desk.json --tier L1 --seed 13` | **PASS** · valid errors 0 / warnings 0；11 封信，未回执 0；play done 4 步 / 12.6s / errors 0 |
+| `pnpm bench runs/desk/13/L1` | **PASS hard 9/9** · first-action 0.37s · first3s 1 · feedback p90 81ms · max-chars 18 · errors 0 · fps-p5 60 · notext PASS · repro PASS · layers PASS |
+| `node frameworks/desk/verify-entry.mjs` | **ENTRY PASS** · 0 退化 · 12 张截图 · 四层互斥与单焦点保持 |
+| `node frameworks/desk/verify-schedule.mjs` | **SCHEDULE PASS** · 0 退化 · 5 项断言通过 |
+| `node frameworks/desk/verify-activity.mjs` | **ACTIVITY PASS** · 六项新断言全部通过 · 14 张截图产出 · 同机位对比图生成 |
+| `pnpm bench runs/fifty-years/9/L1` | **PASS hard 9/9** · first-action 0.12s · first3s 1 · feedback p90 349ms · max-chars 28 · errors 0 · fps-p5 60 · layers PASS |
+| `pnpm bench runs/first-visit/13/L1` | 8/9（首动 0.12s、每屏 29 字、报错 0、fps 60，旧产物在无头并发测试下 feedback p90 采样抖动，既有文件逐字节无修改） |
+
+### 四、截图证据（14 张，位于 `runs/desk/13/L1/shots/`）
+- `activity-L1-assign-before.png`: 派活前木牍与基/衡签
+- `activity-L1-assign-after.png`: 派活至叔衡后木牍偏向与衡签高亮
+- `activity-L2-swapped.png`: 派活后进 L2 两案毛坯互换
+- `activity-L1-slips-before.png`: 排期更换前 2 简
+- `activity-L1-slips-after.png`: 排期更换后 4 简（随 game 力气改变）
+- `activity-L1-postpone.png`: 竹简压后（移至木牍右侧）
+- `activity-L1-drop.png`: 竹简撤下（移至案角）
+- `activity-L2-falling.png`: L2 帛上分幕墨笔正在落笔
+- `activity-L2-focus.png`: L2 焦点笔金帛高亮
+- `activity-L2-rehearsal.png`: L2 帛角预演小朱印与划痕
+- `activity-L2-dwell.png`: L2 上次停留处朱墨圈出
+- `activity-L2-handoff.png`: L2 帛卷起牵线至 L3
+- `activity-L2-tradeoff.png`: L2 取舍淡痕与理由浮现
+- `activity-L2-comparison.png`: 新旧 L2 同机位对比图（静物 vs 正在设计落笔）
+
+### 五、旧作逐文件 SHA 比对
+对既有运行目录 `runs/fifty-years/9/L1` 与 `runs/studio/5/L1` 进行了 SHA-256 哈希校验：除 `bench.json` 和 `curve.csv` 作为运行期重测产物发生数值刷新外，既有的 `index.html`、`layers.json`、`ledger.json`、`plan.json`、`report.json`、`trace.jsonl` 全部逐字节保持一致，零污染、零意外改动。未触碰 git。
+

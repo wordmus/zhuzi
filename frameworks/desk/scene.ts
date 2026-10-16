@@ -7,9 +7,26 @@ import { lacquerGround, glow, grain } from '../../components/paint/texture';
 import { cloudScroll } from '../../components/paint/ornament';
 import { rgba } from '../../components/paint/util';
 import { lamp, token, doorEdge, rough, silk, rack, stroke, oval } from '../../assets/library/desk/paint';
-import { woodTablet } from './tablets';
+import { woodTablet, assignTally, bambooSlipsPiles, directorSilkScroll } from './tablets';
 
-export interface DeskSceneEvidence { scheduleTitle: string; group: string; groupTurnAt: number; entries: { title: string }[]; memory: number }
+export interface DeskSceneEvidence {
+  scheduleTitle: string;
+  group: string;
+  groupTurnAt: number;
+  entries: { title: string }[];
+  memory: number;
+  assignedDirector?: 'base' | 'shuheng';
+  scheduleWhen?: 'next' | 'later' | 'dropped';
+  budgetSlips?: number;
+  l2Time?: number;
+  acts?: { id: string; focus: string; elements: any[]; lines: any[]; withhold?: string[]; tradeoff?: { why: string } }[];
+  tier?: string;
+  currentActId?: string;
+  tradeoffReason?: string;
+  hasRehearsal?: boolean;
+  rehearsalFailed?: boolean;
+  dwellActIndex?: number;
+}
 
 type Rect = { x: number; y: number; w: number; h: number };
 export function createDeskScene(stage: Stage, c: CanvasRenderingContext2D) {
@@ -21,12 +38,16 @@ export function createDeskScene(stage: Stage, c: CanvasRenderingContext2D) {
     return { narrow, s, x: stage.width / 2, y: stage.height * .49, side: narrow ? 215 : 434, spread: narrow ? 135 : 225 };
   };
   const boxes = (depth: number): Record<string, Rect> => {
-    const { x, y, s, side, narrow } = layout();
+    const { x, y, s, side, spread, narrow } = layout();
     const rect = (a: number, b: number, w: number, h: number) => ({ x: x + a * s, y: y + b * s, w: w * s, h: h * s });
     return {
       main: depth === 0 ? rect(-68, narrow ? -84 : -143, 129, 150) : depth === 1 ? rect(-42, -99, 193, 135) : depth === 2 ? rect(side - 35, -205, 72, 279) : rect(-53, -198, 108, 272),
       back: rect(-side - 24, -40, 48, 68),
       thought: rect(48, -17, 72, 44),
+      assignBase: rect(-134, 14, 32, 52),
+      assignShuheng: rect(76, 14, 32, 52),
+      slips: rect(-60, 20, 120, 48),
+      tradeoff: rect(narrow ? spread - 25 : spread - 35, 115, 30, 45),
       next: rect(95, -170, 73, 230),
       group: rect(narrow ? -198 : -320, -223, 82, 145),
       memory: rect(narrow ? -150 : -184, -235, narrow ? 300 : 368, 126),
@@ -62,7 +83,23 @@ export function createDeskScene(stage: Stage, c: CanvasRenderingContext2D) {
       if (uncertain) stroke(c, [[-58, -51], [-40, -56], [-20, -55]], rgba(TONE.ink, .22), 2);
       c.restore();
       glow(c, -13, 40, 98, PAL.millet, .13);
-      woodTablet(c, -13, 39, evidence.scheduleTitle, 1, true);
+
+      // 竹简笺数：根据状态（接下来/压后/撤下）绘制
+      const slipsCount = evidence.budgetSlips ?? 3;
+      const state = evidence.scheduleWhen ?? 'next';
+      const slipX = state === 'later' ? (narrow ? 85 : 115) : state === 'dropped' ? (narrow ? 140 : 190) : -13;
+      const slipY = state === 'dropped' ? 70 : 41;
+      bambooSlipsPiles(c, slipX, slipY, slipsCount, state, hovering('desk-slips'));
+
+      // 木牍：根据派活偏向微调
+      const assign = evidence.assignedDirector ?? 'base';
+      const tabletShiftX = assign === 'shuheng' ? 10 : -10;
+      woodTablet(c, -13 + tabletShiftX, 39, evidence.scheduleTitle, 1, true);
+
+      // 两枚小签：刻「基」「衡」
+      assignTally(c, -118, 39, '基', assign === 'base', hovering('desk-assign-base'));
+      assignTally(c, 92, 39, '衡', assign === 'shuheng', hovering('desk-assign-shuheng'));
+
       lamp(c, narrow ? 176 : 235, table.top - 3, t, hot ? 1 : .76);
       // The blank silk end is also the existing next-thought action.
       c.fillStyle = PAL.silkDim; c.fillRect(58, 8, 50, 13);
@@ -78,6 +115,23 @@ export function createDeskScene(stage: Stage, c: CanvasRenderingContext2D) {
         c.save(); c.translate(xx, table.top - 7); if (narrow) c.scale(.74, .74);
         rough(c, 0, 0, w?.form, /3d/i.test(`${w?.intent} ${w?.title}`)); c.restore();
       }
+
+      // 导演正在设计：进 L2 帛铺开，按 plan 真实数据落笔
+      const silkW = narrow ? 160 : 210, silkH = narrow ? 48 : 56;
+      const silkX = narrow ? spread - 80 : spread - 105;
+      const silkY = 150 - 24 - silkH / 2 + 6;
+      directorSilkScroll(c, silkX, silkY, silkW, silkH, {
+        elapsed: evidence.l2Time ?? 999,
+        reducedMotion: stage.reducedMotion,
+        acts: evidence.acts ?? [],
+        tier: evidence.tier ?? 'L1',
+        currentActId: evidence.currentActId ?? 'desk-directors',
+        tradeoffReason: evidence.tradeoffReason,
+        hasRehearsal: evidence.hasRehearsal ?? false,
+        rehearsalFailed: evidence.rehearsalFailed ?? false,
+        dwellActIndex: evidence.dwellActIndex,
+        hoverTradeoff: hovering('desk-tradeoff'),
+      }, side);
       const slots = [0, 1, -1, 2, -2], position = evidence.memory % 5;
       const lightX = slots[position]! * (narrow ? 62 : 78);
       mentor.setGaze(Math.max(-1, Math.min(1, lightX / 180)));

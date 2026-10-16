@@ -9,23 +9,23 @@
       "pictures": [
         {
           "file": "runs/desk/11/L1/shots/entry-wide-L0.png",
-          "hash": "a00fcfb95841e55857f1f7bc02fb532dbb7d40ac3930430b6d166e5d2a1390b9"
+          "hash": "35c32584c77ec086d5780dce93d2d25ae30148a6351da95e15cff16037e05971"
         },
         {
           "file": "runs/desk/11/L1/shots/entry-wide-L1.png",
-          "hash": "b7be03ab8c9f1fa29f2a5ac26dc52375fb81fdf21038e53a7ac83585c33f9f9c"
+          "hash": "fa59081e5fd39b4377b081aa3dc63502cf75e695a81e84e8e5496812edbb7a4b"
         },
         {
           "file": "runs/desk/11/L1/shots/entry-wide-L2.png",
-          "hash": "173be87a752c8eaeee48da4e4ddf2f084ef34d106bf7b1a1dfc3acaa5d9cbf8f"
+          "hash": "166da5006ef2b7f092f42b6046a2673310f7bad992a9df319c107e7d3942ce66"
         },
         {
           "file": "runs/desk/11/L1/shots/entry-wide-L3.png",
-          "hash": "09c05edc21ca9229adee2303dbe9763fa6f15b40ad5d81380824a2e76c48ed7f"
+          "hash": "0352cac84e8a0a7607b8ddcbaf5199ca1f5b13a1fa58ebe73121bc8367a4d227"
         },
         {
           "file": "runs/desk/11/L1/shots/entry-wide-drawer.png",
-          "hash": "acc7979a707f0710a55a64df6f9586c1f608793ca8ebb31bba11ceb1fda2e4dd"
+          "hash": "2bebbb58ea98bee2a08602ab724a8d57ecbdc2bb6dc446090f6c68a51fe3d7a2"
         }
       ],
       "chars": [
@@ -76,14 +76,14 @@
           },
           {
             "id": "h-night",
-            "text": "还不知道你喜欢多长的故事",
+            "text": "深夜你更愿意看短的，不耐烦拖沓",
             "evidence": [
               {
                 "visit": 1,
-                "what": "尚无足够来访记录；这是待确认的问题。"
+                "what": "真实时段记录为「夜里」（dayPart）"
               }
             ],
-            "confidence": 0,
+            "confidence": 0.6,
             "status": "active"
           }
         ],
@@ -103,23 +103,23 @@
       "pictures": [
         {
           "file": "runs/desk/11/L1/shots/entry-narrow-L0.png",
-          "hash": "09035f6488de4b7d7a126e4c7d72fc9aeefd2d6b94b3ff02feff087325b0bdf9"
+          "hash": "35a5c789a4c6eb280c44d102fb3d72052f598855b77817a75a96d0fa570ac7ca"
         },
         {
           "file": "runs/desk/11/L1/shots/entry-narrow-L1.png",
-          "hash": "46cfa93c5d6e6ddc2e2b5aa0d8391ac08ff1aa8147db15a17a1b366b47de502a"
+          "hash": "bcb1bbbd8e9f9ce26f8e35f2b878ccb1022f39a88ecce3889eef66357df08a21"
         },
         {
           "file": "runs/desk/11/L1/shots/entry-narrow-L2.png",
-          "hash": "35aeb20b53f0e8472e13feeff75b270d5166bd5ef6cb0bf93e7ea9397cd789d3"
+          "hash": "d06da3a23823e32f7d7482f4301f83d54ece34560631c5bddbc74bbd228032fa"
         },
         {
           "file": "runs/desk/11/L1/shots/entry-narrow-L3.png",
-          "hash": "2b5335b549f20dd02111ffce69526b66fc6d5d2c1f97ee5e881fe7966b79deee"
+          "hash": "76e204de44366810d1807d27e73abf5f2a2d8f1c405bd64fa98bdbc50168b4c7"
         },
         {
           "file": "runs/desk/11/L1/shots/entry-narrow-drawer.png",
-          "hash": "7fc9956e3c7af0dc0c5fd297c01d1c4e5a2393f91038d8c0ad0044e3b44ae9c7"
+          "hash": "e54da9bb7ff932245dd7ddb636bbc408ce1ac60c63a8118049ce80ceb39be7f6"
         }
       ],
       "chars": [
@@ -134,7 +134,7 @@
         9,
         9
       ],
-      "expandedChars": 169,
+      "expandedChars": 174,
       "before": {
         "why": "上回停在导师案前，接着看，先看《咖啡厅入口》。",
         "id": "desk"
@@ -170,14 +170,14 @@
           },
           {
             "id": "h-night",
-            "text": "还不知道你喜欢多长的故事",
+            "text": "深夜你更愿意看短的，不耐烦拖沓",
             "evidence": [
               {
                 "visit": 1,
-                "what": "尚无足够来访记录；这是待确认的问题。"
+                "what": "真实时段记录为「夜里」（dayPart）"
               }
             ],
-            "confidence": 0,
+            "confidence": 0.6,
             "status": "active"
           }
         ],

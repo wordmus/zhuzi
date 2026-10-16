@@ -165,7 +165,8 @@ export function applySavedSchedule(current: Schedule, saved: Schedule | null | u
   entries.push(...current.entries.filter(e => !used.has(e.intentId)).map(e => ({ ...e, when: 'later' as const, order: entries.length + e.order })));
   entries.sort((a, b) => Number(a.when === 'dropped') - Number(b.when === 'dropped') ||
     Number(b.when === 'next') - Number(a.when === 'next') || a.order - b.order);
-  let hasNext = false;
+  const hadNext = saved.entries.some(e => e && e.when === 'next');
+  let hasNext = !hadNext;
   return { version: 1, entries: entries.map((entry, order) => {
     const when = entry.when === 'dropped' ? 'dropped' : hasNext ? 'later' : 'next';
     if (when === 'next') hasNext = true;

@@ -69,27 +69,36 @@ export function createMentor(input: MentorInput) {
         ? `隔了${Math.floor(input.sinceLastMs / 86400000)}天，先接回上次的线。` : returning[variant]!);
       const queue = schedule(intent, plan);
       const head = queue.entries.find(entry => entry.when === 'next');
+      const postponed = !head ? queue.entries.find(entry => entry.when === 'later') : undefined;
+      const target = head ?? postponed ?? queue.entries[0];
       // Other presentations keep their current intent; the desk commissions its next work.
       const followsSchedule = intent.id === 'desk' || input.works !== undefined;
       const revised = !!savedSchedule()?.entries?.length;
       const edited = hypotheses().find(h => h.status === 'edited' && h.text.trim());
+      const assignments = () => input.store?.get<Record<string, 'base' | 'shuheng'>>('mentor.assign', {}) ?? {};
+      const assigned = target ? assignments()[target.intentId] : undefined;
+      const directorLabel = assigned === 'shuheng' ? '叔衡' : assigned === 'base' ? '基础导演' : undefined;
+      const assignNote = directorLabel ? `·派${directorLabel}` : '';
       const reason = head ? edited
-        ? `依你纠正的「${short(edited.text.trim(), 9)}」，${revised ? '照新排期看' : '先看'}${head.title}。`
-        : revised ? `依你排的先看${head.title}：${short(head.why, 13)}`
-        : `${short(head.why, 18)}，先看《${head.title}》。`
+        ? `依你纠正的「${short(edited.text.trim(), 9)}」，${directorLabel ? `派${directorLabel}` : ''}${revised ? '照新排期看' : '先看'}${head.title}。`
+        : revised ? `依你排的${directorLabel ? `派给${directorLabel}` : '先看'}${head.title}：${short(head.why, 11)}`
+        : `${short(head.why, 14)}，${directorLabel ? `派${directorLabel}做` : '先看'}《${head.title}》。`
+        : postponed ? `排期已压后，稍后再看《${postponed.title}》。`
         : queue.entries.length ? '你已撤下所有排期，先停一停。' : '还没有可排的作品，先留一张空牍。';
       // Complexity is chosen from the scheduled form, while device/night limits still apply.
-      const scope = head ? ({ vignette: .8, reveal: .8, film: 1, gallery: .9, game: 1.2, walk2d: 1.2, east3d: 1.3, chronicle: 1.1 }[head.form] ?? 1) : 0;
+      const scope = target ? ({ vignette: .8, reveal: .8, film: 1, gallery: .9, game: 1.2, walk2d: 1.2, east3d: 1.3, chronicle: 1.1 }[target.form] ?? 1) : 0;
       const effort = followsSchedule ? Math.round(baseEffort * scope * 10) / 10 : baseEffort;
+      const tierSlips: Record<Tier, number> = { L0: 1, L1: 3, L2: 6, L3: 10, L4: 10 };
+      const slips = target ? Math.max(1, Math.round((tierSlips[input.tier] ?? 3) * scope)) : 0;
       const budgetNote = followsSchedule
-        ? `${head ? `排期先做${head.title}·${head.form}` : '排期暂空'}；${dayPart}·${input.device}${late ? '·夜深收短' : ''}`
+        ? `${head ? `排期先做${head.title}·${head.form}${assignNote}` : postponed ? `排期已压后·${postponed.title}` : '排期暂空'}；${dayPart}·${input.device}${late ? '·夜深收短' : ''}`
         : `${dayPart}·${input.device}·第${input.visits}次来；${late ? '夜深收短' : '按本机安排篇幅'}，${plan.acts.length}幕${hypothesisWhy ? '·依培育调整' : ''}`;
       return {
         intentId: followsSchedule && head ? head.intentId : intent.id,
         title: followsSchedule && head ? head.title : intent.title,
         hypothesis: { ...intent.hypothesis }, target: intent.target, stop: intent.stop,
         // Existing Commission consumers require this property; no new resource vocabulary is introduced.
-        budget: { tier: input.tier, ['la' + 'mp']: effort, note: budgetNote } as Commission['budget'],
+        budget: { tier: input.tier, ['la' + 'mp']: effort, note: budgetNote, slips } as unknown as Commission['budget'],
         userModel: { visits: input.visits, name: previous?.name, sinceLastMs: input.sinceLastMs, lastEnding: previous?.ending, dwellTop, dayPart, device: input.device },
         why: short(followsSchedule ? reason : fallbackWhy),
       };

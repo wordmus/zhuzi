@@ -16,7 +16,7 @@ export function deskActs(budget: PlanAct['budget'], data?: DeskData): PlanAct[] 
     elements: [{ id: s.focus, component: s.focus, represents: s.what, actions: [s.action],
       prominence: { x: .5, y: .5, scale: 1, brightness: 1, folded: false } }],
     lines: [{ id: 'entry', who: '导师', text: s.text }], reveal: [s.focus],
-    withhold: ['其它层', '导师明细'], exit: i === 3 ? '新标签页打开作品或说明尚未装上' : '主动进入下一层',
+    withhold: i === 2 ? ['选单物入场，舍去总览', '导师明细'] : ['其它层', '导师明细'], exit: i === 3 ? '新标签页打开作品或说明尚未装上' : '主动进入下一层',
     predict: { firstLook: s.focus, dwell: s.focus, surprise: s.what, firstActionMs: 100 }, budget,
   }));
 }
